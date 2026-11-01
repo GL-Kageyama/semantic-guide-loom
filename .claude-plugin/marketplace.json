@@ -11,7 +11,7 @@
       "name": "semantic-guide-loom",
       "source": "./",
       "description": "Semantic Guide Loom — 説明の映像を、台本から決定的に組み立てる。5 段（素材・声・組み立て・時刻・描画）を通し、時刻は mix.yaml の音の実尺から取る。型（template）は絵の側だけを持ち、意味は作品が持つ。AI の映像生成を使わないので、同じ台本から同じ絵が出る。",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "author": {
         "name": "GL-Kageyama"
       },

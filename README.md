@@ -62,6 +62,9 @@ clone したら一度 `git lfs pull`。表情シート（`sheets/`）と焼い�
 **色違い・位置違いの型は YAML 1 枚で足りる。** 並べ方が違う型はモジュールを 1 本足す。
 手順は [docs/template-contract.md](docs/template-contract.md)。
 
+`out/` に見本が 2 本。`cyber-basics.mp4`（掛け合い型・1280×720・4 分 47 秒）と
+`making-a-guide.mp4`（語り型・1920×1080・53 秒）。
+
 ## 作品の書き方
 
 ```

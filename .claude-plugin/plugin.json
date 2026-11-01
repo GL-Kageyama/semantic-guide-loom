@@ -1,6 +1,6 @@
 {
   "name": "semantic-guide-loom",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Semantic Guide Loom — 意味のある台本から説明の映像を焼く。解説動画・社内の説明動画・研修の導入を、AI の映像生成を使わずに組み立てる。型（掛け合いの胸像型・語りのスライド型）とキャストを差し替えて、同じ台本を別の絵にする。時刻は音の実尺から取る。",
   "author": {
     "name": "GL-Kageyama"

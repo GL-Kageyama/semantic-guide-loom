@@ -1,5 +1,24 @@
 # HISTORY
 
+## 0.1.2 — 2026-11-01 本編『サイバー基礎』を guide-loom から焼き直した（バイト一致）
+
+`out/cyber-basics.mp4`（4 分 47 秒・8,618 コマ・13,659,717 B・h264 + aac）を加えた。
+
+**これは `資料/…/解説動画の作成_構想/試作/out/cyber-basics.mp4` の写しではない。**
+guide-loom の `render.py` で焼き直したもので、**md5 が元と一致した**（`c1de4b4a…`）。
+`--still` 3 枚の一致より強い検算——8,618 コマすべて同じ絵が出たことになる。
+
+素材の側の居場所:
+
+| 素材 | どこへ |
+| --- | --- |
+| 表情シート 2 枚 | `sheets/`（0.1.1 で移した。md5 一致） |
+| 切り抜き 33 ファイル | **移さない**（`build/` に同じものが出る）。PNG 32 枚は md5 一致、`faces.json` は中身同一でキーの並びだけ違う |
+| 声とミックス | `semantic-audio-loom/projects/longform/` のまま（そこが正本） |
+
+焼き直しは `render.py` の 1 段だけ。時刻は既に在る `build/cyber-basics/timeline.json`
+（`audio` が指すミックスは audio 側の `renders/cyber-basics.wav`）から取った。38.6 秒。
+
 ## 0.1.1 — 2026-11-01 大きなものは Git LFS に入れる
 
 **入れるのは「入力」と「成果物」、入れないのは「中間物」。**
