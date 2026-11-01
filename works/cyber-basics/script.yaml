@@ -1,0 +1,129 @@
+# 解説動画『脆弱性とサイバー攻撃 — なぜ、同じ三つなのか』
+# ミライ（人）とミラボ（AIパートナー）の掛け合い。約4分半。
+# 構成は「三つの境界」: 入力（命令との境目）・メモリ（確保した範囲の境目）・依存（自分と他人の境目）。
+# 各章で「昔の事件」と「今の事件」を並べ、同じ形だと示す。終章で「なぜ三つか」に答える。
+#
+# 演技は「効く欄」だけで振る。記号（文末に1つ・短い行）・speed・pause_before・volume。
+# emotion は「neutral か、そうでないか」の粗いスイッチとしてだけ使う（感情どうしは区別できない）。
+# delivery は flat / cold だけ（測って動くのは12語のうち4語、本作に要るのはこの2語）。
+# pitch・intonation・subtext・intensity は書かない（音が動かない）。設計は 資料/…/演技の設計.md。
+#
+# テンポ: ミライは fast を基調、ミラボは fast〜very_fast（ミラボのほうが速い）。
+# 落とすのは「静かな所」だけ（c23・c34・c46b）。全体を速くすると、遅い所が効く。
+# 章の頭（c07/c17/c30/c47）だけ 1.6 秒。鐘が cue の 1.6 秒手前に鳴るので、そこで前の行が終わる。
+#
+# 行は文の切れ目で割る（cNN と cNNb）。長い行は ！ も ？ も効かないため。
+# ！ は全編で4つ（c01 / c11b / c14 / c55）。増やすと効かなくなる。
+# seed は全行 1（省略時も 1）。
+#
+# 表記の方針: line は Tsukasa が読む形（カタカナ）。字幕の原表記は video.yaml の display。
+# 数は 資料_脆弱性とサイバー攻撃_2026.md の「使う数」だけを使う。
+name: cyber-basics
+default_pause: 0.25
+cues:
+  # ── 序章
+  - {character: mirabo, line: "ミライさん！", emotion: excitement, intensity: subtle, volume: loud, speed: very_fast, pause_before: 0.8, name: c01}
+  - {character: mirabo, line: "また、大きな攻撃のニュースだよ。", emotion: excitement, intensity: subtle, speed: fast, pause_before: 0.12, name: c01b}
+  - {character: mirai, line: "うん。今日は、別の角度から話そう。", speed: very_fast, pause_before: 0.3, name: c02}
+  - {character: mirai, line: "なぜ、同じ場所が壊れるのか。", speed: fast, pause_before: 0.3, name: c02b}
+  - {character: mirabo, line: "同じ場所？", speed: very_fast, pause_before: 0.25, name: c03}
+  - {character: mirai, line: "入力、メモリ、依存。", speed: fast, pause_before: 0.35, name: c04}
+  - {character: mirai, line: "20年《にじゅうねん》、名前が変わっても、この三つだ。", speed: very_fast, pause_before: 0.15, name: c04b}
+  - {character: mirabo, line: "20年《にじゅうねん》も？", emotion: joy, intensity: subtle, speed: fast, pause_before: 0.22, name: c05}
+  - {character: mirai, line: "そう。三つとも、いまも、直っていない。", emotion: confidence, intensity: moderate, speed: very_fast, pause_before: 0.3, name: c06}
+
+  # ── 第1章 入力
+  - {character: mirai, line: "ひとつめは、入力。", speed: fast, pause_before: 1.6, name: c07}
+  - {character: mirai, line: "外から来た文字を、プログラムが信じてしまう。", speed: very_fast, pause_before: 0.15, name: c07b}
+  - {character: mirabo, line: "信じるって、どういうこと？", speed: fast, pause_before: 0.3, name: c08}
+  - {character: mirai, line: "たとえば、ログイン画面。", speed: very_fast, pause_before: 0.25, name: c09}
+  - {character: mirai, line: "名前を入れる欄がある。", speed: very_fast, pause_before: 0.15, name: c09b}
+  - {character: mirai, line: "そこに、命令を混ぜられたら？", speed: very_fast, pause_before: 0.3, name: c10}
+  - {character: mirabo, line: "名前だと思って読んだら、", speed: very_fast, pause_before: 0.25, name: c11}
+  - {character: mirabo, line: "命令だった！", emotion: excitement, intensity: subtle, volume: loud, speed: very_fast, pause_before: 0.15, name: c11b}
+  - {character: mirai, line: "そう。インジェクション。", speed: fast, pause_before: 0.3, name: c12}
+  - {character: mirai, line: "入力と命令の境目が、壊れる。", emotion: confidence, intensity: moderate, speed: very_fast, pause_before: 0.3, name: c12b}
+  - {character: mirai, line: "2021年、ログフォーシェル。", speed: fast, pause_before: 0.35, name: c13}
+  - {character: mirai, line: "ログに書いた文字が、遠くのコードを呼び出した。", speed: very_fast, pause_before: 0.15, name: c13b}
+  - {character: mirabo, line: "ログって、記録するだけじゃないんだ！", emotion: excitement, intensity: subtle, volume: loud, speed: very_fast, pause_before: 0.25, name: c14}
+  - {character: mirai, line: "記録する場所が、実行する場所になった。", speed: very_fast, pause_before: 0.3, name: c15}
+  - {character: mirai, line: "世界中が、急いで直した。", speed: very_fast, pause_before: 0.3, name: c15b}
+  - {character: mirai, line: "でも、同じ形は、まだ一番多い。", speed: very_fast, pause_before: 0.3, name: c16}
+  - {character: mirai, line: "去年、悪用された脆弱性の、四割が昔からある型だ。", speed: very_fast, pause_before: 0.15, name: c16b}
+  - {character: mirai, line: "2007年に、もう“言い訳が立たない”とされた型が、", speed: fast, pause_before: 0.3, name: c16c}
+  - {character: mirai, line: "まだ、上位に3つ残っている。", speed: fast, pause_before: 0.25, name: c16d}
+
+  # ── 第2章 メモリ
+  - {character: mirai, line: "ふたつめは、メモリ。", speed: fast, pause_before: 1.6, name: c17}
+  - {character: mirai, line: "確保した場所の外を、読んでしまう。", speed: very_fast, pause_before: 0.15, name: c17b}
+  - {character: mirabo, line: "外を読むと、何が見えるの？", speed: fast, pause_before: 0.3, name: c18}
+  - {character: mirai, line: "隣に置いてあった、別のデータ。", speed: very_fast, pause_before: 0.25, name: c19}
+  - {character: mirai, line: "パスワードかもしれない。", volume: quiet, speed: fast, pause_before: 0.3, name: c19b}
+  - {character: mirai, line: "2014年、ハートブリード。", speed: fast, pause_before: 0.35, name: c20}
+  - {character: mirai, line: "オープンエスエスエル。", speed: very_fast, pause_before: 0.15, name: c20b}
+  - {character: mirai, line: "境界チェックが、一つ抜けた。", speed: fast, pause_before: 0.25, name: c20c}
+  - {character: mirabo, line: "一つ、抜けただけ？", emotion: excitement, intensity: subtle, speed: very_fast, pause_before: 0.25, name: c21}
+  - {character: mirai, line: "一回に、64キロバイト。記憶が漏れた。", speed: fast, pause_before: 0.25, name: c22}
+  - {character: mirabo, line: "静かに、少しずつ。", emotion: anxiety, intensity: subtle, volume: quiet, speed: slow, delivery: flat, pause_before: 0.35, name: c23}
+  - {character: mirai, line: "そう。壊す音がしない。", speed: fast, pause_before: 0.35, name: c24}
+  - {character: mirai, line: "だから、気づくのが遅れる。", speed: fast, pause_before: 0.3, name: c24b}
+  - {character: mirai, line: "11年後《じゅういちねんご》、同じ形が、また出た。", speed: fast, pause_before: 0.35, name: c25}
+  - {character: mirai, line: "2025年、シトリックス・ブリード・ツー。", speed: fast, pause_before: 0.3, name: c25b}
+  - {character: mirai, line: "一回に、127バイト。", speed: very_fast, pause_before: 0.2, name: c25c}
+  - {character: mirabo, line: "127バイト？", emotion: excitement, intensity: subtle, speed: very_fast, pause_before: 0.22, name: c26}
+  - {character: mirai, line: "小さい。でも、何度でも、繰り返せる。", speed: very_fast, pause_before: 0.3, name: c27}
+  - {character: mirai, line: "漏れたのは、ログインした後の、クッキー。", speed: very_fast, pause_before: 0.2, name: c27b}
+  - {character: mirabo, line: "鍵を、持っていかれたんだ。", emotion: anxiety, intensity: subtle, volume: quiet, speed: natural, pause_before: 0.35, name: c28}
+  - {character: mirai, line: "長さを確かめる。境界を確かめる。", speed: very_fast, pause_before: 0.35, name: c29}
+  - {character: mirai, line: "地味だけど、そこが最後の壁。", emotion: confidence, intensity: subtle, speed: fast, pause_before: 0.3, name: c29b}
+
+  # ── 第3章 依存
+  - {character: mirai, line: "みっつめは、依存。", speed: fast, pause_before: 1.6, name: c30}
+  - {character: mirai, line: "自分が書いていないコードを、信じる。", speed: very_fast, pause_before: 0.15, name: c30b}
+  - {character: mirabo, line: "ライブラリのこと？", speed: fast, pause_before: 0.28, name: c31}
+  - {character: mirai, line: "うん。2024年。", speed: fast, pause_before: 0.35, name: c32}
+  - {character: mirai, line: "エックスゼット・ユーティルズという、圧縮の部品に、", speed: very_fast, pause_before: 0.25, name: c32b}
+  - {character: mirai, line: "バックドアが仕込まれた。", speed: very_fast, pause_before: 0.2, name: c32c}
+  - {character: mirabo, line: "誰が入れたの？", emotion: anxiety, intensity: subtle, volume: quiet, speed: natural, pause_before: 0.25, name: c33}
+  - {character: mirai, line: "長く面倒を見ていた開発者を、根気よく騙して。", volume: quiet, speed: slow, delivery: cold, pause_before: 0.3, name: c34}
+  - {character: mirabo, line: "コードじゃなくて、人だ。", emotion: sadness, intensity: moderate, volume: quiet, speed: natural, pause_before: 0.35, name: c35}
+  - {character: mirai, line: "そう。依存は、コードと人の、両方にある。", speed: very_fast, pause_before: 0.3, name: c36}
+  - {character: mirai, line: "そして、気づかれずに終わりかけた。", speed: very_fast, pause_before: 0.3, name: c36b}
+  - {character: mirai, line: "止めたのは、一人のエンジニア。", speed: fast, pause_before: 0.3, name: c37}
+  - {character: mirai, line: "手がかりは、ログインの半秒の遅れだった。", speed: fast, pause_before: 0.3, name: c37b}
+  - {character: mirabo, line: "半秒。", emotion: anxiety, intensity: subtle, volume: quiet, speed: natural, pause_before: 0.35, name: c38}
+  - {character: mirai, line: "それだけの違和感で、止まった。", speed: fast, pause_before: 0.35, name: c39}
+  - {character: mirai, line: "でも、狙いは、変わった。", speed: very_fast, pause_before: 0.3, name: c39b}
+  - {character: mirai, line: "2026年、エヌピーエムの部品が、次々に乗っ取られた。", speed: fast, pause_before: 0.3, name: c40}
+  - {character: mirai, line: "170以上の部品。週に、5億回、誰かが入れている。", speed: very_fast, pause_before: 0.2, name: c40b}
+  - {character: mirabo, line: "どうやって？", speed: very_fast, pause_before: 0.25, name: c41}
+  - {character: mirai, line: "部品を公開する、自動の仕組みが、狙われた。", speed: very_fast, pause_before: 0.3, name: c42}
+  - {character: mirai, line: "気づいたときには、正しい手順で、偽物が配られていた。", speed: very_fast, pause_before: 0.25, name: c42b}
+  - {character: mirabo, line: "正しい手順で？", emotion: excitement, intensity: subtle, speed: very_fast, pause_before: 0.25, name: c43}
+  - {character: mirai, line: "証明書も、付いていた。", volume: quiet, speed: fast, pause_before: 0.3, name: c43b}
+  - {character: mirai, line: "でも、証明書が言うのは、“通った”ということ。", speed: fast, pause_before: 0.3, name: c44}
+  - {character: mirai, line: "“安全”ということではない。", speed: fast, pause_before: 0.3, name: c44b}
+  - {character: mirabo, line: "じゃあ、何を信じればいいの？", emotion: anxiety, intensity: subtle, volume: quiet, speed: natural, pause_before: 0.3, name: c45}
+  - {character: mirai, line: "出どころを見る。更新を追う。一人に背負わせない。", speed: very_fast, pause_before: 0.3, name: c46}
+  - {character: mirai, line: "これは、技術だけでは守れない場所。", volume: quiet, speed: slow, pause_before: 0.35, name: c46b}
+
+  # ── 終章
+  - {character: mirai, line: "入力、メモリ、依存。", speed: fast, pause_before: 1.6, name: c47}
+  - {character: mirabo, line: "じゃあ、三つを塞げばいい？", emotion: joy, intensity: subtle, speed: fast, pause_before: 0.3, name: c48}
+  - {character: mirai, line: "塞ぐだけでは足りない。", speed: very_fast, pause_before: 0.35, name: c49}
+  - {character: mirai, line: "去年、新しく登録された脆弱性は、一年で2倍になった。", speed: very_fast, pause_before: 0.3, name: c49b}
+  - {character: mirai, line: "1万4千件から、3万件。", speed: very_fast, pause_before: 0.25, name: c49c}
+  - {character: mirabo, line: "多すぎる……", emotion: anxiety, volume: quiet, speed: slow, pause_before: 0.35, name: c50}
+  - {character: mirai, line: "見つけるのも、直すのも、追いつかない。", speed: fast, pause_before: 0.3, name: c50b}
+  - {character: mirai, line: "だから、抜けた後に気づく。", speed: very_fast, pause_before: 0.3, name: c51}
+  - {character: mirai, line: "広がる前に止める。", speed: very_fast, pause_before: 0.15, name: c51b}
+  - {character: mirabo, line: "被害を、小さくする。", emotion: confidence, intensity: subtle, speed: fast, pause_before: 0.28, name: c52}
+  - {character: mirai, line: "なぜ、同じ三つかというと、", speed: fast, pause_before: 0.35, name: c53}
+  - {character: mirai, line: "どれも、自分の内と外の、境目の話だから。", speed: fast, pause_before: 0.3, name: c53b}
+  - {character: mirai, line: "入ってくるもの。自分の記憶。", speed: very_fast, pause_before: 0.25, name: c53c}
+  - {character: mirai, line: "自分が使う、他人のもの。", speed: very_fast, pause_before: 0.3, name: c53d}
+  - {character: mirai, line: "その線を、コードはまだ、自分で引き直せない。", speed: very_fast, pause_before: 0.35, name: c54}
+  - {character: mirabo, line: "じゃあ、見るところは三つだね！", emotion: joy, intensity: subtle, volume: loud, speed: very_fast, pause_before: 0.3, name: c55}
+  - {character: mirai, line: "入力、メモリ、依存。", speed: fast, pause_before: 0.5, name: c56}
+  - {character: mirai, line: "まずは、自分のところの、外とつながっている場所を、", speed: very_fast, pause_before: 0.15, name: c56b}
+  - {character: mirai, line: "数えてみよう。", speed: very_fast, pause_before: 0.25, name: c56c}

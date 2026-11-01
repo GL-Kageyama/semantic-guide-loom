@@ -133,19 +133,20 @@ cue の名の配列。`assemble.py` がこの cue の手前にチャイムを置
 templates/<型>/template.yaml   型（配布する）
 casts/<キャスト>.cast.yaml      キャスト（配布する）
 sheets/                        表情シート（入力。Git LFS）
-works/<作品>/                   作品（script/video/chapters）
+works/<作品>/                   台本（script / video / chapters / voice_fx）
+assets/<作品>/                  音の資材（voice / sfx / bgm）— Git LFS
 build/<作品>/                   中間物（assets, audio, timeline.json）— .gitignore
 out/<作品>.mp4                  成果物 — Git LFS
 ```
 
-**入れるのは「入力」と「成果物」、入れないのは「中間物」。** 表情シートは入力
-（切り抜きからは戻せない）、`out/` は成果物（clone した人がそのまま見られる）。
-`build/` は焼き直せば戻るので入れない。
+**入れるのは「入力」と「成果物」、入れないのは「中間物」。** 表情シートも声も入力
+（切り抜きからも、声からも元には戻せない）、`out/` は成果物（clone した人がそのまま
+見られる）。`build/` は焼き直せば戻るので入れない。
+
+`assets/<作品>/` の中でも、`voice_trim/` `voice_fx/` `renders/` `*_tiled.wav`
+`*_short.wav` は `assemble.py` が作る派生なので `.gitignore`。**入るのは `voice/*.wav`
+と、効果音・敷き音の原盤だけ。**
 
 **作品はこのリポジトリに無くてもよい。** `make.sh` は `script.yaml` と `video.yaml` の
-あるディレクトリならどこでも指せる。音の側の作品が
-`semantic-audio-loom/projects/longform/` に在るなら、そこをそのまま指す。
-
-```
-./engine/make.sh ../semantic-audio-loom/projects/longform/cyber-basics
-```
+あるディレクトリならどこでも指せる。その場合、音の資材は `assets/<作品>` が無ければ
+`build/<作品>/audio` に作られる。

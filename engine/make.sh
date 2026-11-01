@@ -21,7 +21,9 @@ WORK_IN="$1"; shift
 WORK="$(cd "$WORK_IN" && pwd)"
 NAME="$(basename "$WORK")"
 BUILD="$ROOT/build/$NAME"
-AUDIO="$BUILD/audio"
+# 資材（声・効果音・BGM）がリポジトリに在れば、それを読む。無ければ build/ に作る。
+# assets/ の中で作られる派生（voice_trim・renders・*_tiled.wav）は .gitignore。
+if [ -d "$ROOT/assets/$NAME" ]; then AUDIO="$ROOT/assets/$NAME"; else AUDIO="$BUILD/audio"; fi
 
 [ -f "$WORK/script.yaml" ] || { echo "script.yaml が無い: $WORK" >&2; exit 2; }
 [ -d "$SAL" ] || { echo "semantic-audio-loom が無い: $SAL" >&2; exit 2; }

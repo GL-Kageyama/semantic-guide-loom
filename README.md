@@ -44,12 +44,18 @@ SKIP_VOICE=1 SKIP_ASSETS=1 ./engine/make.sh works/making-a-guide
 - `FORCE=1` … 声を作り直す。**参照音声や `voice_fx.yaml` を変えたときはこれが要る**
   （既定のままでは既存の WAV を飛ばす）。
 - 作品はこのリポジトリに無くてよい。`script.yaml` と `video.yaml` のある所を指す。
-  `./engine/make.sh ../semantic-audio-loom/projects/longform/cyber-basics`
+- **clone しただけでも、声を作らずに同じ絵が出せる。** 見本 2 本の資材（声・効果音・
+  BGM）は `assets/` に入っているから、声の段を飛ばせばよい。
+
+  ```bash
+  SKIP_VOICE=1 ./engine/make.sh works/cyber-basics
+  ```
 
 必要なもの: `ffmpeg`、Pillow・numpy・scipy・PyYAML（`$HOME/sonic-loom-spike/venv_tsukasa`）、
 隣に `semantic-audio-loom`（声と組み立ての道具はそこが正本）。
 
-clone したら一度 `git lfs pull`。表情シート（`sheets/`）と焼いた動画（`out/`）は LFS に在る。
+clone したら一度 `git lfs pull`。表情シート（`sheets/`）・資材（`assets/`）・焼いた動画
+（`out/`）は LFS に在る。
 
 ## 型
 
@@ -72,6 +78,11 @@ works/<作品名>/
   script.yaml     何を、どの順で、誰が、どう話すか（音の台本）
   video.yaml      題・章・字幕の表記・型・キャスト（映像の台本）
   chapters.yaml   章の頭の cue（音のチャイム）
+  voice_fx.yaml   声に掛ける効果（任意）
+
+assets/<作品名>/
+  voice/          1 行 1 つの声（+ .params.yaml）
+  sfx/  bgm/      効果音・敷き音
 ```
 
 `video.yaml` の `template:` と `cast:` が、どの型でどのキャストを置くかを名乗る。
@@ -95,6 +106,7 @@ templates/<型>/template.yaml
 casts/<キャスト>.cast.yaml
 sheets/                表情シート（入力。Git LFS）
 works/<作品>/
+assets/<作品>/         声・効果音・BGM（入力。Git LFS。派生は .gitignore）
 out/<作品>.mp4         焼いた動画（成果物。Git LFS）
 build/<作品>/          中間物（.gitignore。焼き直せば戻る）
 docs/                  契約と型の説明

@@ -1,5 +1,54 @@
 # HISTORY
 
+## 0.1.3 — 2026-11-01 資材を洗い出し、声まで入れた
+
+台本を `works/cyber-basics/` へ、音の資材を `assets/cyber-basics/` へ入れた。
+**これで clone しただけでも、声を作らずに同じ mp4 が出る。**
+
+### 洗い出し — この動画を作るのに何が要るか
+
+| 段 | 要るもの | いまどこに在るか | 入れたか |
+| --- | --- | --- | --- |
+| 1 素材 | 表情シート 2 枚 | `資料/…/キャラ/` の原本 | ✅ `sheets/`（0.1.1） |
+| 2 声 | 声 104 本 + `.params.yaml` 104 | audio の `assets/cyber-basics/voice/` | ✅ `assets/cyber-basics/voice/`（15 MB） |
+| 2 声 | 声のプロファイル・参照音声 | `semantic-audio-loom/characters/` | — 声を作り直すときだけ要る |
+| 3 組み立て | 台本 4 本（script / video / chapters / voice_fx） | audio の `projects/longform/cyber-basics/` | ✅ `works/cyber-basics/` |
+| 3 組み立て | 鐘 `chime.wav` | audio の `assets/cyber-basics/sfx/` | ✅ `assets/cyber-basics/sfx/`（517 KB） |
+| 3 組み立て | 敷き音 `underlay.wav` | audio の `assets/cyber-basics/bgm/` | ✅ `assets/cyber-basics/bgm/`（2.6 MB） |
+| 4 時刻 | `mix.yaml` の実尺 | `assemble.py` が書く | 派生 |
+| 5 描画 | 型・キャスト | このリポジトリ（0.1.0 から） | ✅ |
+| 5 描画 | 書体 BIZ UD ゴシック | macOS のシステム | — 環境（`template.yaml` が名前で指す） |
+
+**入れないもの（すべて焼き直せば戻る）**: `voice_trim/`（無音の切り詰め）・`voice_fx/`
+（効果を掛けた声）・`chime_short.wav`（1.4 秒に切った鐘）・`underlay_tiled.wav`
+（287 秒に延ばした敷き音）・`renders/cyber-basics.wav`（50 MB のミックス）・`build/`・
+`mix.yaml`。
+
+### 検算 — 声を消した状態で、同じ mp4 が出るか
+
+`assets/` に `voice/` `sfx/chime.wav` `bgm/underlay.wav` だけを置き、
+`voice_trim/` `voice_fx/` `*_tiled.wav` `*_short.wav` `renders/` を持たない状態で回した。
+
+```
+SKIP_VOICE=1 ./engine/make.sh works/cyber-basics
+```
+
+- `mix.yaml` … **103 stems / 287.3 秒**（元と同じ）
+- `timeline.json` … **97 cues / 5 chapters / 287.3 秒**
+- `out/cyber-basics.mp4` … **md5 `c1de4b4a…`（元と一致）**、42 秒
+
+ゆえに `voice_trim/` 以下の 5 種は本当に派生で、持たなくてよい。ミックスの利得と頭出し
+まで一致したので、声さえ在れば音の組み立ても再現できる。
+
+### 決めたこと
+
+- **`make.sh` は `assets/<作品>` があればそこを資材の根にする**（無ければ従来どおり
+  `build/<作品>/audio`）。派生は `assets/` の中にも書かれるが `.gitignore`。
+- **`FORCE=1` を付けると、入っている声を作り直す。** 生成先は `assets/<作品>/voice/`
+  なので、**記録として入れた声が上書きされる**。台本を変えたときだけ使う。
+- 事実の出どころ（`資料/…/資料_脆弱性とサイバー攻撃_2026.md`）は**入れていない**。
+  私的なノートなので、入れるかは裁定が要る。
+
 ## 0.1.2 — 2026-11-01 本編『サイバー基礎』を guide-loom から焼き直した（バイト一致）
 
 `out/cyber-basics.mp4`（4 分 47 秒・8,618 コマ・13,659,717 B・h264 + aac）を加えた。

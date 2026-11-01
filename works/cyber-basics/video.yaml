@@ -1,0 +1,28 @@
+# 映像側の台本（音には渡さない）。render.py の timeline が読む。
+title: 脆弱性とサイバー攻撃
+subtitle: なぜ、同じ三つなのか
+channel: MIRAI × MIRABO
+# どの型で描き、誰が画面に居るか（semantic-guide-loom の templates/ と casts/ の名）。
+template: dialogue-bust
+cast: mirai-mirabo
+chapters:
+  c01: {label: 序章, title: その画面の裏側, key: "名前は変わる。\n壊れる場所は変わらない。", term: 脆弱性}
+  c07: {label: 第1章, title: 入力が、命令になる, key: "信じた文字列が、\n実行される。", term: 入力}
+  c17: {label: 第2章, title: 静かに漏れる記憶, key: "確保した範囲の外を、\n読んでしまう。", term: メモリ}
+  c30: {label: 第3章, title: 信じた部品が、裏切る, key: "コードと、人。\n両方に依存する。", term: 依存}
+  c47: {label: 終章, title: 三つの境界, key: "入ってくるもの。自分の記憶。\n自分が使う、他人のもの。", term: 防御}
+# 字幕だけ原表記にする（音はカタカナで読ませる）
+# 行を割った cue（cNNb）は、割った先の文だけを書く。
+display:
+  c04b: "20年、名前が変わっても、この三つだ。"
+  c05: "20年も？"
+  c13: "2021年、Log4Shell。"
+  c16b: "去年、悪用された脆弱性の、4割が昔からある型だ。"
+  c20: "2014年、Heartbleed。"
+  c20b: "OpenSSL。"
+  c25: "11年後、同じ形が、また出た。"
+  c25b: "2025年、CitrixBleed 2。"
+  c32b: "XZ Utilsという、圧縮の部品に、"
+  c37b: "手がかりは、ログインの0.5秒の遅れだった。"
+  c40: "2026年、npmの部品が、次々に乗っ取られた。"
+  c40b: "170以上の部品。週に、5億回、誰かが入れている。"

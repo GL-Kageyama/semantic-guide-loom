@@ -1,0 +1,48 @@
+name: c05
+metadata:
+  kind: cue
+  name: c05
+  character: mirabo
+  sample_rate: 24000
+  duration_sec: 2.048
+  created_at: '2026-11-01T06:32:38.279080+00:00'
+parameters:
+  version: 2
+  provider: tsukasa
+  voice_profile:
+    character: ミラボ
+    name_reading: みらぼ
+    reference_audio: gen_machine_bright
+    voice:
+      age: young_adult
+      gender: female
+      pitch: very_high
+      texture: bright
+      breathiness: none
+      resonance: head
+  performance_spec:
+    emotion:
+      primary: joy
+      intensity: 0.25
+    loudness:
+      effort: normal
+      volume: normal
+    prosody:
+      pace: fast
+      pitch: natural
+      intonation: neutral
+      breathiness: none
+      pauses: []
+      emphasis: []
+      breath: []
+    subtext: ''
+  dialogue: 20年も？
+  reading: にじゅうねんも？
+  seed: 1
+  alpha: 0.35
+  beta: 0.7
+  rate_of_speech: 1.12
+  sha1: 72b95ef81bdb
+  name: c05
+  character: mirabo
+  pause_before: 0.22

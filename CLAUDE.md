@@ -38,9 +38,11 @@
 - **`git add -A` は使わない。** 触ったパスだけを add する。
 - **音声と画像は Git LFS**：`*.wav` `*.mp3` `*.m4a` `*.flac` `*.ogg` `*.mp4` `*.png`
   `*.jpg` `*.jpeg`（`.gitattributes`）。テキストは対象外。
-- **入れないのは `build/` だけ**（中間物。焼き直せば戻る）。**`sheets/`（入力）と
-  `out/`（成果物）は LFS で入れる。** clone したら `git lfs pull`。
-  理由は `sheets/README.md`。
+- **入れるのは「入力」と「成果物」、入れないのは「中間物」。** LFS で入れるのは
+  `sheets/`（表情シート）・`assets/<作品>/`（声・効果音・BGM の原盤）・`out/*.mp4`
+  （焼いた動画）。入れないのは `build/`・`works/*/mix.yaml`・`assets/*/voice_trim/`・
+  `assets/*/voice_fx/`・`assets/*/renders/`・`assets/*/bgm/*_tiled.wav`・
+  `assets/*/sfx/*_short.wav`（どれも焼き直せば戻る）。clone したら `git lfs pull`。
 
 ## 環境
 

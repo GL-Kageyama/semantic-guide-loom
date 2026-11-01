@@ -1,6 +1,13 @@
 # 派生（make.sh が作る中間物。消してよい。もう一度焼けば戻る）
 build/
 
+# 資材の中で assemble.py が作る派生（声の切り詰め・効果・鐘の短縮版・敷き音の繰り返し・ミックス）
+assets/*/voice_trim/
+assets/*/voice_fx/
+assets/*/renders/
+assets/*/bgm/*_tiled.wav
+assets/*/sfx/*_short.wav
+
 # assemble.py が毎回書き直す（派生。手で編集しない）
 works/*/mix.yaml
 
