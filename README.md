@@ -114,7 +114,6 @@ engine/
   layouts/
     dialogue_bust.py   掛け合い・胸像型の並べ方
     narrate_slide.py   語り・スライド型の並べ方
-references/
 references/templates/<型>/template.yaml   型の「数」
 references/sheets/                        表情シート（入力。Git LFS）
 characters/<キャスト>.cast.yaml  誰が画面に居るか
