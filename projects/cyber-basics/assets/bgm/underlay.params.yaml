@@ -1,0 +1,25 @@
+name: underlay
+metadata:
+  asset_type: bgm
+  prompt: A quiet understated felt piano piece, sparse slow notes, calm and curious,
+    warm room tone, no drums, no vocals
+  provider: musicgen
+  sample_rate: 44100
+  channels: 1
+  duration: 29.94
+  created_at: '2026-10-31T00:38:54.628668+00:00'
+parameters:
+  version: 3
+  asset_type: bgm
+  provider: musicgen
+  spec:
+    duration: 30.0
+    prompt: A quiet understated felt piano piece, sparse slow notes, calm and curious,
+      warm room tone, no drums, no vocals
+  seed: 1
+  duration: 30.0
+  sample_rate: 44100
+  sha1: a5512b06409f
+  provider_settings:
+    tokens: 1500
+    guidance_scale: 3.0
