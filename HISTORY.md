@@ -1,5 +1,57 @@
 # HISTORY
 
+## 0.2.0 — 2026-11-01 置き場を姉妹リポジトリに揃えた
+
+`semantic-audio-loom` / `semantic-visual-loom` と同じ名のものが同じ場所に在る形へ寄せた。
+**道具も台本も 1 行も変えていない。** 焼き上がりは移す前とバイト一致。
+
+### 移したもの
+
+| 前 | 後 | 理由 |
+| --- | --- | --- |
+| `works/<作品>/` | `projects/<作品>/` | 姉妹が `projects/`（audio の生成物・visual の作品も同じ） |
+| `assets/<作品>/`（トップ） | `projects/<作品>/assets/` | 作品は 1 か所に閉じる（audio も `projects/<p>/assets/`） |
+| `out/<作品>.mp4` | `projects/<作品>/renders/<作品>.mp4` | 成果物も作品の隣（visual の `renders/` に倣う） |
+| `templates/<型>/` | `references/templates/<型>/` | 姉妹の `references/` は「再利用する元」 |
+| `sheets/` | `references/sheets/` | 同上 |
+| `casts/<名前>.cast.yaml` | `characters/<名前>.cast.yaml` | 姉妹は `characters/`（audio の声の人物） |
+
+⚠️ **`assets/renders/`（assemble.py が書く中間の WAV）と、作品の `renders/`
+（焼いた MP4）は別物。** 前者は `.gitignore`、後者は成果物で LFS。
+
+### 足したもの
+
+| ファイル | 何 |
+| --- | --- |
+| `install.sh` | 姉妹と同じ `--local` / `--global` / `--uninstall`。`.claude/skills/` へ相対で張る |
+| `.claude/skills/semantic-guide-loom` | `--local` が張るのと同じ symlink（clone した時点で効く） |
+| `references/README.md` | `references/` が何を持つか（型・表情シート） |
+| `schemas/video.schema.json` ほか 2 本 | `video.yaml` / `template.yaml` / `cast.yaml` の形 |
+| `schemas/README.md` | `script.yaml` の形の正本は audio の `schemas/scene.schema.json`。**ここへ写さない** |
+| `tools/check_layout.py` | 古い綴りが残っていないか・`schemas/` が実物に通るか |
+| `assets/repo-hero.png` + `assets/README.md` | README の頭の絵。**外で描いていない**——`cyber-basics` の 29.0 秒のコマ |
+
+`timeline.json` に `project` を足した（`render.py` が書き出し先の既定を決めるのに使う）。
+
+### 多言語化はしないと決めた
+
+姉妹は `README-ja.md` / `README-zh.md`・`docs/*-ja.md`・`locales/` を持つが、この
+リポジトリには置かない。成果物が日本語の音声と字幕であること、台本を他言語で書けば
+同じ手順で焼けること——が理由。**仕組みとしての翻訳・言語切替は作らない。**
+README「言語」と `CLAUDE.md` に明記した。取り込むのは別の段。
+
+### 検算
+
+移した後に 2 本とも焼き直し、**バイト一致**を確かめた。
+
+| 作品 | 焼き直し | 移す前の記録 | 一致 |
+| --- | --- | --- | --- |
+| `cyber-basics` | md5 `c1de4b4ae16b0e6d087f78ea4a812301` / sha256 `dc0d3b90…` | sha256 `dc0d3b904778131585ba375bd81e6493064539ccd0faf326cfdee5affdbcf222` | ✅ |
+| `making-a-guide` | sha256 `c4a3ebad59b4c0accbf59a8ce1b859c8f35794abd8c363077450a59a4e715779` | 同（LFS の oid） | ✅ |
+
+`SKIP_VOICE=1`（声を作り直さず、clone しただけの状態）で回した。97 cues / 5 chapters /
+287.3 秒は 0.1.3 と同じ。
+
 ## 0.1.3 — 2026-11-01 資材を洗い出し、声まで入れた
 
 台本を `works/cyber-basics/` へ、音の資材を `assets/cyber-basics/` へ入れた。

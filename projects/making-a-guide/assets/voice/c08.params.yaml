@@ -1,0 +1,48 @@
+name: c08
+metadata:
+  kind: cue
+  name: c08
+  character: narrator
+  sample_rate: 24000
+  duration_sec: 4.298
+  created_at: '2026-11-01T07:10:05.622645+00:00'
+parameters:
+  version: 2
+  provider: tsukasa
+  voice_profile:
+    character: 語り手
+    name_reading: かたりて
+    reference_audio: female_mature_p294
+    voice:
+      age: adult
+      gender: female
+      pitch: medium
+      texture: clear
+      breathiness: none
+      resonance: chest
+  performance_spec:
+    emotion:
+      primary: neutral
+      intensity: 0.0
+    loudness:
+      effort: normal
+      volume: normal
+    prosody:
+      pace: natural
+      pitch: natural
+      intonation: neutral
+      breathiness: none
+      pauses: []
+      emphasis: []
+      breath: []
+    subtext: ''
+  dialogue: 同じ人の行だけを、同じ大きさに寄せます。
+  reading: ''
+  seed: 1
+  alpha: 0.35
+  beta: 0.7
+  rate_of_speech: 1.0
+  sha1: 2b591b4bfbd3
+  name: c08
+  character: narrator
+  pause_before: 0.2

@@ -1,21 +1,24 @@
 # 派生（make.sh が作る中間物。消してよい。もう一度焼けば戻る）
 build/
 
-# 資材の中で assemble.py が作る派生（声の切り詰め・効果・鐘の短縮版・敷き音の繰り返し・ミックス）
-assets/*/voice_trim/
-assets/*/voice_fx/
-assets/*/renders/
-assets/*/bgm/*_tiled.wav
-assets/*/sfx/*_short.wav
+# 作品の資材の中で assemble.py が作る派生（声の切り詰め・効果・鐘の短縮版・
+# 敷き音の繰り返し・ミックス）。入るのは voice/*.wav と sfx/bgm の原盤だけ。
+projects/*/assets/voice_trim/
+projects/*/assets/voice_fx/
+projects/*/assets/renders/
+projects/*/assets/bgm/*_tiled.wav
+projects/*/assets/sfx/*_short.wav
 
 # assemble.py が毎回書き直す（派生。手で編集しない）
-works/*/mix.yaml
+projects/*/mix.yaml
 
 __pycache__/
 *.pyc
 .DS_Store
 
-# ⚠️ sheets/ と out/ は入れない（消さないこと）。
-#    表情シートは入力（作品の絵）で、切り抜きからは戻せない。
-#    焼いた動画は成果物で、clone した人がそのまま見られるべきもの。
-#    どちらも .gitattributes が Git LFS に載せる。
+# ⚠️ 消さないこと
+#   references/sheets/        表情シート（入力。切り抜きからは戻せない）
+#   projects/*/assets/voice/  声（入力。モデルを起こさないと戻らない）
+#   projects/*/renders/       焼いた動画（成果物。clone した人がそのまま見られる）
+#   assets/repo-hero.png      README の絵
+#   どれも .gitattributes が Git LFS に載せる。

@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """timeline.json・型・キャストから、解説動画を描いて ffmpeg へ流す。
 
-  <venv> render.py --timeline timeline.json --out ../out/cyber-basics.mp4
+  <venv> render.py --timeline timeline.json                              # projects/<作品>/renders/<作品>.mp4 へ
+  <venv> render.py --timeline timeline.json --out some/path.mp4
   <venv> render.py --timeline timeline.json --still 40.0      # 1 枚だけ出す
   <venv> render.py --timeline timeline.json --start 0 --duration 15 --out preview.mp4
 
-型（templates/<name>/template.yaml）が持つのは **絵の側** ——画布・色・書体・
+型（references/templates/<name>/template.yaml）が持つのは **絵の側** ——画布・色・書体・
 立ち位置・札・字幕・上段・進捗・間合い。作品（timeline.json）が持つのは
-**意味の側** ——題・章・字幕・時刻。キャスト（casts/<name>.cast.yaml）が持つのは
+**意味の側** ——題・章・字幕・時刻。キャスト（characters/<name>.cast.yaml）が持つのは
 **誰が居るか** ——表情シート・口パクの有無・動き・拡大率。
 
 この入口がやるのは 4 つだけ——読む・型を選ぶ・1 コマずつ描く・ffmpeg へ流す。
@@ -30,6 +31,17 @@ sys.path.insert(0, str(HERE))
 import common as K  # noqa: E402
 
 
+def default_out(tl: dict) -> str:
+    """焼いた動画の置き場。作品の隣（`<作品>/renders/`）。
+
+    timeline.json の `project` が作品の場所を名乗る。名乗らない timeline.json
+    （外で作ったもの）では、このリポジトリの `renders/` へ落とす。
+    """
+    project = tl.get("project") or ""
+    base = Path(project) / "renders" if project else REPO / "renders"
+    return str(base / f"{tl['name']}.mp4")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--timeline", default=str(HERE / "timeline.json"))
@@ -50,7 +62,7 @@ def main() -> None:
     if not tname:
         ap.error("型が決まらない（--template か video.yaml の template）")
 
-    K.TPL = K.load_yaml(REPO / "templates" / tname / "template.yaml")
+    K.TPL = K.load_yaml(REPO / "references" / "templates" / tname / "template.yaml")
     K.PAL = K.TPL["palette"]
     W, H = int(tl["width"]), int(tl["height"])
     K.SCALE = H / float(K.TPL["canvas"]["height"])
@@ -59,7 +71,7 @@ def main() -> None:
 
     cast = None
     if cname:
-        cast = K.Cast(K.load_yaml(REPO / "casts" / f"{cname}.cast.yaml"),
+        cast = K.Cast(K.load_yaml(REPO / "characters" / f"{cname}.cast.yaml"),
                       float(K.TPL.get("dim_when_silent", 1.0)))
 
     layout = importlib.import_module(f"layouts.{K.TPL.get('layout', 'dialogue_bust')}")
@@ -78,7 +90,7 @@ def main() -> None:
     dur = args.duration if args.duration > 0 else max(0.0, tl["duration"] - start)
     f0 = int(round(start * fps))
     f1 = min(total_frames, int(round((start + dur) * fps)))
-    out = args.out or str(REPO / "out" / f"{tl['name']}.mp4")
+    out = args.out or default_out(tl)
     os.makedirs(os.path.dirname(os.path.abspath(out)), exist_ok=True)
 
     audio = tl.get("audio", "")

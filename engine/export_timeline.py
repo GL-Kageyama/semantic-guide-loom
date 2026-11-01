@@ -5,7 +5,7 @@
 知るのはこの道具だけで済むようにしてある。
 
   PYTHONPATH=. <venv> export_timeline.py \
-      --project ../../../semantic-audio-loom/projects/longform/cyber-basics \
+      --project ../../semantic-guide-loom/projects/cyber-basics \
       --out timeline.json
 
 時刻の出どころは mix.yaml の voice stem（assemble.py が実尺から書いたもの）。
@@ -39,7 +39,7 @@ def chapter_lead(template: str) -> float:
     """型が「札を cue の何秒前から出すか」を持つ。無ければ 1.6 秒。"""
     if not template:
         return 1.6
-    p = REPO / "templates" / template / "template.yaml"
+    p = REPO / "references" / "templates" / template / "template.yaml"
     if not p.exists():
         sys.exit(f"型が無い: {p}")
     with open(p, encoding="utf-8") as f:
@@ -129,10 +129,11 @@ def main() -> None:
             cur = c["chapter"]
         c["chapter"] = cur
 
-    audio = args.audio or os.path.join(os.path.dirname(work), "assets", name,
-                                       "renders", name + ".wav")
+    audio = args.audio or os.path.join(work, "assets", "renders", name + ".wav")
     tl = {
         "name": name,
+        # 作品の置き場。render.py が既定の書き出し先（<project>/renders/<name>.mp4）を決めるのに使う。
+        "project": work,
         "title": video.get("title", name),
         "subtitle": video.get("subtitle", ""),
         "channel": video.get("channel", ""),

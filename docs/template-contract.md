@@ -7,7 +7,7 @@
 
 | 部品 | 置き場 | 何を持つか |
 | --- | --- | --- |
-| 数 | `templates/<型>/template.yaml` | 画布・色・書体・位置・間合い |
+| 数 | `references/templates/<型>/template.yaml` | 画布・色・書体・位置・間合い |
 | 並べ方 | `engine/layouts/<layout>.py` | その数を使って 1 コマを描く関数 |
 
 `template.yaml` の `layout:` が、どの `layouts/*.py` を呼ぶかを名乗る。
@@ -62,7 +62,7 @@ timing:
 
 `slots`（立ち位置）、`dim_when_silent`、`mouth`（声 → 口の 3 状態の閾値）、
 `panel`（章の札）、`subtitle`、`header`。
-全欄は `templates/dialogue-bust/template.yaml` を見る。
+全欄は `references/templates/dialogue-bust/template.yaml` を見る。
 
 ### `narrate-slide` が持つ欄
 
@@ -104,7 +104,7 @@ characters:
   - id: mirai                 # script.yaml の character と一致させる
     name: ミライ
     slot: left                # template.yaml の slots の鍵
-    sheet: ミライ_表情差分シート.png   # sheets/ の下
+    sheet: ミライ_表情差分シート.png   # references/sheets/ の下
     canvas: [420, 480]        # 切り出しの画布
     scale: 1.15               # 型の枠に合わせる拡大率
     expressions: [neutral, smile, ...]     # シートの 8 マス（左上から右へ）
@@ -126,11 +126,11 @@ characters:
 
 ## 型を足す手順
 
-1. `templates/<新しい型>/template.yaml` を作る。既存の型を写して色と数を変える。
+1. `references/templates/<新しい型>/template.yaml` を作る。既存の型を写して色と数を変える。
 2. 並べ方が同じなら、**それだけで終わり**（`layout:` は既存のまま）。
 3. 並べ方が違うなら `engine/layouts/<新しい型>.py` を書き、`layout:` で名乗る。
    - 文字は `common.wrap_jp` / `common.wrap_balanced` / `common.text_img` を使う
    - 背景と札は自前で描く（型ごとに違ってよい）
-4. `./engine/make.sh <作品>` で焼き、`--still` で 1 枚見て、数を詰める。
+4. `./engine/make.sh projects/<作品>` で焼き、`--still` で 1 枚見て、数を詰める。
 
 **型は作品を知らない。** 特定の題・特定の人数・特定の章の数を、型に書かない。

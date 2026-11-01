@@ -2,7 +2,7 @@
 #
 # キャストは「誰が画面に居るか」だけを持つ。立ち位置は型（template.yaml）が持つ。
 # 表情シートは 4列×2行 = 8マス。左から右、上の行が先。
-# シートは `sheets/` に置く（配布物には入れていない。理由は sheets/README.md）。
+# シートは `references/sheets/` に置く（配布物に入れている。理由はその README）。
 
 name: mirai-mirabo
 description: 人（ミライ）と小さな機体（ミラボ）。掛け合いで説明する。

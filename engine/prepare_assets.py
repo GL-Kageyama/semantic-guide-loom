@@ -6,7 +6,7 @@
   <id>_<expr>.png                       口パクをしない側は 1 枚だけ
   faces.json                            感情→表情の対応表、画像の並び、口の錨
 
-  engine/prepare_assets.py --cast casts/mirai-mirabo.cast.yaml --out build/cyber-basics/assets
+  engine/prepare_assets.py --cast characters/mirai-mirabo.cast.yaml --out build/cyber-basics/assets
 
 シートは 4列×2行 = 8マス。左から右、上の行が先。並び順はキャストが書く。
 
@@ -161,7 +161,8 @@ def main() -> None:
     ap.add_argument("--work", default="", help="作品の置き場（video.yaml の親）")
     ap.add_argument("--cast", default="", help="キャストの名。既定は video.yaml の cast")
     ap.add_argument("--out", required=True, help="素材の書き先（例: build/<work>/assets）")
-    ap.add_argument("--sheets", default=str(REPO / "sheets"), help="表情シートの置き場")
+    ap.add_argument("--sheets", default=str(REPO / "references" / "sheets"),
+                    help="表情シートの置き場")
     args = ap.parse_args()
 
     name = args.cast
@@ -175,7 +176,7 @@ def main() -> None:
             name = (yaml.safe_load(f) or {}).get("cast", "")
         if not name:
             ap.error(f"video.yaml に cast が無い: {vpath}")
-    cast_path = REPO / "casts" / f"{name}.cast.yaml"
+    cast_path = REPO / "characters" / f"{name}.cast.yaml"
 
     global OPENNESS
     with open(cast_path, encoding="utf-8") as f:
@@ -192,7 +193,7 @@ def main() -> None:
         cid = ch["id"]
         path = sheets / ch["sheet"]
         if not path.exists():
-            raise SystemExit(f"表情シートが無い: {path}\n  → sheets/README.md を見て置く")
+            raise SystemExit(f"表情シートが無い: {path}\n  → references/sheets/README.md を見て置く")
         cs = cells(path)
         if len(cs) != COLUMNS * ROWS:
             raise RuntimeError(f"{cid}: {COLUMNS * ROWS}マスでない（{len(cs)}）")

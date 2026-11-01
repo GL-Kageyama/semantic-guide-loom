@@ -1,5 +1,9 @@
 # semantic-guide-loom
 
+<p align="center">
+  <img src="assets/repo-hero.png" width="100%" alt="semantic-guide-loom">
+</p>
+
 **意味のある台本から、説明の映像を焼く。** 解説動画・社内の説明動画・研修の導入——
 「人が見て分かる」映像を、AI の映像生成を使わずに、決定的に組み立てる。
 
@@ -11,8 +15,8 @@
 | --- | --- |
 | 何を、どの順で話すか | `script.yaml`（音の台本）× `video.yaml`（映像の台本） |
 | 誰が声を出すか、どう演じるか | `script.yaml` の `character` と演技の欄 |
-| 誰が画面に居るか | `casts/<名前>.cast.yaml` |
-| どう見えるか（色・位置・間合い・並べ方） | `templates/<型>/` |
+| 誰が画面に居るか | `characters/<名前>.cast.yaml` |
+| どう見えるか（色・位置・間合い・並べ方） | `references/templates/<型>/` × `engine/layouts/` |
 | 時刻 | **音の実尺**。台本から数え直さない |
 
 ## 5 つの段
@@ -32,30 +36,30 @@
 
 ```bash
 # 端から端まで
-./engine/make.sh works/making-a-guide
+./engine/make.sh projects/making-a-guide
 
 # 1 枚だけ見る（数を詰めるとき）
-./engine/make.sh works/making-a-guide --still 40
+./engine/make.sh projects/making-a-guide --still 40
 
 # 音はそのままで、絵だけ焼き直す
-SKIP_VOICE=1 SKIP_ASSETS=1 ./engine/make.sh works/making-a-guide
+SKIP_VOICE=1 SKIP_ASSETS=1 ./engine/make.sh projects/making-a-guide
 ```
 
 - `FORCE=1` … 声を作り直す。**参照音声や `voice_fx.yaml` を変えたときはこれが要る**
   （既定のままでは既存の WAV を飛ばす）。
 - 作品はこのリポジトリに無くてよい。`script.yaml` と `video.yaml` のある所を指す。
 - **clone しただけでも、声を作らずに同じ絵が出せる。** 見本 2 本の資材（声・効果音・
-  BGM）は `assets/` に入っているから、声の段を飛ばせばよい。
+  BGM）は `projects/<作品>/assets/` に入っているから、声の段を飛ばせばよい。
 
   ```bash
-  SKIP_VOICE=1 ./engine/make.sh works/cyber-basics
+  SKIP_VOICE=1 ./engine/make.sh projects/cyber-basics
   ```
 
 必要なもの: `ffmpeg`、Pillow・numpy・scipy・PyYAML（`$HOME/sonic-loom-spike/venv_tsukasa`）、
 隣に `semantic-audio-loom`（声と組み立ての道具はそこが正本）。
 
-clone したら一度 `git lfs pull`。表情シート（`sheets/`）・資材（`assets/`）・焼いた動画
-（`out/`）は LFS に在る。
+clone したら一度 `git lfs pull`。表情シート（`references/sheets/`）・資材
+（`projects/<作品>/assets/`）・焼いた動画（`projects/<作品>/renders/`）は LFS に在る。
 
 ## 型
 
@@ -64,26 +68,31 @@ clone したら一度 `git lfs pull`。表情シート（`sheets/`）・資材�
 | `dialogue-bust` | 左に人・右に相棒、中央に章の札、下に字幕 | 掛け合いで説明する。4〜5 分に耐える |
 | `narrate-slide` | 左に章の題と箇条書き、下に字幕。人物なし | 社内説明・研修。1 章 = 1 枚で読み物として立つ |
 
-型は「数」（`template.yaml`）と「並べ方」（`engine/layouts/*.py`）に分かれている。
-**色違い・位置違いの型は YAML 1 枚で足りる。** 並べ方が違う型はモジュールを 1 本足す。
-手順は [docs/template-contract.md](docs/template-contract.md)。
+型は「数」（`references/templates/<型>/template.yaml`）と「並べ方」
+（`engine/layouts/*.py`）に分かれている。**色違い・位置違いの型は YAML 1 枚で足りる。**
+並べ方が違う型はモジュールを 1 本足す。手順は [docs/template-contract.md](docs/template-contract.md)。
 
-`out/` に見本が 2 本。`cyber-basics.mp4`（掛け合い型・1280×720・4 分 47 秒）と
-`making-a-guide.mp4`（語り型・1920×1080・53 秒）。
+見本は 2 本。`projects/cyber-basics/renders/cyber-basics.mp4`（掛け合い型・1280×720・
+4 分 47 秒）と `projects/making-a-guide/renders/making-a-guide.mp4`
+（語り型・1920×1080・53 秒）。
 
 ## 作品の書き方
 
 ```
-works/<作品名>/
+projects/<作品名>/
   script.yaml     何を、どの順で、誰が、どう話すか（音の台本）
   video.yaml      題・章・字幕の表記・型・キャスト（映像の台本）
   chapters.yaml   章の頭の cue（音のチャイム）
   voice_fx.yaml   声に掛ける効果（任意）
-
-assets/<作品名>/
-  voice/          1 行 1 つの声（+ .params.yaml）
-  sfx/  bgm/      効果音・敷き音
+  assets/
+    voice/        1 行 1 つの声（+ .params.yaml）— 入力
+    sfx/  bgm/    効果音・敷き音 — 入力
+  renders/        焼いた動画 — 成果物（Git LFS）
 ```
+
+`assets/` の中で `assemble.py` が作るもの（`voice_trim/` `voice_fx/` `assets/renders/`
+`*_tiled.wav` `*_short.wav`）と `mix.yaml` は派生ゆえ `.gitignore`。
+**作品の `renders/`（動画）とは別の置き場**であることに注意。
 
 `video.yaml` の `template:` と `cast:` が、どの型でどのキャストを置くかを名乗る。
 人物を置かない型は `cast:` を書かない。
@@ -93,6 +102,9 @@ assets/<作品名>/
 ## 構成
 
 ```
+.claude-plugin/        配布の manifest（plugin.json / marketplace.json）
+.claude/skills/        install.sh --local が張る symlink
+skills/semantic-guide-loom/SKILL.md   手順書（スキルの本体）
 engine/
   make.sh              5 段を通す
   prepare_assets.py    表情シート → 素材
@@ -102,15 +114,31 @@ engine/
   layouts/
     dialogue_bust.py   掛け合い・胸像型の並べ方
     narrate_slide.py   語り・スライド型の並べ方
-templates/<型>/template.yaml
-casts/<キャスト>.cast.yaml
-sheets/                表情シート（入力。Git LFS）
-works/<作品>/
-assets/<作品>/         声・効果音・BGM（入力。Git LFS。派生は .gitignore）
-out/<作品>.mp4         焼いた動画（成果物。Git LFS）
-build/<作品>/          中間物（.gitignore。焼き直せば戻る）
+references/
+references/templates/<型>/template.yaml   型の「数」
+references/sheets/                        表情シート（入力。Git LFS）
+characters/<キャスト>.cast.yaml  誰が画面に居るか
+projects/<作品>/       台本・資材・焼いた動画（asset は Git LFS）
+schemas/               video / template / cast の形
+tools/
+  check_layout.py      置き場の綴りと schemas を確かめる
 docs/                  契約と型の説明
+assets/repo-hero.png   この README の絵（git-lfs）
+build/<作品>/          中間物（.gitignore。焼き直せば戻る）
 ```
+
+## 言語
+
+**このリポジトリは多言語対応をしない。** 台本・型・キャスト・文書は日本語だけ。
+
+姉妹リポジトリ（`semantic-audio-loom` / `semantic-visual-loom`）は
+`README-ja.md` / `README-zh.md`・`docs/*-ja.md`・`locales/` を持つが、ここには置かない。
+理由は、このリポジトリの成果物が**日本語の音声と日本語の字幕**であること。台本を
+英語や中国語で書けば同じ手順で焼ける（`script.yaml` の `line` と `video.yaml` の
+`display` に、その言語の文を書くだけ）——が、**仕組みとしての翻訳・言語切替は作らない。**
+
+多言語化は別の段に置く。取り込むときは、姉妹リポジトリと同じ 3 層
+（ロケール JSON・言語別プロンプト・ミラーツリー）で入れる。
 
 ## 決まりごと
 
@@ -119,6 +147,7 @@ docs/                  契約と型の説明
 - **読み違えはルビで塞ぐ**（`漢字《かな》`）。音だけ仮名になり、字幕は原表記のまま。
 - **1 コマは状態を持たない。** 同じ時刻なら同じ絵が出る。
 - **型は作品を知らない。** 特定の題・人数・章の数を型に書かない。
+- **置き場を移したら `tools/check_layout.py`。** 古い綴りが文書に残っていないかを見る。
 
 ## ライセンス
 

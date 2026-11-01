@@ -1,11 +1,11 @@
-# sheets/ — 表情シートの置き場
+# references/sheets/ — 表情シートの置き場
 
-置いてあるのは `casts/<名前>.cast.yaml` が名前で指す PNG だけ。**Git LFS で配布する**
+置いてあるのは `characters/<名前>.cast.yaml` が名前で指す PNG だけ。**Git LFS で配布する**
 （`.gitattributes` の `*.png`）。clone したら `git lfs pull` で降りてくる。
 
 ```
-sheets/ミライ_表情差分シート.png
-sheets/ミラボ_表情シート.png
+references/sheets/ミライ_表情差分シート.png
+references/sheets/ミラボ_表情シート.png
 ```
 
 ## 要る形
@@ -14,7 +14,7 @@ sheets/ミラボ_表情シート.png
 - **背景は透過**（RGBA）。白を抜く処理はしていない。
 - 8 マスとも**同じ位置・同じ大きさ**で描かれていること。`prepare_assets.py` は
   外接矩形の上端と横中心でそろえるが、目と口の位置が大きく違うと口パクが崩れる。
-- 表情の並びは `casts/<名前>.cast.yaml` の `expressions` が書く（シートは順番だけ持つ）。
+- 表情の並びは `characters/<名前>.cast.yaml` の `expressions` が書く（シートは順番だけ持つ）。
 
 ## 口パクは絵から測る
 

@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/GL-Kageyama/semantic-guide-loom/schemas/cast.schema.json",
+  "title": "cast.yaml — キャスト（誰が画面に居るか）",
+  "description": "characters/<name>.cast.yaml。立ち位置は型が持つ。キャストは slot の名で座る。役者はデータであり、コードに固有名を書かない。",
+  "type": "object",
+  "required": ["name", "characters"],
+  "additionalProperties": true,
+  "properties": {
+    "name": {"type": "string", "minLength": 1},
+    "description": {"type": "string"},
+    "default_expression": {"type": "string"},
+    "mouth_states": {
+      "type": "array",
+      "description": "口の状態の深さの比。[[\"m0\", 1.0], [\"m1\", 0.42]] の形。",
+      "items": {
+        "type": "array",
+        "prefixItems": [{"type": "string"}, {"type": "number"}],
+        "minItems": 2,
+        "maxItems": 2
+      }
+    },
+    "characters": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/character"}
+    }
+  },
+  "$defs": {
+    "character": {
+      "type": "object",
+      "required": ["id", "name", "slot", "sheet", "canvas", "expressions"],
+      "additionalProperties": true,
+      "properties": {
+        "id": {"type": "string", "minLength": 1, "description": "script.yaml の character と一致させる"},
+        "name": {"type": "string", "description": "画面に出す名"},
+        "slot": {"type": "string", "description": "template.yaml の slots の鍵"},
+        "sheet": {"type": "string", "description": "references/sheets/ の下のファイル名"},
+        "canvas": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"type": "integer", "minimum": 1},
+          "description": "切り出しの画布 [幅, 高さ]（720p 基準）"
+        },
+        "scale": {"type": "number", "exclusiveMinimum": 0},
+        "expressions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string"},
+          "description": "シートの 8 マス（左上から右へ）の表情名"
+        },
+        "blink": {
+          "type": "object",
+          "additionalProperties": {"type": "string"},
+          "description": "表情 → 閉じ目の表情"
+        },
+        "by_emotion": {
+          "type": "object",
+          "additionalProperties": {"type": "string"},
+          "description": "script の emotion 語 → 表情"
+        },
+        "lip": {"type": "boolean", "description": "口パクをするか"},
+        "mouth_offset": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"type": "number"},
+          "description": "目の中心 → 口の中心のずれ（画布の座標）。シートごとに測り直す"
+        },
+        "mouth": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "box": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {"type": "number"}
+            },
+            "drop": {"type": "number"},
+            "inner": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 4,
+              "items": {"type": "number", "minimum": 0, "maximum": 255}
+            }
+          }
+        },
+        "motion": {
+          "type": "array",
+          "description": "sin 波の重ね合わせ。amp は 720p 基準の画素。",
+          "items": {
+            "type": "object",
+            "required": ["axis", "amp", "hz"],
+            "additionalProperties": false,
+            "properties": {
+              "axis": {"enum": ["x", "y"]},
+              "amp": {"type": "number"},
+              "hz": {"type": "number"},
+              "phase": {"type": "number"}
+            }
+          }
+        }
+      }
+    }
+  }
+}

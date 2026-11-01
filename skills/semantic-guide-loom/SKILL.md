@@ -1,7 +1,7 @@
 ---
 name: semantic-guide-loom
-description: 意味のある台本から説明の映像を焼く。解説動画・社内の説明動画・研修の導入を作る。型（掛け合い・語りスライド）を選び、音の実尺から時刻を取り、Pillow で 1 コマずつ描いて ffmpeg で書き出す。AI の映像生成は使わない（同じ台本から同じ絵が出る）。
-argument-hint: '(optional) 作品名か題材。例: /semantic-guide-loom works/making-a-guide / 新入社員向けの経費精算の説明 / --still 40'
+description: 意味のある台本から説明の映像を焼く。解説動画・社内の説明動画・研修の導入を作る。型（掛け合い・語りスライド）を選び、音の実尺から時刻を取り、Pillow で 1 コマずつ描いて ffmpeg で書き出す。AI の映像生成は使わない（同じ台本から同じ絵が出る）。日本語のみ（多言語化はしない）。
+argument-hint: '(optional) 作品名か題材。例: /semantic-guide-loom projects/making-a-guide / 新入社員向けの経費精算の説明 / --still 40'
 ---
 
 # semantic-guide-loom — 説明の映像を焼く
@@ -25,11 +25,13 @@ argument-hint: '(optional) 作品名か題材。例: /semantic-guide-loom works/
 ## 作る
 
 ```bash
-./engine/make.sh works/<作品名>                    # 端から端まで
-./engine/make.sh works/<作品名> --still 40         # 1 枚だけ見る（数を詰めるとき）
-SKIP_VOICE=1 SKIP_ASSETS=1 ./engine/make.sh <作品>  # 絵だけ焼き直す
-FORCE=1 ./engine/make.sh <作品>                    # 声を作り直す
+./engine/make.sh projects/<作品名>                    # 端から端まで
+./engine/make.sh projects/<作品名> --still 40         # 1 枚だけ見る（数を詰めるとき）
+SKIP_VOICE=1 SKIP_ASSETS=1 ./engine/make.sh <作品>    # 絵だけ焼き直す
+FORCE=1 ./engine/make.sh <作品>                       # 声を作り直す
 ```
+
+焼いた動画は**作品の隣**に出る（`projects/<作品名>/renders/<作品名>.mp4`）。
 
 ⚠️ **参照音声や `voice_fx.yaml` を変えたら `FORCE=1`。** 既定は既存の WAV を飛ばすので、
 古い声のまま焼ける。
@@ -37,23 +39,28 @@ FORCE=1 ./engine/make.sh <作品>                    # 声を作り直す
 ## 作品を書く
 
 ```
-works/<作品名>/
+projects/<作品名>/
   script.yaml     誰が・何を・どう話すか（音の台本）
   video.yaml      題・章・字幕の表記・型・キャスト（映像の台本）
   chapters.yaml   章の頭の cue（音のチャイム）
+  assets/voice/   1 行 1 つの声（+ .params.yaml）
+  assets/sfx/  assets/bgm/   効果音・敷き音
 ```
 
 `video.yaml` が名乗るのは 3 つ。
 
 ```yaml
-template: dialogue-bust   # templates/<name>/ の名
-cast: mirai-mirabo        # casts/<name>.cast.yaml の名（人物を置かない型は書かない）
+template: dialogue-bust   # references/templates/<name>/ の名
+cast: mirai-mirabo        # characters/<name>.cast.yaml の名（人物を置かない型は書かない）
 chapters:
   c07: {label: 第1章, title: 入力が、命令になる, term: 入力, key: "..."}
 ```
 
 **章の中身は型が決める。** `dialogue-bust` は `term` と `key`、`narrate-slide` は
 `bullets`（配列）を読む。`export_timeline.py` は素通しするだけ。
+
+形は `schemas/`（`video` / `template` / `cast`）。`script.yaml` の形の正本は
+`semantic-audio-loom/schemas/scene.schema.json`。
 
 ## 型
 
@@ -62,7 +69,7 @@ chapters:
 | `dialogue-bust` | 左に人・右に相棒、中央に章の札、下に字幕 | 掛け合いで説明する |
 | `narrate-slide` | 左に章の題と箇条書き、下に字幕。人物なし | 社内説明・研修 |
 
-型は「数」（`templates/<型>/template.yaml`）と「並べ方」
+型は「数」（`references/templates/<型>/template.yaml`）と「並べ方」
 （`engine/layouts/<layout>.py`）に分かれる。
 
 - **色違い・位置違いなら YAML を 1 枚**足すだけ（`layout:` は既存のまま）
@@ -85,7 +92,14 @@ chapters:
 - **行は文の切れ目で割る。** 長い行は記号も効かない。字幕の折り返しは字数で決まるので、
   27 字を超える行は先に割る。
 - **表情シートは 4列×2行の 8 マス・背景透過。** 差し替えたら `mouth_offset` を測り直す
-  （`sheets/README.md`）。
+  （`references/sheets/README.md`）。
+- **置き場を移したら `tools/check_layout.py`。** 古い綴りが文書に残っていないか、
+  `schemas/` が実物に通るかを見る。
+
+## 言語
+
+**日本語のみ。** 台本を英語や中国語で書けば同じ手順で焼けるが、仕組みとしての
+翻訳・言語切替は持たない（`locales/` も `README-xx.md` も置かない）。
 
 ## 前提
 

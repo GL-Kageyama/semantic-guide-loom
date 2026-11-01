@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/GL-Kageyama/semantic-guide-loom/schemas/template.schema.json",
+  "title": "template.yaml — 型（絵の側）",
+  "description": "references/templates/<name>/template.yaml。型は絵の側だけを持つ。意味（題・章・時刻）は持たない。座標と長さはすべて 720p 基準。",
+  "type": "object",
+  "required": ["name", "layout", "canvas", "font", "palette", "progress", "timing"],
+  "additionalProperties": true,
+  "properties": {
+    "name": {"type": "string", "minLength": 1},
+    "description": {"type": "string"},
+    "layout": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$",
+      "description": "engine/layouts/<layout>.py の名"
+    },
+    "canvas": {
+      "type": "object",
+      "required": ["width", "height"],
+      "properties": {
+        "width": {"type": "integer", "minimum": 16},
+        "height": {"type": "integer", "minimum": 16}
+      }
+    },
+    "font": {
+      "type": "object",
+      "required": ["path"],
+      "additionalProperties": true,
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "regular": {"type": "integer", "minimum": 0},
+        "bold": {"type": "integer", "minimum": 0}
+      }
+    },
+    "palette": {
+      "type": "object",
+      "description": "名前 → [r,g,b] か [r,g,b,a]。layouts は名前で引く。",
+      "minProperties": 1,
+      "additionalProperties": {"$ref": "#/$defs/color"}
+    },
+    "background": {"type": "object", "description": "型ごとに形が違ってよい。"},
+    "progress": {
+      "type": "object",
+      "required": ["bar_height"],
+      "additionalProperties": true,
+      "properties": {
+        "bar_height": {"type": "number", "minimum": 0},
+        "tick_height": {"type": "number", "minimum": 0},
+        "tick_width": {"type": "number", "minimum": 0},
+        "tick_color": {"$ref": "#/$defs/color"},
+        "track_color": {"$ref": "#/$defs/color"}
+      }
+    },
+    "timing": {
+      "type": "object",
+      "required": ["chapter_lead"],
+      "additionalProperties": true,
+      "properties": {
+        "subtitle_lead": {"type": "number"},
+        "subtitle_tail": {"type": "number"},
+        "speaker_tail": {"type": "number"},
+        "chapter_slide": {"type": "number", "minimum": 0},
+        "chapter_lead": {
+          "type": "number",
+          "minimum": 0,
+          "description": "札を cue の何秒前から出すか。export_timeline.py が読む唯一の timing。"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "color": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 4,
+      "items": {"type": "number", "minimum": 0, "maximum": 255}
+    }
+  }
+}

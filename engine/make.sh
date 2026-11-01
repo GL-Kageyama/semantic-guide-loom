@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # 1 本ぶんの解説動画を、素材から書き出しまで通す。
 #
-#   ./engine/make.sh works/cyber-basics
-#   ./engine/make.sh works/cyber-basics --still 40     # 1 枚だけ出す
+#   ./engine/make.sh projects/cyber-basics
+#   ./engine/make.sh projects/cyber-basics --still 40     # 1 枚だけ出す
 #
 # 環境変数:
 #   FORCE=1        声を作り直す（参照や voice_fx を変えたときはこれが要る）
@@ -21,14 +21,14 @@ WORK_IN="$1"; shift
 WORK="$(cd "$WORK_IN" && pwd)"
 NAME="$(basename "$WORK")"
 BUILD="$ROOT/build/$NAME"
-# 資材（声・効果音・BGM）がリポジトリに在れば、それを読む。無ければ build/ に作る。
-# assets/ の中で作られる派生（voice_trim・renders・*_tiled.wav）は .gitignore。
-if [ -d "$ROOT/assets/$NAME" ]; then AUDIO="$ROOT/assets/$NAME"; else AUDIO="$BUILD/audio"; fi
+# 資材（声・効果音・BGM）が作品の隣に在れば、それを読む。無ければ build/ に作る。
+# projects/<作品>/assets/ の中で作られる派生（voice_trim・renders・*_tiled.wav）は .gitignore。
+if [ -d "$WORK/assets" ]; then AUDIO="$WORK/assets"; else AUDIO="$BUILD/audio"; fi
 
 [ -f "$WORK/script.yaml" ] || { echo "script.yaml が無い: $WORK" >&2; exit 2; }
 [ -d "$SAL" ] || { echo "semantic-audio-loom が無い: $SAL" >&2; exit 2; }
 
-mkdir -p "$BUILD" "$AUDIO" "$ROOT/out"
+mkdir -p "$BUILD" "$AUDIO" "$WORK/renders"
 
 step() { printf '\n\033[1m── %s\033[0m\n' "$1"; }
 run()  { echo "+ $*"; "$@"; }
@@ -63,7 +63,7 @@ if [ "${1:-}" = "--still" ]; then
   run "$PY" "$ROOT/engine/render.py" --timeline "$BUILD/timeline.json" "$@"
 else
   run "$PY" "$ROOT/engine/render.py" --timeline "$BUILD/timeline.json" \
-      --out "$ROOT/out/$NAME.mp4" "$@"
+      --out "$WORK/renders/$NAME.mp4" "$@"
   echo
-  echo "できた: $ROOT/out/$NAME.mp4"
+  echo "できた: $WORK/renders/$NAME.mp4"
 fi

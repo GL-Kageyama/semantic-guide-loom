@@ -2,7 +2,7 @@
 title: 脆弱性とサイバー攻撃
 subtitle: なぜ、同じ三つなのか
 channel: MIRAI × MIRABO
-# どの型で描き、誰が画面に居るか（semantic-guide-loom の templates/ と casts/ の名）。
+# どの型で描き、誰が画面に居るか（references/templates/ と characters/ の名）。
 template: dialogue-bust
 cast: mirai-mirabo
 chapters:
