@@ -1,16 +1,14 @@
-# 派生（素材の切り抜き・声・WAV・timeline）
+# 派生（make.sh が作る中間物。消してよい。もう一度焼けば戻る）
 build/
-
-# 産物
-out/
 
 # assemble.py が毎回書き直す（派生。手で編集しない）
 works/*/mix.yaml
 
-# 表情シートは配布しない（理由は sheets/README.md）
-sheets/*.png
-sheets/*.jpg
-
 __pycache__/
 *.pyc
 .DS_Store
+
+# ⚠️ sheets/ と out/ は入れない（消さないこと）。
+#    表情シートは入力（作品の絵）で、切り抜きからは戻せない。
+#    焼いた動画は成果物で、clone した人がそのまま見られるべきもの。
+#    どちらも .gitattributes が Git LFS に載せる。

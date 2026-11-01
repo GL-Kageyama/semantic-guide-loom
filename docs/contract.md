@@ -132,11 +132,15 @@ cue の名の配列。`assemble.py` がこの cue の手前にチャイムを置
 ```
 templates/<型>/template.yaml   型（配布する）
 casts/<キャスト>.cast.yaml      キャスト（配布する）
-sheets/                        表情シート（配布しない。README を見る）
+sheets/                        表情シート（入力。Git LFS）
 works/<作品>/                   作品（script/video/chapters）
-build/<作品>/                   派生（assets, audio, timeline.json）— .gitignore
-out/<作品>.mp4                  産物 — .gitignore
+build/<作品>/                   中間物（assets, audio, timeline.json）— .gitignore
+out/<作品>.mp4                  成果物 — Git LFS
 ```
+
+**入れるのは「入力」と「成果物」、入れないのは「中間物」。** 表情シートは入力
+（切り抜きからは戻せない）、`out/` は成果物（clone した人がそのまま見られる）。
+`build/` は焼き直せば戻るので入れない。
 
 **作品はこのリポジトリに無くてもよい。** `make.sh` は `script.yaml` と `video.yaml` の
 あるディレクトリならどこでも指せる。音の側の作品が

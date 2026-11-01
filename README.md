@@ -49,6 +49,8 @@ SKIP_VOICE=1 SKIP_ASSETS=1 ./engine/make.sh works/making-a-guide
 必要なもの: `ffmpeg`、Pillow・numpy・scipy・PyYAML（`$HOME/sonic-loom-spike/venv_tsukasa`）、
 隣に `semantic-audio-loom`（声と組み立ての道具はそこが正本）。
 
+clone したら一度 `git lfs pull`。表情シート（`sheets/`）と焼いた動画（`out/`）は LFS に在る。
+
 ## 型
 
 | 型 | 見た目 | 使うとき |
@@ -88,8 +90,10 @@ engine/
     narrate_slide.py   語り・スライド型の並べ方
 templates/<型>/template.yaml
 casts/<キャスト>.cast.yaml
-sheets/                表情シート（配布しない。README を見る）
+sheets/                表情シート（入力。Git LFS）
 works/<作品>/
+out/<作品>.mp4         焼いた動画（成果物。Git LFS）
+build/<作品>/          中間物（.gitignore。焼き直せば戻る）
 docs/                  契約と型の説明
 ```
 

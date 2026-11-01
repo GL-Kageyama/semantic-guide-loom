@@ -1,7 +1,7 @@
 # sheets/ — 表情シートの置き場
 
-**このディレクトリは配布しない**（`.gitignore`）。置いてあるのは `template.yaml` と
-`cast.yaml` が名前で指す PNG だけ。
+置いてあるのは `casts/<名前>.cast.yaml` が名前で指す PNG だけ。**Git LFS で配布する**
+（`.gitattributes` の `*.png`）。clone したら `git lfs pull` で降りてくる。
 
 ```
 sheets/ミライ_表情差分シート.png
@@ -26,7 +26,10 @@ sheets/ミラボ_表情シート.png
 `prepare_assets.py` は各マスの `pt` と唇の線の範囲を標準出力に出すので、
 口パクがずれたらその数字を見る。
 
-## なぜ配布しないか
+## なぜ入れるか
 
-表情シートは**作品の絵**であって、機構ではない。配布物に入れるかは作者の裁定。
-入れる場合は Git LFS に載せる（`.gitattributes` は `*.png` を LFS にしている）。
+表情シートは**入力**であって派生ではない。`prepare_assets.py` が作る切り抜き
+（`build/`）はシートから戻せるが、**切り抜きからシートは戻せない**。落とすと
+`dialogue-bust` は焼けなくなる。
+
+2 枚で約 3.3 MB。`.gitattributes` の `*.png` が LFS に載せるので、履歴は太らない。
