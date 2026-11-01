@@ -1,0 +1,104 @@
+# 型 dialogue-bust —— 掛け合い・胸像型。
+#
+# 左に人、右に相棒、中央に章の札、下に字幕、最下部に進捗。
+# **数字はすべて 720p 基準。** 1080p は render.py が H/720 倍する。
+#
+# 型が決めるのは「絵の側」だけ。台本・章・字幕の文言は作品（video.yaml）が持つ。
+# 別の型を足すときは、このファイルと同じ欄を持つディレクトリをもう 1 つ作る。
+
+name: dialogue-bust
+description: 掛け合い・胸像型。2人が交互に話し、中央の札で章を示す。
+# 並べ方の実装（engine/layouts/<layout>.py）。型が違えば、この 1 行が変わる。
+layout: dialogue_bust
+
+canvas:
+  width: 1280
+  height: 720
+
+# 書体は 1 本だけ持つ。太字は index で切り替える（ttc の 2 面）。
+font:
+  path: "/System/Library/AssetsV2/com_apple_MobileAsset_Font8/42529d87b12845309dd4a57dea9e58446826e94c.asset/AssetData/BIZ_UDGothic.ttc"
+  regular: 0
+  bold: 1
+
+palette:
+  ink: [245, 241, 232]          # IVORY  本文
+  pale: [191, 224, 245]         # PALE   補助の文
+  accent: [79, 195, 247]        # CYAN   章の名・進捗・枠
+  warm: [255, 209, 102]         # YELLOW 章の題
+  bg_top: [16, 25, 45]
+  bg_bottom: [27, 42, 74]
+  panel_fill: [22, 34, 60, 210]
+  panel_line: [79, 195, 247, 90]
+  panel_rule: [79, 195, 247, 110]
+  subtitle_fill: [12, 20, 36, 205]
+  subtitle_shadow: [10, 16, 30]
+  header_sub: [150, 180, 210]
+  panel_tag: [140, 170, 200]
+
+background:
+  kind: gradient-dots
+  dot_step: 40
+  dot_size: 2
+  dot_color: [191, 224, 245, 26]
+  glow: {box: [0.28, 0.02, 0.72, 0.95], color: [56, 120, 160, 34], blur: 90}
+
+# 立ち位置。作品のキャストは slot の名で座る（cast.yaml）。
+slots:
+  left:  {origin: [14, 184]}     # 胸像。画布の下端は枠の外へ出す
+  right: {origin: [918, 280]}    # 全身
+dim_when_silent: 0.78            # 話していない側の明度
+
+# 声の大きさ → 口の 3 状態。音素は見ない。
+mouth:
+  open_db: -30.0                 # これより大きければ開
+  half_db: -44.0                 # これより大きければ半開、以下は閉
+
+panel:
+  box: [510, 78, 906, 556]
+  radius: 22
+  outline_width: 2
+  pad: 34
+  label: {size: 24, bold: true}
+  tag:   {size: 20, dy: 4}
+  rule_dy: 44
+  after_rule_dy: 26
+  term:  {size: 86, bold: true}
+  after_term_dy: 18
+  title: {size: 30, bold: true, step: 40}
+  after_title_dy: 18
+  short_rule: {width: 60, thickness: 3, color: [255, 209, 102, 160]}
+  after_short_dy: 22
+  key:   {size: 27, step: 42}
+
+subtitle:
+  y: 586
+  size: 31
+  max_width: 820
+  box_width: 900
+  radius: 16
+  pad: 26
+  spacing: 8
+  max_lines: 2
+
+header:
+  title:   {x: 40, y: 26, size: 23, bold: true}
+  chapter: {x: 40, y: 56, size: 17}
+  channel: {right: 40, y: 30, size: 17}
+  rule_y: 88
+  rule_width: 1
+  rule_color: [79, 195, 247, 50]
+
+progress:
+  bar_height: 6
+  tick_height: 10
+  tick_width: 2
+  tick_color: [255, 209, 102, 200]
+  track_color: [12, 20, 36, 255]
+
+timing:
+  subtitle_lead: 0.05      # 発話の何秒前から字幕を出すか
+  subtitle_tail: 0.45      # 発話の何秒後まで残すか
+  speaker_tail: 0.25       # 話し手の強調を何秒残すか
+  chapter_slide: 0.45      # 札が上から滑り込む時間
+  chapter_lead: 1.6        # 札を cue の何秒前から出すか（export_timeline が使う）

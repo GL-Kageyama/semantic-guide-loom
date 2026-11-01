@@ -1,0 +1,18 @@
+# 説明動画『説明動画の作り方』——型 narrate-slide の見本。約30秒。
+# 題材はこの工房自身の手順なので、社外の事実を一切名乗らない。
+# 語りは semantic-audio-loom の既製の声（characters/narrator.voice.yaml）。
+name: making-a-guide
+default_pause: 0.2
+cues:
+  - {character: narrator, line: "説明動画は、五つの段で、できています。", speed: natural, pause_before: 0.7, name: c01}
+  - {character: narrator, line: "素材、声、組み立て、時刻、描画。", speed: natural, pause_before: 0.25, name: c02}
+  - {character: narrator, line: "まず、絵の素材を作ります。", speed: natural, pause_before: 1.2, name: c03}
+  - {character: narrator, line: "表情シートを八マスに切り、口の三つの形を、絵から作ります。", speed: natural, pause_before: 0.2, name: c04}
+  - {character: narrator, line: "台本の一行ずつを、別の声のファイルにします。", speed: natural, pause_before: 0.6, name: c05}
+  - {character: narrator, line: "読み違えたら、ルビで読みだけを直します。", speed: natural, pause_before: 0.2, name: c06}
+  - {character: narrator, line: "声を並べて、間と音量をそろえます。", speed: natural, pause_before: 1.2, name: c07}
+  - {character: narrator, line: "同じ人の行だけを、同じ大きさに寄せます。", speed: natural, pause_before: 0.2, name: c08}
+  - {character: narrator, line: "字幕の時刻は、できた音の長さから取ります。", speed: natural, pause_before: 0.6, name: c09}
+  - {character: narrator, line: "台本の間を足し直すと、一コマずつ、ずれます。", speed: natural, pause_before: 0.2, name: c10}
+  - {character: narrator, line: "最後に、一枚ずつ描いて、動画にします。", speed: natural, pause_before: 1.2, name: c11}
+  - {character: narrator, line: "同じ台本からは、同じ絵が出ます。", speed: natural, pause_before: 0.2, name: c12}

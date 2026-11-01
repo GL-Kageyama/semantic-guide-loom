@@ -1,0 +1,82 @@
+# キャスト mirai-mirabo —— 解説動画『脆弱性とサイバー攻撃』の二人。
+#
+# キャストは「誰が画面に居るか」だけを持つ。立ち位置は型（template.yaml）が持つ。
+# 表情シートは 4列×2行 = 8マス。左から右、上の行が先。
+# シートは `sheets/` に置く（配布物には入れていない。理由は sheets/README.md）。
+
+name: mirai-mirabo
+description: 人（ミライ）と小さな機体（ミラボ）。掛け合いで説明する。
+
+# 台本に表情の指定が無いときの表情。
+default_expression: neutral
+
+# 口の状態。0 が開、1 が半開、2 はシートの絵そのまま。
+# 深さの割合は口パクをする側だけが使う。
+mouth_states: [["m0", 1.0], ["m1", 0.42]]
+
+characters:
+  - id: mirai
+    name: ミライ
+    slot: left
+    sheet: ミライ_表情差分シート.png
+    canvas: [420, 480]
+    # 画布の拡大率。型の枠に合わせて、キャストごとに決める（絵の側の都合）。
+    scale: 1.15
+    expressions: [neutral, smile, serious, thinking, surprised, worried, blink_neutral, blink_smile]
+    blink:
+      neutral: blink_neutral
+      smile: blink_smile
+      serious: blink_neutral
+      thinking: blink_neutral
+      surprised: blink_neutral
+      worried: blink_neutral
+    # 台本の emotion 語 → 表情。書いていない語は neutral。
+    by_emotion:
+      joy: smile
+      confidence: serious
+      excitement: surprised
+      anxiety: worried
+      sadness: worried
+      fear: worried
+      anger: serious
+    # 口パクをする。唇の線を 1 マスずつ拾い、その下に口の中を描き足す。
+    lip: true
+    # 目の中心から口の中心までのずれ（画布の座標）。シートごとに測り直す値。
+    mouth_offset: [4.0, 66.0]
+    mouth:
+      box: [26, 14, 8]        # 口を探す箱（左右の幅, 上へ, 下へ）
+      drop: 7.5               # 開いたときの深さ（画素）
+      inner: [118, 66, 70]    # 口の中の色
+    # 動きは sin 波の重ね合わせ。型の絵に小さな呼吸を足す。
+    # axis は x か y、amp は 720p 基準の画素、hz は 1 秒あたりの回数。
+    motion:
+      - {axis: y, amp: 1.5, hz: 1.1}
+
+  - id: mirabo
+    name: ミラボ
+    slot: right
+    sheet: ミラボ_表情シート.png
+    canvas: [300, 450]
+    scale: 0.76
+    expressions: [neutral, excited, surprised, worried, sad, focused, blink_neutral, blink_excited]
+    blink:
+      neutral: blink_neutral
+      excited: blink_excited
+      surprised: blink_neutral
+      worried: blink_neutral
+      sad: blink_neutral
+      focused: blink_neutral
+    by_emotion:
+      joy: excited
+      excitement: excited
+      confidence: focused
+      anxiety: worried
+      sadness: sad
+      fear: worried
+      anger: focused
+    # 口を動かさない。画面の中で形が変わると、人間の口の動きとは別物に見えるため。
+    lip: false
+    # 浮いている機体。上下と左右で、別々の速さ・位相を持たせる。
+    motion:
+      - {axis: y, amp: 4, hz: 1.7, phase: 0.8}
+      - {axis: x, amp: 3, hz: 0.9, phase: 2.0}

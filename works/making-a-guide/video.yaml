@@ -1,0 +1,34 @@
+# 映像側の台本（音には渡さない）。render.py の timeline が読む。
+title: 説明動画の作り方
+subtitle: 五つの段
+channel: semantic-guide-loom
+# 人物を置かない型。ゆえに cast は名乗らない。
+template: narrate-slide
+width: 1920
+height: 1080
+fps: 30
+chapters:
+  c01:
+    label: はじめに
+    title: 五つの段
+    bullets:
+      - 素材 → 声 → 組み立て → 時刻 → 描画
+      - どこで作るかが決まれば、題材は何でも同じ手順で焼ける
+  c03:
+    label: 第1段 素材と声
+    title: 絵と声を、別々に用意する
+    bullets:
+      - 表情シートは 4列×2行の 8 マス。口の 3 状態を絵から測って作る
+      - 台本は一行ずつ別のファイルにする。読み違えは 漢字《かな》 で塞ぐ
+  c07:
+    label: 第2段 組み立てと時刻
+    title: 音の実尺が、時刻を決める
+    bullets:
+      - 間と音量を 1 本に畳む。声量は人ごとの中央値へ寄せる
+      - 字幕の時刻は mix.yaml の voice stem から取る。台本の間を足し直さない
+  c11:
+    label: 第3段 描画
+    title: 一枚ずつ描いて、動画にする
+    bullets:
+      - Pillow で 1 コマずつ描き、ffmpeg へ流し込む
+      - 同じ台本からは、同じ絵が出る
