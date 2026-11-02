@@ -13,6 +13,7 @@
 
 | 決めること | どこで決めるか |
 | --- | --- |
+| 何を言ってよいか（検証済みの事実） | `research/`（出典・抜き書き・`facts.yaml`） |
 | 何を、どの順で話すか | `design.md`（設計）→ `script.yaml`（音の台本）× `video.yaml`（映像の台本） |
 | 誰が声を出すか、どう演じるか | `script.yaml` の `character` と演技の欄（`emotion` / `speed` / `pause_before` / `volume`） |
 | その人物が何を欲し、何を怖れるか | `characters/<id>.character.yaml`（人物票。一人 1 ファイル） |
@@ -37,6 +38,10 @@
 `engine/make.sh` が 5 つを順に通す。**矢印は一方向**——絵は音の実尺を読む。音は絵を知らない。
 ゆえに台本を変えても、絵の側の時刻を手で直す必要はない。
 
+5 段の前に **0 段（調査）** を置く。題材が決まったら、設計より先に検索・取得・検証を行い、
+`projects/<作品>/research/` に台帳を残す。設計・台本・詳細カードはその事実 ID を引く。
+**焼く時にネットを見ない**（`make.sh` は検索も取得もしない）。
+
 `reading.yaml` があるときは、2 の前に `engine/reading.py stage` が `build/<作品>/` に
 舞台を作る（`line` を読みに、`display` に原表記を）。`bgm.yaml` があるときは、3 で
 `engine/bgm.py` が生成とミックスを行う。**どちらも無ければ、従来の 5 段のまま。**
@@ -47,6 +52,7 @@
 
 | 段 | スキル | 作るもの | 道具 |
 | --- | --- | --- | --- |
+| 調査 | `guide-research` | `research/`（出典・抜き書き・検証済みの事実） | 検索・取得（焼く前の段だけ） |
 | 設計 | `guide-design` | `design.md`（約束・章・事実の柱・役割） | story-council（plot モード） |
 | 人物 | `guide-cast` | `characters/<id>.character.yaml`（一人 1 ファイル）+ `<キャスト>.persona.yaml`（関係） | `engine/persona.py` |
 | 台本 | `guide-script` | `台本.md` → `script.yaml` / `video.yaml` / `chapters.yaml` | story-council（キャスト有 10 次元 / 語り 8 次元）・`engine/review.py`・`engine/scriptcheck.py` |
@@ -111,7 +117,7 @@ clone したら一度 `git lfs pull`。表情シート（`references/sheets/`）
 
 | 型 | 見た目 | 使うとき |
 | --- | --- | --- |
-| `dialogue-bust` | 左に人・右に相棒、中央に章の札、下に字幕 | 掛け合いで説明する。4〜5 分に耐える |
+| `dialogue-bust` | 左に人・右に相棒、中央に章の札、下に字幕。章の中で詳細カードが切り替わる | 掛け合いで説明する。4〜5 分に耐える |
 | `narrate-slide` | 左に章の題と箇条書き、下に字幕。人物なし | 社内説明・研修。1 章 = 1 枚で読み物として立つ |
 
 型は「数」（`references/templates/<型>/template.yaml`）と「並べ方」
@@ -130,9 +136,15 @@ projects/<作品名>/
   reading.yaml    cue → 声に読ませる読み（任意。無ければ line をそのまま読む）
   bgm.yaml        敷き音の意図とミックス（任意。無ければ BGM の段を飛ばす）
   script.yaml     何を、どの順で、誰が、どう話すか（音の台本）
-  video.yaml      題・章・字幕の表記・型・キャスト（映像の台本）
+  video.yaml      題・章・字幕の表記・型・キャスト（映像の台本。詳細カードは details）
   chapters.yaml   章の頭の cue（音のチャイム）
   voice_fx.yaml   声に掛ける効果（任意）
+  research/       調査の台帳（任意。出典・抜き書き・検証済みの事実）
+    README.md     この作品の調査の目的・範囲・更新の仕方
+    queries.md    検索語と訂正の記録
+    sources.yaml  出典
+    notes/        出典ごとの抜き書き
+    facts.yaml    映像に使う事実（details[].fact が引く）
   review/         台本の版・評価・採用の記録（任意。設計から作るとき）
     acting/       感情の弧（plan.md）と版ごとの演技の計測（vN.yaml）
     viewers/      初見復元テストと説明の評価（vN/ と vN.yaml）
@@ -158,6 +170,7 @@ projects/<作品名>/
 .claude/skills/        install.sh --local が張る symlink
 skills/
   semantic-guide-loom/SKILL.md   入口。焼く手順（スキルの本体）
+  guide-research/      調査（research/）。設計より先に事実を集める
   guide-design/        設計（design.md）
   guide-cast/          人物票（character.yaml）と二人の関係（persona.yaml）
   guide-script/        台本の生成と評価の往復
@@ -188,8 +201,8 @@ references/sheets/                        表情シート（入力。Git LFS）
 characters/<キャスト>.cast.yaml   誰が画面に居るか・身体の揺れ
 characters/<id>.character.yaml    人物票（欲・怖れ・矛盾・感情の型）
 characters/<キャスト>.persona.yaml 二人の関係
-projects/<作品>/       台本・資材・焼いた動画（asset は Git LFS）
-schemas/               video / template / cast / character / persona / reading / bgm の形
+projects/<作品>/       台本・資材・焼いた動画（asset は Git LFS）。research/ は調査の台帳
+schemas/               video / template / cast / character / persona / reading / bgm / research の形
 tools/
   check_layout.py      置き場の綴りと schemas を確かめる
 docs/                  契約と型の説明
@@ -217,6 +230,8 @@ build/<作品>/          中間物（.gitignore。焼き直せば戻る）
 - **読み違えは `reading.yaml` で塞ぐ。** 字幕は原表記のまま（`display`）。
 - **BGM の音量と ducking は `bgm.yaml` が持つ。** `mix.yaml` は手で直さない。
 - **1 コマは状態を持たない。** 同じ時刻なら同じ絵が出る。
+- **カードの事実は `research/facts.yaml` から引く。** `details[].fact` が id を指す。
+  焼く時に検索しない。新しい事実は、先に台帳へ足す。
 - **顔は `beat` から決まる。** 人物票の `emotions.<beat>.face` を
   `export_timeline.py` が解決し、明示 `face` があればそちらを優先する。
   聞き手の反応も `react.<id>.beat` でよい。まばたきはしない。

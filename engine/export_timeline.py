@@ -137,7 +137,7 @@ def main() -> None:
             entry["chapter"] = len(ch_list)
             # 章の中身は型が決める。ここは素通しする（dialogue-bust は term/key、
             # narrate-slide は bullets を読む）。
-            ch_list.append({
+            entry_ch = {
                 **ch,
                 "cue": cue_name,
                 "index": len(ch_list),
@@ -148,7 +148,24 @@ def main() -> None:
                 # 章の札はチャイムに合わせて cue の手前から出す（何秒手前かは型が持つ）
                 "start": round(max(0.0, start - lead), 4),
                 "cue_start": round(start, 4),
-            })
+            }
+            # 詳細カードのアンカーを、mix.yaml の声の実尺へ解決する。
+            # timeline は cue 名を引かずに自己完結する（描く側は時刻だけを読む）。
+            details = ch.get("details")
+            if details:
+                resolved = []
+                for j, detail in enumerate(details, 1):
+                    if not isinstance(detail, dict):
+                        sys.exit(f"{cue_name} の details[{j}]: 辞書でない")
+                    dcue = detail.get("cue")
+                    if not dcue or dcue not in starts:
+                        sys.exit(
+                            f"{cue_name} の details[{j}]: "
+                            f"mix.yaml に voice stem が無い cue {dcue!r}"
+                        )
+                    resolved.append({**detail, "start": round(starts[dcue][0], 4)})
+                entry_ch["details"] = resolved
+            ch_list.append(entry_ch)
         cues.append(entry)
 
     # 章の区切りに居ない cue は直前の章に属す
@@ -157,6 +174,38 @@ def main() -> None:
         if c["chapter"] >= 0:
             cur = c["chapter"]
         c["chapter"] = cur
+
+    duration = round(float(mix.get("duration") or max(c["end"] for c in cues) + 2.5), 4)
+
+    # 実尺上の注意（警告のみ）。TTS の尺で変わるので、ここでは止めない。
+    warnings: list[str] = []
+    for ci, ch in enumerate(ch_list):
+        details = ch.get("details") or []
+        if not details:
+            continue
+        next_ch = ch_list[ci + 1] if ci + 1 < len(ch_list) else None
+        chapter_end = float(next_ch["start"]) if next_ch else duration
+        if details[0]["start"] == ch["cue_start"]:
+            warnings.append(
+                f"{ch['cue']}: 最初の詳細が章の頭 cue と同じ（key を読む間が無い）"
+            )
+        for j, detail in enumerate(details):
+            d_start = float(detail["start"])
+            if d_start < float(ch["cue_start"]):
+                warnings.append(
+                    f"{ch['cue']} / {detail.get('cue')}: 時刻が章の頭 cue より前"
+                )
+            if next_ch and d_start >= float(next_ch["start"]):
+                warnings.append(
+                    f"{ch['cue']} / {detail.get('cue')}: 時刻が次の章の start 以降"
+                )
+            visible_end = (float(details[j + 1]["start"]) if j + 1 < len(details)
+                           else chapter_end)
+            if visible_end - d_start < 4.0:
+                warnings.append(
+                    f"{ch['cue']} / {detail.get('cue')}: 可視 {visible_end - d_start:.2f} 秒"
+                    "（4.0 秒未満）"
+                )
 
     audio = args.audio or os.path.join(work, "assets", "renders", name + ".wav")
     tl = {
@@ -171,7 +220,7 @@ def main() -> None:
         "fps": args.fps or int(video.get("fps", 30)),
         "width": args.width or int(video.get("width", 1280)),
         "height": args.height or int(video.get("height", 720)),
-        "duration": round(float(mix.get("duration") or max(c["end"] for c in cues) + 2.5), 4),
+        "duration": duration,
         "audio": os.path.abspath(audio),
         "cues": cues,
         "chapters": ch_list,
@@ -179,6 +228,10 @@ def main() -> None:
     with open(args.out, "w", encoding="utf-8") as f:
         json.dump(tl, f, ensure_ascii=False, indent=1)
     print(f"{args.out}: {len(cues)} cues / {len(ch_list)} chapters / {tl['duration']:.1f}s")
+    if warnings:
+        print(f"警告 {len(warnings)} 件", file=sys.stderr)
+        for line in warnings:
+            print(f"  {line}", file=sys.stderr)
 
 
 if __name__ == "__main__":

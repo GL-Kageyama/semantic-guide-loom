@@ -6,8 +6,221 @@ channel: MIRAI × MIRABO
 template: dialogue-bust
 cast: mirai-mirabo
 chapters:
-  c001: {label: 序章, title: 99.8%, key: "この数字は、\n何を測った?", term: 現在地}
-  c043: {label: 第1章, title: ぼやけた、最初の一枚, key: "鏡は、壊れて\nいなかった。", term: 形}
-  c085: {label: 第2章, title: 1.3ミリ, key: "測る側が、\nずれていた。", term: 誤差}
-  c190: {label: 第3章, title: 眼鏡をかけた望遠鏡, key: "直すのでは、\nなく。", term: 補正}
-  c236: {label: 終章, title: 十日の露出, key: "分母が、\n言えない。", term: 露出}
+  c001:
+    label: 序章
+    title: 99.8%
+    key: "この数字は、\n何を測った?"
+    term: 現在地
+    details:
+      - cue: c003
+        head: 打ち上げ
+        lines:
+          - 1990年4月24日
+          - ディスカバリー STS-31
+          - 高度 約483キロメートル
+          - 周期 約95分
+        fact: launch-orbit
+      - cue: c006
+        head: 主鏡
+        lines:
+          - 直径 2.4メートル
+          - 重さ 828キログラム
+          - 素材は ULE ガラス
+          - 表面の凹凸は 1µm 未満
+        fact: mirror-spec
+      - cue: c032
+        head: 99.8%
+        lines:
+          - 記録された数字ではない
+          - 二つの記録の一致率
+          - 研磨と検査の「同じ形」
+          - 分母は、記録の全体
+        fact: current-location-99-8
+
+  c043:
+    label: 第1章
+    title: ぼやけた、最初の一枚
+    key: "鏡は、壊れて\nいなかった。"
+    term: 形
+    details:
+      - cue: c045
+        head: ファーストライト
+        lines:
+          - 1990年5月20日
+          - 最初の観測
+          - 星が点にならず、にじむ
+          - 公開された最初の像
+        fact: first-light
+      - cue: c055
+        head: 予測
+        lines:
+          - 研磨の記録は許容範囲
+          - 鏡は正しい「はず」
+          - 予測であり、記録ではない
+          - 検査は、別の問い
+        fact: prediction-97
+      - cue: c061
+        head: 縁
+        lines:
+          - 設計より 2.2µm 平ら
+          - 球面収差
+          - 光が一点に集まらない
+          - 鏡は、壊れていない
+        fact: flaw-2-2um
+      - cue: c072
+        head: 97%の意味
+        lines:
+          - 削った側の形
+          - 鏡の表面の削り方
+          - 縁の平らさは出ない
+          - 検査は正しく動いていた
+        fact: 97-meaning
+
+  c085:
+    label: 第2章
+    title: 1.3ミリ
+    key: "測る側が、\nずれていた。"
+    term: 誤差
+    details:
+      - cue: c088
+        head: null corrector
+        lines:
+          - 鏡の形を光で測る装置
+          - 反射式
+          - 中のレンズが基準
+          - レンズの位置で曲がり方が変わる
+        fact: null-corrector
+      - cue: c102
+        head: 1.3ミリ
+        lines:
+          - 基準のレンズが 1.3mm ずれた
+          - 原因は、棒のキャップ
+          - 許容の 10 倍
+          - 鏡を磨く間も、その基準
+        fact: field-lens-1-3mm
+      - cue: c125
+        head: 屈折式
+        lines:
+          - レンズを通し、反対側から見る
+          - 反射式とは別の検査
+          - 「鏡がおかしい」と言った
+          - 装置の種類で、退けられた
+        fact: refractive-test
+      - cue: c137
+        head: 紙
+        lines:
+          - 退けられた日の紙
+          - 誤差の曲線が刷ってある
+          - 端が、折れている
+          - 誰も、読み上げない
+        fact: paper-label
+      - cue: c159
+        head: 定規
+        lines:
+          - 1.3mm は定規で測れる
+          - Roger Angel の指摘
+          - なのに、誰も測らない
+          - 安い定規で足りた
+        fact: ruler
+      - cue: c172
+        head: 分母
+        lines:
+          - 分母を出さないと、意味がない
+          - 単一の百分率は出さない
+          - 現在地は、一つではない
+          - 何を何で割ったか
+        fact: denominator
+      - cue: c185
+        head: 裏
+        lines:
+          - 紙は薄い
+          - 灯りにかざすと、線が透ける
+          - 表のラベルが、線を隠す
+          - 次は、裏から読む
+        fact: back-of-paper
+
+  c190:
+    label: 第3章
+    title: 眼鏡をかけた望遠鏡
+    key: "直すのでは、\nなく。"
+    term: 補正
+    details:
+      - cue: c192
+        head: 修理
+        lines:
+          - 1993年12月、STS-61
+          - エンデバーが追いついた
+          - 5回の船外活動
+          - 総船外活動 35時間28分
+        fact: sm1
+      - cue: c197
+        head: COSTAR
+        lines:
+          - 光を補正する装置
+          - 鏡の前に置く
+          - 誤差と反対の形を作る
+          - 鏡を削らずに直す
+        fact: costar
+      - cue: c204
+        head: WFPC2
+        lines:
+          - 新しいカメラ
+          - COSTAR の補正を受ける
+          - 鏡を直すのではなく
+          - 光を直す
+        fact: wfpc2
+      - cue: c209
+        head: 最初の一枚
+        lines:
+          - 1994年1月13日
+          - 補正後の最初の像
+          - M100 の渦巻銀河
+          - 約30光年
+        fact: first-corrected
+
+  c236:
+    label: 終章
+    title: 十日の露出
+    key: "分母が、\n言えない。"
+    term: 露出
+    details:
+      - cue: c238
+        head: ディープフィールド
+        lines:
+          - 何もないように見える天域
+          - 長く写す観測
+          - 1995年12月18–28日
+          - 150周の軌道を予定
+        fact: hdf-observation
+      - cue: c240
+        head: 露出
+        lines:
+          - 10日間
+          - 342回の露出
+          - 4つのフィルター
+          - 合計 100時間超
+        fact: hdf-observation
+      - cue: c241
+        head: 銀河
+        lines:
+          - 1,500個から約3,000個へ
+          - 満月の約1/30 の天域
+          - 硬貨を 75フィート先に見る
+          - 1996年1月15日公開
+        fact: hdf-galaxies
+      - cue: c249
+        head: 分母（終章）
+        lines:
+          - 参照像がない
+          - 正しさを外から確かめられない
+          - 数字ではなく、横線
+          - 分母が言えない
+        fact: hdf-no-reference
+      - cue: c282
+        head: 線
+        lines:
+          - 折れた端から、ラベルが浮く
+          - 下から、線が出てくる
+          - 縁が平らすぎると言っていた
+          - 数字にせず、線のまま
+        fact: line

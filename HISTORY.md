@@ -1,5 +1,128 @@
 # HISTORY
 
+## 0.5.0 — 2026-11-03 中央パネルの詳細カードと、調査から作る仕組み
+
+`dialogue-bust` の中央パネルは、章の名・語（`term`）・章題・小さな言葉（`key`）を
+1 枚に焼き、章の間ずっと同じ絵を貼っていた。`key` は章の問いを 2 行で置くだけで、
+話が進んでも変わらない。ここを、**章のヘッダは残したまま、その下の本文だけが
+章の中で切り替わる**形にした。掛け合いを楽しむ人にも、詳細を掴みたい人にも届く。
+あわせて、解説動画の初手として**検索で情報を集め、台帳に格納し、動画作りに活かす**
+仕組み（0 段・調査）を足した。**台本と声は v12 のまま**（`script.yaml` / `台本.md` /
+`reading.yaml` / `bgm.yaml` を変えていない。309 cue / 5 章 / 1033.8 秒）。
+
+### 調査を 0 段にした — `research/`
+
+設計より先に、検索・取得・検証を行い、作品の隣に台帳を残す。**焼く時にネットを見ない**
+（`make.sh` は検索も取得もしない）。
+
+```
+projects/<作品>/research/
+  README.md  queries.md  sources.yaml  notes/<id>.md  facts.yaml
+```
+
+- `sources.yaml` は `id` / `title` / `kind`（official / paper / reference / news /
+  in-work）/ `url` or `path` / `accessed` / `confidence`。`accessed` は
+  **引用符で囲む**（PyYAML が日付オブジェクトに変えるため。`scriptcheck.py` が拾う）。
+- `facts.yaml` は 1 fact = 1 主張。`sources` は 1 つ以上で `sources.yaml` を指す。
+  作品内の予測・演出は `kind: in-work` として事実と分ける。
+- `video.yaml` の `details[].fact` が fact の id を指す。カードの文は fact の範囲を出ない。
+- 新スキル `skills/guide-research/`。検索語・当たった資料・**古い値の訂正**を
+  `queries.md` に残す。`schemas/research.schema.json` と `scriptcheck.py` の参照検査
+  （未知の fact・解決しない source・`confidence: low` の使用）を足した。
+- 台帳は入力（テキスト）なので Git に入れる。`build/` へ移さない。
+
+### 中央パネルを広げ、人物を左右へどけた
+
+| 項目（720p） | 0.4.0 | 0.5.0 |
+|---|---:|---:|
+| 左の origin | `[14, 184]` | `[0, 184]` |
+| 右の origin | `[918, 280]` | `[1020, 280]` |
+| パネル box | `[510, 78, 906, 556]` | `[492, 78, 1006, 556]` |
+| 幅 / 内側 | 396 / 328 | **514 / 446** |
+| 左右の隙間 | 20 / 14 | **16 / 16** |
+| 右の余白 | 136 | 34 |
+| パネル中心 | 708 | 749 |
+
+左はもともと余白が少ないので −14px、右は +102px。パネルは 2 人の間の中央
+（`(476+1022)/2 = 749`）に置いた。右のリアクション記号の anchor は
+`[200, 0]` → `[160, 0]`（新しい右 origin で 3 字が画布の右端を越えない位置）。
+
+ヘッダ（label・tag・rule・term・title・short rule）を描く helper にまとめ、
+**helper が本文の開始 y を返す**ようにした。`detail_geometry(ch)` は同じ helper を
+測るだけ（`im=None`）で通すので、描画と容量の計算がずれない。実測（章題 1 行）:
+本文開始 **375**、下端 **522**、容量 **4 行**、4 行で下端 **508**。章題 2 行なら
+本文開始 415・容量 3 行。`head` 22px 太字（asc+desc=23）、`line` 22px / step 27。
+23 枚 92 行の実測で、最長の head は **198px**、最長の行は **330px**（内側 446px）。
+
+### 詳細カード
+
+```yaml
+details:
+  - {cue: c045, head: ファーストライト, lines: [1990年5月20日, ...], fact: first-light}
+```
+
+- `cue` / `head` / `lines`（1〜4）が必須。`fact` は任意。**章に 2〜7 枚**、23 枚を 5 章へ。
+- `cue` は**その章の範囲**、台本順に strict に増える。最初のカードは章の頭 cue より
+  後ろ（`key` を読む時間）。可視時間の実測で最短は **5.21 秒**（c240→c241）。
+- `export_timeline.py` が `cue` を `mix.yaml` の voice stem の `start` に解決し、
+  `{**detail, "start": ...}` に差し替える。**timeline は cue 名を引かずに自己完結**する。
+- `scriptcheck.py` が形・所属・順序・容量・事実の参照を見る。実尺が要る検査
+  （可視 4.0 秒未満・章の外・最初が章の頭 cue と同じ）は `export_timeline.py` が
+  **警告**にする（TTS の実尺で変わるため止めない）。
+- 選択は `bisect_right(starts, t) - 1`（0 に clamp）。切替の `timing.detail_fade`
+  （0.30 秒）だけ `Image.blend(prev, cur, smooth(age / fade))`。**章の切替では
+  blend しない**（従来の slide だけ）。age=0 は前のカードが 100%。
+- 詳細を持つ作品だけ、パネルを**箱 + 輪郭の数 px**（`outline_width + 2` = 4px）に
+  切り詰めて持つ。切り詰め後 522×486×4B ≈ 0.97 MiB、28 枚で ≈ 27 MiB
+  （フルキャンバスなら ≈ 99 MiB）。箱の外は完全透明で、slide 0 と 10 の貼り付けが
+  フルキャンバスと**ピクセル一致**することを確かめた。フルキャンバスには戻さない。
+
+### 後方互換と、意図した絵の変更
+
+- **詳細機構を入れ、型を広げる前**に、v12 timeline の 40 / 200 / 400 / 700 / 900 秒の
+  `--still` を描き、変更前の SHA-256 と**5 枚とも一致**した（ヘッダ helper 化と
+  key 経路が画素を変えていないこと）。
+- **詳細を持たない作品は、従来の `panels`（章ごとに 1 枚）の経路をそのまま通る。**
+  後方互換を構造で保証する。`panel.detail` の無い型も同じ（`details` があっても key だけ）。
+- 型を広げた後は、5 枚とも**意図的に変わる**。`dialogue-bust` を共有する
+  `black-swan-ai` / `cyber-basics` も同じだけ人物と札が動く。**再焼きはしない**
+  （焼けることは `--still` で確認）。
+- 決定性: 同じ時刻の 2 回の描画が SHA-256 一致。`--start 560` の先頭フレームは
+  同じ t の `--still` と一致（差はエンコードの YUV 変換ぶん。`--crf 0` でも
+  mean 0.79 / 最頻は 0）。
+- 通し焼き: **1280×720 / 30fps / 1033.79 秒 / AAC 44.1kHz stereo**、
+  `export_timeline` の実尺警告 0。`scriptcheck --strict` は ok。
+
+### 取り直した事実（サンプル『ハッブルの鏡』）
+
+`research/sources.yaml` 16 件・`facts.yaml` 22 件・`notes/` 16 件・検索語 10 件。
+主な訂正（`queries.md`）:
+
+- STS-61 の総船外活動 **28.5 時間 → 35 時間 28 分**（ESA）。
+- 軌道 **559km → 約 483km / 周期 約 95 分**（NASA Observatory）。
+- 主鏡の表面 **10nm → 1µm 未満**（NASA は 10nm と書かない）。
+- HDF の天域比較は **10 円玉ではなく硬貨**（75 フィート先）。
+- ファーストライト **1990年5月20日**、不具合の公表 **1990年6月27日**。
+- HDF: **1995年12月18–28日 / 342 露出 / 150 周の軌道を予定 / 4 フィルター /
+  100 時間超 / 1,500 → 約 3,000 銀河 / 1996年1月15日公開**。
+
+99.8% / 97% は記録ではなく**作品内の値**として `kind: in-work` に置いた。
+
+### 足したもの・変えたもの
+
+- 新規: `skills/guide-research/`、`schemas/research.schema.json`、
+  `projects/hubble-mirror/research/`（README・queries・sources・facts・notes 16）、
+  `review/compare/details/`（代表 10 枚）、`.claude/skills/guide-research`（symlink）。
+- 変更: `engine/export_timeline.py`（`details` の解決と実尺警告）、
+  `engine/layouts/dialogue_bust.py`（`_header` / `detail_geometry` / カードの
+  切替と切り詰め）、`engine/scriptcheck.py`（詳細と研究の検査）、
+  `references/templates/dialogue-bust/template.yaml`（`panel.detail` /
+  `detail_fade` / 幅と位置）、`schemas/video.schema.json`（`details`）、
+  `projects/hubble-mirror/video.yaml`（23 枚）、`README.md` / `docs/` / `skills/` /
+  `install.sh` / `.claude-plugin/`（0.5.0・8 スキル）。
+- 触っていない: `semantic-audio-loom/`、`distill-essence-engine/`、`script.yaml` /
+  `台本.md` / `reading.yaml` / `bgm.yaml`、他の作品の再焼き。
+
 ## 0.4.0 — 2026-11-03 人物の個性と感情を、台本・声・絵の機構へ通した
 
 0.3.0 の通しサンプル『ハッブルの鏡』は、事実と構成の評価は高かったが、148 cue の

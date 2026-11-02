@@ -15,12 +15,13 @@ video.yaml ──(template / cast の名)─────────────
                                           (render) ──> projects/<作品>/renders/<name>.mp4
 ```
 
-この 4 つに**任意の 4 つ**が重なる。どれも無ければ、従来の 5 段のまま動く。
+この 4 つに**任意の 5 つ**が重なる。どれも無ければ、従来の 5 段のまま動く。
 
 ```
 reading.yaml ──(reading.py stage)──> build/<作品>/script.yaml + video.yaml
                                           ↑ line を読みに、display に原表記
 bgm.yaml ──(bgm.py generate / mix)──> assets/bgm/<name>.wav + mix.yaml の bed と duck
+research/ ──(scriptcheck が fact の参照を見る)──> video.yaml の details
 characters/<id>.character.yaml ──(人は check / brief。engine は beat→face の解決にも読む)──> 台本と演技
 characters/<キャスト>.persona.yaml ──(関係。人が読む)──> 掛け合いの型
 ```
@@ -218,6 +219,34 @@ pair:
 
 ---
 
+## `research/` — 調査の台帳（作品が持つ。任意）
+
+**焼く前の段。** 題材が決まったら、設計より先に検索・取得・検証を行い、事実を台帳に
+残す。`make.sh` はここを読むだけで、**検索も取得もしない**。
+
+```
+research/
+  README.md       この作品の調査の目的・範囲・更新の仕方
+  queries.md      検索語、当たった資料、分かったこと・分からなかったこと、訂正
+  sources.yaml    出典（id / title / kind / url or path / accessed / confidence）
+  notes/<id>.md   出典ごとの抜き書き（短い引用・頁・単位・分母）
+  facts.yaml      映像に使う事実（id / statement / sources / confidence / used_by）
+```
+
+- **`sources.yaml`** の `kind` は `official` / `paper` / `reference` / `news` /
+  `in-work`。`in-work` は作品内の予測・演出（例: 99.8% は記録ではなく作品の値）。
+  `url` か `path` のどちらかを持ち、`accessed` は `YYYY-MM-DD`（**引用符で囲む**）。
+- **`facts.yaml`** は 1 fact = 1 主張。`sources` は 1 つ以上で `sources.yaml` の id を指す。
+  `confidence` は `high` / `medium` / `low`。
+- **`video.yaml` の `details[].fact`** が fact の id を指す。カードの文は fact の範囲を
+  出ない。`confidence: low` の fact をカードに使うと `scriptcheck.py` が警告する。
+- 形は `schemas/research.schema.json`。**参照の検査は `scriptcheck.py`**
+  （`details` があるのに `research/` が無い → 警告、未知の fact → エラー、
+  fact の `sources` が解決しない → エラー）。
+- 台帳は**入力**（テキスト）なので Git に入れる。`build/` へ移さない。
+
+---
+
 ## `design.md` — 設計（作品が持つ。任意）
 
 台本を書く前の設計。題材・視聴者・約束・事実の柱・**説明の鎖**・章・二人の役割・
@@ -226,7 +255,8 @@ pair:
 
 **説明の鎖**は、視聴者が台本だけで復元できる問い（3〜7 個）と、それを平文で言う
 場所の対応。**主題（約束）はここに入れない。** 主題は言わない。事実と因果は言う。
-この表が `review/viewers/<版>/facts.yaml` の元になる。
+この表が `review/viewers/<版>/facts.yaml` の元になる。事実の値は `research/facts.yaml`
+と揃える（設計・門・カードで別の数を言わない）。
 
 ---
 
@@ -276,14 +306,31 @@ width: 1280                    # 省略時 1280
 height: 720                    # 省略時 720
 fps: 30                        # 省略時 30
 chapters:                      # cue の名 → 章
-  c07: {label: 第1章, title: 入力が、命令になる, term: 入力,
-        key: "信じた文字列が、\n実行される。"}
+  c07:
+    label: 第1章
+    title: 入力が、命令になる
+    term: 入力
+    key: "信じた文字列が、\n実行される。"
+    details:                   # 任意。章の中で切り替わる詳細カード
+      - cue: c09               # この章の cue。この頭で切り替わる
+        head: 命令の形
+        lines: ["一文に、一つの動作", "目的語を先に置く"]
+        fact: input-command-form   # research/facts.yaml の id（任意）
 display:                       # cue の名 → 字幕の文（原表記）
   c05: "20年も？"
 ```
 
-- **`chapters` の中身は型が決める。** `export_timeline` は素通しするだけ。
-  `dialogue-bust` は `term` と `key` を読み、`narrate-slide` は `bullets`（配列）を読む。
+- **`chapters` の中身は型が決める。** `export_timeline` は `details` の `cue` だけを
+  時刻へ解決し、他は素通しする。`dialogue-bust` は `term` / `key` / `details` を読み、
+  `narrate-slide` は `bullets`（配列）を読む。
+- **`details`** は `cue` / `head` / `lines`（1〜4 項目）が必須で、`fact` は任意。
+  `cue` は**その章の範囲**（章の頭 cue 以上、次の章の頭 cue 未満）にあり、台本順に
+  増えること。`head` と `lines` は改行せず、`lines` の各項目を 1 表示行に割っておく。
+  **詳細の無い章・作品は、従来どおり `key` 1 枚**で焼ける（後方互換）。
+- **検査の分担。** `scriptcheck.py` は形・所属・順序・容量・fact の参照を見る
+  （古い `mix.yaml` でも走る）。実尺が要る検査——次のカードまでの可視時間
+  **4.0 秒未満**、章の `start` より前、最初のカードが章の頭 cue と同じ——は
+  `export_timeline.py` が**警告**として出す（TTS の実尺で変わるため止めない）。
 - **`display` は「音の表記」と「字幕の表記」を割るための欄。** `line` はカタカナで
   読ませ、字幕は原表記で出す、という使い方をする。無い cue は `line` がそのまま出る。
 
@@ -325,9 +372,15 @@ cue の名の配列。`assemble.py` がこの cue の手前にチャイムを置
            "react": {"mirai": {"face": "thinking", "beat": "doubt", "mark": "？"}},
            "chapter": 0}],
  "chapters": [{"cue": "c01", "index": 0, "label": "序章", "title": "...",
-               "start": 0.4, "cue_start": 2.0, "...": "型が読む欄は素通し"}]
+               "start": 0.4, "cue_start": 2.0, "...": "型が読む欄は素通し",
+               "details": [{"cue": "c03", "head": "...", "lines": ["..."],
+                            "fact": "...", "start": 9.74}]}]
 }
 ```
+
+**`details` の `start` は `mix.yaml` の voice stem の実尺**（`export_timeline.py` が
+`cue` を解決して足す）。`timeline.json` は cue 名を引かずに自己完結する。
+`details` を持たない章には、この欄を**足さない**（従来の形を変えない）。
 
 `wav` は**キュー単体の WAV**。口の動きはこの 1 本の包絡から作る——
 `duration` の WAV から切り出すのでなく、cue ごとのファイルを測る。
@@ -366,7 +419,8 @@ characters/<id>.character.yaml             人物票・一人 1 ファイル（�
 characters/<キャスト>.persona.yaml         キャストの関係（配布する）
 references/sheets/                        表情シート（入力。Git LFS）
 projects/<作品>/                            台本（script / video / chapters / voice_fx /
-                                          design / reading / bgm / review）
+                                          design / reading / bgm / research / review）
+projects/<作品>/research/                   調査の台帳（sources / facts / notes / queries）
 projects/<作品>/review/acting/             感情の弧（plan.md）と版ごとの計測（vN.yaml）
 projects/<作品>/review/viewers/            初見復元テストと説明の評価（vN/ と vN.yaml）
 projects/<作品>/assets/                     音の資材（voice / sfx / bgm）— Git LFS

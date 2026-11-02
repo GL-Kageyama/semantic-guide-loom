@@ -1,0 +1,132 @@
+facts:
+  - id: launch-orbit
+    statement: 1990年4月24日、ディスカバリー STS-31 で打ち上げ。軌道は高度約483km、周期約95分。
+    sources: [nasa-observatory, nasa-10-years]
+    confidence: high
+    used_by: [c003]
+
+  - id: mirror-spec
+    statement: 主鏡は直径2.4m、828kg、ULEガラス。表面の凹凸は1µm未満。
+    sources: [nasa-optics]
+    confidence: high
+    used_by: [c006]
+
+  - id: current-location-99-8
+    statement: 99.8%は記録された数字ではなく、二つの記録の一致率として作品内で出した値。分母は記録の全体。
+    sources: [hubble-script, hubble-review-facts]
+    confidence: high
+    used_by: [c032]
+
+  - id: first-light
+    statement: 1990年5月20日、最初の観測。星は点にならず、にじんだ。
+    sources: [nasa-first-light, nasa-mirror-flaw]
+    confidence: high
+    used_by: [c045]
+
+  - id: prediction-97
+    statement: 97%は研磨の記録から出した作品内の予測。鏡は許容範囲にある「はず」とされた。
+    sources: [hubble-script, hubble-review-facts]
+    confidence: high
+    used_by: [c055]
+
+  - id: flaw-2-2um
+    statement: 主鏡の縁は設計より約2.2µm平ら（球面収差）。光が一点に集まらず、鏡は壊れていない。1990年6月27日に公表。
+    sources: [physics-today-blurry, nasa-mirror-flaw]
+    confidence: high
+    used_by: [c061]
+
+  - id: 97-meaning
+    statement: 97%は削った側の形（鏡の表面の削り方）を測った値。縁の平らさは出ない。検査は正しく動いていた。
+    sources: [hubble-script, hubble-review-facts]
+    confidence: high
+    used_by: [c072]
+
+  - id: null-corrector
+    statement: 反射式 null corrector は、装置の中のレンズの位置を基準に鏡の形を光で測る。
+    sources: [ntrs-allen, hubble-script]
+    confidence: high
+    used_by: [c088]
+
+  - id: field-lens-1-3mm
+    statement: 基準の field lens が1.3mmずれていた。原因は metering rod のキャップ。許容の10倍。鏡はその基準で磨かれた。
+    sources: [nasa-mirror-flaw, ntrs-allen]
+    confidence: high
+    used_by: [c102]
+
+  - id: refractive-test
+    statement: 屈折式（inverse）検査は球面収差を示したが、数字ではなく装置の種類（反射の方が正確という前提）で退けられた。
+    sources: [nature-346-599, ntrs-allen]
+    confidence: high
+    used_by: [c125]
+
+  - id: paper-label
+    statement: 退けられた日の紙には誤差の曲線が刷られ、端が折れていた。ラベルは「精度が低い」で、誰も読み上げなかった。
+    sources: [hubble-script, hubble-review-facts]
+    confidence: high
+    used_by: [c137]
+
+  - id: ruler
+    statement: Roger Angel は、1.3mm はプラスチックの定規でも測れる差だと指摘した。誰も測らなかった。
+    sources: [nature-346-599]
+    confidence: high
+    used_by: [c159]
+
+  - id: denominator
+    statement: 分母を出さない百分率は出さない。現在地は一つの数字ではない。
+    sources: [hubble-script]
+    confidence: high
+    used_by: [c172]
+
+  - id: back-of-paper
+    statement: 紙は薄く、灯りにかざすと線が透ける。表のラベルが線を隠す。次は裏から読む。
+    sources: [hubble-script]
+    confidence: high
+    used_by: [c185]
+
+  - id: sm1
+    statement: 1993年12月、STS-61。エンデバーが追いつき、5回の船外活動。総船外活動35時間28分。
+    sources: [nasa-sm1-timeline, esa-sm1]
+    confidence: high
+    used_by: [c192]
+
+  - id: costar
+    statement: COSTAR は光を補正する装置。鏡の前に置き、誤差と反対の形を光の入り口で作る。鏡は削らない。
+    sources: [nasa-sm1-timeline, hubble-script]
+    confidence: high
+    used_by: [c197]
+
+  - id: wfpc2
+    statement: WFPC2 は新しいカメラ。COSTAR の補正を受けた光で像を写す。鏡を直すのではなく、光を直す。
+    sources: [nasa-sm1-timeline, hubble-script]
+    confidence: high
+    used_by: [c204]
+
+  - id: first-corrected
+    statement: 1994年1月13日、補正後の最初の像（M100、約30光年）が公開された。
+    sources: [stsci-1994-01]
+    confidence: high
+    used_by: [c209]
+
+  - id: hdf-observation
+    statement: 1995年12月18–28日、10日間・342回の露出・150周の軌道を予定・4つのフィルター・合計100時間超。
+    sources: [nasa-hdf, esa-hdf]
+    confidence: high
+    used_by: [c238, c240]
+
+  - id: hdf-galaxies
+    statement: 1,500個から約3,000個の銀河。天域は満月の約1/30、硬貨を75フィート先に見る大きさ。1996年1月15日公開。
+    sources: [nasa-hdf, esa-hdf, stsci-1996-01]
+    confidence: high
+    used_by: [c241]
+
+  - id: hdf-no-reference
+    statement: この像には比べる参照像がない。正しさを外から確かめられず、分母が言えない。数字ではなく横線で示す。
+    sources: [hubble-script]
+    confidence: high
+    used_by: [c249]
+
+  - id: line
+    statement: 折れた端からラベルが浮き、下から線が出る。線は縁が平らすぎると言っていた。数字にせず、線のまま残す。
+    sources: [hubble-script]
+    confidence: high
+    used_by: [c282]

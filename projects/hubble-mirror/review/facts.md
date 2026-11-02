@@ -1,5 +1,9 @@
 # 事実確認 — hubble-mirror
 
+> この表は **v12 台本の門の記録**。表は書き換えない。詳細カード（`video.yaml` の
+> `details`）の事実は `../research/facts.yaml` が正本で、出典は
+> `../research/sources.yaml`、抜き書きは `../research/notes/` に在る。
+
 公開されている NASA の記録の範囲で書く。**台本の台詞は、この表の外の数値を名乗らない。**
 
 | 事実 | 出典 | 確度 |

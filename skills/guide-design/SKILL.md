@@ -18,8 +18,11 @@ argument-hint: '題材か作品の置き場。例: 新入社員向けの経費�
 2. `references/design-sheet.md` の型で `design.md` を書く。章は「情報の順番」ではなく
    **問いの順番**で並べる。各章に「この章が開く問い」と「どこへ落ちるか」を書く。
 3. **事実の柱を分ける。** 日付・固有名・数値・引用は、出典と確度を添えて列挙する。
-   演出で足す比喩・場面・会話は、事実の柱と混ぜない。確認は `research-verify` の
-   手順で行い、結果を `projects/<作品>/review/facts.md` に残す。
+   演出で足す比喩・場面・会話は、事実の柱と混ぜない。確認は
+   [guide-research](../guide-research/SKILL.md) の手順で先に行い、結果を
+   `projects/<作品>/research/facts.yaml` に残す。設計と詳細カードはその fact の
+   id を引く。**焼く時に検索しない。**（`review/facts.md` は台本の門が使った
+   事実の記録で、正本は `research/facts.yaml`。）
 4. **二人の役割を決める。** 誰が問い、誰が予測し、誰が具体で崩すか。名前はここでは
    `characters/<キャスト>.cast.yaml` の id で書き、固有名は書かない。
 5. **設計を評議会に掛ける。** `story-council` の plot モード（本文ではなく構想を評価）で、

@@ -13,6 +13,7 @@
 | `persona.schema.json` | `persona.yaml`（キャストの関係） | `characters/<キャスト>.persona.yaml` |
 | `reading.schema.json` | `reading.yaml`（声に読ませる読み） | `projects/<作品>/reading.yaml` |
 | `bgm.schema.json` | `bgm.yaml`（敷き音の意図とミックス） | `projects/<作品>/bgm.yaml` |
+| `research.schema.json` | `research/sources.yaml` と `research/facts.yaml`（調査の台帳） | `projects/<作品>/research/` |
 | `viewer.schema.json` | 初見の視聴者テストの返答（JSON） | `projects/<作品>/review/viewers/<版>/r*.json` |
 
 `viewer.schema.json` だけは YAML ではなく JSON。文学評議会の report とは別の台帳で、
@@ -47,11 +48,14 @@ check("schemas/character.schema.json", "characters/*.character.yaml")
 check("schemas/persona.schema.json",   "characters/*.persona.yaml")
 check("schemas/reading.schema.json",   "projects/*/reading.yaml")
 check("schemas/bgm.schema.json",       "projects/*/bgm.yaml")
+check("schemas/research.schema.json",  "projects/*/research/sources.yaml")
+check("schemas/research.schema.json",  "projects/*/research/facts.yaml")
 check("schemas/viewer.schema.json",    "projects/*/review/viewers/*/r*.json")
 PY
 ```
 
-`tools/check_layout.py` が上の 8 つをまとめて走らせる。
+`tools/check_layout.py` が上の 10 件（9 つの schema。`research` は 2 ファイルに当てる）を
+まとめて走らせる。
 
 ## 欄を足すとき
 

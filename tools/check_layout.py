@@ -55,6 +55,8 @@ SCHEMAS = [
     ("schemas/character.schema.json", "characters/*.character.yaml"),
     ("schemas/reading.schema.json", "projects/*/reading.yaml"),
     ("schemas/bgm.schema.json", "projects/*/bgm.yaml"),
+    ("schemas/research.schema.json", "projects/*/research/sources.yaml"),
+    ("schemas/research.schema.json", "projects/*/research/facts.yaml"),
     ("schemas/viewer.schema.json", "projects/*/review/viewers/*/r*.json"),
 ]
 

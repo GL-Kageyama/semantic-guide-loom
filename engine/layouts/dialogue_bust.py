@@ -40,8 +40,92 @@ def make_bg(w: int, h: int) -> Image.Image:
     return im.convert("RGB")
 
 
-def make_panel(ch: dict, idx: int, total: int, w: int, h: int) -> Image.Image:
-    """中央の章の札。1 章ぶんを 1 枚に焼く。"""
+def _header(ch: dict, idx: int, total: int, x0: int, y0: int, x1: int,
+            im: Image.Image | None = None) -> int:
+    """章のヘッダを描き、本文（key / 詳細）の開始 y を返す。
+
+    `im=None` なら描かずに測るだけ。`text_img` は 8px の余白を足すので、
+    測る側も同じ helper を通す（固定値を書かない）。
+    """
+    p = K.TPL["panel"]
+    pad = K.S(p["pad"])
+    d = ImageDraw.Draw(im) if im is not None else None
+    y = y0 + pad
+    if d is not None:
+        d.text((x0 + pad, y), ch["label"],
+               font=K.font(p["label"]["size"], p["label"]["bold"]),
+               fill=K.C("accent"))
+        tag = f"{idx + 1} / {total}"
+        tfnt = K.font(p["tag"]["size"])
+        d.text((x1 - pad - tfnt.getlength(tag), y + K.S(p["tag"]["dy"])), tag,
+               font=tfnt, fill=K.C("panel_tag"))
+    y += K.S(p["rule_dy"])
+    if d is not None:
+        d.line([x0 + pad, y, x1 - pad, y], fill=K.C("panel_rule"),
+               width=K.S(p["outline_width"]))
+    y += K.S(p["after_rule_dy"])
+    # ことば（大きく）
+    term = K.text_img([ch["term"]], K.font(p["term"]["size"], p["term"]["bold"]),
+                      K.C("ink"), K.S(0), align="left")
+    if im is not None:
+        im.alpha_composite(term, (x0 + pad - K.S(4), y))
+    y += term.height + K.S(p["after_term_dy"])
+    tf = K.font(p["title"]["size"], p["title"]["bold"])
+    for line in K.wrap_jp(ch["title"], tf, x1 - x0 - pad * 2):
+        t = K.text_img([line], tf, K.C("warm"), 0, align="left")
+        if im is not None:
+            im.alpha_composite(t, (x0 + pad - K.S(4), y))
+        y += K.S(p["title"]["step"])
+    y += K.S(p["after_title_dy"])
+    sr = p["short_rule"]
+    if d is not None:
+        d.line([x0 + pad, y, x0 + pad + K.S(sr["width"]), y],
+               fill=K.rgba(sr["color"]), width=K.S(sr["thickness"]))
+    y += K.S(p["after_short_dy"])
+    return y
+
+
+def detail_geometry(ch: dict) -> dict:
+    """章題の行数から、詳細カードの本文開始と容量を出す。
+
+    `dialogue_bust` の `panel.detail` が無い型では呼ばない。
+    """
+    p = K.TPL["panel"]
+    detail = p.get("detail")
+    if not detail:
+        raise ValueError("panel.detail が型に無い")
+    x0, y0, x1, y1 = (K.S(v) for v in p["box"])
+    body_top = _header(ch, 0, 1, x0, y0, x1)
+    pad = K.S(p["pad"])
+    head_cfg = detail["head"]
+    line_cfg = detail["line"]
+    head_font = K.font(head_cfg["size"], head_cfg.get("bold", False))
+    line_font = K.font(line_cfg["size"], line_cfg.get("bold", False))
+    head_h = sum(head_font.getmetrics())
+    line_h = sum(line_font.getmetrics())
+    gap = K.S(detail.get("head_gap", 6))
+    step = K.S(line_cfg["step"])
+    bottom = y1 - pad
+    first_line = body_top + head_h + gap
+    computed = (0 if bottom < first_line + line_h
+                else (bottom - first_line - line_h) // step + 1)
+    capacity = min(int(detail.get("max_lines", computed)), computed)
+    return {
+        "body_top": body_top,
+        "bottom": bottom,
+        "capacity": max(0, capacity),
+        "inner_width": x1 - x0 - pad * 2,
+        "head_font": head_font,
+        "line_font": line_font,
+        "head_h": head_h,
+        "line_h": line_h,
+        "step": step,
+    }
+
+
+def make_panel(ch: dict, idx: int, total: int, w: int, h: int,
+               card: dict | None = None) -> Image.Image:
+    """中央の章の札。1 章ぶん（または詳細カード 1 枚）を焼く。"""
     p = K.TPL["panel"]
     x0, y0, x1, y1 = (K.S(v) for v in p["box"])
     im = Image.new("RGBA", (w, h), (0, 0, 0, 0))
@@ -49,31 +133,17 @@ def make_panel(ch: dict, idx: int, total: int, w: int, h: int) -> Image.Image:
     d.rounded_rectangle([x0, y0, x1, y1], radius=K.S(p["radius"]), fill=K.C("panel_fill"),
                         outline=K.C("panel_line"), width=K.S(p["outline_width"]))
     pad = K.S(p["pad"])
-    y = y0 + pad
-    d.text((x0 + pad, y), ch["label"], font=K.font(p["label"]["size"], p["label"]["bold"]),
-           fill=K.C("accent"))
-    tag = f"{idx + 1} / {total}"
-    tfnt = K.font(p["tag"]["size"])
-    d.text((x1 - pad - tfnt.getlength(tag), y + K.S(p["tag"]["dy"])), tag, font=tfnt,
-           fill=K.C("panel_tag"))
-    y += K.S(p["rule_dy"])
-    d.line([x0 + pad, y, x1 - pad, y], fill=K.C("panel_rule"), width=K.S(p["outline_width"]))
-    y += K.S(p["after_rule_dy"])
-    # ことば（大きく）
-    term = K.text_img([ch["term"]], K.font(p["term"]["size"], p["term"]["bold"]), K.C("ink"),
-                      K.S(0), align="left")
-    im.alpha_composite(term, (x0 + pad - K.S(4), y))
-    y += term.height + K.S(p["after_term_dy"])
-    tf = K.font(p["title"]["size"], p["title"]["bold"])
-    for line in K.wrap_jp(ch["title"], tf, x1 - x0 - pad * 2):
-        t = K.text_img([line], tf, K.C("warm"), 0, align="left")
-        im.alpha_composite(t, (x0 + pad - K.S(4), y))
-        y += K.S(p["title"]["step"])
-    y += K.S(p["after_title_dy"])
-    sr = p["short_rule"]
-    d.line([x0 + pad, y, x0 + pad + K.S(sr["width"]), y],
-           fill=K.rgba(sr["color"]), width=K.S(sr["thickness"]))
-    y += K.S(p["after_short_dy"])
+    y = _header(ch, idx, total, x0, y0, x1, im)
+    if card is not None:
+        detail = p["detail"]
+        hf = K.font(detail["head"]["size"], detail["head"].get("bold", False))
+        lf = K.font(detail["line"]["size"], detail["line"].get("bold", False))
+        d.text((x0 + pad, y), card["head"], font=hf, fill=K.C("warm"))
+        y += sum(hf.getmetrics()) + K.S(detail.get("head_gap", 6))
+        for line in card["lines"]:
+            d.text((x0 + pad, y), line, font=lf, fill=K.C("ink"))
+            y += K.S(detail["line"]["step"])
+        return im
     kf = K.font(p["key"]["size"])
     key_lines: list[str] = []
     for seg in ch["key"].split("\n"):
@@ -105,11 +175,66 @@ def make_subtitle(text: str) -> Image.Image:
     return im
 
 
+def _validate_card(ch: dict, card: dict, geo: dict) -> None:
+    tag = f"{ch.get('cue', '?')} / {card.get('cue', '?')}"
+    head = card.get("head")
+    if not isinstance(head, str) or not head or "\n" in head:
+        raise ValueError(f"{tag}: 詳細カードの head が空か、改行を含む")
+    lines = card.get("lines")
+    if not isinstance(lines, list) or not lines:
+        raise ValueError(f"{tag}: 詳細カードの lines が空")
+    if len(lines) > geo["capacity"]:
+        raise ValueError(
+            f"{tag}: 詳細カードが {len(lines)} 行（容量 {geo['capacity']} 行）"
+        )
+    if "warm" not in K.PAL or "ink" not in K.PAL:
+        raise ValueError(f"{tag}: palette に warm / ink が無い")
+    if geo["head_font"].getlength(head) > geo["inner_width"]:
+        raise ValueError(f"{tag}: head が 1 行に収まらない（{head!r}）")
+    for line in lines:
+        if not isinstance(line, str) or not line or "\n" in line:
+            raise ValueError(f"{tag}: lines に空文字か改行がある")
+        if geo["line_font"].getlength(line) > geo["inner_width"]:
+            raise ValueError(
+                f"{tag}: 行が内側 {geo['inner_width']}px に収まらない（{line!r}）"
+            )
+
+
 def build(tl: dict, cast: K.Cast, fps: int, W: int, H: int):
     timing = K.TPL["timing"]
     bg = make_bg(W, H)
-    panels = [make_panel(ch, ch["index"], len(tl["chapters"]), W, H)
-              for ch in tl["chapters"]]
+
+    detail_cfg = (K.TPL.get("panel") or {}).get("detail")
+    use_cards = bool(detail_cfg) and any(ch.get("details") for ch in tl["chapters"])
+    panels: list[Image.Image] = []
+    card_rows: list[list[tuple[float, Image.Image]]] | None = None
+    crop_box: tuple[int, int, int, int] | None = None
+    if use_cards:
+        p = K.TPL["panel"]
+        x0, y0, x1, y1 = (K.S(v) for v in p["box"])
+        margin = K.S(int(p.get("outline_width", 2)) + 2)
+        crop_box = (max(0, x0 - margin), max(0, y0 - margin),
+                    min(W, x1 + margin + 1), min(H, y1 + margin + 1))
+        card_rows = []
+        for ch in tl["chapters"]:
+            geo = detail_geometry(ch)
+            rows = [(float(ch["start"]),
+                     make_panel(ch, ch["index"], len(tl["chapters"]), W, H).crop(crop_box))]
+            for card in ch.get("details") or []:
+                _validate_card(ch, card, geo)
+                rows.append((float(card["start"]),
+                             make_panel(ch, ch["index"], len(tl["chapters"]), W, H,
+                                        card=card).crop(crop_box)))
+            for prev, cur in zip(rows, rows[1:]):
+                if cur[0] <= prev[0]:
+                    raise ValueError(
+                        f"{ch.get('cue', '?')} / {cur[0]}: 詳細カードの時刻が増えていない"
+                    )
+            card_rows.append(rows)
+    else:
+        panels = [make_panel(ch, ch["index"], len(tl["chapters"]), W, H)
+                  for ch in tl["chapters"]]
+
     subs = {c["name"]: make_subtitle(c["text"]) for c in tl["cues"] if c["text"]}
 
     # 口の列（口パクをする側だけ）
@@ -279,10 +404,26 @@ def build(tl: dict, cast: K.Cast, fps: int, W: int, H: int):
         im = bg.copy()
         ch_idx = chapter_idx_at(t)
         if ch_idx >= 0:
-            p = panels[ch_idx]
             slide = K.S(10) * max(0.0, 1.0 - (t - tl["chapters"][ch_idx]["start"])
                                   / timing["chapter_slide"])
-            im.paste(p, (0, int(slide)), p)
+            if card_rows is not None and crop_box is not None:
+                rows = card_rows[ch_idx]
+                starts = [row[0] for row in rows]
+                ci = bisect.bisect_right(starts, t) - 1
+                if ci < 0:
+                    ci = 0
+                p = rows[ci][1]
+                if ci > 0:
+                    fade_s = float(timing.get("detail_fade", 0.30))
+                    gap = starts[ci] - starts[ci - 1]
+                    fade_s = min(fade_s, gap)
+                    age = t - starts[ci]
+                    if fade_s > 0 and 0.0 <= age < fade_s:
+                        p = Image.blend(rows[ci - 1][1], p, smooth(age / fade_s))
+                im.paste(p, (crop_box[0], crop_box[1] + int(slide)), p)
+            else:
+                p = panels[ch_idx]
+                im.paste(p, (0, int(slide)), p)
 
         cur = cue_at(t)
         speaker = (cur["character"] if cur and t <= cur["end"] + timing["speaker_tail"]

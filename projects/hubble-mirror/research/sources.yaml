@@ -1,0 +1,112 @@
+sources:
+  - id: nasa-optics
+    title: Hubble Observatory — Optics
+    kind: official
+    url: https://science.nasa.gov/mission/hubble/observatory/design/optics/
+    accessed: "2026-11-03"
+    confidence: high
+
+  - id: nasa-observatory
+    title: Hubble Observatory
+    kind: official
+    url: https://science.nasa.gov/mission/hubble/observatory/
+    accessed: "2026-11-03"
+    confidence: high
+
+  - id: nasa-first-light
+    title: Hubble's First Light
+    kind: official
+    url: https://science.nasa.gov/mission/hubble/overview/hubbles-first-light/
+    accessed: "2026-11-03"
+    confidence: high
+
+  - id: nasa-mirror-flaw
+    title: Hubble's Mirror Flaw
+    kind: official
+    url: https://science.nasa.gov/mission/hubble/observatory/design/optics/hubbles-mirror-flaw/
+    accessed: "2026-11-03"
+    confidence: high
+
+  - id: nasa-sm1-timeline
+    title: Servicing Mission 1 Timeline
+    kind: official
+    url: https://science.nasa.gov/mission/hubble/observatory/missions-to-hubble/servicing-mission-1-timeline-full-text/
+    accessed: "2026-11-03"
+    confidence: high
+
+  - id: nasa-hdf
+    title: Hubble's Deepest View of the Universe
+    kind: official
+    url: https://science.nasa.gov/missions/hubble/hubbles-deepest-view-of-the-universe-unveils-bewildering-galaxies-across-billions-of-years/
+    accessed: "2026-11-03"
+    confidence: high
+
+  - id: nasa-10-years
+    title: April 24 Marks a Triumphant Ten Years in Space for Hubble Space Telescope
+    kind: official
+    url: https://science.nasa.gov/missions/hubble/april-24-marks-a-triumphant-ten-years-in-space-for-hubble-space-telescope/
+    accessed: "2026-11-03"
+    confidence: high
+
+  - id: esa-sm1
+    title: Hubble Servicing Mission 1
+    kind: official
+    url: https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Hubble_Telescope_1_SUP_st_SUP_Servicing_Mission
+    accessed: "2026-11-03"
+    confidence: high
+
+  - id: esa-hdf
+    title: Hubble Deep Fields
+    kind: official
+    url: https://esahubble.org/science/deep_fields/
+    accessed: "2026-11-03"
+    confidence: high
+
+  - id: physics-today-blurry
+    title: Hubble's Blurry Years
+    kind: reference
+    url: https://physicstoday.aip.org/features/hubbles-blurry-years
+    accessed: "2026-11-03"
+    confidence: high
+
+  - id: ntrs-allen
+    title: The Hubble Space Telescope Optical Systems Failure Report (NASA-TM-103443)
+    kind: paper
+    url: https://ntrs.nasa.gov/citations/19910003124
+    accessed: "2026-11-03"
+    confidence: high
+
+  - id: nature-346-599
+    title: Nature 346, 599 (1990)
+    kind: paper
+    url: https://www.nature.com/articles/346599b0
+    accessed: "2026-11-03"
+    confidence: high
+
+  - id: stsci-1994-01
+    title: Hubble's First Corrected Image (M100)
+    kind: official
+    url: https://www.stsci.edu/contents/news-releases/1994/news-1994-01
+    accessed: "2026-11-03"
+    confidence: high
+
+  - id: stsci-1996-01
+    title: Hubble Deep Field release
+    kind: official
+    url: https://www.stsci.edu/contents/news-releases/1996/news-1996-01
+    accessed: "2026-11-03"
+    confidence: high
+
+  - id: hubble-script
+    title: 台本 v12（cue の事実）
+    kind: in-work
+    path: projects/hubble-mirror/script.yaml
+    accessed: "2026-11-03"
+    confidence: high
+
+  - id: hubble-review-facts
+    title: v12 事実確認の記録
+    kind: in-work
+    path: projects/hubble-mirror/review/facts.md
+    accessed: "2026-11-03"
+    confidence: high

@@ -102,6 +102,17 @@ v12 は字幕を 27 字以内に割ったため cue が増えた。聞き手の�
 `compare/v1/`、`compare/v6/`、`compare/v12/` に、同じ 7 場面のフレームを置く
 （99.8% / 最初の一枚 / 鏡は壊れていない / 99.4% / 1.3 ミリ / 机の上の紙 / 告白）。
 
+### 詳細カード（0.5.0）
+
+0.5.0 で中央パネルを広げ、章のヘッダ（label / term / title / key）を保ったまま、
+その下の本文だけが章の中で 23 回切り替わるようにした。**台本・声は v12 のまま**
+（`script.yaml` / `台本.md` は変えていない）。カードの事実は
+[`../research/facts.yaml`](../research/facts.yaml) から引き、出典は
+[`../research/sources.yaml`](../research/sources.yaml) に在る。
+
+`compare/details/` に、各章のカードと切替の前後を代表フレームで置く。
+点数・採用の記述は変えない（評価したのは台本であって、絵ではない）。
+
 ## 置き場
 
 ```
@@ -114,7 +125,7 @@ review/
                    v1/ v2/ v3/ は 8 本）
   viewers/         v6〜v12 の門の記録と baseline-plain/
   acting/          v1.yaml / v6.yaml / v12.yaml（演技の計測）と plan.md
-  compare/         v1/ v6/ v12/（同じ場面のフレーム）
+  compare/         v1/ v6/ v12/（同じ場面のフレーム）と details/（0.5.0 の詳細カード）
   archive/         v1 の script.yaml / video.yaml / reading.yaml
   design/          設計の評議会（v1 / v2 / v2.1 / v2.2）
 ```

@@ -45,8 +45,8 @@ background:
 
 # 立ち位置。作品のキャストは slot の名で座る（cast.yaml）。
 slots:
-  left:  {origin: [14, 184]}     # 胸像。画布の下端は枠の外へ出す
-  right: {origin: [918, 280]}    # 全身
+  left:  {origin: [0, 184]}      # 胸像。画布の下端は枠の外へ出す
+  right: {origin: [1020, 280]}   # 全身
 dim_when_silent: 0.78            # 話していない側の明度
 
 # 声の大きさ → 口の 3 状態。音素は見ない。
@@ -55,7 +55,7 @@ mouth:
   half_db: -44.0                 # これより大きければ半開、以下は閉
 
 panel:
-  box: [510, 78, 906, 556]
+  box: [492, 78, 1006, 556]
   radius: 22
   outline_width: 2
   pad: 34
@@ -70,6 +70,13 @@ panel:
   short_rule: {width: 60, thickness: 3, color: [255, 209, 102, 160]}
   after_short_dy: 22
   key:   {size: 27, step: 42}
+  # 章の中で切り替わる詳細カード。色はコード側（head=warm / lines=ink）。
+  # max_lines は上限。実際の容量は章題の行数から detail_geometry が計算する。
+  detail:
+    head: {size: 22, bold: true}
+    head_gap: 6
+    line: {size: 22, step: 27}
+    max_lines: 4
 
 subtitle:
   y: 586
@@ -102,6 +109,7 @@ timing:
   speaker_tail: 0.25       # 話し手の強調を何秒残すか
   chapter_slide: 0.45      # 札が上から滑り込む時間
   chapter_lead: 1.6        # 札を cue の何秒前から出すか（export_timeline が使う）
+  detail_fade: 0.30        # 詳細カードの切替。0 で即時
 
 # 聞き手の反応。作品の cue に `react.<id>: {face, mark}` があるときだけ出る。
 # 記号の位置は slot の origin からのずれ（720p）。時刻だけで決まり、乱数は使わない。
@@ -121,4 +129,4 @@ acting:
     rise: 10               # 消えるまでに上がる画素
     anchor:
       left: [360, 10]      # ミライの頭の右上
-      right: [200, 0]      # ミラボの右上
+      right: [160, 0]      # ミラボの右上（origin 1020 で 3 字が画布から出ない）

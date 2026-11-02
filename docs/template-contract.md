@@ -61,11 +61,40 @@ timing:
 ### `dialogue-bust` が持つ欄
 
 `slots`（立ち位置）、`dim_when_silent`、`mouth`（声 → 口の 3 状態の閾値）、
-`panel`（章の札）、`subtitle`、`header`、`acting`（聞き手の反応と記号）。
+`panel`（章の札と詳細カード）、`subtitle`、`header`、`acting`（聞き手の反応と記号）。
 全欄は `references/templates/dialogue-bust/template.yaml` を見る。
 
 `acting` の形は下の「演技の描画」を見る。**`acting` が無ければ、反応も記号も
 描かない**（古い作品は今までどおり）。
+
+### 詳細カード — `panel.detail`（`dialogue-bust`）
+
+`video.yaml` の `chapters[].details` を、章のヘッダ（label / term / title / key）の
+下で切り替える。**ヘッダは動かない。** `details` が無い章・作品は、今までどおり
+`key` 1 枚を章の間ずっと貼る（`panel.detail` の無い古い型も同じ）。
+
+```yaml
+panel:
+  detail:
+    head: {size: 22, bold: true}   # 見出し。色は layout が warm
+    head_gap: 6
+    line: {size: 22, step: 27}     # 本文。色は layout が ink
+    max_lines: 4                   # 章題が 1 行のときの上限
+
+timing:                            # 同じ template.yaml の別の節
+  detail_fade: 0.30                # カードの切替のクロスフェード（0 で即時）
+```
+
+- **容量は章題の行数から決まる。** 本文の開始はヘッダが描き終わる y、下端は箱の
+  下端 − pad。1 行章題なら **4 行**、2 行章題なら **3 行**（720p 実測）。`max_lines` は
+  上限で、実容量を超える指定は実容量で切られる。`scriptcheck.py` が同じ計算で弾く。
+- **切り替えは `details[].start`（`timeline.json`）で決まる。** 1 コマは状態を
+  持たず、`bisect` でその時刻のカードを選ぶ。切替の `detail_fade` 秒だけ前後の
+  カードを `Image.blend` する。**章の切替では blend しない**（従来の slide だけ）。
+- 詳細を持つ作品だけ、パネルを**箱＋輪郭の数 px に切り詰めて**持つ（外は完全透明。
+  貼る結果はフルキャンバスと同じ）。詳細が無ければ従来の 1 枚経路のまま。
+- `head` が 1 行に収まらない・行が容量を超える・色名が無い、は**黙って切らずに
+  失敗**する（章 cue と詳細 cue を名指しする）。
 
 ### `narrate-slide` が持つ欄
 
@@ -97,7 +126,7 @@ acting:
     rise: 10               # 浮き上がる画素
     anchor:                # slot の原点からの相対位置 [x, y]
       left: [360, 10]
-      right: [200, 0]
+      right: [160, 0]      # 右の原点が右へ寄ったので、3 字が画布から出ない位置
 ```
 
 ### 顔の切り替え

@@ -45,10 +45,40 @@
         "title": {"type": "string", "description": "章の題"},
         "term": {"type": "string", "description": "dialogue-bust が読む語"},
         "key": {"type": "string", "description": "dialogue-bust が読む一行（改行可）"},
+        "details": {
+          "type": "array",
+          "description": "章の中で切り替わる詳細カード。cue の頭で切り替わる。",
+          "items": {"$ref": "#/$defs/detail"}
+        },
         "bullets": {
           "type": "array",
           "items": {"type": "string"},
           "description": "narrate-slide が読む箇条書き"
+        }
+      }
+    },
+    "detail": {
+      "type": "object",
+      "required": ["cue", "head", "lines"],
+      "additionalProperties": true,
+      "properties": {
+        "cue": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_.-]+$",
+          "description": "このカードに切り替わる章内の cue"
+        },
+        "head": {"type": "string", "minLength": 1, "description": "見出し（1 行）"},
+        "lines": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {"type": "string", "minLength": 1},
+          "description": "検証済みの事実。各項目は 1 表示行に割る"
+        },
+        "fact": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$",
+          "description": "research/facts.yaml の id"
         }
       }
     }

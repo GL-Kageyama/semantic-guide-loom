@@ -11,9 +11,10 @@ argument-hint: '(optional) 作品名か題材。例: /semantic-guide-loom projec
 
 ## 全体の流れ
 
-台本がまだ無いなら、**設計から始める**。スキルが 7 つ、焼くのが `engine/make.sh`。
+台本がまだ無いなら、**設計から始める**。スキルが 8 つ、焼くのが `engine/make.sh`。
 
 ```
+調査  guide-research  題材 → research/（出典・抜き書き・検証済みの事実）
 設計  guide-design    題材 → design.md（約束・章・事実の柱）
 人物  guide-cast      design.md + 既存台本 → characters/<id>.character.yaml + persona
 台本  guide-script    design.md + 人物 + 感情の弧 → 生成 → 評議会 → 採用版
@@ -35,6 +36,11 @@ BGM   guide-bgm       台本・章 → bgm.yaml → MusicGen → underlay.wav
 `engine/make.sh <作品>` が 5 つを順に通す。**矢印は一方向**——絵は音の実尺を読む。
 音は絵を知らない。
 
+5 段の前に **0 段（調査）** がある。題材が決まったら、設計より先に
+`guide-research` で検索・取得・検証を行い、`projects/<作品>/research/` に台帳を残す。
+設計・台本・`video.yaml` の詳細カードは、その事実 ID を引く。
+**焼く時にネットを見ない**（`make.sh` は検索も取得もしない）。
+
 `reading.yaml` があれば、2 の前に `engine/reading.py stage` が
 `build/<作品>/` に舞台を作る（`line` を読みに差し替え、`display` に原表記を補う）。
 `bgm.yaml` があれば、3 で `engine/bgm.py` が生成とミックスを行う。
@@ -44,6 +50,7 @@ BGM   guide-bgm       台本・章 → bgm.yaml → MusicGen → underlay.wav
 
 | 段 | スキル | 作るもの | 道具 |
 | --- | --- | --- | --- |
+| 調査 | `guide-research` | `projects/<作品>/research/`（出典・抜き書き・検証済みの事実） | 検索・取得（焼く前の段だけ） |
 | 設計 | `guide-design` | `projects/<作品>/design.md` | story-council（plot モード） |
 | 人物 | `guide-cast` | `characters/<id>.character.yaml` + `characters/<キャスト>.persona.yaml` | `engine/persona.py` |
 | 台本 | `guide-script` | `台本.md` → `script.yaml` / `video.yaml` / `chapters.yaml` | story-council（キャスト有 10 次元 / 語り 8 次元）・`engine/review.py`・`engine/scriptcheck.py` |
@@ -61,6 +68,8 @@ BGM   guide-bgm       台本・章 → bgm.yaml → MusicGen → underlay.wav
   感情の型を持つ。`cast.yaml` は画面、`persona.yaml` は二人の関係。
 - **演技は台詞より先に設計する。** `review/acting/plan.md` の感情の弧 → cue の
   `beat` / `face` / `speed` / `react`。`engine/acting.py audit` で測る。
+- **事実は台帳から引く。** `research/facts.yaml` は 1 fact = 1 主張。詳細カードの
+  `fact` がその id を指す。**焼く時に検索しない**——新しい事実は先に台帳へ足す。
 - **説明の門は文学評議会と別。** 評議会の 10 次元は、説明の明瞭さを測らない。
   `guide-viewer` が、台本だけを渡した初見の読者 3 人と説明の評価者 1 人で、
   因果・数字の分母・事実の網羅を見る。**平均に混ぜず、採用の前に通す。**
@@ -88,6 +97,10 @@ BGM=0 ./engine/make.sh <作品>                         # 敷き音の段を飛�
 
 ```
 projects/<作品名>/
+  research/       調査の台帳（任意。出典・抜き書き・検証済みの事実）
+    sources.yaml    出典
+    facts.yaml      映像に使う事実（details[].fact が引く）
+    notes/          出典ごとの抜き書き
   design.md       題材・約束・章・事実の柱（任意。設計から作るとき）
   reading.yaml    cue → 声に読ませる読み（任意。無ければ line をそのまま読む）
   bgm.yaml        敷き音の意図とミックス（任意。無ければ BGM の段を飛ばす）
@@ -104,20 +117,31 @@ projects/<作品名>/
 template: dialogue-bust   # references/templates/<name>/ の名
 cast: mirai-mirabo        # characters/<name>.cast.yaml の名（人物を置かない型は書かない）
 chapters:
-  c07: {label: 第1章, title: 入力が、命令になる, term: 入力, key: "..."}
+  c07:
+    label: 第1章
+    title: 入力が、命令になる
+    term: 入力
+    key: "..."
+    details:                       # 任意。章の中で切り替わる詳細カード
+      - cue: c09                   # この章の cue。この頭で切り替わる
+        head: 命令の形
+        lines: ["一文に、一つの動作", "目的語を先に置く"]
+        fact: input-command-form   # research/facts.yaml の id
 ```
 
-**章の中身は型が決める。** `dialogue-bust` は `term` と `key`、`narrate-slide` は
-`bullets`（配列）を読む。`export_timeline.py` は素通しするだけ。
+**章の中身は型が決める。** `dialogue-bust` は `term` / `key` / `details`、
+`narrate-slide` は `bullets`（配列）を読む。`export_timeline.py` は `details` の
+`cue` を `mix.yaml` の実尺へ解決して `start` を足すだけで、他は素通しする。
 
-形は `schemas/`（`video` / `template` / `cast` / `character` / `persona` / `reading` / `bgm`）。
+形は `schemas/`（`video` / `template` / `cast` / `character` / `persona` / `reading` /
+`bgm` / `research`）。
 `script.yaml` の形の正本は `semantic-audio-loom/schemas/scene.schema.json`。
 
 ## 型
 
 | 型 | 見た目 | 使うとき |
 | --- | --- | --- |
-| `dialogue-bust` | 左に人・右に相棒、中央に章の札、下に字幕 | 掛け合いで説明する |
+| `dialogue-bust` | 左に人・右に相棒、中央に章の札、下に字幕。章の中で詳細カードが切り替わる | 掛け合いで説明する |
 | `narrate-slide` | 左に章の題と箇条書き、下に字幕。人物なし | 社内説明・研修 |
 
 型は「数」（`references/templates/<型>/template.yaml`）と「並べ方」
@@ -148,6 +172,10 @@ chapters:
   まばたきはしない。
 - **行は文の切れ目で割る。** 長い行は記号も効かない。字幕の折り返しは字数で決まるので、
   27 字を超える行は先に割る。
+- **詳細カードは cue で章に留める。** `details[].cue` はその章の範囲にあり、台本順に
+  増えること。`lines` は 1 項目 1 表示行（改行しない）で 4 項目まで（章題が 2 行なら 3）。
+  字幕の繰り返しにせず、`fact` の範囲を出ない。最初のカードは章の頭 cue より後ろに置く
+  （key を読む時間を作る）。`scriptcheck.py` が形・所属・順序・容量を見る。
 - **表情シートは 4列×2行の 8 マス・背景透過。** 差し替えたら `mouth_offset` を測り直す
   （`references/sheets/README.md`）。
 - **チャイムは打音が頭から 1.4 秒以内に来るもの。** `assemble.py` は `chime.wav` を
