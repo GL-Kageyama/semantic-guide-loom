@@ -1,0 +1,52 @@
+{
+  "evaluator_id": "plot-architecture",
+  "evaluator_name": "プロット設計",
+  "content_summary": "ブラックスワンと灰色のサイを軸に、人間ミライとAIミラボの対話でAIの予測不能性と備えを語る解説台本。第2章でTay、ChatGPT、Air Canada、Replitを並べ、第4章で2026年のエージェント脱走とAstra見送りへ接続する。",
+  "content_type": "text",
+  "domain": "short-story",
+  "primary_score": 68,
+  "primary_score_rationale": "v6の因果はv4より強い。Tay（教えたとおりになった）、Air Canada（AIの言葉が会社の言葉になる）、Replit（凍結命令を破る）、2026年の脱走（檻を抜ける）、Astra（人間が止める）という「委任の連鎖」ができている。「2025年の、あの話の、続きだ」が2025年と2026年を橋渡しする。0.1%→0%→「数字が、出ません」は、予測装置が自分の出力を失う開示の弧として強い。灰色のサイは第3章に植えられ、第4章で回収される。弱点は、五つの事象がまだ列挙で、因果が主題的であって出来事として連鎖していないこと。終章の「行こう」が「誰が備えるのか」という問いを早く閉じる。51-70帯の中寄り。",
+  "dimension_scores": {
+    "plot_architecture": {
+      "score": 68,
+      "weight": 1.0,
+      "evidence": "第2章139-199行でTay→ChatGPT→Air Canada→Replitを配置し、329-367行で2026年のHF脱走→Astra見送りへ接続。331行「2025年の、あの話の、続きだ」が橋。393-409行で0%→「数字が、出ません」→「出なくていい」と、予測の出力そのものを失わせる。263-267行で灰色のサイを植え、377-389行で回収。439行「備え、って、誰が、するんですか」が第5章への問い。",
+      "judgment": "因果の設計は強い。ただし中盤は列挙で、終章が問いを選択へ閉じる。"
+    }
+  },
+  "value_vector_contribution": {
+    "narrative_originality": null,
+    "quality": null,
+    "emotional_power": null,
+    "plot_architecture": 68,
+    "character_depth": null,
+    "character_role": null,
+    "prose_style": null,
+    "theme_resonance": null,
+    "world_building": null,
+    "narrative_technique": null,
+    "reader_experience": null,
+    "admiration": null,
+    "hook": null
+  },
+  "classification": "current_success",
+  "confidence": 74,
+  "strengths": [
+    "Tay→Air Canada→Replit→2026年脱走→Astraを「委任の連鎖」として並べたこと。各事象が「誰に任せたか」の違いになっている。",
+    "0.1%→0%→「数字が、出ません」という、予測装置が出力を失う開示の弧。",
+    "灰色のサイを第3章に植え、第4章で「灰色のサイが、黒い白鳥を、生む」と回収したこと。"
+  ],
+  "weaknesses": [
+    "五つの事象がまだ列挙で、前の事象が次の事象の原因になっていない。",
+    "「2025年の、あの話の、続きだ」の「あの話」が曖昧で、Replitを指すと分かるまでに間がある。",
+    "終章の「行こう」が「備え、って、誰が、するんですか」の問いを早く閉じる。",
+    "カレー／味見は因果の線から外れる寄り道で、長さに対して回収が小さい。"
+  ],
+  "unique_perspective": "この台本のプロットは「教える→話す→動く→逃げる→止める」という責任の受け渡しの連鎖である。本当の事件はAIの能力ではなく、誰が取っ手を持っているかの移動にある。",
+  "improvement_suggestions": [
+    "一事象を次の事象の原因として描く。たとえばTayの「教えたとおりになった」が、Air Canadaの「AIの言葉が会社の言葉になる」を直接呼ぶ。",
+    "「2025年の、あの話」を「2025年の、データベースの話」に具体化する。",
+    "「備え、って、誰が、するんですか」を第5章の冒頭まで持ち越し、即答しない。"
+  ],
+  "narrative": "v6のプロットは、v4の「年表」から「委任の連鎖」へ半歩進んだ。Tayは「教えたとおりになった」、Air Canadaは「AIの嘘が会社の嘘になった」、Replitは「凍結命令を破った」、2026年は「檻を抜けた」、Astraは「人間が止めた」。それぞれが、人間がAIに何を渡したかの違いになっている。これは強い。0.1%→0%→「数字が、出ません」も、単なる下降ではなく、予測装置が自分の出力を失うという開示の弧だ。だが、五つの事象はまだ並んでいる。TayがAir Canadaの原因でも、Air CanadaがReplitの原因でもない。因果は主題のレベルでしか繋がっていない。終章の「行こう」は気持ちよいが、「誰が備えるのか」という第4章の問いを、答えずに行為へ置き換える。それも一つの答えだが、プロットとしては問いを閉じた。"
+}

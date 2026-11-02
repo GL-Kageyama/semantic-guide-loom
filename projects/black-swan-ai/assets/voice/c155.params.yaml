@@ -1,0 +1,48 @@
+name: c155
+metadata:
+  kind: cue
+  name: c155
+  character: mirai
+  sample_rate: 24000
+  duration_sec: 4.048
+  created_at: '2026-11-02T11:44:22.313045+00:00'
+parameters:
+  version: 2
+  provider: tsukasa
+  voice_profile:
+    character: ミライ
+    name_reading: みらい
+    reference_audio: gen_female_light
+    voice:
+      age: young_adult
+      gender: female
+      pitch: medium_high
+      texture: warm
+      breathiness: slight
+      resonance: chest
+  performance_spec:
+    emotion:
+      primary: neutral
+      intensity: 0.0
+    loudness:
+      effort: normal
+      volume: normal
+    prosody:
+      pace: fast
+      pitch: natural
+      intonation: neutral
+      breathiness: none
+      pauses: []
+      emphasis: []
+      breath: []
+    subtext: ''
+  dialogue: うん。予測できないものを、生む装置だ。
+  reading: ''
+  seed: 1
+  alpha: 0.35
+  beta: 0.7
+  rate_of_speech: 1.12
+  sha1: 9cd8b6e26110
+  name: c155
+  character: mirai
+  pause_before: 0.35

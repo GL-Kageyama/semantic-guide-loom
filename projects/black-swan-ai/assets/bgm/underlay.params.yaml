@@ -1,0 +1,30 @@
+name: underlay
+metadata:
+  asset_type: bgm
+  prompt: A continuous soft ambient pad, warm evolving chords, very subtle felt piano
+    notes, calm and curious, slight unease, steady background texture, no drums,
+    no vocals, low dynamic
+  provider: musicgen
+  sample_rate: 44100
+  channels: 1
+  duration: 84.82
+  composed_from: 30 秒の生成 3 本（seed 21・22・23）を 2.5 秒のクロスフェードで継いだもの
+  level: +8 dB、ピークを 0.95 でリミット（声の下でも途切れず聞こえるように）
+parameters:
+  version: 3
+  asset_type: bgm
+  provider: musicgen
+  spec:
+    duration: 30.0
+    prompt: A continuous soft ambient pad, warm evolving chords, very subtle felt
+      piano notes, calm and curious, slight unease, steady background texture,
+      no drums, no vocals, low dynamic
+  seeds: [21, 22, 23]
+  crossfade_s: 2.5
+  level_gain_db: 8.0
+  level_limit: 0.95
+  duration: 84.82
+  sample_rate: 44100
+  provider_settings:
+    tokens: 1500
+    guidance_scale: 3.0

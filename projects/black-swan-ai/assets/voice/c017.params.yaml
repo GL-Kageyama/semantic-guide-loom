@@ -1,0 +1,48 @@
+name: c017
+metadata:
+  kind: cue
+  name: c017
+  character: mirabo
+  sample_rate: 24000
+  duration_sec: 3.273
+  created_at: '2026-11-02T11:42:42.324498+00:00'
+parameters:
+  version: 2
+  provider: tsukasa
+  voice_profile:
+    character: ミラボ
+    name_reading: みらぼ
+    reference_audio: gen_machine_bright
+    voice:
+      age: young_adult
+      gender: female
+      pitch: very_high
+      texture: bright
+      breathiness: none
+      resonance: head
+  performance_spec:
+    emotion:
+      primary: joy
+      intensity: 0.25
+    loudness:
+      effort: normal
+      volume: normal
+    prosody:
+      pace: very_fast
+      pitch: natural
+      intonation: neutral
+      breathiness: none
+      pauses: []
+      emphasis: []
+      breath: []
+    subtext: ''
+  dialogue: かわいいです。98%です。
+  reading: ''
+  seed: 1
+  alpha: 0.35
+  beta: 0.7
+  rate_of_speech: 1.28
+  sha1: d9abfe7135aa
+  name: c017
+  character: mirabo
+  pause_before: 0.35

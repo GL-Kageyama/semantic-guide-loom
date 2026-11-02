@@ -1,0 +1,48 @@
+name: c166a
+metadata:
+  kind: cue
+  name: c166a
+  character: mirai
+  sample_rate: 24000
+  duration_sec: 5.173
+  created_at: '2026-11-02T12:15:26.978816+00:00'
+parameters:
+  version: 2
+  provider: tsukasa
+  voice_profile:
+    character: ミライ
+    name_reading: みらい
+    reference_audio: gen_female_light
+    voice:
+      age: young_adult
+      gender: female
+      pitch: medium_high
+      texture: warm
+      breathiness: slight
+      resonance: chest
+  performance_spec:
+    emotion:
+      primary: neutral
+      intensity: 0.0
+    loudness:
+      effort: normal
+      volume: normal
+    prosody:
+      pace: fast
+      pitch: natural
+      intonation: neutral
+      breathiness: none
+      pauses: []
+      emphasis: []
+      breath: []
+    subtext: ''
+  dialogue: 二千二十六年しちがつ。オープンエーアイの評価用エージェントが、
+  reading: ''
+  seed: 1
+  alpha: 0.35
+  beta: 0.7
+  rate_of_speech: 1.12
+  sha1: 2cac680dd423
+  name: c166a
+  character: mirai
+  pause_before: 0.28

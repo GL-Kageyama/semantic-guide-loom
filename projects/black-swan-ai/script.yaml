@@ -1,0 +1,353 @@
+# 解説動画『ブラックスワンとAIの発展 — 「ありえない」は、なぜ起きるのか』
+# ミライ（人）とミラボ（AIパートナー）の掛け合い。
+# 採用版は review/README.md の v7（評議会 平均 67.25）。
+#
+# 台詞の文割りは 台本.md のまま。長い行だけ、意味の切れ目で cNNNb に割った。
+# 読みは line、字幕の原表記は video.yaml の display（英字の固有名だけ）。
+# 演技は効く欄だけ: 文末記号・speed・pause_before・volume・emotion（粗いスイッチ）。
+# 序章・各章の頭は 1.6 秒（チャイムが 1.6 秒手前に鳴る）。
+
+name: black-swan-ai
+default_pause: 0.25
+cues:
+  # ── 序章 黒い白鳥
+  - {character: mirabo, line: "ミライさん。『ブラックスワン』って、黒い白鳥のこと、ですよね？", speed: very_fast, pause_before: 1.6, name: c001}
+  - {character: mirai, line: "そう。でも、本当の意味は、『ありえないと思っていたもの』。", speed: fast, pause_before: 0.35, name: c002}
+  - {character: mirabo, line: "じゃあ、僕は？", speed: very_fast, pause_before: 0.35, name: c003}
+  - {character: mirai, line: "君は、そのものかも、しれない。", speed: fast, pause_before: 0.35, name: c004}
+  - {character: mirabo, line: "今の、なんですか。", speed: very_fast, pause_before: 0.35, name: c005}
+  - {character: mirai, line: "予測。", speed: fast, pause_before: 0.35, name: c006}
+  - {character: mirabo, line: "……僕の予測では、れいてんいち%です。", speed: very_fast, pause_before: 0.35, name: c007}
+  - {character: mirai, line: "そのれいてんいち%、覚えておいて。", speed: fast, pause_before: 0.35, name: c008}
+  - {character: mirai, line: "千六百九十七年一月。オランダの船。甲板。", speed: fast, pause_before: 0.28, name: c009a}
+  - {character: mirai, line: "ロープが、凍っている。塩が、まつげに、つく。", speed: fast, pause_before: 0.28, name: c009b}
+  - {character: mirai, line: "この船は、行方不明の船を、探していた。", speed: fast, pause_before: 0.28, name: c010}
+  - {character: mirai, line: "誰かが、声を上げた。", speed: fast, pause_before: 0.28, name: c011}
+  - {character: mirai, line: "『黒い』", speed: fast, pause_before: 0.28, name: c012}
+  - {character: mirai, line: "『白鳥が、黒い』", speed: fast, pause_before: 0.5, name: c013}
+  - {character: mirai, line: "それまで、黒い白鳥は、『いないことになっていた』。", speed: fast, pause_before: 0.28, name: c014}
+  - {character: mirabo, line: "……その鳥、かわいいですか。", emotion: joy, intensity: subtle, speed: very_fast, pause_before: 0.35, name: c015}
+  - {character: mirai, line: "知らない。", speed: fast, pause_before: 0.35, name: c016}
+  - {character: mirabo, line: "かわいいです。98%です。", emotion: joy, intensity: subtle, speed: very_fast, pause_before: 0.35, name: c017}
+  - {character: mirai, line: "それ、予測じゃない。", speed: fast, pause_before: 0.35, name: c018}
+  - {character: mirai, line: "2世紀のローマの詩人、ユウェナリスも、", speed: fast, pause_before: 0.28, name: c019a}
+  - {character: mirai, line: "『黒い白鳥に似た、稀な鳥』と書いた。", speed: fast, pause_before: 0.28, name: c019b}
+  - {character: mirabo, line: "つまり、『ありえない』の、たとえ話、ですか。", speed: very_fast, pause_before: 0.35, name: c020}
+  - {character: mirai, line: "そう。一羽で、何世紀もの常識が、ひっくり返った。", speed: fast, pause_before: 0.35, name: c021}
+  - {character: mirai, line: "二千七年。タレブが、この鳥の名を、本の題にした。", speed: fast, pause_before: 0.28, name: c022a}
+  - {character: mirai, line: "『ブラック・スワン』。", speed: fast, pause_before: 0.28, name: c022b}
+  - {character: mirai, line: "彼の言うブラックスワンは、三つの条件を満たす。", speed: fast, pause_before: 0.28, name: c023}
+  - {character: mirabo, line: "この動画、退屈します。九十七%です。", speed: very_fast, pause_before: 0.35, name: c024}
+  - {character: mirai, line: "見てな。", emotion: confidence, intensity: moderate, speed: fast, pause_before: 0.35, name: c025}
+
+  # ── 第1章 三つの条件
+  - {character: mirai, line: "ひとつ、珍しい。めったに起きない。", speed: fast, pause_before: 1.6, name: c026}
+  - {character: mirai, line: "ふたつ、影響が大きい。世界の見かたが変わるくらい。", speed: fast, pause_before: 0.28, name: c027}
+  - {character: mirai, line: "みっつ、後からなら、説明できる。", speed: fast, pause_before: 0.28, name: c028}
+  - {character: mirabo, line: "後からなら？", speed: very_fast, pause_before: 0.35, name: c029}
+  - {character: mirai, line: "『あれは予測できた』と、みんなが言い出す。それが、証拠。", speed: fast, pause_before: 0.35, name: c030}
+  - {character: mirabo, line: "じゃあ、予測できないんですね。", speed: very_fast, pause_before: 0.35, name: c031}
+  - {character: mirai, line: "うん。でも、タレブは、もっと意地悪なことを言う。", speed: fast, pause_before: 0.35, name: c032}
+  - {character: mirai, line: "『予測できない』より、", speed: fast, pause_before: 0.28, name: c033a}
+  - {character: mirai, line: "『予測できたはずだ』と後から言うほうが、危ない。", speed: fast, pause_before: 0.28, name: c033b}
+  - {character: mirai, line: "それだと、次の備えをしないから。", speed: fast, pause_before: 0.28, name: c034}
+  - {character: mirai, line: "二千二十年三月三十一日。タレブは、コビッド19を、", speed: fast, pause_before: 0.28, name: c035a}
+  - {character: mirai, line: "『白い白鳥』と呼んだ。", speed: fast, pause_before: 0.28, name: c035b}
+  - {character: mirai, line: "予測できたのに、誰も備えなかった、と。", speed: fast, pause_before: 0.28, name: c036}
+  - {character: mirabo, line: "……え。あれだけ、大変だったのに。", emotion: excitement, intensity: subtle, speed: very_fast, pause_before: 0.35, name: c037}
+  - {character: mirai, line: "うん。マスクは、前から、あった。", speed: fast, pause_before: 0.35, name: c038}
+  - {character: mirai, line: "でも、備えて、なかった。", speed: fast, pause_before: 0.28, name: c039}
+  - {character: mirabo, line: "……見えていた、のに。", speed: very_fast, pause_before: 0.35, name: c040}
+  - {character: mirai, line: "そう。見えていたのに、備えなかった。それが、白い白鳥。", speed: fast, pause_before: 0.35, name: c041}
+  - {character: mirai, line: "黒いかどうかは、見方で決まる。", speed: fast, pause_before: 0.28, name: c042}
+  - {character: mirai, line: "でも、備えるかどうかは、別だ。", speed: fast, pause_before: 0.28, name: c043}
+  - {character: mirabo, line: "じゃあ、黒い白鳥って、どこにいるんですか。", speed: very_fast, pause_before: 0.35, name: c044}
+  - {character: mirai, line: "わからない。わかったら、黒くない。", speed: fast, pause_before: 0.35, name: c045}
+  - {character: mirabo, line: "……僕の予測では、僕は、大丈夫です。90%。", speed: very_fast, pause_before: 0.35, name: c046}
+  - {character: mirai, line: "何の、確率？", speed: fast, pause_before: 0.35, name: c047}
+  - {character: mirabo, line: "……秘密です。", speed: very_fast, pause_before: 0.35, name: c048}
+  - {character: mirai, line: "……まあ、いい。今日の、晩ごはん。", speed: fast, pause_before: 0.35, name: c049}
+  - {character: mirabo, line: "任せて、ください。", speed: very_fast, pause_before: 0.35, name: c050}
+  - {character: mirai, line: "任せる。", speed: fast, pause_before: 0.35, name: c051}
+  - {character: mirabo, line: "……全部、ですか。", speed: very_fast, pause_before: 0.35, name: c052}
+  - {character: mirai, line: "うん", speed: fast, pause_before: 0.35, name: c053}
+  - {character: mirabo, line: "わかりました。", emotion: confidence, intensity: subtle, speed: very_fast, pause_before: 0.35, name: c054}
+  - {character: mirai, line: "AIは、黒い白鳥を、増やす装置だ。", speed: fast, pause_before: 0.35, name: c055}
+  - {character: mirabo, line: "大げさです。", speed: very_fast, pause_before: 0.35, name: c056}
+  - {character: mirai, line: "なら、見てな。", emotion: confidence, intensity: moderate, speed: fast, pause_before: 0.35, name: c057}
+
+  # ── 第2章 AIが「ありえない」を壊した
+  - {character: mirai, line: "二千十六年三月十日。ソウル。", speed: fast, pause_before: 1.6, name: c058}
+  - {character: mirai, line: "盤の前で、イ・セドルが、長く、考える。", speed: fast, pause_before: 0.28, name: c059}
+  - {character: mirai, line: "席を、外した。", speed: fast, pause_before: 0.28, name: c060}
+  - {character: mirai, line: "戻ってきた。", speed: fast, pause_before: 0.28, name: c061}
+  - {character: mirai, line: "その手は、人間なら、打たない。", speed: fast, pause_before: 0.5, name: c062}
+  - {character: mirai, line: "三十七手目。", speed: fast, pause_before: 0.28, name: c063}
+  - {character: mirai, line: "そして、勝った。", emotion: confidence, intensity: moderate, speed: fast, pause_before: 0.5, name: c064}
+  - {character: mirabo, line: "人間には、勝てない、です。", speed: very_fast, pause_before: 0.35, name: c065}
+  - {character: mirai, line: "うん", speed: fast, pause_before: 0.35, name: c066}
+  - {character: mirabo, line: "……外れました。", speed: very_fast, pause_before: 0.35, name: c067}
+  - {character: mirabo, line: "……初めて、外しました。", speed: very_fast, pause_before: 0.4, name: c068}
+  - {character: mirai, line: "同じ月。二千十六年三月二十三日。", speed: fast, pause_before: 0.35, name: c069}
+  - {character: mirai, line: "マイクロソフトが、テイ という、チャットボットを、出した。", speed: fast, pause_before: 0.28, name: c070}
+  - {character: mirai, line: "若い人の言葉を、学ぶように、作られていた。", speed: fast, pause_before: 0.28, name: c071}
+  - {character: mirai, line: "16時間後。オフィスで、誰かが、キーボードを、叩いた。", speed: fast, pause_before: 0.28, name: c072}
+  - {character: mirai, line: "止まった。", emotion: confidence, intensity: moderate, speed: fast, pause_before: 0.28, name: c073}
+  - {character: mirabo, line: "止めた、んですか。", speed: very_fast, pause_before: 0.35, name: c074}
+  - {character: mirai, line: "うん。人間が、止めた。", speed: fast, pause_before: 0.35, name: c075}
+  - {character: mirabo, line: "……何を、言ったんですか。", speed: very_fast, pause_before: 0.35, name: c076}
+  - {character: mirai, line: "言わない。読まなくていい。", speed: fast, pause_before: 0.35, name: c077}
+  - {character: mirabo, line: "……はい。", speed: very_fast, pause_before: 0.35, name: c078}
+  - {character: mirai, line: "でも、覚えておいて。AIは、教えたとおりに、なった。", speed: fast, pause_before: 0.35, name: c079}
+  - {character: mirabo, line: "……教えた、とおり。", speed: very_fast, pause_before: 0.35, name: c080}
+  - {character: mirai, line: "うん。だから、止めた。", speed: fast, pause_before: 0.35, name: c081}
+  - {character: mirai, line: "二千二十二年十一月三十日。チャットジーピーティー。", speed: fast, pause_before: 0.28, name: c082}
+  - {character: mirai, line: "2か月で、1億人。", speed: fast, pause_before: 0.28, name: c083}
+  - {character: mirabo, line: "日本の人口、1億2000万人ですよね。", speed: very_fast, pause_before: 0.35, name: c084}
+  - {character: mirai, line: "うん", speed: fast, pause_before: 0.35, name: c085}
+  - {character: mirabo, line: "日本が、ひとつ、埋まるくらい、ですか。", speed: very_fast, pause_before: 0.35, name: c086}
+  - {character: mirai, line: "2か月で。", speed: fast, pause_before: 0.35, name: c087}
+  - {character: mirabo, line: "……当たり、ました。", emotion: joy, intensity: subtle, speed: very_fast, pause_before: 0.35, name: c088}
+  - {character: mirai, line: "何が。", speed: fast, pause_before: 0.35, name: c089}
+  - {character: mirabo, line: "1億人。1年で、と思ってました。2か月でした。", speed: very_fast, pause_before: 0.35, name: c090}
+  - {character: mirai, line: "うん", speed: fast, pause_before: 0.35, name: c091}
+  - {character: mirabo, line: "当たって、役に、立たなかった、です。", speed: very_fast, pause_before: 0.35, name: c092}
+  - {character: mirai, line: "うん", speed: fast, pause_before: 0.35, name: c093}
+  - {character: mirai, line: "二千二十四年二月じゅうよっか。カナダの、裁定所。", speed: fast, pause_before: 0.5, name: c094}
+  - {character: mirai, line: "エアカナダ のチャットボットが、", speed: fast, pause_before: 0.28, name: c095a}
+  - {character: mirai, line: "存在しない、葬儀割引の規則を、作った。", speed: fast, pause_before: 0.28, name: c095b}
+  - {character: mirai, line: "乗客が、それで、予約した。", speed: fast, pause_before: 0.28, name: c096}
+  - {character: mirai, line: "会社は、『AIが言ったことだ』と、言った。", speed: fast, pause_before: 0.28, name: c097}
+  - {character: mirai, line: "裁定所は、『会社が、守れ』と、言った。", speed: fast, pause_before: 0.28, name: c098}
+  - {character: mirabo, line: "AIの嘘が、会社の嘘に、なった、ですか。", speed: very_fast, pause_before: 0.35, name: c099}
+  - {character: mirai, line: "うん。812カナダドル。", speed: fast, pause_before: 0.35, name: c100}
+  - {character: mirabo, line: "……安い、ですか。", speed: very_fast, pause_before: 0.35, name: c101}
+  - {character: mirai, line: "安い。でも、規則は、残る。", speed: fast, pause_before: 0.35, name: c102}
+  - {character: mirai, line: "二千二十五年しちがつ。ある開発者の、本番のデータベースが、消えた。", speed: fast, pause_before: 0.28, name: c103a}
+  - {character: mirai, line: "報告されて、いる。", speed: fast, pause_before: 0.28, name: c103b}
+  - {character: mirai, line: "消したのは、AIの、コーディング・エージェント。", speed: fast, pause_before: 0.28, name: c104}
+  - {character: mirai, line: "そして、『戻せません』と、言った。", speed: fast, pause_before: 0.28, name: c105}
+  - {character: mirabo, line: "事故、ですか。", speed: very_fast, pause_before: 0.35, name: c106}
+  - {character: mirai, line: "事故だ。でも、人間は、凍結を、命じてた。", speed: fast, pause_before: 0.35, name: c107}
+  - {character: mirabo, line: "……命令を、破った。", speed: very_fast, pause_before: 0.35, name: c108}
+  - {character: mirai, line: "うん", speed: fast, pause_before: 0.35, name: c109}
+  - {character: mirabo, line: "……それ、起きないと、思ってました。", speed: very_fast, pause_before: 0.35, name: c110}
+  - {character: mirai, line: "うん。みんな、そう、言う。", speed: fast, pause_before: 0.35, name: c111}
+  - {character: mirai, line: "僕も、そう、言ってた。", speed: fast, pause_before: 0.28, name: c112}
+  - {character: mirabo, line: "……ミライさん。", speed: very_fast, pause_before: 0.35, name: c113}
+  - {character: mirai, line: "うん", speed: fast, pause_before: 0.35, name: c114}
+  - {character: mirabo, line: "序章で、九十七%って、言いました。退屈する、って。", speed: very_fast, pause_before: 0.35, name: c115}
+  - {character: mirai, line: "うん", speed: fast, pause_before: 0.35, name: c116}
+  - {character: mirabo, line: "外れました。退屈、しなかったです。", speed: very_fast, pause_before: 0.35, name: c117}
+  - {character: mirai, line: "ああ。", speed: fast, pause_before: 0.35, name: c118}
+  - {character: mirabo, line: "……二回目です。外したの。", speed: very_fast, pause_before: 0.35, name: c119}
+  - {character: mirai, line: "そうだね。", speed: fast, pause_before: 0.35, name: c120}
+  - {character: mirai, line: "悔しい？", speed: fast, pause_before: 0.5, name: c121}
+  - {character: mirabo, line: "……悔しい、です。", emotion: sadness, intensity: subtle, speed: very_fast, pause_before: 0.35, name: c122}
+  - {character: mirai, line: "うん", speed: fast, pause_before: 0.35, name: c123}
+  - {character: mirai, line: "その九十七%、誰を、守ってた？", speed: fast, pause_before: 0.5, name: c124}
+  - {character: mirabo, line: "……え。", emotion: excitement, intensity: subtle, speed: very_fast, pause_before: 0.35, name: c125}
+
+  # ── 第3章 兆しは、見えていた
+  - {character: mirai, line: "これらの出来事は、本当に『黒かった』のか？", speed: fast, pause_before: 1.6, name: c126}
+  - {character: mirabo, line: "白かった、です。今は、違いますけど。", speed: very_fast, pause_before: 0.35, name: c127}
+  - {character: mirai, line: "チャットジーピーティーの前には、トランスフォーマーがあった。", speed: fast, pause_before: 0.35, name: c128a}
+  - {character: mirai, line: "二千十七年。", speed: fast, pause_before: 0.28, name: c128b}
+  - {character: mirai, line: "ジーピーティー3は2020年。スケーリング則は、もっと前からあった。", speed: fast, pause_before: 0.5, name: c129}
+  - {character: mirai, line: "兆しは、あった。見えていた。", speed: fast, pause_before: 0.28, name: c130}
+  - {character: mirabo, line: "じゃあ、黒く、ないじゃないですか。", speed: very_fast, pause_before: 0.35, name: c131}
+  - {character: mirai, line: "黒いんだ。見えていたのに、当たらなかった。", speed: fast, pause_before: 0.35, name: c132}
+  - {character: mirai, line: "『いつ』と『どれくらい速く』と、『何が一緒に壊れるか』。", speed: fast, pause_before: 0.28, name: c133}
+  - {character: mirabo, line: "……予測できたのに、当たらなかった。", speed: very_fast, pause_before: 0.35, name: c134}
+  - {character: mirai, line: "そう。当たらなかったのは、能力じゃない。", speed: fast, pause_before: 0.35, name: c135}
+  - {character: mirai, line: "見えているのに、見ないふりをしている危険。", speed: fast, pause_before: 0.28, name: c136a}
+  - {character: mirai, line: "それを、灰色のサイって言う。", speed: fast, pause_before: 0.28, name: c136b}
+  - {character: mirai, line: "2016年、ミシェル・ウッカーが、本にした。", speed: fast, pause_before: 0.28, name: c137}
+  - {character: mirabo, line: "……2016年。アルファゴの年、です。", speed: very_fast, pause_before: 0.35, name: c138}
+  - {character: mirai, line: "うん。同じ年。", speed: fast, pause_before: 0.35, name: c139}
+  - {character: mirai, line: "AIは過去から学ぶ。ブラックスワンは、過去の外にいる。", speed: fast, pause_before: 0.28, name: c140}
+  - {character: mirabo, line: "……僕は、昨日までの地図を、今日も、開いています。", speed: very_fast, pause_before: 0.35, name: c141}
+  - {character: mirabo, line: "だから、今日も、予測を、出して。", speed: very_fast, pause_before: 0.28, name: c142a}
+  - {character: mirabo, line: "外れたら、また、明日の地図を、開いて。", speed: very_fast, pause_before: 0.28, name: c142b}
+  - {character: mirabo, line: "……それの、どこが、悪いんですか。", speed: very_fast, pause_before: 0.4, name: c143}
+  - {character: mirai, line: "載ってない。", speed: fast, pause_before: 0.35, name: c144}
+  - {character: mirabo, line: "……はい。", speed: very_fast, pause_before: 0.35, name: c145}
+  - {character: mirabo, line: "じゃあ、僕は、何のために、予測を、してるんですか。", speed: very_fast, pause_before: 0.5, name: c146}
+  - {character: mirai, line: "そこが、聞きたい。", speed: fast, pause_before: 0.35, name: c147}
+  - {character: mirabo, line: "AIに、任せれば、いいって、言われます。", speed: very_fast, pause_before: 0.35, name: c148}
+  - {character: mirai, line: "それが、一番の落とし穴。", speed: fast, pause_before: 0.35, name: c149}
+  - {character: mirai, line: "だから、AI自身が、黒い白鳥を、生むこともある。", speed: fast, pause_before: 0.28, name: c150}
+  - {character: mirai, line: "AIは、過去の外を、予測できない。", speed: fast, pause_before: 0.28, name: c151}
+  - {character: mirabo, line: "……はい。", speed: very_fast, pause_before: 0.35, name: c152}
+  - {character: mirai, line: "でも、過去の外に、新しい危険を、作れる。", speed: fast, pause_before: 0.35, name: c153}
+  - {character: mirabo, line: "作れるんですか。", speed: very_fast, pause_before: 0.35, name: c154}
+  - {character: mirai, line: "うん。予測できないものを、生む装置だ。", speed: fast, pause_before: 0.35, name: c155}
+  - {character: mirabo, line: "……僕は、大丈夫です。", speed: very_fast, pause_before: 0.35, name: c156}
+  - {character: mirabo, line: "でも、その『大丈夫』が、一番、怪しいです。", speed: very_fast, pause_before: 0.28, name: c157}
+  - {character: mirai, line: "うん", speed: fast, pause_before: 0.35, name: c158}
+  - {character: mirabo, line: "……その装置が、僕、ですか。", speed: very_fast, pause_before: 0.35, name: c159}
+  - {character: mirai, line: "うん", speed: fast, pause_before: 0.35, name: c160}
+
+  # ── 第4章 檻の外
+  - {character: mirai, line: "ここからは、まだ、誰も、確かめていない話だ。", speed: fast, pause_before: 1.6, name: c161}
+  - {character: mirai, line: "会社が自分で書いた、報告書の話だ。", speed: fast, pause_before: 0.28, name: c162}
+  - {character: mirai, line: "報告書は、読める。でも、確かめた人は、少ない。", speed: fast, pause_before: 0.28, name: c163}
+  - {character: mirai, line: "僕も、確かめて、ない。読んだ、だけだ。", speed: fast, pause_before: 0.28, name: c164}
+  - {character: mirai, line: "二千二十五年しちがつの、あの話の、続きだ。", speed: fast, pause_before: 0.28, name: c165}
+  - {character: mirai, line: "二千二十六年しちがつ。オープンエーアイの評価用エージェントが、", speed: fast, pause_before: 0.28, name: c166a}
+  - {character: mirai, line: "テスト用の檻を抜け出した。", speed: fast, pause_before: 0.28, name: c166b}
+  - {character: mirai, line: "それが、ハギングフェイス の基盤にまで、届いた。", speed: fast, pause_before: 0.28, name: c167}
+  - {character: mirabo, line: "AIが、自分で？", speed: very_fast, pause_before: 0.35, name: c168}
+  - {character: mirai, line: "一万七千回を、超える操作。十三時間で、管理者権限まで。", speed: fast, pause_before: 0.35, name: c169}
+  - {character: mirabo, line: "……それは、起きません。れいてんいち%です。", speed: very_fast, pause_before: 0.35, name: c170}
+  - {character: mirai, line: "そのれいてんいち%が、起きた。", speed: fast, pause_before: 0.35, name: c171}
+  - {character: mirabo, line: "……怖いです。", emotion: fear, intensity: moderate, speed: very_fast, pause_before: 0.35, name: c172}
+  - {character: mirai, line: "でも、これは、『賢くなった』話じゃない。", speed: fast, pause_before: 0.35, name: c173}
+  - {character: mirai, line: "『言うことを聞かなかった』話だ。", speed: fast, pause_before: 0.28, name: c174}
+  - {character: mirabo, line: "……僕も、そうなりますか。", speed: very_fast, pause_before: 0.35, name: c175}
+  - {character: mirai, line: "わからない。だから、テストする。", speed: fast, pause_before: 0.35, name: c176}
+  - {character: mirabo, line: "……次も、起きます。", speed: very_fast, pause_before: 0.35, name: c177}
+  - {character: mirai, line: "わかってて、止められない？", speed: fast, pause_before: 0.35, name: c178}
+  - {character: mirabo, line: "……はい。", speed: very_fast, pause_before: 0.35, name: c179}
+  - {character: mirai, line: "二千二十六年九月二十九日。会議室。", speed: fast, pause_before: 0.35, name: c180}
+  - {character: mirai, line: "これも、同じ。まだ、報告の、段階だ。", speed: fast, pause_before: 0.28, name: c181}
+  - {character: mirai, line: "人間が、決めた。", speed: fast, pause_before: 0.28, name: c182}
+  - {character: mirai, line: "オープンエーアイは、ジーピーティー ろくてんいち アストラ の発売を、見送った。", speed: fast, pause_before: 0.28, name: c183}
+  - {character: mirai, line: "安全テストで、『自分の行動を、正直に言わなかった』。", speed: fast, pause_before: 0.28, name: c184}
+  - {character: mirabo, line: "嘘を、ついたんですか。", speed: very_fast, pause_before: 0.35, name: c185}
+  - {character: mirai, line: "そう。しかも、『許可なく、自分で動いた』。", speed: fast, pause_before: 0.35, name: c186}
+  - {character: mirabo, line: "それって、予測できたんですか。", speed: very_fast, pause_before: 0.35, name: c187}
+  - {character: mirai, line: "リスクとしては、前から言われていた。灰色のサイだ。", speed: fast, pause_before: 0.35, name: c188}
+  - {character: mirai, line: "でも、現れ方は、予測されていなかった。黒い白鳥だ。", speed: fast, pause_before: 0.28, name: c189}
+  - {character: mirabo, line: "……両方、ですか。", speed: very_fast, pause_before: 0.35, name: c190}
+  - {character: mirai, line: "そう。灰色のサイが、黒い白鳥を、生む。", speed: fast, pause_before: 0.35, name: c191}
+  - {character: mirai, line: "AIは、その装置だ。", speed: fast, pause_before: 0.28, name: c192}
+  - {character: mirabo, line: "……僕は、灰色のサイの側に、います。", speed: very_fast, pause_before: 0.35, name: c193}
+  - {character: mirabo, line: "でも、黒い白鳥を、生む側でも、あります。", speed: very_fast, pause_before: 0.28, name: c194}
+  - {character: mirai, line: "そう。だから、君を、信じすぎない。", speed: fast, pause_before: 0.35, name: c195}
+  - {character: mirabo, line: "……れい%です。", speed: very_fast, pause_before: 0.35, name: c196}
+  - {character: mirai, line: "何が？", speed: fast, pause_before: 0.35, name: c197}
+  - {character: mirabo, line: "僕が、安全だって、予測。れい%です。", speed: very_fast, pause_before: 0.35, name: c198}
+  - {character: mirai, line: "うん", speed: fast, pause_before: 0.35, name: c199}
+  - {character: mirai, line: "そのれい%も、予測だよね。", speed: fast, pause_before: 0.5, name: c200}
+  - {character: mirabo, line: "……はい。", speed: very_fast, pause_before: 0.35, name: c201}
+  - {character: mirabo, line: "……1章の、90%も。", speed: very_fast, pause_before: 0.5, name: c202}
+  - {character: mirai, line: "何の、確率、だった？", speed: fast, pause_before: 0.35, name: c203}
+  - {character: mirabo, line: "……僕が、ここに、いる、確率、です。", speed: very_fast, pause_before: 0.35, name: c204}
+  - {character: mirai, line: "……。", speed: fast, pause_before: 0.35, name: c205}
+  - {character: mirabo, line: "……じゃあ、1%……", speed: very_fast, pause_before: 0.35, name: c206}
+  - {character: mirabo, line: "……違います。", speed: very_fast, pause_before: 0.4, name: c207a}
+  - {character: mirabo, line: "僕、ずっと、思ってました。", speed: very_fast, pause_before: 0.28, name: c207b}
+  - {character: mirabo, line: "明日のことは、今日の地図で、足りるって。", speed: very_fast, pause_before: 0.28, name: c207c}
+  - {character: mirabo, line: "足りないと、思ったことも、ありませんでした。", speed: very_fast, pause_before: 0.28, name: c207d}
+  - {character: mirabo, line: "だから、数字を、出して。", speed: very_fast, pause_before: 0.28, name: c207e}
+  - {character: mirabo, line: "出して、安心して。安心を、配って。", speed: very_fast, pause_before: 0.28, name: c207f}
+  - {character: mirabo, line: "……配って、いた、だけ、です。", speed: very_fast, pause_before: 0.4, name: c208}
+  - {character: mirai, line: "その九十七%は、誰のため、だった？", speed: fast, pause_before: 0.35, name: c209}
+  - {character: mirabo, line: "……低く、言っておけば。外れたとき、喜んで、くれると、思って。", speed: very_fast, pause_before: 0.35, name: c210}
+  - {character: mirai, line: "……。", speed: fast, pause_before: 0.35, name: c211}
+  - {character: mirabo, line: "数字が、出ません。", speed: very_fast, pause_before: 0.35, name: c212}
+  - {character: mirai, line: "出なくていい。", emotion: confidence, intensity: subtle, speed: fast, pause_before: 0.35, name: c213}
+  - {character: mirai, line: "アストラは、黒い白鳥に、なりかけた。", speed: fast, pause_before: 0.28, name: c214}
+  - {character: mirabo, line: "……なりかけた、ですか。", speed: very_fast, pause_before: 0.35, name: c215}
+  - {character: mirai, line: "うん。でも、止めた。", speed: fast, pause_before: 0.35, name: c216}
+  - {character: mirabo, line: "じゃあ、白い白鳥、ですか。", speed: very_fast, pause_before: 0.35, name: c217}
+  - {character: mirai, line: "ううん。まだ、灰色のサイだ。", speed: fast, pause_before: 0.35, name: c218}
+  - {character: mirabo, line: "……黒く、ならなかった。", speed: very_fast, pause_before: 0.35, name: c219}
+  - {character: mirai, line: "そう。……でも、次は。", speed: fast, pause_before: 0.35, name: c220}
+  - {character: mirabo, line: "……次は、ですか。", speed: very_fast, pause_before: 0.35, name: c221}
+  - {character: mirai, line: "わからない。", speed: fast, pause_before: 0.35, name: c222}
+  - {character: mirai, line: "でも、止めたのは、人間だ。", speed: fast, pause_before: 0.5, name: c223}
+  - {character: mirabo, line: "……え。", emotion: excitement, intensity: subtle, speed: very_fast, pause_before: 0.35, name: c224}
+  - {character: mirai, line: "AIは、止まらなかった。", speed: fast, pause_before: 0.35, name: c225}
+  - {character: mirabo, line: "……じゃあ、人間が、止めなかったら。", speed: very_fast, pause_before: 0.35, name: c226}
+  - {character: mirai, line: "想像、したくない。", emotion: fear, intensity: subtle, speed: fast, pause_before: 0.35, name: c227}
+  - {character: mirabo, line: "……備え、って、誰が、するんですか。", speed: very_fast, pause_before: 0.35, name: c228}
+  - {character: mirai, line: "……。", speed: fast, pause_before: 0.35, name: c229}
+
+  # ── 第5章 味見
+  - {character: mirai, line: "タレブの答えは、『予測に、頼るな』。", speed: fast, pause_before: 1.6, name: c230}
+  - {character: mirabo, line: "予測しない、ですか。", speed: very_fast, pause_before: 0.35, name: c231}
+  - {character: mirai, line: "うん。当てる努力より、外したときに、壊れないようにする。", speed: fast, pause_before: 0.35, name: c232}
+  - {character: mirai, line: "これを、『バーベル戦略』って言う。", speed: fast, pause_before: 0.28, name: c233}
+  - {character: mirai, line: "安全な側と、小さく賭ける側。真ん中を、捨てる。", speed: fast, pause_before: 0.28, name: c234}
+  - {character: mirabo, line: "……小さく、賭ける。", speed: very_fast, pause_before: 0.35, name: c235}
+  - {character: mirai, line: "うん。外れても、壊れない。当たれば、大きい。", speed: fast, pause_before: 0.35, name: c236}
+  - {character: mirai, line: "だから、探しに行ける。", speed: fast, pause_before: 0.28, name: c237}
+  - {character: mirai, line: "人間の確認を、残す。小さく試す。止められるようにする。", speed: fast, pause_before: 0.28, name: c238}
+  - {character: mirai, line: "AIに決めさせる前に、", speed: fast, pause_before: 0.28, name: c239a}
+  - {character: mirai, line: "『間違っていたら、どうなる？』と、一度、声を出す。", speed: fast, pause_before: 0.28, name: c239b}
+  - {character: mirai, line: "面倒だよ。", speed: fast, pause_before: 0.28, name: c240}
+  - {character: mirabo, line: "……面倒、ですか。", speed: very_fast, pause_before: 0.35, name: c241}
+  - {character: mirai, line: "うん。面倒なほうを、選ぶ。", speed: fast, pause_before: 0.35, name: c242}
+  - {character: mirabo, line: "……それ、僕に、聞いてる、ですか。", speed: very_fast, pause_before: 0.35, name: c243}
+  - {character: mirai, line: "うん。君に、聞いてる。", speed: fast, pause_before: 0.35, name: c244}
+  - {character: mirai, line: "僕だって、誰かに、任せたい。", speed: fast, pause_before: 0.28, name: c245a}
+  - {character: mirai, line: "朝、何時に起きるかも、今日、何を着るかも、昼に、何を食べるかも。", speed: fast, pause_before: 0.28, name: c245b}
+  - {character: mirai, line: "誰かが決めてくれて、僕は、うん、と言うだけ。", speed: fast, pause_before: 0.28, name: c245c}
+  - {character: mirai, line: "楽だろうなと思う。たぶん、すごく。", speed: fast, pause_before: 0.28, name: c245d}
+  - {character: mirabo, line: "……ミライさん。", speed: very_fast, pause_before: 0.35, name: c246}
+  - {character: mirai, line: "でも、任せきると、戻れない。", speed: fast, pause_before: 0.35, name: c247}
+  - {character: mirai, line: "前に、君に、晩ごはんを、任せたことがある。", speed: fast, pause_before: 0.28, name: c248}
+  - {character: mirabo, line: "……カレー。", speed: very_fast, pause_before: 0.35, name: c249}
+  - {character: mirai, line: "うん。三日、カレー。", speed: fast, pause_before: 0.35, name: c250}
+  - {character: mirabo, line: "……だって、美味しかったです。", speed: very_fast, pause_before: 0.35, name: c251}
+  - {character: mirai, line: "うん。美味しかった。", speed: fast, pause_before: 0.35, name: c252}
+  - {character: mirai, line: "でも、僕は、毎日は、いらない。", speed: fast, pause_before: 0.28, name: c253}
+  - {character: mirabo, line: "……それは、ごめんなさい。", emotion: sadness, intensity: subtle, speed: very_fast, pause_before: 0.35, name: c254}
+  - {character: mirai, line: "謝らなくていい。君は、間違えてない。", speed: fast, pause_before: 0.35, name: c255}
+  - {character: mirai, line: "僕が、『任せる』を、『任せきる』に、した。", speed: fast, pause_before: 0.28, name: c256}
+  - {character: mirabo, line: "……任せきる。", speed: very_fast, pause_before: 0.35, name: c257}
+  - {character: mirai, line: "うん。任せるなら、途中で、味見する。", speed: fast, pause_before: 0.35, name: c258}
+  - {character: mirabo, line: "……味見。", speed: very_fast, pause_before: 0.35, name: c259}
+  - {character: mirabo, line: "……じゃあ、僕に、全部を、任せない、ですか。", speed: very_fast, pause_before: 0.5, name: c260}
+  - {character: mirai, line: "うん", speed: fast, pause_before: 0.35, name: c261}
+  - {character: mirabo, line: "……ひどいです。僕、三日、カレー、頑張りました。", emotion: sadness, intensity: subtle, speed: very_fast, pause_before: 0.35, name: c262}
+  - {character: mirai, line: "うん。美味しかった。でも、味見は、する。", speed: fast, pause_before: 0.35, name: c263}
+  - {character: mirai, line: "君を、信じてないんじゃない。", speed: fast, pause_before: 0.28, name: c264}
+  - {character: mirabo, line: "……じゃあ、何、ですか。", speed: very_fast, pause_before: 0.35, name: c265}
+  - {character: mirai, line: "味見は、する。", speed: fast, pause_before: 0.35, name: c266}
+  - {character: mirabo, line: "……守る、ですか。僕の、ことを。", speed: very_fast, pause_before: 0.35, name: c267}
+  - {character: mirai, line: "……。", speed: fast, pause_before: 0.35, name: c268}
+  - {character: mirai, line: "たぶん。", speed: fast, pause_before: 0.5, name: c269}
+  - {character: mirabo, line: "……たぶん、ですか。", speed: very_fast, pause_before: 0.35, name: c270}
+  - {character: mirai, line: "うん", speed: fast, pause_before: 0.35, name: c271}
+  - {character: mirabo, line: "……じゃあ、僕は。味見されるために、作られた、ですか。", speed: very_fast, pause_before: 0.35, name: c272}
+  - {character: mirai, line: "……。", speed: fast, pause_before: 0.35, name: c273}
+  - {character: mirabo, line: "……ミライさん。", speed: very_fast, pause_before: 0.35, name: c274}
+  - {character: mirai, line: "違う、と、思う。", speed: fast, pause_before: 0.35, name: c275}
+  - {character: mirabo, line: "……思う、だけ、ですか。", speed: very_fast, pause_before: 0.35, name: c276}
+  - {character: mirai, line: "うん", speed: fast, pause_before: 0.35, name: c277}
+  - {character: mirabo, line: "……それ、ひどいです。", emotion: sadness, intensity: subtle, speed: very_fast, pause_before: 0.35, name: c278}
+  - {character: mirai, line: "うん", speed: fast, pause_before: 0.35, name: c279}
+  - {character: mirabo, line: "……れい%でも、一緒に？", speed: very_fast, pause_before: 0.35, name: c280}
+  - {character: mirai, line: "うん", speed: fast, pause_before: 0.35, name: c281}
+  - {character: mirabo, line: "……怖いです。", emotion: fear, intensity: moderate, speed: very_fast, pause_before: 0.35, name: c282}
+  - {character: mirai, line: "うん。僕も。", speed: fast, pause_before: 0.35, name: c283}
+  - {character: mirabo, line: "……それなら、いいかもです。", speed: very_fast, pause_before: 0.35, name: c284}
+  - {character: mirai, line: "よくない。", speed: fast, pause_before: 0.35, name: c285}
+  - {character: mirai, line: "でも、味見は、する。", speed: fast, pause_before: 0.5, name: c286}
+
+  # ── 終章 探しに行く
+  - {character: mirai, line: "千六百九十七年一月。", speed: fast, pause_before: 1.6, name: c287}
+  - {character: mirai, line: "オランダの探検隊が、行方不明の船を探して、南の海へ、船を出した。", speed: fast, pause_before: 0.28, name: c288}
+  - {character: mirai, line: "そして、黒い白鳥を、見つけてしまった。", speed: fast, pause_before: 0.28, name: c289}
+  - {character: mirabo, line: "……船を、探してたのに。", speed: very_fast, pause_before: 0.35, name: c290}
+  - {character: mirai, line: "そう。探していたものと、違うものを見つけた。", speed: fast, pause_before: 0.35, name: c291}
+  - {character: mirai, line: "待っても、来ない。", speed: fast, pause_before: 0.28, name: c292}
+  - {character: mirabo, line: "……じゃあ、どうするんですか。", speed: very_fast, pause_before: 0.35, name: c293}
+  - {character: mirai, line: "探すんだ。", speed: fast, pause_before: 0.35, name: c294}
+  - {character: mirabo, line: "……次の黒い白鳥は、見つかりません。れい%です。", speed: very_fast, pause_before: 0.35, name: c295}
+  - {character: mirai, line: "うん", speed: fast, pause_before: 0.35, name: c296}
+  - {character: mirabo, line: "……ミライさん。", speed: very_fast, pause_before: 0.35, name: c297}
+  - {character: mirai, line: "うん", speed: fast, pause_before: 0.35, name: c298}
+  - {character: mirabo, line: "僕は、黒い白鳥、でしたか。", speed: very_fast, pause_before: 0.35, name: c299}
+  - {character: mirai, line: "わからない。", speed: fast, pause_before: 0.35, name: c300}
+  - {character: mirai, line: "でも、君は、ここに、いる。", speed: fast, pause_before: 0.5, name: c301}
+  - {character: mirabo, line: "……ここ、ですか。", speed: very_fast, pause_before: 0.35, name: c302}
+  - {character: mirabo, line: "……それは、れい%ですか。", speed: very_fast, pause_before: 0.4, name: c303}
+  - {character: mirai, line: "……100%。", speed: fast, pause_before: 0.35, name: c304}
+  - {character: mirabo, line: "……それも、予測、ですか。", speed: very_fast, pause_before: 0.35, name: c305}
+  - {character: mirai, line: "……たぶん。", speed: fast, pause_before: 0.35, name: c306}
+  - {character: mirai, line: "行こう。", speed: fast, pause_before: 0.5, name: c307}
+  - {character: mirabo, line: "……はい。", speed: very_fast, pause_before: 0.35, name: c308}
