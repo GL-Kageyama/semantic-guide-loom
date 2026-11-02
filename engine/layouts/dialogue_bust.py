@@ -6,6 +6,7 @@
 """
 from __future__ import annotations
 
+import bisect
 import math
 
 from PIL import Image, ImageDraw, ImageFilter
@@ -119,15 +120,101 @@ def build(tl: dict, cast: K.Cast, fps: int, W: int, H: int):
         for c in tl["cues"] if cast.lip(c["character"])
     }
 
-    def face_at(char: str, t: float) -> str:
-        """その人が最後に話した cue の表情を、次に話すまで保つ。"""
-        cur = None
+    # 演技の設定は型が持つ。無ければ記号は出さず、表情だけを変える。
+    acting = K.TPL.get("acting") or {}
+    mark_cfg = acting.get("mark") or {}
+    reaction_cfg = acting.get("reaction") or {}
+    mark_lead = float(reaction_cfg.get("lead", 0.0))
+    pop = float(mark_cfg.get("pop", 0.18))
+    hold = float(mark_cfg.get("hold", 0.8))
+    fade = float(mark_cfg.get("fade", 0.32))
+    pop_amp = float(mark_cfg.get("pop_amp", 0.5))
+    rise = float(mark_cfg.get("rise", 0.0))
+    anchors = mark_cfg.get("anchor") or {}
+
+    def reaction_of(cue: dict) -> dict:
+        r = cue.get("react") or {}
+        return r if isinstance(r, dict) else {}
+
+    # 人物ごとの「表情が変わる時刻」。発話の頭と、聞き手の反応の頭を混ぜる。
+    # 同じ時刻なら発話が勝つ（遅い方が勝つ、の同点規則）。
+    face_starts: dict[str, list[float]] = {}
+    face_names: dict[str, list[str]] = {}
+    face_explicit: dict[str, list[bool]] = {}
+    own_starts: dict[str, list[float]] = {}
+    for cid in cast.order:
+        events: list[tuple[float, int, str, bool]] = []
+        own: list[float] = []
         for c in tl["cues"]:
-            if c["start"] > t:
-                break
-            if c["character"] == char:
-                cur = c
-        return cast.face_for(char, cur)
+            if c.get("character") == cid:
+                own.append(float(c["start"]))
+                events.append((float(c["start"]), 1, cast.face_for(cid, c),
+                               bool(c.get("face"))))
+        for c in tl["cues"]:
+            entry = reaction_of(c).get(cid)
+            if isinstance(entry, dict) and entry.get("face"):
+                events.append((float(c["start"]), 0, str(entry["face"]), True))
+        events.sort(key=lambda e: (e[0], e[1]))
+        face_starts[cid] = [e[0] for e in events]
+        face_names[cid] = [e[2] for e in events]
+        face_explicit[cid] = [e[3] for e in events]
+        own_starts[cid] = sorted(own)
+
+    def face_at(char: str, t: float) -> tuple[str, bool]:
+        """その人の最後の表情の切替を、次に変わるまで保つ。
+
+        2 つ目は「その表情が台本に明示されていたか」。身体の揺れの倍率は、
+        明示の顔にだけ掛ける（古い作品の揺れを変えないため）。
+        """
+        starts = face_starts.get(char) or []
+        i = bisect.bisect_right(starts, t) - 1
+        if i < 0:
+            return cast.face_for(char, None), False
+        name = face_names[char][i]
+        if name not in cast.meta[char]["faces"]:
+            return cast.face_for(char, None), False
+        return name, face_explicit[char][i]
+
+    # 記号の予定表。cue.start から出し、自分の次の発話が始まったら消す。
+    marks: list[dict] = []
+    if mark_cfg:
+        for c in tl["cues"]:
+            for cid, entry in reaction_of(c).items():
+                if cid not in cast.chars or not isinstance(entry, dict):
+                    continue
+                text = str(entry.get("mark") or "")
+                if not text:
+                    continue
+                t0 = float(c["start"]) + mark_lead
+                own_next = next((s for s in own_starts.get(cid, []) if s > t0 + 1e-9),
+                                math.inf)
+                end = min(t0 + pop + hold + fade, own_next)
+                if end <= t0:
+                    continue
+                marks.append({"cid": cid, "text": text, "t0": t0, "end": end})
+
+    mark_imgs: dict[str, Image.Image] = {}
+    if marks:
+        fnt = K.font(int(mark_cfg.get("size", 40)), bool(mark_cfg.get("bold", True)))
+        stroke = K.S(mark_cfg.get("outline_width", 3))
+        fill = K.rgba(mark_cfg.get("color", [255, 209, 102, 235]))
+        edge = K.rgba(mark_cfg.get("outline", [12, 20, 36, 230]))
+        pad = K.S(6)
+        for m in marks:
+            if m["text"] in mark_imgs:
+                continue
+            w = int(fnt.getlength(m["text"])) + stroke * 2 + pad * 2
+            asc, desc = fnt.getmetrics()
+            h = asc + desc + stroke * 2 + pad * 2
+            im = Image.new("RGBA", (max(1, w), max(1, h)), (0, 0, 0, 0))
+            d = ImageDraw.Draw(im)
+            d.text((pad + stroke, pad + stroke), m["text"], font=fnt, fill=fill,
+                   stroke_width=stroke, stroke_fill=edge)
+            mark_imgs[m["text"]] = im
+
+    def smooth(x: float) -> float:
+        x = max(0.0, min(1.0, x))
+        return x * x * (3.0 - 2.0 * x)
 
     def cue_at(t: float) -> dict | None:
         cur = None
@@ -157,6 +244,37 @@ def build(tl: dict, cast: K.Cast, fps: int, W: int, H: int):
                 dy += v
         return dx, dy
 
+    def draw_marks(im: Image.Image, t: float) -> None:
+        for m in marks:
+            if not (m["t0"] <= t < m["end"]):
+                continue
+            age = t - m["t0"]
+            if pop > 0 and age < pop:
+                u = smooth(age / pop)
+                scale, alpha = 1.0 + pop_amp * (1.0 - u), u
+            elif age < pop + hold:
+                scale, alpha = 1.0, 1.0
+            else:
+                v = (age - pop - hold) / fade if fade > 0 else 1.0
+                scale, alpha = 1.0, 1.0 - smooth(v)
+            img = mark_imgs[m["text"]]
+            if abs(scale - 1.0) > 1e-6:
+                img = img.resize((max(1, int(round(img.width * scale))),
+                                  max(1, int(round(img.height * scale)))),
+                                 Image.LANCZOS)
+            if alpha < 0.999:
+                img = img.copy()
+                img.putalpha(img.getchannel("A").point(lambda v: int(v * alpha)))
+            slot = cast.chars[m["cid"]]["slot"]
+            anchor = anchors.get(slot) or [0, 0]
+            ox, oy = (K.S(v) for v in K.TPL["slots"][slot]["origin"])
+            dx, dy = offset(m["cid"], t)
+            ax = ox + K.S(float(anchor[0])) + dx
+            ay = oy + K.S(float(anchor[1])) + dy
+            if rise:
+                ay -= K.S(rise * smooth(min(1.0, age / max(1e-6, pop + hold + fade))))
+            im.paste(img, (ax - img.width // 2, ay - img.height // 2), img)
+
     def draw_frame(t: float, fi: int) -> Image.Image:
         im = bg.copy()
         ch_idx = chapter_idx_at(t)
@@ -176,9 +294,15 @@ def build(tl: dict, cast: K.Cast, fps: int, W: int, H: int):
         for cid in cast.order:
             ch = cast.chars[cid]
             ox, oy = (K.S(v) for v in K.TPL["slots"][ch["slot"]]["origin"])
+            face, explicit = face_at(cid, t)
             dx, dy = offset(cid, t)
-            fig = cast.sheet(cid, face_at(cid, t))[0 if speaker in (None, cid) else 1][lvl]
+            if explicit:
+                gain = cast.gain(cid, face)
+                dx, dy = int(round(dx * gain)), int(round(dy * gain))
+            fig = cast.sheet(cid, face)[0 if speaker in (None, cid) else 1][lvl]
             im.paste(fig, (ox + dx, oy + dy), fig)
+
+        draw_marks(im, t)
 
         # 字幕（発話の間だけ）
         if cur and cur["text"] and (cur["start"] - timing["subtitle_lead"] <= t

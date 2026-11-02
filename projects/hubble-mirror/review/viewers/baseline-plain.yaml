@@ -1,0 +1,10 @@
+# 平文の基準。同じ事実を人物も感情の層も無しで書いた台本の理解度。
+# engine/viewer.py baseline が作る。門の判定には使わない（record の --baseline）。
+kind: baseline
+version: baseline-plain
+clarity:
+  mean: 69.0
+  readers:
+    r1: 70.0
+    r2: 62.0
+    r3: 75.0

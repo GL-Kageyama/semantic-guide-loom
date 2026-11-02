@@ -2,24 +2,24 @@ name: c131
 metadata:
   kind: cue
   name: c131
-  character: mirai
+  character: mirabo
   sample_rate: 24000
-  duration_sec: 2.898
-  created_at: '2026-11-02T17:56:31.784103+00:00'
+  duration_sec: 2.873
+  created_at: '2026-11-02T20:20:21.866505+00:00'
 parameters:
   version: 2
   provider: tsukasa
   voice_profile:
-    character: ミライ
-    name_reading: みらい
-    reference_audio: gen_female_light
+    character: ミラボ
+    name_reading: みらぼ
+    reference_audio: gen_machine_bright
     voice:
       age: young_adult
       gender: female
-      pitch: medium_high
-      texture: warm
-      breathiness: slight
-      resonance: chest
+      pitch: very_high
+      texture: bright
+      breathiness: none
+      resonance: head
   performance_spec:
     emotion:
       primary: neutral
@@ -28,7 +28,7 @@ parameters:
       effort: normal
       volume: normal
     prosody:
-      pace: fast
+      pace: slow
       pitch: natural
       intonation: neutral
       breathiness: none
@@ -36,13 +36,13 @@ parameters:
       emphasis: []
       breath: []
     subtext: ''
-  dialogue: でぃーぷふぃーるど。
+  dialogue: りゆうは、せいどですか。
   reading: ''
   seed: 1
   alpha: 0.35
   beta: 0.7
-  rate_of_speech: 1.12
-  sha1: 58116c686532
+  rate_of_speech: 0.9
+  sha1: 0a9b04d5e3ff
   name: c131
-  character: mirai
-  pause_before: 0.35
+  character: mirabo
+  pause_before: 0.4

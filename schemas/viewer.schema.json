@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://semantic-guide-loom/viewer.schema.json",
+  "title": "初見の視聴者テストの返答",
+  "description": "review/viewers/<版>/<読者>.json。文学評議会の report とは別。説明が伝わったかだけを見る。",
+  "type": "object",
+  "required": ["reader_id", "clarity", "recovered"],
+  "additionalProperties": true,
+  "properties": {
+    "reader_id": {
+      "type": "string",
+      "description": "読者の id（r1 / r2 / r3）。ファイル名と揃える。"
+    },
+    "prior_knowledge": {
+      "type": "string",
+      "description": "題材についての予備知識。none が原則。"
+    },
+    "summary": {
+      "type": "string",
+      "description": "台本だけから復元した出来事の要約。"
+    },
+    "numbers": {
+      "type": "object",
+      "description": "数字 → その数字が何を測ったか（分母・単位）。",
+      "additionalProperties": {"type": "string"}
+    },
+    "cause": {
+      "type": "string",
+      "description": "原因の説明。台本が明示している範囲で。"
+    },
+    "fix": {
+      "type": "string",
+      "description": "どう直したかの説明。台本が明示している範囲で。"
+    },
+    "recovered": {
+      "type": "object",
+      "description": "facts.yaml の id → yes / partial / no。読者自身の判定。",
+      "additionalProperties": {
+        "type": "string",
+        "enum": ["yes", "partial", "no"]
+      }
+    },
+    "unclear": {
+      "type": "array",
+      "description": "意味が取れなかった行。最大 10。",
+      "items": {
+        "type": "object",
+        "required": ["line", "why"],
+        "additionalProperties": true,
+        "properties": {
+          "line": {"type": "string"},
+          "why": {"type": "string"}
+        }
+      }
+    },
+    "clarity": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "台本全体の意味の取りやすさ。0〜100。"
+    }
+  }
+}

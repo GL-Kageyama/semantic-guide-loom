@@ -26,6 +26,8 @@ from pathlib import Path
 
 import yaml
 
+import characters as C
+
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parent
 
@@ -73,6 +75,30 @@ def main() -> None:
     cast = video.get("cast", "") or ""
     lead = chapter_lead(template)
 
+    # 表情は cue の beat から人物票を引いて解決する（明示 face が優先）。
+    # 絵を描く側は解決済みの face を読むだけにして、規則を 1 か所に置く。
+    cast_doc = C.load_cast(cast) if cast else {}
+    specs = {c["id"]: c for c in cast_doc.get("characters", []) if c.get("id")}
+    faces = {cid: set(spec.get("expressions") or []) for cid, spec in specs.items()}
+    sheets = {cid: C.load_character(cid) for cid in specs}
+
+    def resolve_face(cid: str, cue: dict) -> str:
+        face, _ = C.resolve_face(cue, faces.get(cid, set()),
+                                 specs.get(cid) or {}, sheets.get(cid))
+        return face
+
+    def resolve_react(react: dict) -> dict:
+        out: dict = {}
+        for rid, entry in (react or {}).items():
+            if not isinstance(entry, dict):
+                out[rid] = entry
+                continue
+            item = dict(entry)
+            if not item.get("face"):
+                item["face"] = resolve_face(rid, item)
+            out[rid] = item
+        return out
+
     # voice stem の頭を cue 名で引く
     starts: dict[str, tuple[float, str]] = {}
     for stem in mix["stems"]:
@@ -99,9 +125,12 @@ def main() -> None:
             "wav": wav,
             "text": text,
             "chapter": -1,
-            # 表情は cue の側で決める。face が無ければ emotion から引く（描く側で対応表を持つ）
+            # 表情はここで解決する（明示 face → beat → emotion）。描く側は読むだけ。
             "emotion": cue.get("emotion", "") or "",
-            "face": cue.get("face", "") or "",
+            "face": resolve_face(cue.get("character", ""), cue),
+            # 演技の意図（監査用）と、聞き手の反応（顔も同じ規則で解決する）。
+            "beat": cue.get("beat", "") or "",
+            "react": resolve_react(cue.get("react") or {}),
         }
         if cue_name in chapters:
             ch = chapters[cue_name] or {}

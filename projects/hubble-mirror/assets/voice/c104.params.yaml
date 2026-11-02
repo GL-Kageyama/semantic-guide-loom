@@ -4,8 +4,8 @@ metadata:
   name: c104
   character: mirai
   sample_rate: 24000
-  duration_sec: 4.973
-  created_at: '2026-11-02T17:56:16.988833+00:00'
+  duration_sec: 5.273
+  created_at: '2026-11-02T20:19:59.795621+00:00'
 parameters:
   version: 2
   provider: tsukasa
@@ -22,13 +22,13 @@ parameters:
       resonance: chest
   performance_spec:
     emotion:
-      primary: neutral
+      primary: confidence
       intensity: 0.0
     loudness:
       effort: normal
       volume: normal
     prosody:
-      pace: fast
+      pace: natural
       pitch: natural
       intonation: neutral
       breathiness: none
@@ -36,13 +36,13 @@ parameters:
       emphasis: []
       breath: []
     subtext: ''
-  dialogue: せんきゅうひゃくきゅうじゅうさんねんじゅうにがつ。えすてぃーえすろくじゅういち。
+  dialogue: あのけんさは、ずれたきじゅんで、かがみのかたちをはかっていた。
   reading: ''
   seed: 1
   alpha: 0.35
   beta: 0.7
-  rate_of_speech: 1.12
-  sha1: 19f0648f4f54
+  rate_of_speech: 1.0
+  sha1: 2613d54348e4
   name: c104
   character: mirai
-  pause_before: 1.6
+  pause_before: 0.35

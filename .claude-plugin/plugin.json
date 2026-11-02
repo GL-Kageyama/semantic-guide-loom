@@ -1,7 +1,7 @@
 {
   "name": "semantic-guide-loom",
-  "version": "0.3.0",
-  "description": "Semantic Guide Loom — 意味のある台本から説明の映像を焼く。設計（design.md）→ 人物（persona.yaml）→ 台本（評議会の 8 次元で平均 60 超）→ 読み（reading.yaml）→ 敷き音（bgm.yaml）→ 5 段の焼き、をつなぐ 6 つのスキルを持つ。型（掛け合いの胸像型・語りのスライド型）とキャストを差し替えて、同じ台本を別の絵にする。時刻は音の実尺から取る。",
+  "version": "0.4.0",
+  "description": "Semantic Guide Loom — 意味のある台本から説明の映像を焼く。設計（design.md）→ 人物（一人 1 ファイルの character.yaml と関係）→ 台本（キャスト有 10 次元の評議会で平均 60 超）→ 視聴者（初見復元テストと説明の評価、文学とは別の門）→ 演技（face / react / 記号）→ 読み（reading.yaml）→ 敷き音（bgm.yaml）→ 5 段の焼き、をつなぐ入口と 7 つのスキルを持つ。人物の欲・怖れ・矛盾を、表情・聞き手の反応・身体の揺れに載せる。型とキャストを差し替えて、同じ台本を別の絵にする。時刻は音の実尺から取る。",
   "author": {
     "name": "GL-Kageyama"
   },
@@ -15,6 +15,8 @@
     "dialogue",
     "script",
     "persona",
+    "character",
+    "acting",
     "bgm",
     "skill",
     "semantic-guide"

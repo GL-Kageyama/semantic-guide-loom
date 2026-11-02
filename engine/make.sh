@@ -35,10 +35,22 @@ step() { printf '\n\033[1m── %s\033[0m\n' "$1"; }
 run()  { echo "+ $*"; "$@"; }
 
 FORCE_FLAG=()
-[ "${FORCE:-0}" = "1" ] && FORCE_FLAG=(--force)
+RETRIM_FLAG=()
+[ "${FORCE:-0}" = "1" ] && FORCE_FLAG=(--force) && RETRIM_FLAG=(--retrim)
 
 # キャストを名乗らない型（人物を置かない型）は、素材の段を飛ばす。
 CAST="$("$PY" -c 'import sys,yaml;print((yaml.safe_load(open(sys.argv[1])) or {}).get("cast","") or "")' "$WORK/video.yaml")"
+
+# 焼く前の点検。演技の欄が無い古い作品も通す（警告だけ）。STRICT=1 で警告も失敗。
+PRE_STRICT=()
+[ "${STRICT:-0}" = "1" ] && PRE_STRICT=(--strict)
+step "事前検査（台本・演技）"
+run "$PY" "$ROOT/engine/scriptcheck.py" --project "$WORK" \
+    "${PRE_STRICT[@]+"${PRE_STRICT[@]}"}"
+if [ -n "$CAST" ]; then
+  run "$PY" "$ROOT/engine/acting.py" audit --project "$WORK" \
+      "${PRE_STRICT[@]+"${PRE_STRICT[@]}"}"
+fi
 
 if [ "${SKIP_ASSETS:-0}" != "1" ] && [ -n "$CAST" ]; then
   step "1/5 素材（表情シート → 口の 3 状態）"
@@ -78,12 +90,12 @@ if [ "$USE_BGM" = "1" ]; then
       "${BGM_FORCE_FLAG[@]+"${BGM_FORCE_FLAG[@]}"}"
   # mix は下で 1 回だけ。ここでは mix.yaml を書かせ、混ぜない。
   run env PYTHONPATH="$SAL" "$PY" "$SAL/projects/longform/assemble.py" \
-      --dir "$SCRIPT_DIR" --assets "$AUDIO" --no-render "${FORCE_FLAG[@]+"${FORCE_FLAG[@]}"}"
+      --dir "$SCRIPT_DIR" --assets "$AUDIO" --no-render "${RETRIM_FLAG[@]+"${RETRIM_FLAG[@]}"}"
   run "$PY" "$ROOT/engine/bgm.py" mix --project "$WORK" --stage "$SCRIPT_DIR" --assets "$AUDIO"
 else
   step "3/5 組み立て（間・声量・章の印 → 1 本の WAV）"
   run env PYTHONPATH="$SAL" "$PY" "$SAL/projects/longform/assemble.py" \
-      --dir "$SCRIPT_DIR" --assets "$AUDIO" "${FORCE_FLAG[@]+"${FORCE_FLAG[@]}"}"
+      --dir "$SCRIPT_DIR" --assets "$AUDIO" "${RETRIM_FLAG[@]+"${RETRIM_FLAG[@]}"}"
 fi
 
 step "4/5 時刻（mix.yaml の実尺 → timeline.json）"

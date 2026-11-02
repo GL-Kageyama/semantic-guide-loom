@@ -1,0 +1,108 @@
+# 演技の計測。engine/acting.py report が作る。
+# review/reports/ には置かない（評議会の評価者と数えてしまうため）。
+version: v12
+project: projects/hubble-mirror
+script: projects/hubble-mirror/script.yaml
+cast: mirai-mirabo
+metrics:
+  cues: 309
+  speaking: 309
+  beat:
+    count: 309
+    rate: 1.0
+  face:
+    count: 309
+    rate: 1.0
+    explicit: 0
+    explicit_rate: 0.0
+  emotion:
+    count: 309
+    rate: 1.0
+  speed:
+    distinct: 5
+    values:
+      slow: 171
+      natural: 81
+      fast: 37
+      very_slow: 19
+      very_fast: 1
+    longest_run: 11
+    longest_share: 0.036
+  face_longest_run: 12
+  face_longest_share: 0.039
+  pause_before:
+    count: 309
+    min: 0.12
+    max: 1.6
+    median: 0.4
+  react:
+    face_count: 278
+    opportunities: 309
+    face_rate: 0.9
+    mark_count: 8
+    back_to_back: 0
+  characters:
+    mirai:
+      cues: 203
+      chars: 2483
+      questions: 5
+      faces:
+        serious: 60
+        worried: 47
+        thinking: 43
+        smile: 35
+        surprised: 16
+        neutral: 2
+      beats:
+        resolve: 60
+        shame: 41
+        curiosity: 30
+        approval: 18
+        awe: 16
+        tenderness: 15
+        doubt: 13
+        worry: 6
+        fatigue: 2
+        amusement: 2
+      speeds:
+        slow: 118
+        natural: 57
+        fast: 18
+        very_slow: 10
+      marks: 4
+      avg_chars: 12.2
+      question_rate: 0.025
+      distinct_faces: 6
+    mirabo:
+      cues: 106
+      chars: 1408
+      questions: 2
+      faces:
+        focused: 61
+        sad: 21
+        excited: 12
+        surprised: 6
+        worried: 6
+      beats:
+        doubt: 31
+        prediction: 23
+        shame: 16
+        pride: 8
+        resolve: 7
+        surprise: 6
+        longing: 5
+        fear: 5
+        relief: 4
+        worry: 1
+      speeds:
+        slow: 53
+        natural: 24
+        fast: 19
+        very_slow: 9
+        very_fast: 1
+      marks: 4
+      avg_chars: 13.3
+      question_rate: 0.019
+      distinct_faces: 5
+errors: []
+warnings: []

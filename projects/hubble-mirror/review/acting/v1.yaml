@@ -1,0 +1,73 @@
+# 演技の計測。engine/acting.py report が作る。
+# review/reports/ には置かない（評議会の評価者と数えてしまうため）。
+version: v1
+project: projects/hubble-mirror
+script: projects/hubble-mirror/review/compare/v1/script.yaml
+cast: mirai-mirabo
+metrics:
+  cues: 148
+  speaking: 148
+  beat:
+    count: 0
+    rate: 0.0
+  face:
+    count: 0
+    rate: 0.0
+    explicit: 0
+    explicit_rate: 0.0
+  emotion:
+    count: 0
+    rate: 0.0
+  speed:
+    distinct: 2
+    values:
+      fast: 101
+      very_fast: 47
+    longest_run: 9
+    longest_share: 0.061
+  face_longest_run: 0
+  face_longest_share: 0.0
+  pause_before:
+    count: 148
+    min: 0.2
+    max: 2.2
+    median: 0.35
+  react:
+    face_count: 0
+    opportunities: 148
+    face_rate: 0.0
+    mark_count: 0
+    back_to_back: 0
+  characters:
+    mirai:
+      cues: 101
+      chars: 1042
+      questions: 5
+      faces: {}
+      beats: {}
+      speeds:
+        fast: 101
+      marks: 0
+      avg_chars: 10.3
+      question_rate: 0.05
+      distinct_faces: 0
+    mirabo:
+      cues: 47
+      chars: 513
+      questions: 0
+      faces: {}
+      beats: {}
+      speeds:
+        very_fast: 47
+      marks: 0
+      avg_chars: 10.9
+      question_rate: 0.0
+      distinct_faces: 0
+errors: []
+warnings:
+- beat の網羅 0%（目標 90%）
+- face の明示 0%（目標 90%）
+- 'mirai: 表情が 0 種類（目標 5 種類以上）'
+- 'mirabo: 表情が 0 種類（目標 5 種類以上）'
+- 聞き手の反応（顔）0%（目標 60%）
+- 速度が 2 語（目標 4 語以上）

@@ -4,8 +4,8 @@ metadata:
   name: c086
   character: mirai
   sample_rate: 24000
-  duration_sec: 2.148
-  created_at: '2026-11-02T17:56:07.559015+00:00'
+  duration_sec: 2.723
+  created_at: '2026-11-02T20:19:44.748684+00:00'
 parameters:
   version: 2
   provider: tsukasa
@@ -28,7 +28,7 @@ parameters:
       effort: normal
       volume: normal
     prosody:
-      pace: fast
+      pace: natural
       pitch: natural
       intonation: neutral
       breathiness: none
@@ -36,13 +36,13 @@ parameters:
       emphasis: []
       breath: []
     subtext: ''
-  dialogue: いえるまで、まつ。
+  dialogue: ぬるこれくたー。
   reading: ''
   seed: 1
   alpha: 0.35
   beta: 0.7
-  rate_of_speech: 1.12
-  sha1: f9c16dbf3464
+  rate_of_speech: 1.0
+  sha1: fcfd2ee10886
   name: c086
   character: mirai
-  pause_before: 0.5
+  pause_before: 0.35

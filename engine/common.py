@@ -120,6 +120,13 @@ class Cast:
     def lip(self, char: str) -> bool:
         return bool(self.meta["lip"].get(char, False))
 
+    def gain(self, char: str, face: str) -> float:
+        """表情ごとの身体の揺れの倍率。未記載は 1.0。
+
+        明示の face があるコマだけに掛ける（古い作品の揺れを変えないため）。
+        """
+        return float((self.chars[char].get("motion_gain") or {}).get(face, 1.0))
+
     def sheet(self, char: str, expr: str) -> tuple[list, list]:
         """(ふつう, 明度を落としたもの)。それぞれ 3 状態の画像。
 

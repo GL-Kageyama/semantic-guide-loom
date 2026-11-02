@@ -4,8 +4,8 @@ metadata:
   name: c062
   character: mirai
   sample_rate: 24000
-  duration_sec: 2.473
-  created_at: '2026-11-02T17:55:54.748878+00:00'
+  duration_sec: 4.823
+  created_at: '2026-11-02T20:19:27.382235+00:00'
 parameters:
   version: 2
   provider: tsukasa
@@ -28,7 +28,7 @@ parameters:
       effort: normal
       volume: normal
     prosody:
-      pace: fast
+      pace: natural
       pitch: natural
       intonation: neutral
       breathiness: none
@@ -36,13 +36,13 @@ parameters:
       emphasis: []
       breath: []
     subtext: ''
-  dialogue: べつのけんさが、あった。
+  dialogue: ふちがわずかにたいらだと、ひかりがいちてんにあつまらない。
   reading: ''
   seed: 1
   alpha: 0.35
   beta: 0.7
-  rate_of_speech: 1.12
-  sha1: 97261a4d1fd0
+  rate_of_speech: 1.0
+  sha1: 0edd52d5bad6
   name: c062
   character: mirai
-  pause_before: 0.5
+  pause_before: 0.3

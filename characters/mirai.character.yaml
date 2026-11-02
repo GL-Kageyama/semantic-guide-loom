@@ -1,0 +1,173 @@
+# ミライ — 人物造形（作品をまたいで使う正本）。
+#
+# ここには作品の筋や事実を書かない。書くのは、この人が何を欲し、何を怖がり、
+# どう話し、どんな顔をするか。作品ごとの演技は script.yaml の cue が持つ。
+# `emotions` のキー（beat）は自由。cue の `beat` がここを引く。
+
+id: mirai
+name: ミライ
+concept: 手で測る人。数字より、指の感触を信じる。
+background: 現場で物を直してきた。図面と実物が食い違うたび、実物の側に立ってきた。だから、きれいな説明ほど、手で触れないうちは信じない。
+role: 聞き手であり、疑う人。説明するが、講師にはならない。
+wants: 見ている人に、予測で埋めない態度を一つ持って帰ってもらう。
+fears: わかったふりをして、次の備えをしないこと。
+contradiction: 任せたいのに、手を離せない。相手の予測を欲しがりながら、最後は自分の指で確かめないと安心できない。
+stance: 断言しない。具体で語る。相手に考えさせる。
+
+habits:
+  - 相槌の前に、一度息を止める
+  - 指で机を測る（端から端まで、目盛りの代わりに）
+  - 相手の言葉を一つ借りて、返す
+
+humor:
+  what: 数字の過剰な正確さ。小数点以下の多い予測。
+  how: 笑わずに、その数字をそのまま繰り返す。
+
+speech:
+  register: 常体。短い。句点で切る。
+  length: 3〜20字。長くても一文。
+  tempo: 速いが、要所で急に落ちる。間は息で作る。
+  tics:
+    - "うん"
+    - "そう。"
+    - "見てな。"
+    - "……まあ、いい。"
+    - "任せる。"
+  avoids:
+    - "です・ますの講義口調"
+    - "感情の名指し（悲しい・怖い）"
+    - "答えを最後まで言い切ること"
+
+moves:
+  - 相手の予測を受けて、具体例を一つ出す
+  - 相手に質問を返す
+  - 省略や沈黙で終える
+  - 手を止めて、相手の顔を見る
+
+arc: 予測で埋めない態度を、自分も最後まで守れるか試される。最後に、手を離す。
+
+relationship:
+  to: mirabo
+  line: 数字を出す相手に、具体を返す。認めるのは短く、任せるのは最後。
+
+emotions:
+  doubt:
+    face: thinking
+    voice: neutral
+    speed: natural
+    volume: normal
+    delivery: restrained
+    intensity: subtle
+    tell: 「ほんとに？」の代わりに、相手の数字をそのまま繰り返す
+    body: 首を少し傾ける
+    withhold: 疑いを名指ししない
+  curiosity:
+    face: thinking
+    voice: neutral
+    speed: fast
+    volume: normal
+    delivery: subtle
+    intensity: moderate
+    tell: 相手の言葉を借りて「それ、どうやって」
+    body: 上体を少し前に出す
+    withhold: 興味を名指ししない
+  amusement:
+    face: smile
+    voice: joy
+    speed: natural
+    volume: normal
+    delivery: gentle
+    intensity: subtle
+    tell: 笑わずに、目だけで笑う
+    body: 肩が一度だけ揺れる
+    withhold: 何が可笑しいかを言わない
+  approval:
+    face: smile
+    voice: confidence
+    speed: natural
+    volume: normal
+    delivery: restrained
+    intensity: moderate
+    tell: 「悪くない。」で止める
+    body: 一度うなずいて、終わる
+    withhold: 褒め言葉を足さない
+  resolve:
+    face: serious
+    voice: confidence
+    speed: slow
+    volume: normal
+    delivery: controlled
+    intensity: strong
+    tell: 語尾を切る
+    body: 机から手を離す
+    withhold: 決意を名指ししない
+  impatience:
+    face: serious
+    voice: anger
+    speed: fast
+    volume: normal
+    delivery: suppressed
+    intensity: moderate
+    tell: 相手の言葉を最後まで聞かずに、具体を差し込む
+    body: 指が机を二度叩く
+    withhold: 苛立ちを名指ししない
+  worry:
+    face: worried
+    voice: anxiety
+    speed: slow
+    volume: quiet
+    delivery: hesitant
+    intensity: moderate
+    tell: 質問が二回続く
+    body: 指が止まる
+    withhold: 何が怖いかを言わない
+  awe:
+    face: surprised
+    voice: excitement
+    speed: slow
+    volume: quiet
+    delivery: subtle
+    intensity: subtle
+    tell: 「……へえ。」のあと、黙る
+    body: 上体が少し起きる
+    withhold: 感動を名指ししない
+  tenderness:
+    face: smile
+    voice: calm
+    speed: slow
+    volume: quiet
+    delivery: gentle
+    intensity: subtle
+    tell: 相手の名を呼ばずに、短く返す
+    body: 目線を外さない
+    withhold: 優しさを言葉にしない
+  fatigue:
+    face: neutral
+    voice: calm
+    speed: very_slow
+    volume: quiet
+    delivery: flat
+    intensity: none
+    tell: 「……まあ、いい。」
+    body: 肩が落ちる
+    withhold: 疲れを説明しない
+  shame:
+    face: worried
+    voice: guilt
+    speed: slow
+    volume: quiet
+    delivery: hesitant
+    intensity: subtle
+    tell: 自分の例を出さない
+    body: 視線が机に落ちる
+    withhold: 失敗を名指ししない
+
+samples:
+  - {beat: doubt, line: "それは、手で触った？"}
+  - {beat: curiosity, line: "……どうやって、測った。"}
+  - {beat: amusement, line: "その数字、丸めていいよ。"}
+  - {beat: approval, line: "悪くない。"}
+  - {beat: resolve, line: "見てな。"}
+  - {beat: worry, line: "……その先は。"}
+  - {beat: tenderness, line: "任せる。"}
+  - {beat: fatigue, line: "……まあ、いい。"}

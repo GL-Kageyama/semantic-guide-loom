@@ -1,0 +1,13 @@
+# 映像側の台本（音には渡さない）。render.py の timeline が読む。
+title: ハッブルの鏡
+subtitle: 「精度が高い」と「正しい」は、別
+channel: MIRAI × MIRABO
+# どの型で描き、誰が画面に居るか（references/templates/ と characters/ の名）。
+template: dialogue-bust
+cast: mirai-mirabo
+chapters:
+  c001: {label: 序章, title: 99.8%, key: "この数字は、\n何を測った?", term: 現在地}
+  c043: {label: 第1章, title: ぼやけた、最初の一枚, key: "鏡は、壊れて\nいなかった。", term: 形}
+  c085: {label: 第2章, title: 1.3ミリ, key: "測る側が、\nずれていた。", term: 誤差}
+  c190: {label: 第3章, title: 眼鏡をかけた望遠鏡, key: "直すのでは、\nなく。", term: 補正}
+  c236: {label: 終章, title: 十日の露出, key: "分母が、\n言えない。", term: 露出}

@@ -4,8 +4,8 @@ metadata:
   name: c058
   character: mirabo
   sample_rate: 24000
-  duration_sec: 3.173
-  created_at: '2026-11-02T17:55:52.711855+00:00'
+  duration_sec: 2.648
+  created_at: '2026-11-02T20:19:24.564857+00:00'
 parameters:
   version: 2
   provider: tsukasa
@@ -25,10 +25,10 @@ parameters:
       primary: neutral
       intensity: 0.0
     loudness:
-      effort: normal
-      volume: normal
+      effort: relaxed
+      volume: quiet
     prosody:
-      pace: very_fast
+      pace: slow
       pitch: natural
       intonation: neutral
       breathiness: none
@@ -36,13 +36,13 @@ parameters:
       emphasis: []
       breath: []
     subtext: ''
-  dialogue: ぼくは、ただしいといに、こたえていました。
+  dialogue: よそくのはなしです。
   reading: ''
   seed: 1
   alpha: 0.35
   beta: 0.7
-  rate_of_speech: 1.28
-  sha1: 0e2473c4deae
+  rate_of_speech: 0.9
+  sha1: 51f1a21ccaff
   name: c058
   character: mirabo
-  pause_before: 1.0
+  pause_before: 0.35

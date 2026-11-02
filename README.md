@@ -14,9 +14,11 @@
 | 決めること | どこで決めるか |
 | --- | --- |
 | 何を、どの順で話すか | `design.md`（設計）→ `script.yaml`（音の台本）× `video.yaml`（映像の台本） |
-| 誰が声を出すか、どう演じるか | `script.yaml` の `character` と演技の欄 |
-| 誰が話し、どう喋るか | `characters/<名前>.persona.yaml`（言葉の設定） |
+| 誰が声を出すか、どう演じるか | `script.yaml` の `character` と演技の欄（`emotion` / `speed` / `pause_before` / `volume`） |
+| その人物が何を欲し、何を怖れるか | `characters/<id>.character.yaml`（人物票。一人 1 ファイル） |
+| 二人がどう噛み合うか | `characters/<名前>.persona.yaml`（関係） |
 | 誰が画面に居るか | `characters/<名前>.cast.yaml`（画面の設定） |
+| 表情・聞き手の反応・記号・身体の揺れ | cue の `face` / `react` と cast の `motion_gain` |
 | 声にどう読ませるか | `reading.yaml`（かな）。字幕は `video.yaml` の `display` が持つ |
 | 敷き音 | `bgm.yaml`（意図とミックス）→ `assets/bgm/underlay.wav` |
 | どう見えるか（色・位置・間合い・並べ方） | `references/templates/<型>/` × `engine/layouts/` |
@@ -46,16 +48,32 @@
 | 段 | スキル | 作るもの | 道具 |
 | --- | --- | --- | --- |
 | 設計 | `guide-design` | `design.md`（約束・章・事実の柱・役割） | story-council（plot モード） |
-| 人物 | `guide-cast` | `characters/<キャスト>.persona.yaml` | `engine/persona.py` |
-| 台本 | `guide-script` | `台本.md` → `script.yaml` / `video.yaml` / `chapters.yaml` | story-council（8 次元）・`engine/review.py`・`engine/scriptcheck.py` |
+| 人物 | `guide-cast` | `characters/<id>.character.yaml`（一人 1 ファイル）+ `<キャスト>.persona.yaml`（関係） | `engine/persona.py` |
+| 台本 | `guide-script` | `台本.md` → `script.yaml` / `video.yaml` / `chapters.yaml` | story-council（キャスト有 10 次元 / 語り 8 次元）・`engine/review.py`・`engine/scriptcheck.py` |
+| 視聴者 | `guide-viewer` | `review/viewers/<版>.yaml`（初見復元テスト・説明の評価） | `engine/viewer.py` |
+| 演技 | `guide-acting` | `review/acting/plan.md` → cue の `beat` / `face` / `speed` / `react` | `engine/acting.py` |
 | 読み | `guide-reading` | `reading.yaml` | `engine/reading.py` |
 | BGM | `guide-bgm` | `bgm.yaml` → `assets/bgm/underlay.wav` | `engine/bgm.py` |
 | 焼く | `semantic-guide-loom` | `renders/<作品>.mp4` | `engine/make.sh` |
 
-- **台本は平均 60 超の最高版を採る。** 版ごとに `review/drafts/vN.md` と
-  `review/reports/vN/*.json` を残し、`engine/review.py record` が `review/scores.yaml` に書く。
-- **ペルソナとキャストを混ぜない。** `persona.yaml` は話し方、`cast.yaml` は画面。
-  名前はどちらもデータで、コードには書かない。
+- **台本は、二つの門を通す。** 文学評議会（平均 60 超）と、視聴者の門
+  （理解度は平文の基準 − 10 以上・各事実が 2/3 以上・説明の評価 75 以上）。
+  **平均に混ぜない。**
+  版ごとに `review/drafts/vN.md`・`review/reports/vN/*.json`・`review/viewers/vN/` を残す。
+  キャストの居る作品は **10 次元**（既存 8 + `character-depth` + `character-role`）、
+  語りだけなら 8 次元。**次元数が違う平均を混ぜない。**
+- **文学評議会は、説明の明瞭さを測らない。** 10 次元は物語としての強さを見るので、
+  断片・省略・余白が高得点になりうる。解説動画は、台本だけを渡した初見の読者 3 人と
+  説明の評価者 1 人に通す（`guide-viewer`）。**文学が高くても、ここを落ちたら採用しない。**
+- **理解度の絶対値 75 は、平文の解説のための数字。** 掛け合いと感情の層を持つ台本は、
+  同じ事実でも自己申告の理解度が下がる。同じ事実を平文で書いた基準版を同じ 3 人に
+  読ませ、**基準の平均 − 10 点**を掛け合い版のしきい値にする。事実の復元（2/3）と
+  説明の評価（75）は変えない。
+- **人物は一人 1 ファイル。** 欲・怖れ・矛盾・癖・感情の型（`emotions`）・台詞の見本まで。
+  `cast.yaml` は画面、`persona.yaml` は二人の関係。名前はどれもデータで、コードには書かない。
+- **演技は台詞より先に設計する。** 感情の弧（`review/acting/plan.md`）を置き、cue に
+  `beat` / `speed` / `pause_before` / `volume` / `react` を振る。顔は `beat` から
+  人物票を引いて決まる（`face` は動かす所だけ明示）。まばたきはしない。
 - **読みは音のためだけ。** 字幕・章題には渡さない。
 
 ## 使い方
@@ -108,7 +126,7 @@ clone したら一度 `git lfs pull`。表情シート（`references/sheets/`）
 
 ```
 projects/<作品名>/
-  design.md       題材・約束・章・事実の柱（任意。設計から作るとき）
+  design.md       題材・約束・章・事実の柱・説明の鎖（任意。設計から作るとき）
   reading.yaml    cue → 声に読ませる読み（任意。無ければ line をそのまま読む）
   bgm.yaml        敷き音の意図とミックス（任意。無ければ BGM の段を飛ばす）
   script.yaml     何を、どの順で、誰が、どう話すか（音の台本）
@@ -116,6 +134,8 @@ projects/<作品名>/
   chapters.yaml   章の頭の cue（音のチャイム）
   voice_fx.yaml   声に掛ける効果（任意）
   review/         台本の版・評価・採用の記録（任意。設計から作るとき）
+    acting/       感情の弧（plan.md）と版ごとの演技の計測（vN.yaml）
+    viewers/      初見復元テストと説明の評価（vN/ と vN.yaml）
   assets/
     voice/        1 行 1 つの声（+ .params.yaml）— 入力
     sfx/  bgm/    効果音・敷き音 — 入力
@@ -139,30 +159,37 @@ projects/<作品名>/
 skills/
   semantic-guide-loom/SKILL.md   入口。焼く手順（スキルの本体）
   guide-design/        設計（design.md）
-  guide-cast/          人物の言葉の設定（persona.yaml）
+  guide-cast/          人物票（character.yaml）と二人の関係（persona.yaml）
   guide-script/        台本の生成と評価の往復
+  guide-viewer/        初見復元テストと説明の評価（文学評議会とは別の門）
+  guide-acting/        感情の弧と cue ごとの演技（face / react / mark）
   guide-reading/       読み（reading.yaml）
   guide-bgm/           敷き音（bgm.yaml）
 engine/
   make.sh              5 段を通す
   prepare_assets.py    表情シート → 素材
-  persona.py           persona の検査・人物票・既存台本の分析
-  review.py            評議会の採点を集計・記録
+  characters.py        人物票・関係・シートの解決（共有）
+  persona.py           人物票の検査・brief・既存台本の分析
+  acting.py            演技の監査・版ごとの計測・比較
+  sal_enums.py         semantic-audio-loom の語彙を読む（写さない）
+  review.py            評議会の採点を集計・記録・比較
+  viewer.py            初見復元テストと説明の評価を集計（門の判定）
   reading.py           読みの下書き・監査・ビルド用の舞台
-  scriptcheck.py       script / video / chapters / reading の整合
+  scriptcheck.py       script / video / chapters / reading / 演技の整合
   bgm.py               敷き音の下書き・生成・ミックス
   export_timeline.py   mix.yaml → timeline.json
   render.py            入口（読む・型を選ぶ・焼く）
   common.py            尺度・色・書体・文字・素材（型に依らない）
   layouts/
-    dialogue_bust.py   掛け合い・胸像型の並べ方
+    dialogue_bust.py   掛け合い・胸像型の並べ方（反応・記号・身体）
     narrate_slide.py   語り・スライド型の並べ方
 references/templates/<型>/template.yaml   型の「数」
 references/sheets/                        表情シート（入力。Git LFS）
-characters/<キャスト>.cast.yaml   誰が画面に居るか
-characters/<キャスト>.persona.yaml 誰がどう話すか
+characters/<キャスト>.cast.yaml   誰が画面に居るか・身体の揺れ
+characters/<id>.character.yaml    人物票（欲・怖れ・矛盾・感情の型）
+characters/<キャスト>.persona.yaml 二人の関係
 projects/<作品>/       台本・資材・焼いた動画（asset は Git LFS）
-schemas/               video / template / cast / persona / reading / bgm の形
+schemas/               video / template / cast / character / persona / reading / bgm の形
 tools/
   check_layout.py      置き場の綴りと schemas を確かめる
 docs/                  契約と型の説明
@@ -190,6 +217,11 @@ build/<作品>/          中間物（.gitignore。焼き直せば戻る）
 - **読み違えは `reading.yaml` で塞ぐ。** 字幕は原表記のまま（`display`）。
 - **BGM の音量と ducking は `bgm.yaml` が持つ。** `mix.yaml` は手で直さない。
 - **1 コマは状態を持たない。** 同じ時刻なら同じ絵が出る。
+- **顔は `beat` から決まる。** 人物票の `emotions.<beat>.face` を
+  `export_timeline.py` が解決し、明示 `face` があればそちらを優先する。
+  聞き手の反応も `react.<id>.beat` でよい。まばたきはしない。
+- **人物はデータ。** 欲・怖れ・矛盾・感情の型は `characters/<id>.character.yaml`。
+  コードに固有名を書かない。
 - **型は作品を知らない。** 特定の題・人数・章の数を型に書かない。
 - **置き場を移したら `tools/check_layout.py`。** 古い綴りが文書に残っていないかを見る。
 

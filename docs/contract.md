@@ -15,13 +15,14 @@ video.yaml ──(template / cast の名)─────────────
                                           (render) ──> projects/<作品>/renders/<name>.mp4
 ```
 
-この 4 つに**任意の 3 つ**が重なる。どれも無ければ、従来の 5 段のまま動く。
+この 4 つに**任意の 4 つ**が重なる。どれも無ければ、従来の 5 段のまま動く。
 
 ```
 reading.yaml ──(reading.py stage)──> build/<作品>/script.yaml + video.yaml
                                           ↑ line を読みに、display に原表記
 bgm.yaml ──(bgm.py generate / mix)──> assets/bgm/<name>.wav + mix.yaml の bed と duck
-persona.yaml ──(人が読む。engine は check と brief だけ)──> 台本の言葉
+characters/<id>.character.yaml ──(人は check / brief。engine は beat→face の解決にも読む)──> 台本と演技
+characters/<キャスト>.persona.yaml ──(関係。人が読む)──> 掛け合いの型
 ```
 
 **向きが一方通行であることが、この機構の要**。絵は音の実尺を読む。音は絵を知らない。
@@ -49,6 +50,31 @@ cues:
 - 演技の欄（`emotion` / `speed` / `pause_before` / `volume` / `pitch` …）は
   semantic-audio-loom の仕様。**効く欄は限られる**（semantic-audio-loom の
   `docs/resolve.md`「どの欄が、声を動かすか」を見る）
+
+### 演技の欄 — 声と絵の両方へ渡る
+
+```yaml
+- name: c009
+  character: mirabo
+  line: "99.8パーセント。"
+  emotion: confidence       # 声（SAL の 11 感情）
+  beat: pride               # 演技の正本。人物票の感情キー
+  face: smile               # 省略可（明示があれば beat より優先）
+  speed: fast
+  pause_before: 0.3
+  volume: normal
+  react:                    # 聞き手の反応（この cue の間）
+    mirai: {beat: doubt, mark: "？"}
+```
+
+- **`beat` が演技の正本。** `face` は省略してよく、人物票の
+  `emotions.<beat>.face` から解決される。明示 `face` があればそちらを優先し、
+  どちらも無ければ `cast.yaml` の `by_emotion[emotion]` に落ちる。
+- `react` の id は cast の id。`face` / `beat` は cue と同じ規則で解決され、
+  `mark` は 3 文字まで。**顔だけ・記号だけでもよい**が、どちらも無い反応は無効。
+- **解決するのは `export_timeline.py` の 1 か所だけ**（規則は
+  `engine/characters.py`）。`timeline.json` には解決済みの `face` と
+  `react.<id>.face` が入り、`beat` も記録として残る。絵を描く側は推測しない。
 
 ⚠️ **読み違えは `line` のルビで塞ぐ。** 工房の記法 `漢字《かな》`。読みだけ仮名になり、
 台詞と字幕は原表記のまま残る。ただし**読みを本気で直すなら `reading.yaml`**（下記）。
@@ -125,23 +151,68 @@ mix:
 
 ---
 
-## `persona.yaml` — 言葉の人物（配布する）
+## `characters/<id>.character.yaml` — 人物票（配布する）
 
-`cast.yaml` が**画面の誰か**、`persona.yaml` が**言葉の誰か**。話し方・長さ・癖・
-避けること・弧を持つ。絵の欄（表情・口・立ち位置）は持たない。
+**一人 1 ファイル。** 作品をまたいで使い回せる人物造形。`id` は `cast.yaml` の id と
+一致する。話し方だけでなく、欲・怖れ・矛盾・癖・感情の型（`emotions`）・台詞の
+見本（`samples`）を持つ。**絵の欄（立ち位置・口・画像）は持たない。**
+
+```yaml
+id: mirai
+name: ミライ
+concept: 手で測る人。数字より、指の感触を信じる。
+role: 聞き手であり、疑う人。講師にはならない。
+wants: ...
+fears: ...
+contradiction: 任せたいのに、手を離せない。
+habits: [指で机を測る, 相槌の前に一度息を止める]
+humor: {what: 数字の過剰な正確さ, how: 相手の言葉を一つ借りて返す}
+speech:
+  register: 常体。短い。
+  length: 3〜20 字
+  tics: [うん, そう。, 見てな。]
+  avoids: [講義口調, 感情の名指し]
+emotions:                       # 感情の型。キーは自由
+  pride:
+    face: smile                 # cast の expressions のどれか
+    voice: confidence           # SAL の 11 感情
+    speed: fast
+    volume: normal
+    delivery: ""
+    tell: 文末に「です」を足す
+    body: 少し浮く
+    withhold: 嬉しさを名指ししない
+samples: [{beat: pride, line: "99.8%です。"}]
+```
+
+- `emotions` は 6 つ以上。`face` が cast に実在し、`voice` / `speed` / `volume` /
+  `delivery` が semantic-audio-loom の語彙であることを `engine/persona.py check` が見る
+- schema が必須にするのは `id` と `name` だけ。下書きを止めないため、残りは
+  `check` が厳しく見る
+- 形は `schemas/character.schema.json`
+
+## `characters/<キャスト>.persona.yaml` — 二人の関係（配布する）
+
+`cast.yaml` が**画面の誰か**、`character.yaml` が**人物**、`persona.yaml` が
+**関係**。人物の欄は持たない（旧形式の `characters[]` は読み込みの後方互換）。
 
 ```yaml
 name: mirai-mirabo
-characters:
-  - id: mirai
-    name: ミライ
-    role: 問いを立て、具体で崩す
-    speech: {register: 常体, length: {min: 8, max: 25},
-             tics: [うん, そう。, 見てな。], avoids: [です・ます]}
+description: 人と小さな機体。疑い、確かめ、最後に少しだけ任せる。
+pair:
+  engine: ミライが問いを立て、ミラボが予測で応え、ミライが具体で崩す。
+  rule: ミラボの数字は、ミライの具体に回収される。
+  dynamics:
+    - between: [mirai, mirabo]
+      engine: 予測 → 具体 → 予測の外れ。
+      rule: ミラボは当てにいき、ミライは当てさせない。
+      escalation: ミラボが数字を増やし、ミライが黙る。
 ```
 
-- `engine/persona.py check` が cast との id の一致と必須欄を見る
-- `engine/persona.py brief` が台本を書く前の人物票を出す
+- `engine/persona.py check` が cast の id と人物票の対応、`dynamics` の id、
+  `emotions` の語彙を見る
+- `engine/persona.py brief` が台本を書く前の人物票（感情表・samples 込み）を出す。
+  `--character <id>` で一人ぶん
 - `engine/persona.py analyze --project` が既存台本から話し方の実測を出す
 - 形は `schemas/persona.schema.json`
 
@@ -149,8 +220,45 @@ characters:
 
 ## `design.md` — 設計（作品が持つ。任意）
 
-台本を書く前の設計。題材・視聴者・約束・事実の柱・章・二人の役割・最後に残す問い。
-**形は決めない**（Markdown）。`guide-design` の `references/design-sheet.md` が型。
+台本を書く前の設計。題材・視聴者・約束・事実の柱・**説明の鎖**・章・二人の役割・
+最後に残す問い。**形は決めない**（Markdown）。`guide-design` の
+`references/design-sheet.md` が型。
+
+**説明の鎖**は、視聴者が台本だけで復元できる問い（3〜7 個）と、それを平文で言う
+場所の対応。**主題（約束）はここに入れない。** 主題は言わない。事実と因果は言う。
+この表が `review/viewers/<版>/facts.yaml` の元になる。
+
+---
+
+## `review/` — 二つの台帳（混ぜない）
+
+台本の採否は、**別々の物差し**を両方通す。平均も足さない。
+
+| 台帳 | 何を見るか | 道具 | 合格 |
+| --- | --- | --- | --- |
+| `review/reports/<版>/` | 文学評議会の 10 次元（物語・人物・情感） | `engine/review.py` | 平均 60 超 |
+| `review/viewers/<版>/` | 初見の復元テスト（3 人）と説明の評価（1 人） | `engine/viewer.py` | 理解度は平文の基準 − 10 以上、各事実が 2/3 以上、説明 75 以上 |
+
+```
+review/viewers/<版>/
+  facts.yaml       視聴者が答えるべき問い（id / question / answer）
+  r1.json r2.json r3.json   初見の読者の返答（schemas/viewer.schema.json）
+  explanation.json 説明の設計の評価
+review/viewers/<版>.yaml   集計と門の判定（engine/viewer.py record が書く）
+review/viewers/<基準>/plain.md   同じ事実を平文で書いた基準版
+review/viewers/<基準>.yaml       基準の理解度（engine/viewer.py baseline が書く）
+```
+
+- **文学評議会は、説明の明瞭さを測らない。** 10 次元は物語としての強さを見る。
+  断片・省略・余白が高得点になりうるので、解説動画には別の門が要る。
+- **理解度の絶対値 75 は、平文の解説のための数字。** 掛け合いと感情の層を持つ
+  台本は、同じ事実でも自己申告の理解度が下がる。同じ事実を平文で書いた基準版を
+  同じ 3 人に読ませ、**基準の平均 − 10 点**を掛け合い版のしきい値にする。
+  基準は台本より先に、`facts.yaml` と `design.md` から書く。事実の復元（2/3）と
+  説明の評価（75）は基準でも変えない。
+- **`review/reports/` に視聴者の JSON を置かない。** `review.py` が全部評価者として
+  数え、文学の平均が壊れる。置き場を分ける。
+- 読者には台本だけを渡す。`design.md`・人物票・前の評価を見せない。
 
 ---
 
@@ -213,7 +321,9 @@ cue の名の配列。`assemble.py` がこの cue の手前にチャイムを置
  "audio": "/abs/path/renders/cyber-basics.wav",
  "cues": [{"name": "c01", "character": "mirabo", "start": 2.0, "end": 3.1,
            "wav": "/abs/path/c01.wav", "text": "ミライさん！",
-           "emotion": "excitement", "face": "", "chapter": 0}],
+           "emotion": "excitement", "face": "excited", "beat": "pride",
+           "react": {"mirai": {"face": "thinking", "beat": "doubt", "mark": "？"}},
+           "chapter": 0}],
  "chapters": [{"cue": "c01", "index": 0, "label": "序章", "title": "...",
                "start": 0.4, "cue_start": 2.0, "...": "型が読む欄は素通し"}]
 }
@@ -221,6 +331,9 @@ cue の名の配列。`assemble.py` がこの cue の手前にチャイムを置
 
 `wav` は**キュー単体の WAV**。口の動きはこの 1 本の包絡から作る——
 `duration` の WAV から切り出すのでなく、cue ごとのファイルを測る。
+
+`face` / `react` は**解決済み**の値が入る（明示 `face` → `beat` → `emotion` の
+対応表 → 既定）。`beat` もそのまま残るが、絵は読まない（監査と記録のため）。
 
 `project` は作品の置き場。`render.py` が、書き出し先を決め損ねたときの既定
 （`<project>/renders/<name>.mp4`）に使う。
@@ -249,15 +362,22 @@ cue の名の配列。`assemble.py` がこの cue の手前にチャイムを置
 ```
 references/templates/<型>/template.yaml   型（配布する）
 characters/<キャスト>.cast.yaml            キャスト・画面（配布する）
-characters/<キャスト>.persona.yaml         キャスト・言葉（配布する）
+characters/<id>.character.yaml             人物票・一人 1 ファイル（配布する）
+characters/<キャスト>.persona.yaml         キャストの関係（配布する）
 references/sheets/                        表情シート（入力。Git LFS）
 projects/<作品>/                            台本（script / video / chapters / voice_fx /
                                           design / reading / bgm / review）
+projects/<作品>/review/acting/             感情の弧（plan.md）と版ごとの計測（vN.yaml）
+projects/<作品>/review/viewers/            初見復元テストと説明の評価（vN/ と vN.yaml）
 projects/<作品>/assets/                     音の資材（voice / sfx / bgm）— Git LFS
 projects/<作品>/renders/                    焼いた動画 — 成果物。Git LFS
 build/<作品>/                               中間物（assets, audio, 読みの舞台, timeline.json）
                                           — .gitignore
 ```
+
+**演技の計測は `review/acting/` に置く。** `review/reports/` は評価者の JSON だけの
+場所で、`review.py` はそこの全 `*.json` を評価者として数える。YAML の計測を
+混ぜると平均が壊れる。
 
 **入れるのは「入力」と「成果物」、入れないのは「中間物」。** 表情シートも声も入力
 （切り抜きからも、声からも元には戻せない）、`renders/` は成果物（clone した人がそのまま

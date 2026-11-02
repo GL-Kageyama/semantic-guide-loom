@@ -4,8 +4,8 @@ metadata:
   name: c012
   character: mirai
   sample_rate: 24000
-  duration_sec: 2.323
-  created_at: '2026-11-02T17:55:27.333219+00:00'
+  duration_sec: 2.623
+  created_at: '2026-11-02T20:18:51.391743+00:00'
 parameters:
   version: 2
   provider: tsukasa
@@ -36,13 +36,13 @@ parameters:
       emphasis: []
       breath: []
     subtext: ''
-  dialogue: けんさの、いっち。
+  dialogue: すうじをだすかかりでもある。
   reading: ''
   seed: 1
   alpha: 0.35
   beta: 0.7
   rate_of_speech: 1.12
-  sha1: c92b8dda8b2b
+  sha1: d7c37207a571
   name: c012
   character: mirai
-  pause_before: 0.28
+  pause_before: 0.3

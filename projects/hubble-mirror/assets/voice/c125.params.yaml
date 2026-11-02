@@ -4,8 +4,8 @@ metadata:
   name: c125
   character: mirai
   sample_rate: 24000
-  duration_sec: 1.648
-  created_at: '2026-11-02T17:56:29.219934+00:00'
+  duration_sec: 5.723
+  created_at: '2026-11-02T20:20:16.622168+00:00'
 parameters:
   version: 2
   provider: tsukasa
@@ -28,7 +28,7 @@ parameters:
       effort: normal
       volume: normal
     prosody:
-      pace: fast
+      pace: natural
       pitch: natural
       intonation: neutral
       breathiness: none
@@ -36,13 +36,13 @@ parameters:
       emphasis: []
       breath: []
     subtext: ''
-  dialogue: そうか。
+  dialogue: くっせつしき。れんずをとおしたひかりで、かがみをはんたいがわからみる。
   reading: ''
   seed: 1
   alpha: 0.35
   beta: 0.7
-  rate_of_speech: 1.12
-  sha1: 4079e011dbfa
+  rate_of_speech: 1.0
+  sha1: 428e9f1bc505
   name: c125
   character: mirai
-  pause_before: 0.35
+  pause_before: 0.3

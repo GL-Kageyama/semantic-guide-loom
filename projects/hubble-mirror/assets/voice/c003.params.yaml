@@ -4,8 +4,8 @@ metadata:
   name: c003
   character: mirai
   sample_rate: 24000
-  duration_sec: 3.273
-  created_at: '2026-11-02T17:55:21.503489+00:00'
+  duration_sec: 4.948
+  created_at: '2026-11-02T20:18:43.967827+00:00'
 parameters:
   version: 2
   provider: tsukasa
@@ -22,7 +22,7 @@ parameters:
       resonance: chest
   performance_spec:
     emotion:
-      primary: neutral
+      primary: confidence
       intensity: 0.0
     loudness:
       effort: normal
@@ -36,13 +36,13 @@ parameters:
       emphasis: []
       breath: []
     subtext: ''
-  dialogue: かもつしつに、ぼうえんきょうが、ねている。
+  dialogue: うちあげるのは、でぃすかばりー。えすてぃーえすさんじゅういち。
   reading: ''
   seed: 1
   alpha: 0.35
   beta: 0.7
   rate_of_speech: 1.12
-  sha1: d54531aafb2b
+  sha1: 128c9659f351
   name: c003
   character: mirai
-  pause_before: 0.28
+  pause_before: 0.3

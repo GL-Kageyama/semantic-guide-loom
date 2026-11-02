@@ -85,6 +85,14 @@ def table(args) -> int:
         print(f"評価が無い: {project / 'review' / 'reports'}")
         return 1
 
+    if args.versions:
+        wanted = [v.strip() for v in args.versions.split(",") if v.strip()]
+        missing = [v for v in wanted if v not in reports]
+        if missing:
+            print(f"評価が無い版: {', '.join(missing)}")
+            return 1
+        reports = {v: reports[v] for v in wanted}
+
     index = existing_index(project)
     adopted = index.get("adopted") or ""
     means = {name: mean_of(r["scores"]) for name, r in reports.items()}
@@ -111,6 +119,49 @@ def table(args) -> int:
             print(f"\n{name}: {len(r['errors'])} 件の不備")
             for err in r["errors"]:
                 print(f"  {err}")
+    return 0
+
+
+# 最初の 8 次元。10 次元の版と混ぜて平均を比べないための印。
+ORIGINAL_8 = (
+    "hook", "plot-architecture", "reader-experience", "prose-style",
+    "admiration", "anti-generic-story-filter", "theme-resonance", "emotional-power",
+)
+
+
+def compare(args) -> int:
+    project = Path(args.project)
+    reports = find_reports(project)
+    for version in (args.before, args.after):
+        if version not in reports:
+            print(f"評価が無い版: {version}")
+            return 1
+    a, b = reports[args.before]["scores"], reports[args.after]["scores"]
+    if not a or not b:
+        print("評価者が足りない")
+        return 1
+    if set(a) != set(b):
+        print("評価者の id が違う。同じ id の集合で採り直す。")
+        print(f"  {args.before}: {', '.join(sorted(a))}")
+        print(f"  {args.after}: {', '.join(sorted(b))}")
+        print(f"  片方だけ: {', '.join(sorted(set(a) ^ set(b)))}")
+        return 1
+
+    keys = sorted(a)
+    print(f"| 次元 | {args.before} | {args.after} | 差 |")
+    print("| --- | ---: | ---: | ---: |")
+    for key in keys:
+        print(f"| {key} | {a[key]:g} | {b[key]:g} | {b[key] - a[key]:+g} |")
+    ma, mb = mean_of(a), mean_of(b)
+    print(f"| **平均** | **{ma:.2f}** | **{mb:.2f}** | **{mb - ma:+.2f}** |")
+
+    common = [k for k in ORIGINAL_8 if k in a and k in b]
+    if len(common) == len(ORIGINAL_8):
+        ca = round2(sum(a[k] for k in common) / len(common))
+        cb = round2(sum(b[k] for k in common) / len(common))
+        print(f"\n共通 8 次元の平均: {ca:.2f} → {cb:.2f}（{cb - ca:+.2f}）")
+    else:
+        print(f"\n共通 8 次元のうち {len(common)} 次元しか無い（共通 8 次元の平均は出さない）")
     return 0
 
 
@@ -147,7 +198,7 @@ def record(args) -> int:
     path = project / "review" / "scores.yaml"
     with open(path, "w", encoding="utf-8") as f:
         f.write("# 評議会の採点。engine/review.py record が reports/ から作る。\n")
-        f.write("# 平均は 8 次元の primary_score。採用は人が決め、adopted に残す。\n")
+        f.write("# 平均は版ごとの次元（評価者）の primary_score。採用は人が決め、adopted に残す。\n")
         yaml.safe_dump(out, f, allow_unicode=True, sort_keys=False)
     print(f"書いた: {path}")
 
@@ -203,8 +254,16 @@ def main() -> int:
         p = sub.add_parser(cmd, help=help_text)
         p.add_argument("--project", required=True)
         p.add_argument("--threshold", type=float, default=DEFAULT_THRESHOLD)
+        if cmd == "table":
+            p.add_argument("--versions", default="",
+                           help="出す版を絞る（例 v1b,v4）。次元数が違う版を混ぜない")
         if cmd == "record":
             p.add_argument("--adopted", default="", help="採用した版（省略時は既存の値を保つ）")
+
+    p = sub.add_parser("compare", help="2 版の次元ごとの差を出す（評価者の id が同じときだけ）")
+    p.add_argument("--project", required=True)
+    p.add_argument("--before", required=True, help="前の版")
+    p.add_argument("--after", required=True, help="後の版")
 
     p = sub.add_parser("validate", help="評価者 JSON を novel-council-layer で検証する")
     p.add_argument("--project", required=True)
@@ -215,6 +274,8 @@ def main() -> int:
         return table(args)
     if args.cmd == "record":
         return record(args)
+    if args.cmd == "compare":
+        return compare(args)
     return validate(args)
 
 

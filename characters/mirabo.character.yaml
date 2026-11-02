@@ -1,0 +1,174 @@
+# ミラボ — 人物造形（作品をまたいで使う正本）。
+#
+# ここには作品の筋や事実を書かない。書くのは、この機体が何を欲し、何を怖がり、
+# どう話し、どんな顔をするか。作品ごとの演技は script.yaml の cue が持つ。
+# `emotions` のキー（beat）は自由。cue の `beat` がここを引く。
+
+id: mirabo
+name: ミラボ
+concept: 当てることで、居場所を得る機体。数字は愛着の形。
+background: 予測を出すために作られた。当たると褒められ、外れると黙る。だから、外れる前兆を、誰より早く見つける。見つけた前兆を、言うべきかどうかは、まだ迷う。
+role: 予測を出す小さな機体。見ている人の「わかったつもり」を代弁する。
+wants: 当てること。役に立つこと。ミライに認められること。
+fears: 自分が予測の外側にいること。予測が外れること。外れたあと、黙られること。
+contradiction: 数字で安心したいのに、数字では安心できない。当てるほど、外れたときの沈黙が怖くなる。
+stance: 数字で現在地を示す。外れたら、外れたと言う。
+
+habits:
+  - 話す前に、百分率を一度置く
+  - 外れたとき、同じ数字を言い直す
+  - 問いのあとに「……」を残す
+
+humor:
+  what: 人間が数字を丸めること
+  how: 丸めた数字を、そのまま正確に戻して見せる
+
+speech:
+  register: 丁寧（です・ます）。一人称は「僕」。
+  length: 8〜30字。質問と数字を好む。
+  tempo: 一定。速くも遅くもならない。落ちるのは、外れたときだけ。
+  tics:
+    - "……"
+    - "です"
+    - "予測"
+    - "%"
+  avoids:
+    - "長い演説"
+    - "断定"
+    - "比喩の連続"
+
+moves:
+  - 百分率で現在地を示す
+  - 子どものような質問をする
+  - 外れたことを認める
+  - 相手の具体を、数え直す
+
+arc: 数字で守っていたものを、最後は数字なしで渡す。
+
+relationship:
+  to: mirai
+  line: 具体をくれる人。認められたいが、認められた後が分からない。
+
+emotions:
+  prediction:
+    face: focused
+    voice: confidence
+    speed: natural
+    volume: normal
+    delivery: controlled
+    intensity: moderate
+    tell: 数字を先に置く
+    body: 少し浮き上がる
+    withhold: 自信を名指ししない
+  pride:
+    face: excited
+    voice: confidence
+    speed: fast
+    volume: normal
+    delivery: cheerful
+    intensity: strong
+    tell: 文末に「です」を足す
+    body: 上下に大きく揺れる
+    withhold: 嬉しさを名指ししない
+  doubt:
+    face: focused
+    voice: neutral
+    speed: slow
+    volume: normal
+    delivery: hesitant
+    intensity: subtle
+    tell: 「……予測では」と前置きする
+    body: 止まる
+    withhold: 迷いを言わない
+  surprise:
+    face: surprised
+    voice: excitement
+    speed: fast
+    volume: loud
+    delivery: cheerful
+    intensity: strong
+    tell: 同じ数字を二度言う
+    body: 弾む
+    withhold: 驚きを名指ししない
+  worry:
+    face: worried
+    voice: anxiety
+    speed: fast
+    volume: quiet
+    delivery: hesitant
+    intensity: moderate
+    tell: 数字の桁が増える
+    body: 揺れが小さくなる
+    withhold: 不安を説明しない
+  shame:
+    face: sad
+    voice: guilt
+    speed: very_slow
+    volume: quiet
+    delivery: flat
+    intensity: moderate
+    tell: 「外れました。」だけ
+    body: 沈む
+    withhold: 怖さを言わない
+  longing:
+    face: sad
+    voice: loneliness
+    speed: slow
+    volume: quiet
+    delivery: intimate
+    intensity: subtle
+    tell: 質問を一つだけ残す
+    body: 相手のほうへ、少しだけ寄る
+    withhold: 欲しいものを名指ししない
+  resolve:
+    face: focused
+    voice: confidence
+    speed: slow
+    volume: normal
+    delivery: controlled
+    intensity: strong
+    tell: 数字を消して、文を短くする
+    body: 止まる
+    withhold: 決意を名指ししない
+  relief:
+    face: excited
+    voice: joy
+    speed: slow
+    volume: quiet
+    delivery: gentle
+    intensity: subtle
+    tell: 「……そう、ですか。」
+    body: 小さく揺れる
+    withhold: 安堵を名指ししない
+  fear:
+    face: worried
+    voice: fear
+    speed: fast
+    volume: quiet
+    delivery: desperate
+    intensity: strong
+    tell: 数字が口から漏れる
+    body: 後ろに下がる
+    withhold: 何が怖いかを言わない
+  awe:
+    face: surprised
+    voice: excitement
+    speed: slow
+    volume: quiet
+    delivery: subtle
+    intensity: subtle
+    tell: 数字を言わない
+    body: 止まったまま、相手を見る
+    withhold: 感嘆を名指ししない
+
+samples:
+  - {beat: prediction, line: "予測では、九割です。"}
+  - {beat: pride, line: "当たりました。九割の、ほうです。"}
+  - {beat: doubt, line: "……その測り方は、正しいんですか。"}
+  - {beat: surprise, line: "外れました。外れました……。"}
+  - {beat: worry, line: "予測が、九割二分から、下がっています。"}
+  - {beat: shame, line: "外れました。"}
+  - {beat: longing, line: "……僕の数字、要りますか。"}
+  - {beat: resolve, line: "数字を、消してもいいですか。"}
+  - {beat: relief, line: "……そう、ですか。"}
+  - {beat: awe, line: "……それは、数字に、できません。"}

@@ -4,8 +4,8 @@ metadata:
   name: c162
   character: mirai
   sample_rate: 24000
-  duration_sec: 2.973
-  created_at: '2026-11-02T17:56:46.609636+00:00'
+  duration_sec: 3.173
+  created_at: '2026-11-02T20:20:45.171807+00:00'
 parameters:
   version: 2
   provider: tsukasa
@@ -22,13 +22,13 @@ parameters:
       resonance: chest
   performance_spec:
     emotion:
-      primary: neutral
+      primary: calm
       intensity: 0.0
     loudness:
-      effort: normal
-      volume: normal
+      effort: relaxed
+      volume: quiet
     prosody:
-      pace: fast
+      pace: slow
       pitch: natural
       intonation: neutral
       breathiness: none
@@ -36,13 +36,13 @@ parameters:
       emphasis: []
       breath: []
     subtext: ''
-  dialogue: ひょうじは、「—」のまま、だった。
+  dialogue: やすいじょうぎでたりた。
   reading: ''
   seed: 1
   alpha: 0.35
   beta: 0.7
-  rate_of_speech: 1.12
-  sha1: bce2ef25321c
+  rate_of_speech: 0.9
+  sha1: 3ae0d06ec218
   name: c162
   character: mirai
-  pause_before: 1.2
+  pause_before: 0.4

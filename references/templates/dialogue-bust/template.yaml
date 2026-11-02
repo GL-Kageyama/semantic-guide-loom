@@ -102,3 +102,23 @@ timing:
   speaker_tail: 0.25       # 話し手の強調を何秒残すか
   chapter_slide: 0.45      # 札が上から滑り込む時間
   chapter_lead: 1.6        # 札を cue の何秒前から出すか（export_timeline が使う）
+
+# 聞き手の反応。作品の cue に `react.<id>: {face, mark}` があるときだけ出る。
+# 記号の位置は slot の origin からのずれ（720p）。時刻だけで決まり、乱数は使わない。
+acting:
+  reaction:
+    lead: 0.20             # cue.start から記号を出すまで
+  mark:
+    size: 42
+    bold: true
+    color: [255, 209, 102, 235]
+    outline: [12, 20, 36, 230]
+    outline_width: 3
+    pop: 0.16              # 出るとき（拡大 → 等倍、透明 → 不透明）
+    hold: 0.85             # 保つ
+    fade: 0.32             # 消えるとき
+    pop_amp: 0.55          # 出るときの大きさ（1 + pop_amp から 1 へ）
+    rise: 10               # 消えるまでに上がる画素
+    anchor:
+      left: [360, 10]      # ミライの頭の右上
+      right: [200, 0]      # ミラボの右上

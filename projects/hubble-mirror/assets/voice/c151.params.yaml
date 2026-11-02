@@ -4,8 +4,8 @@ metadata:
   name: c151
   character: mirai
   sample_rate: 24000
-  duration_sec: 1.623
-  created_at: '2026-11-02T17:56:41.871327+00:00'
+  duration_sec: 4.523
+  created_at: '2026-11-02T20:20:36.739878+00:00'
 parameters:
   version: 2
   provider: tsukasa
@@ -22,13 +22,13 @@ parameters:
       resonance: chest
   performance_spec:
     emotion:
-      primary: neutral
+      primary: guilt
       intensity: 0.0
     loudness:
-      effort: normal
-      volume: normal
+      effort: relaxed
+      volume: quiet
     prosody:
-      pace: fast
+      pace: slow
       pitch: natural
       intonation: neutral
       breathiness: none
@@ -36,13 +36,13 @@ parameters:
       emphasis: []
       breath: []
     subtext: ''
-  dialogue: みせて。
+  dialogue: そのらべる。……ぼくもはったことがある。
   reading: ''
   seed: 1
   alpha: 0.35
   beta: 0.7
-  rate_of_speech: 1.12
-  sha1: d6705dff4dce
+  rate_of_speech: 0.9
+  sha1: 226c17fc9122
   name: c151
   character: mirai
-  pause_before: 0.5
+  pause_before: 0.6

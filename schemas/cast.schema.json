@@ -101,6 +101,11 @@
               "phase": {"type": "number"}
             }
           }
+        },
+        "motion_gain": {
+          "type": "object",
+          "description": "表情 → 身体の揺れの倍率。未記載は 1.0。明示の face があるコマだけに掛かる。",
+          "additionalProperties": {"type": "number", "exclusiveMinimum": 0}
         }
       }
     }

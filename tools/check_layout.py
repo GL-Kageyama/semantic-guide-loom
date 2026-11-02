@@ -52,8 +52,10 @@ SCHEMAS = [
     ("schemas/template.schema.json", "references/templates/*/template.yaml"),
     ("schemas/cast.schema.json", "characters/*.cast.yaml"),
     ("schemas/persona.schema.json", "characters/*.persona.yaml"),
+    ("schemas/character.schema.json", "characters/*.character.yaml"),
     ("schemas/reading.schema.json", "projects/*/reading.yaml"),
     ("schemas/bgm.schema.json", "projects/*/bgm.yaml"),
+    ("schemas/viewer.schema.json", "projects/*/review/viewers/*/r*.json"),
 ]
 
 

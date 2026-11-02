@@ -1,0 +1,5483 @@
+{
+ "name": "hubble-mirror",
+ "project": "/Users/user/AI創作工房/semantic-guide-loom/build/hubble-mirror",
+ "title": "ハッブルの鏡",
+ "subtitle": "「精度が高い」と「正しい」は、別",
+ "channel": "MIRAI × MIRABO",
+ "template": "dialogue-bust",
+ "cast": "mirai-mirabo",
+ "fps": 30,
+ "width": 1280,
+ "height": 720,
+ "duration": 1033.7936,
+ "audio": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/renders/hubble-mirror.wav",
+ "cues": [
+  {
+   "name": "c001",
+   "character": "mirai",
+   "start": 2.8,
+   "end": 7.5483,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c001.wav",
+   "text": "1990年4月24日。夜明け前。",
+   "chapter": 0,
+   "emotion": "excitement",
+   "face": "surprised",
+   "beat": "awe",
+   "react": {
+    "mirabo": {
+     "beat": "awe",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c002",
+   "character": "mirai",
+   "start": 7.898,
+   "end": 11.8413,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c002.wav",
+   "text": "ケネディ宇宙センター。第39B発射台。",
+   "chapter": 0,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "prediction",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c003",
+   "character": "mirai",
+   "start": 12.142,
+   "end": 16.5523,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c003.wav",
+   "text": "打ち上げるのは、ディスカバリー。STS-31。",
+   "chapter": 0,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "prediction",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c004",
+   "character": "mirai",
+   "start": 16.952,
+   "end": 18.94,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c004.wav",
+   "text": "夜明け前の青。",
+   "chapter": 0,
+   "emotion": "excitement",
+   "face": "surprised",
+   "beat": "awe",
+   "react": {
+    "mirabo": {
+     "beat": "awe",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c005",
+   "character": "mirai",
+   "start": 19.24,
+   "end": 22.9676,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c005.wav",
+   "text": "貨物室に、望遠鏡が寝ている。",
+   "chapter": 0,
+   "emotion": "calm",
+   "face": "smile",
+   "beat": "tenderness",
+   "react": {
+    "mirabo": {
+     "beat": "awe",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c006",
+   "character": "mirai",
+   "start": 23.267,
+   "end": 26.4515,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c006.wav",
+   "text": "主鏡の直径は、2.4メートル。",
+   "chapter": 0,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "curiosity",
+   "react": {
+    "mirabo": {
+     "beat": "doubt",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c007",
+   "character": "mirai",
+   "start": 26.852,
+   "end": 32.486,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c007.wav",
+   "text": "鏡の縁を指でなぞる。……指の感触で、縁の形を確かめる。",
+   "chapter": 0,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "curiosity",
+   "react": {
+    "mirabo": {
+     "beat": "surprise",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c008",
+   "character": "mirai",
+   "start": 32.886,
+   "end": 36.3016,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c008.wav",
+   "text": "ハッブル。宇宙に目を置く。",
+   "chapter": 0,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "awe",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c009",
+   "character": "mirai",
+   "start": 36.802,
+   "end": 39.8514,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c009.wav",
+   "text": "打ち上げの映像は、ここまでだ。",
+   "chapter": 0,
+   "emotion": "calm",
+   "face": "neutral",
+   "beat": "fatigue",
+   "react": {
+    "mirabo": {
+     "beat": "doubt",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c010",
+   "character": "mirai",
+   "start": 40.201,
+   "end": 43.2368,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c010.wav",
+   "text": "ここからは、僕の机で話す。",
+   "chapter": 0,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "prediction",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c011",
+   "character": "mirai",
+   "start": 43.587,
+   "end": 48.7561,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c011.wav",
+   "text": "机の上に、ミラボがいる。僕の相棒の、小さな機体だ。",
+   "chapter": 0,
+   "emotion": "calm",
+   "face": "smile",
+   "beat": "tenderness",
+   "react": {
+    "mirabo": {
+     "beat": "pride",
+     "face": "excited"
+    }
+   }
+  },
+  {
+   "name": "c012",
+   "character": "mirai",
+   "start": 49.056,
+   "end": 51.1275,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c012.wav",
+   "text": "数字を出す係でもある。",
+   "chapter": 0,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "curiosity",
+   "react": {}
+  },
+  {
+   "name": "c013",
+   "character": "mirai",
+   "start": 51.247,
+   "end": 55.354,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c013.wav",
+   "text": "画面には、数字の欄と、その下に分母の欄がある。",
+   "chapter": 0,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "curiosity",
+   "react": {
+    "mirabo": {
+     "beat": "doubt",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c014",
+   "character": "mirai",
+   "start": 55.754,
+   "end": 59.3397,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c014.wav",
+   "text": "鏡の研磨の精度は、高かった。",
+   "chapter": 0,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "prediction",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c015",
+   "character": "mirai",
+   "start": 59.84,
+   "end": 62.943,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c015.wav",
+   "text": "なのに、像はぼやけた。",
+   "chapter": 0,
+   "emotion": "anxiety",
+   "face": "worried",
+   "beat": "worry",
+   "react": {
+    "mirabo": {
+     "beat": "worry",
+     "face": "worried"
+    }
+   }
+  },
+  {
+   "name": "c016",
+   "character": "mirai",
+   "start": 63.543,
+   "end": 64.7695,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c016.wav",
+   "text": "なぜか。",
+   "chapter": 0,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "doubt",
+   "react": {
+    "mirabo": {
+     "beat": "doubt",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c017",
+   "character": "mirabo",
+   "start": 65.119,
+   "end": 69.6789,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c017.wav",
+   "text": "ミライさん。これ、壊れた鏡を直した話ですよね。",
+   "chapter": 0,
+   "emotion": "confidence",
+   "face": "focused",
+   "beat": "prediction",
+   "react": {
+    "mirai": {
+     "beat": "doubt",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c018",
+   "character": "mirai",
+   "start": 69.979,
+   "end": 73.7204,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c018.wav",
+   "text": "そう。壊れた鏡を直した話だ。",
+   "chapter": 0,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "prediction",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c019",
+   "character": "mirabo",
+   "start": 74.021,
+   "end": 76.472,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c019.wav",
+   "text": "では、最初に現在地です。",
+   "chapter": 0,
+   "emotion": "confidence",
+   "face": "excited",
+   "beat": "pride",
+   "react": {
+    "mirai": {
+     "beat": "curiosity",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c020",
+   "character": "mirabo",
+   "start": 76.772,
+   "end": 78.6648,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c020.wav",
+   "text": "現在地は、",
+   "chapter": 0,
+   "emotion": "confidence",
+   "face": "focused",
+   "beat": "prediction",
+   "react": {}
+  },
+  {
+   "name": "c021",
+   "character": "mirabo",
+   "start": 78.785,
+   "end": 82.9262,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c021.wav",
+   "text": "今どこまで合っているかを、一つの数字で示すもの。",
+   "chapter": 0,
+   "emotion": "confidence",
+   "face": "focused",
+   "beat": "prediction",
+   "react": {
+    "mirai": {
+     "beat": "doubt",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c022",
+   "character": "mirabo",
+   "start": 83.226,
+   "end": 85.5222,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c022.wav",
+   "text": "この話では、",
+   "chapter": 0,
+   "emotion": "confidence",
+   "face": "focused",
+   "beat": "prediction",
+   "react": {}
+  },
+  {
+   "name": "c023",
+   "character": "mirabo",
+   "start": 85.642,
+   "end": 90.1485,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c023.wav",
+   "text": "鏡の形が設計にどれだけ合っているか、その割合です。",
+   "chapter": 0,
+   "emotion": "confidence",
+   "face": "focused",
+   "beat": "prediction",
+   "react": {
+    "mirai": {
+     "beat": "doubt",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c024",
+   "character": "mirabo",
+   "start": 90.498,
+   "end": 94.924,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c024.wav",
+   "text": "百分率は、数えられるものを、全体で割った数字です。",
+   "chapter": 0,
+   "emotion": "confidence",
+   "face": "focused",
+   "beat": "prediction",
+   "react": {}
+  },
+  {
+   "name": "c025",
+   "character": "mirabo",
+   "start": 95.045,
+   "end": 97.1385,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c025.wav",
+   "text": "割る側が、分母。",
+   "chapter": 0,
+   "emotion": "confidence",
+   "face": "focused",
+   "beat": "prediction",
+   "react": {
+    "mirai": {
+     "beat": "curiosity",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c026",
+   "character": "mirabo",
+   "start": 97.438,
+   "end": 100.6625,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c026.wav",
+   "text": "この話には、記録が二つある。",
+   "chapter": 0,
+   "emotion": "confidence",
+   "face": "focused",
+   "beat": "prediction",
+   "react": {}
+  },
+  {
+   "name": "c027",
+   "character": "mirabo",
+   "start": 100.782,
+   "end": 103.868,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c027.wav",
+   "text": "研磨の記録と、検査の記録です。",
+   "chapter": 0,
+   "emotion": "confidence",
+   "face": "focused",
+   "beat": "prediction",
+   "react": {
+    "mirai": {
+     "beat": "curiosity",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c028",
+   "character": "mirabo",
+   "start": 104.169,
+   "end": 107.0493,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c028.wav",
+   "text": "研磨の記録は、どう削ったか。",
+   "chapter": 0,
+   "emotion": "confidence",
+   "face": "focused",
+   "beat": "prediction",
+   "react": {}
+  },
+  {
+   "name": "c029",
+   "character": "mirabo",
+   "start": 107.169,
+   "end": 110.978,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c029.wav",
+   "text": "検査の記録は、削った形をどう測ったか。",
+   "chapter": 0,
+   "emotion": "confidence",
+   "face": "focused",
+   "beat": "prediction",
+   "react": {
+    "mirai": {
+     "beat": "doubt",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c030",
+   "character": "mirabo",
+   "start": 111.278,
+   "end": 116.061,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c030.wav",
+   "text": "今回、割ったのは、二つの記録が同じ形を言っている部分。",
+   "chapter": 0,
+   "emotion": "confidence",
+   "face": "focused",
+   "beat": "prediction",
+   "react": {}
+  },
+  {
+   "name": "c031",
+   "character": "mirabo",
+   "start": 116.181,
+   "end": 118.874,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c031.wav",
+   "text": "全体は、記録の全体です。",
+   "chapter": 0,
+   "emotion": "confidence",
+   "face": "focused",
+   "beat": "prediction",
+   "react": {
+    "mirai": {
+     "beat": "doubt",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c032",
+   "character": "mirabo",
+   "start": 119.224,
+   "end": 123.2752,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c032.wav",
+   "text": "その一致率が、99.8%。",
+   "chapter": 0,
+   "emotion": "confidence",
+   "face": "excited",
+   "beat": "pride",
+   "react": {
+    "mirai": {
+     "beat": "doubt",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c033",
+   "character": "mirabo",
+   "start": 123.575,
+   "end": 128.2854,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c033.wav",
+   "text": "……やりました。今の現在地は、99.8%です。",
+   "chapter": 0,
+   "emotion": "joy",
+   "face": "excited",
+   "beat": "pride",
+   "react": {
+    "mirai": {
+     "beat": "doubt",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c034",
+   "character": "mirabo",
+   "start": 128.685,
+   "end": 132.2207,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c034.wav",
+   "text": "記録にあるのは、二つの記録だけです。",
+   "chapter": 0,
+   "emotion": "neutral",
+   "face": "focused",
+   "beat": "doubt",
+   "react": {}
+  },
+  {
+   "name": "c035",
+   "character": "mirabo",
+   "start": 132.341,
+   "end": 137.712,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c035.wav",
+   "text": "99.8%は、僕が今、その二つから出しました。",
+   "chapter": 0,
+   "emotion": "neutral",
+   "face": "focused",
+   "beat": "doubt",
+   "react": {
+    "mirai": {
+     "beat": "curiosity",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c036",
+   "character": "mirai",
+   "start": 138.112,
+   "end": 141.8352,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c036.wav",
+   "text": "つまり、記録と記録の一致率だ。",
+   "chapter": 0,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "doubt",
+   "react": {
+    "mirabo": {
+     "beat": "doubt",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c037",
+   "character": "mirabo",
+   "start": 142.335,
+   "end": 143.3354,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c037.wav",
+   "text": "……はい。",
+   "chapter": 0,
+   "emotion": "guilt",
+   "face": "sad",
+   "beat": "shame",
+   "react": {
+    "mirai": {
+     "beat": "doubt",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c038",
+   "character": "mirai",
+   "start": 143.836,
+   "end": 147.8622,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c038.wav",
+   "text": "鏡の形が設計に合っているかは、別だ。",
+   "chapter": 0,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "worry",
+     "face": "worried"
+    }
+   }
+  },
+  {
+   "name": "c039",
+   "character": "mirai",
+   "start": 149.062,
+   "end": 151.7425,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c039.wav",
+   "text": "その検査は、何を測っていた?",
+   "chapter": 0,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "doubt",
+   "react": {
+    "mirabo": {
+     "beat": "fear",
+     "mark": "？",
+     "face": "worried"
+    }
+   }
+  },
+  {
+   "name": "c040",
+   "character": "mirai",
+   "start": 152.942,
+   "end": 156.7295,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c040.wav",
+   "text": "今はまだ、いい。あとで分かる。",
+   "chapter": 0,
+   "emotion": "calm",
+   "face": "smile",
+   "beat": "tenderness",
+   "react": {
+    "mirabo": {
+     "beat": "relief",
+     "face": "excited"
+    }
+   }
+  },
+  {
+   "name": "c041",
+   "character": "mirai",
+   "start": 157.23,
+   "end": 159.1505,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c041.wav",
+   "text": "打ち上げはうまくいった。",
+   "chapter": 0,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "prediction",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c042",
+   "character": "mirai",
+   "start": 159.45,
+   "end": 163.0821,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c042.wav",
+   "text": "4月25日。軌道に入った。",
+   "chapter": 0,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "prediction",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c043",
+   "character": "mirai",
+   "start": 164.682,
+   "end": 168.565,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c043.wav",
+   "text": "5月。最初の観測、ファーストライト。",
+   "chapter": 1,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "worry",
+     "face": "worried"
+    }
+   }
+  },
+  {
+   "name": "c044",
+   "character": "mirai",
+   "start": 168.965,
+   "end": 171.0751,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c044.wav",
+   "text": "星を見た。",
+   "chapter": 1,
+   "emotion": "excitement",
+   "face": "surprised",
+   "beat": "awe",
+   "react": {
+    "mirabo": {
+     "beat": "awe",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c045",
+   "character": "mirai",
+   "start": 171.475,
+   "end": 173.0675,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c045.wav",
+   "text": "点にならない。",
+   "chapter": 1,
+   "emotion": "anxiety",
+   "face": "worried",
+   "beat": "worry",
+   "react": {
+    "mirabo": {
+     "beat": "worry",
+     "face": "worried"
+    }
+   }
+  },
+  {
+   "name": "c046",
+   "character": "mirai",
+   "start": 173.568,
+   "end": 176.9761,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c046.wav",
+   "text": "にじむ。広がる。",
+   "chapter": 1,
+   "emotion": "anxiety",
+   "face": "worried",
+   "beat": "worry",
+   "react": {
+    "mirabo": {
+     "beat": "fear",
+     "face": "worried"
+    }
+   }
+  },
+  {
+   "name": "c047",
+   "character": "mirabo",
+   "start": 177.376,
+   "end": 179.309,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c047.wav",
+   "text": "97%です。",
+   "chapter": 1,
+   "emotion": "confidence",
+   "face": "focused",
+   "beat": "prediction",
+   "react": {
+    "mirai": {
+     "beat": "doubt",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c048",
+   "character": "mirai",
+   "start": 179.609,
+   "end": 182.3339,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c048.wav",
+   "text": "何の97%?",
+   "chapter": 1,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "doubt",
+   "react": {
+    "mirabo": {
+     "beat": "worry",
+     "face": "worried"
+    }
+   }
+  },
+  {
+   "name": "c049",
+   "character": "mirabo",
+   "start": 182.734,
+   "end": 184.6,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c049.wav",
+   "text": "……研磨の精度です。",
+   "chapter": 1,
+   "emotion": "neutral",
+   "face": "focused",
+   "beat": "doubt",
+   "react": {}
+  },
+  {
+   "name": "c050",
+   "character": "mirabo",
+   "start": 184.72,
+   "end": 188.51,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c050.wav",
+   "text": "設計の形のうち、どれだけ合っているか。",
+   "chapter": 1,
+   "emotion": "neutral",
+   "face": "focused",
+   "beat": "doubt",
+   "react": {}
+  },
+  {
+   "name": "c051",
+   "character": "mirabo",
+   "start": 188.63,
+   "end": 190.3875,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c051.wav",
+   "text": "その割合です。",
+   "chapter": 1,
+   "emotion": "neutral",
+   "face": "focused",
+   "beat": "doubt",
+   "react": {
+    "mirai": {
+     "beat": "doubt",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c052",
+   "character": "mirabo",
+   "start": 190.688,
+   "end": 195.0043,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c052.wav",
+   "text": "97%も、記録された数字ではありません。",
+   "chapter": 1,
+   "emotion": "neutral",
+   "face": "focused",
+   "beat": "doubt",
+   "react": {}
+  },
+  {
+   "name": "c053",
+   "character": "mirabo",
+   "start": 195.124,
+   "end": 198.6261,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c053.wav",
+   "text": "僕が今、研磨の記録から出した値です。",
+   "chapter": 1,
+   "emotion": "neutral",
+   "face": "focused",
+   "beat": "doubt",
+   "react": {
+    "mirai": {
+     "beat": "curiosity",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c054",
+   "character": "mirai",
+   "start": 198.926,
+   "end": 200.3311,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c054.wav",
+   "text": "うん。",
+   "chapter": 1,
+   "emotion": "confidence",
+   "face": "smile",
+   "beat": "approval",
+   "react": {
+    "mirabo": {
+     "beat": "relief",
+     "face": "excited"
+    }
+   }
+  },
+  {
+   "name": "c055",
+   "character": "mirabo",
+   "start": 200.681,
+   "end": 204.7377,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c055.wav",
+   "text": "予測では、鏡の形の誤差は、許容範囲です。",
+   "chapter": 1,
+   "emotion": "confidence",
+   "face": "focused",
+   "beat": "prediction",
+   "react": {}
+  },
+  {
+   "name": "c056",
+   "character": "mirabo",
+   "start": 204.858,
+   "end": 207.0396,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c056.wav",
+   "text": "鏡は正しいはずです。",
+   "chapter": 1,
+   "emotion": "confidence",
+   "face": "focused",
+   "beat": "prediction",
+   "react": {
+    "mirai": {
+     "beat": "doubt",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c057",
+   "character": "mirai",
+   "start": 207.34,
+   "end": 208.6223,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c057.wav",
+   "text": "足りる、って?",
+   "chapter": 1,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "doubt",
+   "react": {
+    "mirabo": {
+     "beat": "worry",
+     "face": "worried"
+    }
+   }
+  },
+  {
+   "name": "c058",
+   "character": "mirabo",
+   "start": 208.972,
+   "end": 210.9033,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c058.wav",
+   "text": "予測の話です。",
+   "chapter": 1,
+   "emotion": "neutral",
+   "face": "focused",
+   "beat": "doubt",
+   "react": {
+    "mirai": {
+     "beat": "doubt",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c059",
+   "character": "mirai",
+   "start": 211.203,
+   "end": 213.74,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c059.wav",
+   "text": "じゃあ、鏡は削り損じた。",
+   "chapter": 1,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c060",
+   "character": "mirabo",
+   "start": 214.14,
+   "end": 215.6903,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c060.wav",
+   "text": "……たぶん。",
+   "chapter": 1,
+   "emotion": "neutral",
+   "face": "focused",
+   "beat": "doubt",
+   "react": {
+    "mirai": {
+     "beat": "doubt",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c061",
+   "character": "mirai",
+   "start": 215.991,
+   "end": 219.9685,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c061.wav",
+   "text": "設計より、縁が2.2マイクロメートル平ら。",
+   "chapter": 1,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "curiosity",
+   "react": {
+    "mirabo": {
+     "beat": "surprise",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c062",
+   "character": "mirai",
+   "start": 220.268,
+   "end": 224.4699,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c062.wav",
+   "text": "縁がわずかに平らだと、光が一点に集まらない。",
+   "chapter": 1,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "curiosity",
+   "react": {
+    "mirabo": {
+     "beat": "prediction",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c063",
+   "character": "mirai",
+   "start": 224.87,
+   "end": 227.7173,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c063.wav",
+   "text": "だから、星がにじむ。",
+   "chapter": 1,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c064",
+   "character": "mirabo",
+   "start": 228.067,
+   "end": 230.36,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c064.wav",
+   "text": "2.2マイクロメートル。",
+   "chapter": 1,
+   "emotion": "excitement",
+   "face": "surprised",
+   "beat": "surprise",
+   "react": {
+    "mirai": {
+     "beat": "curiosity",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c065",
+   "character": "mirai",
+   "start": 230.86,
+   "end": 233.1625,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c065.wav",
+   "text": "鏡は壊れていない。",
+   "chapter": 1,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "doubt",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c066",
+   "character": "mirabo",
+   "start": 233.563,
+   "end": 234.9759,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c066.wav",
+   "text": "では。",
+   "chapter": 1,
+   "emotion": "neutral",
+   "face": "focused",
+   "beat": "doubt",
+   "react": {
+    "mirai": {
+     "beat": "doubt",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c067",
+   "character": "mirai",
+   "start": 235.326,
+   "end": 240.2052,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c067.wav",
+   "text": "形が、設計と違う。だから、光が集まらない。",
+   "chapter": 1,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "surprise",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c068",
+   "character": "mirai",
+   "start": 240.505,
+   "end": 242.6439,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c068.wav",
+   "text": "縁を指でなぞった。",
+   "chapter": 1,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "curiosity",
+   "react": {
+    "mirabo": {
+     "beat": "surprise",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c069",
+   "character": "mirabo",
+   "start": 242.994,
+   "end": 244.6136,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c069.wav",
+   "text": "……指で?",
+   "chapter": 1,
+   "emotion": "excitement",
+   "face": "surprised",
+   "beat": "surprise",
+   "react": {
+    "mirai": {
+     "beat": "curiosity",
+     "mark": "？",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c070",
+   "character": "mirai",
+   "start": 245.013,
+   "end": 247.434,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c070.wav",
+   "text": "手のほうが先に気づいた。",
+   "chapter": 1,
+   "emotion": "joy",
+   "face": "smile",
+   "beat": "amusement",
+   "react": {
+    "mirabo": {
+     "beat": "awe",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c071",
+   "character": "mirabo",
+   "start": 247.934,
+   "end": 252.2961,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c071.wav",
+   "text": "僕の97%は、どこを測っていたんでしょう。",
+   "chapter": 1,
+   "emotion": "neutral",
+   "face": "focused",
+   "beat": "doubt",
+   "react": {
+    "mirai": {
+     "beat": "doubt",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c072",
+   "character": "mirai",
+   "start": 252.646,
+   "end": 258.6014,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c072.wav",
+   "text": "97%は、削った側の形。鏡の表面の削り方だ。",
+   "chapter": 1,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {}
+  },
+  {
+   "name": "c073",
+   "character": "mirai",
+   "start": 258.722,
+   "end": 262.3175,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c073.wav",
+   "text": "縁の平らさは、その数字には出ない。",
+   "chapter": 1,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c074",
+   "character": "mirabo",
+   "start": 262.717,
+   "end": 265.3131,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c074.wav",
+   "text": "検査は正しく動いていました。",
+   "chapter": 1,
+   "emotion": "neutral",
+   "face": "focused",
+   "beat": "doubt",
+   "react": {
+    "mirai": {
+     "beat": "doubt",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c075",
+   "character": "mirai",
+   "start": 265.614,
+   "end": 267.0191,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c075.wav",
+   "text": "うん。",
+   "chapter": 1,
+   "emotion": "confidence",
+   "face": "smile",
+   "beat": "approval",
+   "react": {
+    "mirabo": {
+     "beat": "relief",
+     "face": "excited"
+    }
+   }
+  },
+  {
+   "name": "c076",
+   "character": "mirai",
+   "start": 267.519,
+   "end": 269.7993,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c076.wav",
+   "text": "……正しく。",
+   "chapter": 1,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "worry",
+     "face": "worried"
+    }
+   }
+  },
+  {
+   "name": "c077",
+   "character": "mirai",
+   "start": 270.799,
+   "end": 272.6144,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c077.wav",
+   "text": "お前のせいじゃない。",
+   "chapter": 1,
+   "emotion": "calm",
+   "face": "smile",
+   "beat": "tenderness",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c078",
+   "character": "mirabo",
+   "start": 273.014,
+   "end": 275.7701,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c078.wav",
+   "text": "でも、僕が出しました。",
+   "chapter": 1,
+   "emotion": "guilt",
+   "face": "sad",
+   "beat": "shame",
+   "react": {
+    "mirai": {
+     "beat": "tenderness",
+     "face": "smile"
+    }
+   }
+  },
+  {
+   "name": "c079",
+   "character": "mirai",
+   "start": 276.17,
+   "end": 279.0267,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c079.wav",
+   "text": "うん。だから、次を見る。",
+   "chapter": 1,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "relief",
+     "face": "excited"
+    }
+   }
+  },
+  {
+   "name": "c080",
+   "character": "mirai",
+   "start": 279.527,
+   "end": 281.4552,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c080.wav",
+   "text": "なぜ気づかなかった?",
+   "chapter": 1,
+   "emotion": "anxiety",
+   "face": "worried",
+   "beat": "worry",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c081",
+   "character": "mirai",
+   "start": 281.955,
+   "end": 283.7822,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c081.wav",
+   "text": "誰も気づかなかった。",
+   "chapter": 1,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c082",
+   "character": "mirabo",
+   "start": 284.282,
+   "end": 286.3905,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c082.wav",
+   "text": "……誰も。",
+   "chapter": 1,
+   "emotion": "guilt",
+   "face": "sad",
+   "beat": "shame",
+   "react": {
+    "mirai": {
+     "beat": "shame",
+     "face": "worried"
+    }
+   }
+  },
+  {
+   "name": "c083",
+   "character": "mirai",
+   "start": 286.991,
+   "end": 290.2192,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c083.wav",
+   "text": "僕も、気づかなかった一人だ。",
+   "chapter": 1,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "surprise",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c084",
+   "character": "mirabo",
+   "start": 290.619,
+   "end": 291.6194,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c084.wav",
+   "text": "……はい。",
+   "chapter": 1,
+   "emotion": "guilt",
+   "face": "sad",
+   "beat": "shame",
+   "react": {
+    "mirai": {
+     "beat": "shame",
+     "face": "worried"
+    }
+   }
+  },
+  {
+   "name": "c085",
+   "character": "mirai",
+   "start": 293.22,
+   "end": 295.1762,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c085.wav",
+   "text": "鏡は光で測る。",
+   "chapter": 2,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "prediction",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c086",
+   "character": "mirai",
+   "start": 295.526,
+   "end": 297.971,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c086.wav",
+   "text": "null corrector。",
+   "chapter": 2,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "curiosity",
+   "react": {}
+  },
+  {
+   "name": "c087",
+   "character": "mirai",
+   "start": 298.091,
+   "end": 301.3197,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c087.wav",
+   "text": "鏡の形を光で測る検査装置。",
+   "chapter": 2,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "curiosity",
+   "react": {
+    "mirabo": {
+     "beat": "doubt",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c088",
+   "character": "mirai",
+   "start": 301.619,
+   "end": 305.1697,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c088.wav",
+   "text": "反射式で、鏡で反射した光を見る。",
+   "chapter": 2,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "curiosity",
+   "react": {
+    "mirabo": {
+     "beat": "prediction",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c089",
+   "character": "mirai",
+   "start": 305.47,
+   "end": 309.8273,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c089.wav",
+   "text": "装置の中にレンズが一枚。その位置が基準になる。",
+   "chapter": 2,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "curiosity",
+   "react": {
+    "mirabo": {
+     "beat": "doubt",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c090",
+   "character": "mirai",
+   "start": 310.177,
+   "end": 314.1573,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c090.wav",
+   "text": "レンズを通る光は、レンズの位置で曲がり方が変わる。",
+   "chapter": 2,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "curiosity",
+   "react": {}
+  },
+  {
+   "name": "c091",
+   "character": "mirai",
+   "start": 314.278,
+   "end": 317.0567,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c091.wav",
+   "text": "だから、レンズの位置が決まると、",
+   "chapter": 2,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "curiosity",
+   "react": {}
+  },
+  {
+   "name": "c092",
+   "character": "mirai",
+   "start": 317.176,
+   "end": 319.6942,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c092.wav",
+   "text": "鏡の形の測り方も決まる。",
+   "chapter": 2,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "curiosity",
+   "react": {
+    "mirabo": {
+     "beat": "prediction",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c093",
+   "character": "mirai",
+   "start": 319.995,
+   "end": 324.0312,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c093.wav",
+   "text": "装置は、その基準と鏡の形を比べる。",
+   "chapter": 2,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "prediction",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c094",
+   "character": "mirabo",
+   "start": 324.381,
+   "end": 329.0055,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c094.wav",
+   "text": "同じ装置で二回測った。その二つの読みの一致率です。",
+   "chapter": 2,
+   "emotion": "confidence",
+   "face": "excited",
+   "beat": "pride",
+   "react": {}
+  },
+  {
+   "name": "c095",
+   "character": "mirabo",
+   "start": 329.125,
+   "end": 331.8469,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c095.wav",
+   "text": "99.4%。",
+   "chapter": 2,
+   "emotion": "confidence",
+   "face": "excited",
+   "beat": "pride",
+   "react": {
+    "mirai": {
+     "beat": "doubt",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c096",
+   "character": "mirabo",
+   "start": 332.147,
+   "end": 335.0838,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c096.wav",
+   "text": "これも、記録された数字ではありません。",
+   "chapter": 2,
+   "emotion": "neutral",
+   "face": "focused",
+   "beat": "doubt",
+   "react": {}
+  },
+  {
+   "name": "c097",
+   "character": "mirabo",
+   "start": 335.204,
+   "end": 338.4844,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c097.wav",
+   "text": "僕が今、二つの読みから出しました。",
+   "chapter": 2,
+   "emotion": "neutral",
+   "face": "focused",
+   "beat": "doubt",
+   "react": {
+    "mirai": {
+     "beat": "curiosity",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c098",
+   "character": "mirai",
+   "start": 338.984,
+   "end": 341.5852,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c098.wav",
+   "text": "自分と自分が一致した。",
+   "chapter": 2,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "doubt",
+   "react": {
+    "mirabo": {
+     "beat": "doubt",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c099",
+   "character": "mirai",
+   "start": 342.086,
+   "end": 347.2232,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c099.wav",
+   "text": "測る相手は、装置自身だ。鏡の形ではない。",
+   "chapter": 2,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c100",
+   "character": "mirabo",
+   "start": 347.523,
+   "end": 352.7558,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c100.wav",
+   "text": "はい。99.4%。今までで、一番高いです。",
+   "chapter": 2,
+   "emotion": "confidence",
+   "face": "excited",
+   "beat": "pride",
+   "react": {
+    "mirai": {
+     "beat": "doubt",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c101",
+   "character": "mirai",
+   "start": 353.255,
+   "end": 355.4171,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c101.wav",
+   "text": "その基準の位置が。",
+   "chapter": 2,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "doubt",
+   "react": {
+    "mirabo": {
+     "beat": "doubt",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c102",
+   "character": "mirai",
+   "start": 356.018,
+   "end": 358.5522,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c102.wav",
+   "text": "1.3ミリずれていた。",
+   "chapter": 2,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "surprise",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c103",
+   "character": "mirai",
+   "start": 358.952,
+   "end": 362.417,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c103.wav",
+   "text": "これが、その問いの答えだ。",
+   "chapter": 2,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "surprise",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c104",
+   "character": "mirai",
+   "start": 362.767,
+   "end": 367.3442,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c104.wav",
+   "text": "あの検査は、ずれた基準で、鏡の形を測っていた。",
+   "chapter": 2,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c105",
+   "character": "mirai",
+   "start": 367.644,
+   "end": 371.1973,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c105.wav",
+   "text": "レンズの位置を決める棒のキャップが、ずれていた。",
+   "chapter": 2,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "curiosity",
+   "react": {
+    "mirabo": {
+     "beat": "surprise",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c106",
+   "character": "mirabo",
+   "start": 371.547,
+   "end": 373.7705,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c106.wav",
+   "text": "1.3ミリ。",
+   "chapter": 2,
+   "emotion": "excitement",
+   "face": "surprised",
+   "beat": "surprise",
+   "react": {
+    "mirai": {
+     "beat": "resolve",
+     "face": "serious"
+    }
+   }
+  },
+  {
+   "name": "c107",
+   "character": "mirai",
+   "start": 374.121,
+   "end": 379.8005,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c107.wav",
+   "text": "99.8%の二つの記録も。どちらもその装置で測った。",
+   "chapter": 2,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "mark": "！",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c108",
+   "character": "mirai",
+   "start": 380.3,
+   "end": 382.534,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c108.wav",
+   "text": "測る側がずれていた。",
+   "chapter": 2,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c109",
+   "character": "mirai",
+   "start": 382.934,
+   "end": 387.1638,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c109.wav",
+   "text": "その装置で測りながら、鏡を磨いていた。",
+   "chapter": 2,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c110",
+   "character": "mirai",
+   "start": 387.464,
+   "end": 389.103,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c110.wav",
+   "text": "だから、",
+   "chapter": 2,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {}
+  },
+  {
+   "name": "c111",
+   "character": "mirai",
+   "start": 389.223,
+   "end": 394.3521,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c111.wav",
+   "text": "装置がずれていたぶん、鏡も設計と違う形に磨かれた。",
+   "chapter": 2,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c112",
+   "character": "mirai",
+   "start": 394.752,
+   "end": 398.1077,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c112.wav",
+   "text": "鏡の形は実際に違っていた。",
+   "chapter": 2,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c113",
+   "character": "mirai",
+   "start": 398.408,
+   "end": 402.9283,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c113.wav",
+   "text": "縁が、設計より2.2マイクロメートル平らになった。",
+   "chapter": 2,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "surprise",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c114",
+   "character": "mirai",
+   "start": 403.328,
+   "end": 406.7942,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c114.wav",
+   "text": "97%も、",
+   "chapter": 2,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {}
+  },
+  {
+   "name": "c115",
+   "character": "mirai",
+   "start": 406.915,
+   "end": 411.2235,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c115.wav",
+   "text": "そのずれた装置を基準に測った研磨の精度だった。",
+   "chapter": 2,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c116",
+   "character": "mirabo",
+   "start": 411.723,
+   "end": 413.5827,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c116.wav",
+   "text": "つまり、",
+   "chapter": 2,
+   "emotion": "neutral",
+   "face": "focused",
+   "beat": "doubt",
+   "react": {}
+  },
+  {
+   "name": "c117",
+   "character": "mirabo",
+   "start": 413.703,
+   "end": 417.8289,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c117.wav",
+   "text": "間違った装置が自分自身とどれだけ一致していたか、",
+   "chapter": 2,
+   "emotion": "neutral",
+   "face": "focused",
+   "beat": "doubt",
+   "react": {}
+  },
+  {
+   "name": "c118",
+   "character": "mirabo",
+   "start": 417.949,
+   "end": 419.781,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c118.wav",
+   "text": "ということですか。",
+   "chapter": 2,
+   "emotion": "neutral",
+   "face": "focused",
+   "beat": "doubt",
+   "react": {
+    "mirai": {
+     "beat": "doubt",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c119",
+   "character": "mirai",
+   "start": 420.081,
+   "end": 421.4853,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c119.wav",
+   "text": "そう。",
+   "chapter": 2,
+   "emotion": "confidence",
+   "face": "smile",
+   "beat": "approval",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c120",
+   "character": "mirabo",
+   "start": 421.885,
+   "end": 425.3485,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c120.wav",
+   "text": "僕の答えは、問いには合っていました。",
+   "chapter": 2,
+   "emotion": "neutral",
+   "face": "focused",
+   "beat": "doubt",
+   "react": {
+    "mirai": {
+     "beat": "doubt",
+     "mark": "？",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c121",
+   "character": "mirai",
+   "start": 425.648,
+   "end": 427.0531,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c121.wav",
+   "text": "うん。",
+   "chapter": 2,
+   "emotion": "confidence",
+   "face": "smile",
+   "beat": "approval",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c122",
+   "character": "mirabo",
+   "start": 427.553,
+   "end": 432.2033,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c122.wav",
+   "text": "でも、その問いは、鏡の形を測る問いじゃなかった。",
+   "chapter": 2,
+   "emotion": "guilt",
+   "face": "sad",
+   "beat": "shame",
+   "react": {
+    "mirai": {
+     "beat": "shame",
+     "face": "worried"
+    }
+   }
+  },
+  {
+   "name": "c123",
+   "character": "mirai",
+   "start": 432.604,
+   "end": 434.0082,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c123.wav",
+   "text": "そう。",
+   "chapter": 2,
+   "emotion": "confidence",
+   "face": "smile",
+   "beat": "approval",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c124",
+   "character": "mirai",
+   "start": 434.508,
+   "end": 436.6281,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c124.wav",
+   "text": "別の検査があった。",
+   "chapter": 2,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "prediction",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c125",
+   "character": "mirai",
+   "start": 436.928,
+   "end": 442.0226,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c125.wav",
+   "text": "屈折式。レンズを通した光で、鏡を反対側から見る。",
+   "chapter": 2,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "curiosity",
+   "react": {
+    "mirabo": {
+     "beat": "doubt",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c126",
+   "character": "mirai",
+   "start": 442.323,
+   "end": 447.2178,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c126.wav",
+   "text": "さっきの装置は、反射式だった。鏡で跳ね返った光を見る。",
+   "chapter": 2,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "curiosity",
+   "react": {
+    "mirabo": {
+     "beat": "prediction",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c127",
+   "character": "mirai",
+   "start": 447.617,
+   "end": 452.0097,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c127.wav",
+   "text": "屈折式の検査は言った。鏡がおかしい。",
+   "chapter": 2,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "worry",
+     "face": "worried"
+    }
+   }
+  },
+  {
+   "name": "c128",
+   "character": "mirai",
+   "start": 452.41,
+   "end": 456.5156,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c128.wav",
+   "text": "屈折式の言う通り、鏡はおかしかった。",
+   "chapter": 2,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c129",
+   "character": "mirabo",
+   "start": 456.916,
+   "end": 458.6983,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c129.wav",
+   "text": "退けられました。",
+   "chapter": 2,
+   "emotion": "guilt",
+   "face": "sad",
+   "beat": "shame",
+   "react": {
+    "mirai": {
+     "beat": "shame",
+     "face": "worried"
+    }
+   }
+  },
+  {
+   "name": "c130",
+   "character": "mirai",
+   "start": 458.998,
+   "end": 460.4022,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c130.wav",
+   "text": "そう。",
+   "chapter": 2,
+   "emotion": "confidence",
+   "face": "smile",
+   "beat": "approval",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c131",
+   "character": "mirabo",
+   "start": 460.802,
+   "end": 462.9853,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c131.wav",
+   "text": "理由は、精度ですか。",
+   "chapter": 2,
+   "emotion": "neutral",
+   "face": "focused",
+   "beat": "doubt",
+   "react": {
+    "mirai": {
+     "beat": "doubt",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c132",
+   "character": "mirai",
+   "start": 463.386,
+   "end": 466.5685,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c132.wav",
+   "text": "屈折式の数字が悪かったのではない。",
+   "chapter": 2,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "doubt",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c133",
+   "character": "mirai",
+   "start": 466.968,
+   "end": 471.9706,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c133.wav",
+   "text": "装置の種類だ。反射の方が正確だと信じていた。",
+   "chapter": 2,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c134",
+   "character": "mirai",
+   "start": 472.471,
+   "end": 474.246,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c134.wav",
+   "text": "僕も信じていた。",
+   "chapter": 2,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "surprise",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c135",
+   "character": "mirabo",
+   "start": 474.746,
+   "end": 477.0953,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c135.wav",
+   "text": "……ミライさんも。",
+   "chapter": 2,
+   "emotion": "excitement",
+   "face": "surprised",
+   "beat": "surprise",
+   "react": {
+    "mirai": {
+     "beat": "shame",
+     "face": "worried"
+    }
+   }
+  },
+  {
+   "name": "c136",
+   "character": "mirai",
+   "start": 477.495,
+   "end": 479.0548,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c136.wav",
+   "text": "うん。",
+   "chapter": 2,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c137",
+   "character": "mirai",
+   "start": 479.455,
+   "end": 484.1785,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c137.wav",
+   "text": "退けられた日、誰かが紙を机の端へやった。",
+   "chapter": 2,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "worry",
+     "face": "worried"
+    }
+   }
+  },
+  {
+   "name": "c138",
+   "character": "mirai",
+   "start": 484.478,
+   "end": 487.0325,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c138.wav",
+   "text": "屈折式の検査が出した紙。",
+   "chapter": 2,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "curiosity",
+   "react": {}
+  },
+  {
+   "name": "c139",
+   "character": "mirai",
+   "start": 487.153,
+   "end": 490.344,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c139.wav",
+   "text": "鏡の形の誤差が曲線で刷ってある。",
+   "chapter": 2,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "curiosity",
+   "react": {
+    "mirabo": {
+     "beat": "doubt",
+     "mark": "！",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c140",
+   "character": "mirai",
+   "start": 490.744,
+   "end": 492.8242,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c140.wav",
+   "text": "端が、折れている。",
+   "chapter": 2,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "curiosity",
+   "react": {
+    "mirabo": {
+     "beat": "worry",
+     "face": "worried"
+    }
+   }
+  },
+  {
+   "name": "c141",
+   "character": "mirai",
+   "start": 493.324,
+   "end": 496.4798,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c141.wav",
+   "text": "誰も、読み上げない。",
+   "chapter": 2,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c142",
+   "character": "mirai",
+   "start": 496.88,
+   "end": 500.3338,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c142.wav",
+   "text": "ミラボの画面に、ラベルだけ出た。",
+   "chapter": 2,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c143",
+   "character": "mirai",
+   "start": 500.733,
+   "end": 503.8637,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c143.wav",
+   "text": "紙の中身は、読まなかった。",
+   "chapter": 2,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c144",
+   "character": "mirai",
+   "start": 504.264,
+   "end": 506.3855,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c144.wav",
+   "text": "読まずに付けたラベルだ。",
+   "chapter": 2,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c145",
+   "character": "mirai",
+   "start": 506.886,
+   "end": 509.3845,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c145.wav",
+   "text": "「精度が低い」。",
+   "chapter": 2,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c146",
+   "character": "mirabo",
+   "start": 509.884,
+   "end": 512.0148,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c146.wav",
+   "text": "……僕が出しました。",
+   "chapter": 2,
+   "emotion": "guilt",
+   "face": "sad",
+   "beat": "shame",
+   "react": {
+    "mirai": {
+     "beat": "shame",
+     "face": "worried"
+    }
+   }
+  },
+  {
+   "name": "c147",
+   "character": "mirai",
+   "start": 512.415,
+   "end": 513.9747,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c147.wav",
+   "text": "うん。",
+   "chapter": 2,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c148",
+   "character": "mirai",
+   "start": 514.475,
+   "end": 516.8981,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c148.wav",
+   "text": "紙を、端へやったのは。",
+   "chapter": 2,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "doubt",
+   "react": {
+    "mirabo": {
+     "beat": "fear",
+     "face": "worried"
+    }
+   }
+  },
+  {
+   "name": "c149",
+   "character": "mirabo",
+   "start": 517.398,
+   "end": 519.6968,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c149.wav",
+   "text": "……僕です。",
+   "chapter": 2,
+   "emotion": "guilt",
+   "face": "sad",
+   "beat": "shame",
+   "react": {
+    "mirai": {
+     "beat": "shame",
+     "face": "worried"
+    }
+   }
+  },
+  {
+   "name": "c150",
+   "character": "mirai",
+   "start": 520.097,
+   "end": 521.6567,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c150.wav",
+   "text": "うん。",
+   "chapter": 2,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c151",
+   "character": "mirai",
+   "start": 522.256,
+   "end": 525.985,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c151.wav",
+   "text": "そのラベル。……僕も貼ったことがある。",
+   "chapter": 2,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "surprise",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c152",
+   "character": "mirai",
+   "start": 526.485,
+   "end": 529.2052,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c152.wav",
+   "text": "前に一度。",
+   "chapter": 2,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "worry",
+     "face": "worried"
+    }
+   }
+  },
+  {
+   "name": "c153",
+   "character": "mirai",
+   "start": 529.606,
+   "end": 531.5695,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c153.wav",
+   "text": "同じ班の人だった。",
+   "chapter": 2,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "worry",
+     "face": "worried"
+    }
+   }
+  },
+  {
+   "name": "c154",
+   "character": "mirai",
+   "start": 531.969,
+   "end": 537.1,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c154.wav",
+   "text": "僕が紙を退けた日。定規が机に当たる音がした。",
+   "chapter": 2,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c155",
+   "character": "mirai",
+   "start": 537.5,
+   "end": 540.3351,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c155.wav",
+   "text": "僕は、装置の精度を言った。",
+   "chapter": 2,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c156",
+   "character": "mirai",
+   "start": 540.835,
+   "end": 543.9521,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c156.wav",
+   "text": "その人の紙は読まなかった。",
+   "chapter": 2,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c157",
+   "character": "mirai",
+   "start": 544.952,
+   "end": 546.9743,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c157.wav",
+   "text": "名前も覚えていない。",
+   "chapter": 2,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c158",
+   "character": "mirai",
+   "start": 547.475,
+   "end": 550.6463,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c158.wav",
+   "text": "覚えていないことが、嫌だ。",
+   "chapter": 2,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c159",
+   "character": "mirai",
+   "start": 551.046,
+   "end": 555.5063,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c159.wav",
+   "text": "1.3ミリは、プラスチックの定規でも測れる長さだ。",
+   "chapter": 2,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "surprise",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c160",
+   "character": "mirai",
+   "start": 556.006,
+   "end": 559.2943,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c160.wav",
+   "text": "なのに、誰も測らなかった。",
+   "chapter": 2,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c161",
+   "character": "mirabo",
+   "start": 559.595,
+   "end": 561.3856,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c161.wav",
+   "text": "定規ですか。",
+   "chapter": 2,
+   "emotion": "excitement",
+   "face": "surprised",
+   "beat": "surprise",
+   "react": {
+    "mirai": {
+     "beat": "amusement",
+     "face": "smile"
+    }
+   }
+  },
+  {
+   "name": "c162",
+   "character": "mirai",
+   "start": 561.785,
+   "end": 564.1494,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c162.wav",
+   "text": "安い定規で足りた。",
+   "chapter": 2,
+   "emotion": "calm",
+   "face": "neutral",
+   "beat": "fatigue",
+   "react": {
+    "mirabo": {
+     "beat": "doubt",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c163",
+   "character": "mirabo",
+   "start": 564.55,
+   "end": 568.4775,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c163.wav",
+   "text": "現在地を、一つの数字にまとめようとしました。",
+   "chapter": 2,
+   "emotion": "neutral",
+   "face": "focused",
+   "beat": "doubt",
+   "react": {
+    "mirai": {
+     "beat": "doubt",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c164",
+   "character": "mirabo",
+   "start": 568.777,
+   "end": 570.7861,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c164.wav",
+   "text": "……92%です。",
+   "chapter": 2,
+   "emotion": "confidence",
+   "face": "excited",
+   "beat": "pride",
+   "react": {
+    "mirai": {
+     "beat": "doubt",
+     "mark": "？",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c165",
+   "character": "mirabo",
+   "start": 571.186,
+   "end": 574.7963,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c165.wav",
+   "text": "いえ。何を何で割ったか、言えません。",
+   "chapter": 2,
+   "emotion": "guilt",
+   "face": "sad",
+   "beat": "shame",
+   "react": {
+    "mirai": {
+     "beat": "doubt",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c166",
+   "character": "mirai",
+   "start": 575.197,
+   "end": 578.3493,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c166.wav",
+   "text": "定義を先に、見せて。",
+   "chapter": 2,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c167",
+   "character": "mirabo",
+   "start": 578.849,
+   "end": 581.4396,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c167.wav",
+   "text": "……出せません。",
+   "chapter": 2,
+   "emotion": "guilt",
+   "face": "sad",
+   "beat": "shame",
+   "react": {
+    "mirai": {
+     "beat": "doubt",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c168",
+   "character": "mirai",
+   "start": 581.74,
+   "end": 583.1451,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c168.wav",
+   "text": "うん。",
+   "chapter": 2,
+   "emotion": "confidence",
+   "face": "smile",
+   "beat": "approval",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c169",
+   "character": "mirabo",
+   "start": 583.645,
+   "end": 587.587,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c169.wav",
+   "text": "以後、単一の百分率は出しません。",
+   "chapter": 2,
+   "emotion": "confidence",
+   "face": "focused",
+   "beat": "resolve",
+   "react": {
+    "mirai": {
+     "beat": "resolve",
+     "face": "serious"
+    }
+   }
+  },
+  {
+   "name": "c170",
+   "character": "mirai",
+   "start": 587.987,
+   "end": 589.7416,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c170.wav",
+   "text": "いい。",
+   "chapter": 2,
+   "emotion": "confidence",
+   "face": "smile",
+   "beat": "approval",
+   "react": {
+    "mirabo": {
+     "beat": "relief",
+     "face": "excited"
+    }
+   }
+  },
+  {
+   "name": "c171",
+   "character": "mirabo",
+   "start": 590.141,
+   "end": 594.2198,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c171.wav",
+   "text": "現在地は、本来、一つの数字で示すものです。",
+   "chapter": 2,
+   "emotion": "neutral",
+   "face": "focused",
+   "beat": "doubt",
+   "react": {
+    "mirai": {
+     "beat": "doubt",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c172",
+   "character": "mirabo",
+   "start": 594.62,
+   "end": 598.915,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c172.wav",
+   "text": "分母を出さないと、その数字が何なのか分かりません。",
+   "chapter": 2,
+   "emotion": "neutral",
+   "face": "focused",
+   "beat": "doubt",
+   "react": {
+    "mirai": {
+     "beat": "doubt",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c173",
+   "character": "mirai",
+   "start": 599.315,
+   "end": 600.2462,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c173.wav",
+   "text": "分かる。",
+   "chapter": 2,
+   "emotion": "calm",
+   "face": "smile",
+   "beat": "tenderness",
+   "react": {
+    "mirabo": {
+     "beat": "longing",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c174",
+   "character": "mirabo",
+   "start": 600.746,
+   "end": 602.4461,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c174.wav",
+   "text": "それでも、です。",
+   "chapter": 2,
+   "emotion": "loneliness",
+   "face": "sad",
+   "beat": "longing",
+   "react": {
+    "mirai": {
+     "beat": "tenderness",
+     "face": "smile"
+    }
+   }
+  },
+  {
+   "name": "c175",
+   "character": "mirai",
+   "start": 602.846,
+   "end": 604.8901,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c175.wav",
+   "text": "ああ。",
+   "chapter": 2,
+   "emotion": "calm",
+   "face": "smile",
+   "beat": "tenderness",
+   "react": {
+    "mirabo": {
+     "beat": "relief",
+     "face": "excited"
+    }
+   }
+  },
+  {
+   "name": "c176",
+   "character": "mirai",
+   "start": 605.19,
+   "end": 608.0123,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c176.wav",
+   "text": "研磨の記録は、残っている。",
+   "chapter": 2,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "prediction",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c177",
+   "character": "mirai",
+   "start": 608.613,
+   "end": 610.2593,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c177.wav",
+   "text": "……やめとく。",
+   "chapter": 2,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "doubt",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c178",
+   "character": "mirabo",
+   "start": 610.609,
+   "end": 612.1522,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c178.wav",
+   "text": "なぜですか。",
+   "chapter": 2,
+   "emotion": "neutral",
+   "face": "focused",
+   "beat": "doubt",
+   "react": {
+    "mirai": {
+     "beat": "doubt",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c179",
+   "character": "mirai",
+   "start": 612.552,
+   "end": 615.1879,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c179.wav",
+   "text": "今、僕が言いかけた。",
+   "chapter": 2,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "doubt",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c180",
+   "character": "mirai",
+   "start": 615.588,
+   "end": 618.3988,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c180.wav",
+   "text": "研磨の記録を見せろ、って。",
+   "chapter": 2,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "worry",
+     "face": "worried"
+    }
+   }
+  },
+  {
+   "name": "c181",
+   "character": "mirai",
+   "start": 618.799,
+   "end": 620.9592,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c181.wav",
+   "text": "その言い方が嫌だった。",
+   "chapter": 2,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "doubt",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c182",
+   "character": "mirai",
+   "start": 621.459,
+   "end": 625.3708,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c182.wav",
+   "text": "研磨の記録を見せろ、という問いは、",
+   "chapter": 2,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {}
+  },
+  {
+   "name": "c183",
+   "character": "mirai",
+   "start": 625.491,
+   "end": 628.3958,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c183.wav",
+   "text": "紙を退けたのと同じ問いだ。",
+   "chapter": 2,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "doubt",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c184",
+   "character": "mirai",
+   "start": 628.896,
+   "end": 631.8734,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c184.wav",
+   "text": "あの紙を、裏から見たら。",
+   "chapter": 2,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "curiosity",
+   "react": {
+    "mirabo": {
+     "beat": "doubt",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c185",
+   "character": "mirai",
+   "start": 632.273,
+   "end": 636.6163,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c185.wav",
+   "text": "紙は薄い。灯りにかざすと、線が透ける。",
+   "chapter": 2,
+   "emotion": "excitement",
+   "face": "surprised",
+   "beat": "awe",
+   "react": {
+    "mirabo": {
+     "beat": "surprise",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c186",
+   "character": "mirai",
+   "start": 637.017,
+   "end": 641.1285,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c186.wav",
+   "text": "表のラベルが、その線を隠している。",
+   "chapter": 2,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c187",
+   "character": "mirabo",
+   "start": 641.428,
+   "end": 642.1934,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c187.wav",
+   "text": "……裏?",
+   "chapter": 2,
+   "emotion": "excitement",
+   "face": "surprised",
+   "beat": "surprise",
+   "react": {
+    "mirai": {
+     "beat": "amusement",
+     "face": "smile"
+    }
+   }
+  },
+  {
+   "name": "c188",
+   "character": "mirai",
+   "start": 642.694,
+   "end": 645.5598,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c188.wav",
+   "text": "次は裏から読む。",
+   "chapter": 2,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "awe",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c189",
+   "character": "mirai",
+   "start": 645.959,
+   "end": 648.2552,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c189.wav",
+   "text": "進もう。",
+   "chapter": 2,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "prediction",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c190",
+   "character": "mirai",
+   "start": 649.856,
+   "end": 654.5583,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c190.wav",
+   "text": "1993年12月。STS-61。",
+   "chapter": 3,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "prediction",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c191",
+   "character": "mirai",
+   "start": 654.958,
+   "end": 657.3489,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c191.wav",
+   "text": "エンデバーが追いついた。",
+   "chapter": 3,
+   "emotion": "excitement",
+   "face": "surprised",
+   "beat": "awe",
+   "react": {
+    "mirabo": {
+     "beat": "awe",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c192",
+   "character": "mirai",
+   "start": 657.699,
+   "end": 660.0025,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c192.wav",
+   "text": "5回の船外活動。",
+   "chapter": 3,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "prediction",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c193",
+   "character": "mirabo",
+   "start": 660.302,
+   "end": 662.7069,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c193.wav",
+   "text": "鏡を削り直すんですか。",
+   "chapter": 3,
+   "emotion": "confidence",
+   "face": "focused",
+   "beat": "prediction",
+   "react": {
+    "mirai": {
+     "beat": "doubt",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c194",
+   "character": "mirai",
+   "start": 663.107,
+   "end": 666.928,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c194.wav",
+   "text": "削れない。鏡はもう宇宙にある。",
+   "chapter": 3,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "surprise",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c195",
+   "character": "mirabo",
+   "start": 667.328,
+   "end": 668.7409,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c195.wav",
+   "text": "では。",
+   "chapter": 3,
+   "emotion": "neutral",
+   "face": "focused",
+   "beat": "doubt",
+   "react": {
+    "mirai": {
+     "beat": "resolve",
+     "face": "serious"
+    }
+   }
+  },
+  {
+   "name": "c196",
+   "character": "mirai",
+   "start": 669.241,
+   "end": 670.79,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c196.wav",
+   "text": "眼鏡をかける。",
+   "chapter": 3,
+   "emotion": "joy",
+   "face": "smile",
+   "beat": "amusement",
+   "react": {
+    "mirabo": {
+     "beat": "surprise",
+     "mark": "！",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c197",
+   "character": "mirai",
+   "start": 671.19,
+   "end": 674.5993,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c197.wav",
+   "text": "COSTAR。光の入り口。",
+   "chapter": 3,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "prediction",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c198",
+   "character": "mirai",
+   "start": 674.949,
+   "end": 678.1676,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c198.wav",
+   "text": "鏡の前に置く、小さな装置だ。",
+   "chapter": 3,
+   "emotion": "calm",
+   "face": "smile",
+   "beat": "tenderness",
+   "react": {
+    "mirabo": {
+     "beat": "awe",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c199",
+   "character": "mirai",
+   "start": 678.468,
+   "end": 681.7311,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c199.wav",
+   "text": "誤差の形は、先に測ってある。",
+   "chapter": 3,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "prediction",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c200",
+   "character": "mirai",
+   "start": 682.031,
+   "end": 686.2168,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c200.wav",
+   "text": "鏡の誤差と反対の形を、光の入り口で作る。",
+   "chapter": 3,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "curiosity",
+   "react": {
+    "mirabo": {
+     "beat": "prediction",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c201",
+   "character": "mirai",
+   "start": 686.717,
+   "end": 689.4712,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c201.wav",
+   "text": "足すのではない。引く。",
+   "chapter": 3,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "surprise",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c202",
+   "character": "mirai",
+   "start": 689.771,
+   "end": 693.4294,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c202.wav",
+   "text": "鏡がずらした光を、反対向きにずらす。",
+   "chapter": 3,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "curiosity",
+   "react": {
+    "mirabo": {
+     "beat": "prediction",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c203",
+   "character": "mirai",
+   "start": 693.83,
+   "end": 696.2781,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c203.wav",
+   "text": "だから、打ち消せる。",
+   "chapter": 3,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "awe",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c204",
+   "character": "mirai",
+   "start": 696.578,
+   "end": 701.439,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c204.wav",
+   "text": "一緒に、新しいカメラのWFPC2も取り付けた。",
+   "chapter": 3,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "prediction",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c205",
+   "character": "mirai",
+   "start": 701.739,
+   "end": 706.317,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c205.wav",
+   "text": "WFPC2は、COSTARが直した光を受けて、",
+   "chapter": 3,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "curiosity",
+   "react": {}
+  },
+  {
+   "name": "c206",
+   "character": "mirai",
+   "start": 706.437,
+   "end": 708.4355,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c206.wav",
+   "text": "像を写すカメラだ。",
+   "chapter": 3,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "curiosity",
+   "react": {
+    "mirabo": {
+     "beat": "prediction",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c207",
+   "character": "mirabo",
+   "start": 708.835,
+   "end": 711.194,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c207.wav",
+   "text": "鏡を直すのではなく。",
+   "chapter": 3,
+   "emotion": "neutral",
+   "face": "focused",
+   "beat": "doubt",
+   "react": {
+    "mirai": {
+     "beat": "approval",
+     "face": "smile"
+    }
+   }
+  },
+  {
+   "name": "c208",
+   "character": "mirai",
+   "start": 711.494,
+   "end": 712.8983,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c208.wav",
+   "text": "そう。",
+   "chapter": 3,
+   "emotion": "confidence",
+   "face": "smile",
+   "beat": "approval",
+   "react": {
+    "mirabo": {
+     "beat": "relief",
+     "face": "excited"
+    }
+   }
+  },
+  {
+   "name": "c209",
+   "character": "mirai",
+   "start": 713.398,
+   "end": 716.9103,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c209.wav",
+   "text": "1994年1月。",
+   "chapter": 3,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "prediction",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c210",
+   "character": "mirai",
+   "start": 717.411,
+   "end": 720.5133,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c210.wav",
+   "text": "補正後の最初の一枚。",
+   "chapter": 3,
+   "emotion": "excitement",
+   "face": "surprised",
+   "beat": "awe",
+   "react": {
+    "mirabo": {
+     "beat": "awe",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c211",
+   "character": "mirai",
+   "start": 720.813,
+   "end": 722.5303,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c211.wav",
+   "text": "同じ天域。",
+   "chapter": 3,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "curiosity",
+   "react": {
+    "mirabo": {
+     "beat": "prediction",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c212",
+   "character": "mirai",
+   "start": 722.93,
+   "end": 725.1743,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c212.wav",
+   "text": "前と後。",
+   "chapter": 3,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "surprise",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c213",
+   "character": "mirabo",
+   "start": 725.475,
+   "end": 728.8518,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c213.wav",
+   "text": "比べる基準になる像が二枚あります。",
+   "chapter": 3,
+   "emotion": "confidence",
+   "face": "focused",
+   "beat": "prediction",
+   "react": {
+    "mirai": {
+     "beat": "curiosity",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c214",
+   "character": "mirabo",
+   "start": 729.151,
+   "end": 732.6034,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c214.wav",
+   "text": "この二枚を、参照像と呼びます。",
+   "chapter": 3,
+   "emotion": "confidence",
+   "face": "focused",
+   "beat": "prediction",
+   "react": {
+    "mirai": {
+     "beat": "doubt",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c215",
+   "character": "mirabo",
+   "start": 732.904,
+   "end": 737.243,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c215.wav",
+   "text": "参照像は、正しさを外から確かめるための像です。",
+   "chapter": 3,
+   "emotion": "confidence",
+   "face": "focused",
+   "beat": "prediction",
+   "react": {
+    "mirai": {
+     "beat": "doubt",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c216",
+   "character": "mirabo",
+   "start": 737.543,
+   "end": 739.3748,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c216.wav",
+   "text": "分母は、",
+   "chapter": 3,
+   "emotion": "confidence",
+   "face": "focused",
+   "beat": "prediction",
+   "react": {}
+  },
+  {
+   "name": "c217",
+   "character": "mirabo",
+   "start": 739.495,
+   "end": 744.5914,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c217.wav",
+   "text": "補正後の像と二つの参照像それぞれとの一致率です。",
+   "chapter": 3,
+   "emotion": "confidence",
+   "face": "focused",
+   "beat": "prediction",
+   "react": {
+    "mirai": {
+     "beat": "curiosity",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c218",
+   "character": "mirabo",
+   "start": 744.941,
+   "end": 747.9429,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c218.wav",
+   "text": "78から91%。",
+   "chapter": 3,
+   "emotion": "confidence",
+   "face": "focused",
+   "beat": "prediction",
+   "react": {
+    "mirai": {
+     "beat": "doubt",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c219",
+   "character": "mirabo",
+   "start": 748.343,
+   "end": 751.9767,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c219.wav",
+   "text": "二つの参照像が互いに一致しません。",
+   "chapter": 3,
+   "emotion": "neutral",
+   "face": "focused",
+   "beat": "doubt",
+   "react": {}
+  },
+  {
+   "name": "c220",
+   "character": "mirabo",
+   "start": 752.097,
+   "end": 754.4748,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c220.wav",
+   "text": "だから、範囲になります。",
+   "chapter": 3,
+   "emotion": "neutral",
+   "face": "focused",
+   "beat": "doubt",
+   "react": {
+    "mirai": {
+     "beat": "doubt",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c221",
+   "character": "mirabo",
+   "start": 754.774,
+   "end": 757.7108,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c221.wav",
+   "text": "これも、記録された数字ではありません。",
+   "chapter": 3,
+   "emotion": "neutral",
+   "face": "focused",
+   "beat": "doubt",
+   "react": {}
+  },
+  {
+   "name": "c222",
+   "character": "mirabo",
+   "start": 757.831,
+   "end": 761.3199,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c222.wav",
+   "text": "僕が今、二枚の像から出した範囲です。",
+   "chapter": 3,
+   "emotion": "neutral",
+   "face": "focused",
+   "beat": "doubt",
+   "react": {
+    "mirai": {
+     "beat": "curiosity",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c223",
+   "character": "mirabo",
+   "start": 761.82,
+   "end": 764.8825,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c223.wav",
+   "text": "これは、一つの数字ではありません。",
+   "chapter": 3,
+   "emotion": "confidence",
+   "face": "focused",
+   "beat": "resolve",
+   "react": {}
+  },
+  {
+   "name": "c224",
+   "character": "mirabo",
+   "start": 765.003,
+   "end": 767.7332,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c224.wav",
+   "text": "現在地とは呼べません。",
+   "chapter": 3,
+   "emotion": "confidence",
+   "face": "focused",
+   "beat": "resolve",
+   "react": {
+    "mirai": {
+     "beat": "approval",
+     "face": "smile"
+    }
+   }
+  },
+  {
+   "name": "c225",
+   "character": "mirai",
+   "start": 768.233,
+   "end": 770.3247,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c225.wav",
+   "text": "……そうだな。",
+   "chapter": 3,
+   "emotion": "confidence",
+   "face": "smile",
+   "beat": "approval",
+   "react": {
+    "mirabo": {
+     "beat": "relief",
+     "face": "excited"
+    }
+   }
+  },
+  {
+   "name": "c226",
+   "character": "mirabo",
+   "start": 770.725,
+   "end": 771.5496,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c226.wav",
+   "text": "はい。",
+   "chapter": 3,
+   "emotion": "joy",
+   "face": "excited",
+   "beat": "relief",
+   "react": {
+    "mirai": {
+     "beat": "tenderness",
+     "face": "smile"
+    }
+   }
+  },
+  {
+   "name": "c227",
+   "character": "mirai",
+   "start": 771.849,
+   "end": 775.6097,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c227.wav",
+   "text": "机の上。補正後の像の刷り物。",
+   "chapter": 3,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "curiosity",
+   "react": {
+    "mirabo": {
+     "beat": "prediction",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c228",
+   "character": "mirai",
+   "start": 776.01,
+   "end": 777.6009,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c228.wav",
+   "text": "前の紙は。",
+   "chapter": 3,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "doubt",
+   "react": {
+    "mirabo": {
+     "beat": "worry",
+     "face": "worried"
+    }
+   }
+  },
+  {
+   "name": "c229",
+   "character": "mirai",
+   "start": 778.201,
+   "end": 779.5285,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c229.wav",
+   "text": "……ない。",
+   "chapter": 3,
+   "emotion": "anxiety",
+   "face": "worried",
+   "beat": "worry",
+   "react": {
+    "mirabo": {
+     "beat": "fear",
+     "face": "worried"
+    }
+   }
+  },
+  {
+   "name": "c230",
+   "character": "mirai",
+   "start": 779.928,
+   "end": 782.3119,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c230.wav",
+   "text": "「精度が低い」の紙が。",
+   "chapter": 3,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "doubt",
+   "react": {
+    "mirabo": {
+     "beat": "fear",
+     "face": "worried"
+    }
+   }
+  },
+  {
+   "name": "c231",
+   "character": "mirai",
+   "start": 782.712,
+   "end": 784.3038,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c231.wav",
+   "text": "どこへやった。",
+   "chapter": 3,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "doubt",
+   "react": {
+    "mirabo": {
+     "beat": "fear",
+     "face": "worried"
+    }
+   }
+  },
+  {
+   "name": "c232",
+   "character": "mirabo",
+   "start": 784.804,
+   "end": 786.6236,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c232.wav",
+   "text": "……分かりません。",
+   "chapter": 3,
+   "emotion": "fear",
+   "face": "worried",
+   "beat": "fear",
+   "react": {
+    "mirai": {
+     "beat": "doubt",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c233",
+   "character": "mirai",
+   "start": 787.024,
+   "end": 790.4477,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c233.wav",
+   "text": "机の上に、紙の端が見えた。",
+   "chapter": 3,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "curiosity",
+   "react": {
+    "mirabo": {
+     "beat": "fear",
+     "face": "worried"
+    }
+   }
+  },
+  {
+   "name": "c234",
+   "character": "mirai",
+   "start": 790.947,
+   "end": 793.9522,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c234.wav",
+   "text": "ミラボが、手で隠した。",
+   "chapter": 3,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c235",
+   "character": "mirai",
+   "start": 794.753,
+   "end": 796.2955,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c235.wav",
+   "text": "うん。",
+   "chapter": 3,
+   "emotion": "calm",
+   "face": "smile",
+   "beat": "approval",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c236",
+   "character": "mirai",
+   "start": 797.895,
+   "end": 801.2058,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c236.wav",
+   "text": "1995年12月。",
+   "chapter": 4,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "prediction",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c237",
+   "character": "mirai",
+   "start": 801.706,
+   "end": 805.2031,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c237.wav",
+   "text": "ディープフィールド。",
+   "chapter": 4,
+   "emotion": "excitement",
+   "face": "surprised",
+   "beat": "awe",
+   "react": {
+    "mirabo": {
+     "beat": "awe",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c238",
+   "character": "mirai",
+   "start": 805.503,
+   "end": 809.8728,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c238.wav",
+   "text": "何もないように見える天域を、長く写す観測だ。",
+   "chapter": 4,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "curiosity",
+   "react": {
+    "mirabo": {
+     "beat": "prediction",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c239",
+   "character": "mirai",
+   "start": 810.273,
+   "end": 812.9525,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c239.wav",
+   "text": "小さな天域。",
+   "chapter": 4,
+   "emotion": "excitement",
+   "face": "surprised",
+   "beat": "awe",
+   "react": {
+    "mirabo": {
+     "beat": "awe",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c240",
+   "character": "mirai",
+   "start": 813.352,
+   "end": 817.9658,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c240.wav",
+   "text": "10日間。342回の露出。",
+   "chapter": 4,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "surprise",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c241",
+   "character": "mirai",
+   "start": 818.566,
+   "end": 822.1396,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c241.wav",
+   "text": "小さな天域に、銀河が数千。",
+   "chapter": 4,
+   "emotion": "excitement",
+   "face": "surprised",
+   "beat": "awe",
+   "react": {
+    "mirabo": {
+     "beat": "awe",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c242",
+   "character": "mirabo",
+   "start": 822.54,
+   "end": 825.1164,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c242.wav",
+   "text": "補正は完璧ではありません。",
+   "chapter": 4,
+   "emotion": "neutral",
+   "face": "focused",
+   "beat": "doubt",
+   "react": {
+    "mirai": {
+     "beat": "approval",
+     "face": "smile"
+    }
+   }
+  },
+  {
+   "name": "c243",
+   "character": "mirai",
+   "start": 825.416,
+   "end": 826.8211,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c243.wav",
+   "text": "うん。",
+   "chapter": 4,
+   "emotion": "confidence",
+   "face": "smile",
+   "beat": "approval",
+   "react": {
+    "mirabo": {
+     "beat": "relief",
+     "face": "excited"
+    }
+   }
+  },
+  {
+   "name": "c244",
+   "character": "mirabo",
+   "start": 827.221,
+   "end": 829.3423,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c244.wav",
+   "text": "隅はまだ歪みます。",
+   "chapter": 4,
+   "emotion": "anxiety",
+   "face": "worried",
+   "beat": "worry",
+   "react": {
+    "mirai": {
+     "beat": "approval",
+     "face": "smile"
+    }
+   }
+  },
+  {
+   "name": "c245",
+   "character": "mirai",
+   "start": 829.643,
+   "end": 831.0481,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c245.wav",
+   "text": "うん。",
+   "chapter": 4,
+   "emotion": "confidence",
+   "face": "smile",
+   "beat": "approval",
+   "react": {
+    "mirabo": {
+     "beat": "relief",
+     "face": "excited"
+    }
+   }
+  },
+  {
+   "name": "c246",
+   "character": "mirabo",
+   "start": 831.448,
+   "end": 833.8107,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c246.wav",
+   "text": "ミライさん。",
+   "chapter": 4,
+   "emotion": "loneliness",
+   "face": "sad",
+   "beat": "longing",
+   "react": {
+    "mirai": {
+     "beat": "tenderness",
+     "face": "smile"
+    }
+   }
+  },
+  {
+   "name": "c247",
+   "character": "mirabo",
+   "start": 834.21,
+   "end": 836.4972,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c247.wav",
+   "text": "数字を出そうとしました。",
+   "chapter": 4,
+   "emotion": "loneliness",
+   "face": "sad",
+   "beat": "longing",
+   "react": {
+    "mirai": {
+     "beat": "tenderness",
+     "mark": "？",
+     "face": "smile"
+    }
+   }
+  },
+  {
+   "name": "c248",
+   "character": "mirai",
+   "start": 836.798,
+   "end": 838.2031,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c248.wav",
+   "text": "うん。",
+   "chapter": 4,
+   "emotion": "confidence",
+   "face": "smile",
+   "beat": "approval",
+   "react": {
+    "mirabo": {
+     "beat": "longing",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c249",
+   "character": "mirabo",
+   "start": 838.603,
+   "end": 842.5924,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c249.wav",
+   "text": "この像には、比べる参照像がありません。",
+   "chapter": 4,
+   "emotion": "guilt",
+   "face": "sad",
+   "beat": "shame",
+   "react": {}
+  },
+  {
+   "name": "c250",
+   "character": "mirabo",
+   "start": 842.712,
+   "end": 847.2633,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c250.wav",
+   "text": "正しさを外から確かめる基準が、僕にはありません。",
+   "chapter": 4,
+   "emotion": "guilt",
+   "face": "sad",
+   "beat": "shame",
+   "react": {
+    "mirai": {
+     "beat": "doubt",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c251",
+   "character": "mirabo",
+   "start": 847.763,
+   "end": 851.0181,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c251.wav",
+   "text": "分母が言えません。",
+   "chapter": 4,
+   "emotion": "guilt",
+   "face": "sad",
+   "beat": "shame",
+   "react": {
+    "mirai": {
+     "beat": "tenderness",
+     "face": "smile"
+    }
+   }
+  },
+  {
+   "name": "c252",
+   "character": "mirai",
+   "start": 852.419,
+   "end": 855.074,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c252.wav",
+   "text": "出さなくていい。",
+   "chapter": 4,
+   "emotion": "calm",
+   "face": "smile",
+   "beat": "tenderness",
+   "react": {
+    "mirabo": {
+     "beat": "relief",
+     "face": "excited"
+    }
+   }
+  },
+  {
+   "name": "c253",
+   "character": "mirabo",
+   "start": 855.474,
+   "end": 856.2986,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c253.wav",
+   "text": "……はい。",
+   "chapter": 4,
+   "emotion": "joy",
+   "face": "excited",
+   "beat": "relief",
+   "react": {
+    "mirai": {
+     "beat": "tenderness",
+     "face": "smile"
+    }
+   }
+  },
+  {
+   "name": "c254",
+   "character": "mirai",
+   "start": 856.698,
+   "end": 860.9031,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c254.wav",
+   "text": "ミラボの画面の分母の欄に、横線が一本。",
+   "chapter": 4,
+   "emotion": "excitement",
+   "face": "surprised",
+   "beat": "awe",
+   "react": {
+    "mirabo": {
+     "beat": "relief",
+     "face": "excited"
+    }
+   }
+  },
+  {
+   "name": "c255",
+   "character": "mirai",
+   "start": 861.303,
+   "end": 863.5237,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c255.wav",
+   "text": "数字ではない。",
+   "chapter": 4,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "relief",
+     "face": "excited"
+    }
+   }
+  },
+  {
+   "name": "c256",
+   "character": "mirai",
+   "start": 864.024,
+   "end": 867.5369,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c256.wav",
+   "text": "分母が言えない、という印だ。",
+   "chapter": 4,
+   "emotion": "calm",
+   "face": "smile",
+   "beat": "tenderness",
+   "react": {
+    "mirabo": {
+     "beat": "relief",
+     "face": "excited"
+    }
+   }
+  },
+  {
+   "name": "c257",
+   "character": "mirai",
+   "start": 867.937,
+   "end": 871.2933,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c257.wav",
+   "text": "その横線を、自分から出したな。",
+   "chapter": 4,
+   "emotion": "confidence",
+   "face": "smile",
+   "beat": "approval",
+   "react": {
+    "mirabo": {
+     "beat": "pride",
+     "face": "excited"
+    }
+   }
+  },
+  {
+   "name": "c258",
+   "character": "mirabo",
+   "start": 871.693,
+   "end": 872.5176,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c258.wav",
+   "text": "はい。",
+   "chapter": 4,
+   "emotion": "joy",
+   "face": "excited",
+   "beat": "pride",
+   "react": {
+    "mirai": {
+     "beat": "approval",
+     "face": "smile"
+    }
+   }
+  },
+  {
+   "name": "c259",
+   "character": "mirai",
+   "start": 873.018,
+   "end": 874.4191,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c259.wav",
+   "text": "……悪くない。",
+   "chapter": 4,
+   "emotion": "confidence",
+   "face": "smile",
+   "beat": "approval",
+   "react": {
+    "mirabo": {
+     "beat": "relief",
+     "face": "excited"
+    }
+   }
+  },
+  {
+   "name": "c260",
+   "character": "mirabo",
+   "start": 874.919,
+   "end": 875.7436,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c260.wav",
+   "text": "……はい。",
+   "chapter": 4,
+   "emotion": "joy",
+   "face": "excited",
+   "beat": "relief",
+   "react": {
+    "mirai": {
+     "beat": "tenderness",
+     "face": "smile"
+    }
+   }
+  },
+  {
+   "name": "c261",
+   "character": "mirai",
+   "start": 876.144,
+   "end": 879.7686,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c261.wav",
+   "text": "「精度が低い」の紙。まだ持ってる?",
+   "chapter": 4,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "curiosity",
+   "react": {
+    "mirabo": {
+     "beat": "fear",
+     "face": "worried"
+    }
+   }
+  },
+  {
+   "name": "c262",
+   "character": "mirabo",
+   "start": 880.168,
+   "end": 881.2481,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c262.wav",
+   "text": "……持っています。",
+   "chapter": 4,
+   "emotion": "fear",
+   "face": "worried",
+   "beat": "fear",
+   "react": {
+    "mirai": {
+     "beat": "doubt",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c263",
+   "character": "mirai",
+   "start": 881.648,
+   "end": 886.1767,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c263.wav",
+   "text": "鏡が削り損じた、という「たぶん」では足りない。",
+   "chapter": 4,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c264",
+   "character": "mirabo",
+   "start": 886.577,
+   "end": 887.3267,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c264.wav",
+   "text": "……はい。",
+   "chapter": 4,
+   "emotion": "guilt",
+   "face": "sad",
+   "beat": "shame",
+   "react": {
+    "mirai": {
+     "beat": "resolve",
+     "face": "serious"
+    }
+   }
+  },
+  {
+   "name": "c265",
+   "character": "mirai",
+   "start": 887.827,
+   "end": 889.0755,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c265.wav",
+   "text": "見せて。",
+   "chapter": 4,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "fear",
+     "face": "worried"
+    }
+   }
+  },
+  {
+   "name": "c266",
+   "character": "mirabo",
+   "start": 889.475,
+   "end": 894.5468,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c266.wav",
+   "text": "これは、答えじゃない。答えを作る前の、証拠です。",
+   "chapter": 4,
+   "emotion": "confidence",
+   "face": "focused",
+   "beat": "resolve",
+   "react": {
+    "mirai": {
+     "beat": "approval",
+     "face": "smile"
+    }
+   }
+  },
+  {
+   "name": "c267",
+   "character": "mirai",
+   "start": 894.947,
+   "end": 896.8388,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c267.wav",
+   "text": "知ってる。",
+   "chapter": 4,
+   "emotion": "calm",
+   "face": "smile",
+   "beat": "tenderness",
+   "react": {
+    "mirabo": {
+     "beat": "doubt",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c268",
+   "character": "mirabo",
+   "start": 897.239,
+   "end": 900.852,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c268.wav",
+   "text": "出すと、僕が出してきた数字が、使えなくなります。",
+   "chapter": 4,
+   "emotion": "fear",
+   "face": "worried",
+   "beat": "fear",
+   "react": {
+    "mirai": {
+     "beat": "doubt",
+     "face": "thinking"
+    }
+   }
+  },
+  {
+   "name": "c269",
+   "character": "mirai",
+   "start": 901.252,
+   "end": 903.1437,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c269.wav",
+   "text": "知ってる。",
+   "chapter": 4,
+   "emotion": "calm",
+   "face": "smile",
+   "beat": "tenderness",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c270",
+   "character": "mirai",
+   "start": 903.643,
+   "end": 905.3751,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c270.wav",
+   "text": "なぜ持ってた。",
+   "chapter": 4,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "doubt",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c271",
+   "character": "mirabo",
+   "start": 905.875,
+   "end": 908.1571,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c271.wav",
+   "text": "……捨てられませんでした。",
+   "chapter": 4,
+   "emotion": "guilt",
+   "face": "sad",
+   "beat": "shame",
+   "react": {
+    "mirai": {
+     "beat": "tenderness",
+     "face": "smile"
+    }
+   }
+  },
+  {
+   "name": "c272",
+   "character": "mirai",
+   "start": 908.658,
+   "end": 909.5971,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c272.wav",
+   "text": "なぜ。",
+   "chapter": 4,
+   "emotion": "neutral",
+   "face": "thinking",
+   "beat": "doubt",
+   "react": {
+    "mirabo": {
+     "beat": "fear",
+     "face": "worried"
+    }
+   }
+  },
+  {
+   "name": "c273",
+   "character": "mirabo",
+   "start": 910.097,
+   "end": 914.735,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c273.wav",
+   "text": "読めば、僕の数字が最初から間違っていたと分かる。",
+   "chapter": 4,
+   "emotion": "fear",
+   "face": "worried",
+   "beat": "fear",
+   "react": {}
+  },
+  {
+   "name": "c274",
+   "character": "mirabo",
+   "start": 914.855,
+   "end": 919.1039,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c274.wav",
+   "text": "それが怖くて、分からないままでいたかったんです。",
+   "chapter": 4,
+   "emotion": "fear",
+   "face": "worried",
+   "beat": "fear",
+   "react": {
+    "mirai": {
+     "beat": "tenderness",
+     "face": "smile"
+    }
+   }
+  },
+  {
+   "name": "c275",
+   "character": "mirai",
+   "start": 920.704,
+   "end": 921.7252,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c275.wav",
+   "text": "出して。",
+   "chapter": 4,
+   "emotion": "calm",
+   "face": "smile",
+   "beat": "tenderness",
+   "react": {
+    "mirabo": {
+     "beat": "resolve",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c276",
+   "character": "mirabo",
+   "start": 922.125,
+   "end": 924.2145,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c276.wav",
+   "text": "机の端ではなく。",
+   "chapter": 4,
+   "emotion": "confidence",
+   "face": "focused",
+   "beat": "resolve",
+   "react": {
+    "mirai": {
+     "beat": "approval",
+     "face": "smile"
+    }
+   }
+  },
+  {
+   "name": "c277",
+   "character": "mirabo",
+   "start": 924.714,
+   "end": 926.2503,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c277.wav",
+   "text": "ここに置きます。",
+   "chapter": 4,
+   "emotion": "confidence",
+   "face": "focused",
+   "beat": "resolve",
+   "react": {
+    "mirai": {
+     "beat": "approval",
+     "face": "smile"
+    }
+   }
+  },
+  {
+   "name": "c278",
+   "character": "mirai",
+   "start": 926.651,
+   "end": 928.0561,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c278.wav",
+   "text": "うん。",
+   "chapter": 4,
+   "emotion": "confidence",
+   "face": "smile",
+   "beat": "approval",
+   "react": {
+    "mirabo": {
+     "beat": "relief",
+     "face": "excited"
+    }
+   }
+  },
+  {
+   "name": "c279",
+   "character": "mirai",
+   "start": 928.456,
+   "end": 932.796,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c279.wav",
+   "text": "癖で、指で机を測ろうとして、やめた。",
+   "chapter": 4,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "doubt",
+     "face": "focused"
+    }
+   }
+  },
+  {
+   "name": "c280",
+   "character": "mirai",
+   "start": 933.196,
+   "end": 934.7292,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c280.wav",
+   "text": "紙を取った。",
+   "chapter": 4,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "fear",
+     "face": "worried"
+    }
+   }
+  },
+  {
+   "name": "c281",
+   "character": "mirai",
+   "start": 935.229,
+   "end": 937.7252,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c281.wav",
+   "text": "灯りにかざした。",
+   "chapter": 4,
+   "emotion": "excitement",
+   "face": "surprised",
+   "beat": "awe",
+   "react": {
+    "mirabo": {
+     "beat": "awe",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c282",
+   "character": "mirai",
+   "start": 938.125,
+   "end": 941.323,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c282.wav",
+   "text": "折れた端から、ラベルが浮いた。",
+   "chapter": 4,
+   "emotion": "excitement",
+   "face": "surprised",
+   "beat": "awe",
+   "react": {
+    "mirabo": {
+     "beat": "surprise",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c283",
+   "character": "mirai",
+   "start": 941.723,
+   "end": 944.0225,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c283.wav",
+   "text": "「精度が低い」の下から。",
+   "chapter": 4,
+   "emotion": "excitement",
+   "face": "surprised",
+   "beat": "awe",
+   "react": {
+    "mirabo": {
+     "beat": "awe",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c284",
+   "character": "mirai",
+   "start": 944.523,
+   "end": 946.214,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c284.wav",
+   "text": "線が出てきた。",
+   "chapter": 4,
+   "emotion": "excitement",
+   "face": "surprised",
+   "beat": "awe",
+   "react": {
+    "mirabo": {
+     "beat": "awe",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c285",
+   "character": "mirai",
+   "start": 946.614,
+   "end": 949.1893,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c285.wav",
+   "text": "鏡の形の線。",
+   "chapter": 4,
+   "emotion": "excitement",
+   "face": "surprised",
+   "beat": "awe",
+   "react": {
+    "mirabo": {
+     "beat": "awe",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c286",
+   "character": "mirai",
+   "start": 949.589,
+   "end": 953.1015,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c286.wav",
+   "text": "線は、縁が平らすぎると言っていた。",
+   "chapter": 4,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c287",
+   "character": "mirai",
+   "start": 953.602,
+   "end": 956.8524,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c287.wav",
+   "text": "その線が、ずっと言っていた。",
+   "chapter": 4,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c288",
+   "character": "mirai",
+   "start": 957.352,
+   "end": 961.144,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c288.wav",
+   "text": "お前のラベルの下で、線は言っていた。",
+   "chapter": 4,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c289",
+   "character": "mirai",
+   "start": 961.744,
+   "end": 963.5135,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c289.wav",
+   "text": "聞こえていたか。",
+   "chapter": 4,
+   "emotion": "calm",
+   "face": "smile",
+   "beat": "tenderness",
+   "react": {
+    "mirabo": {
+     "beat": "fear",
+     "face": "worried"
+    }
+   }
+  },
+  {
+   "name": "c290",
+   "character": "mirabo",
+   "start": 964.013,
+   "end": 966.8838,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c290.wav",
+   "text": "……聞こえないふりをしていました。",
+   "chapter": 4,
+   "emotion": "guilt",
+   "face": "sad",
+   "beat": "shame",
+   "react": {
+    "mirai": {
+     "beat": "tenderness",
+     "face": "smile"
+    }
+   }
+  },
+  {
+   "name": "c291",
+   "character": "mirai",
+   "start": 967.284,
+   "end": 968.8265,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c291.wav",
+   "text": "うん。",
+   "chapter": 4,
+   "emotion": "calm",
+   "face": "smile",
+   "beat": "tenderness",
+   "react": {
+    "mirabo": {
+     "beat": "relief",
+     "face": "excited"
+    }
+   }
+  },
+  {
+   "name": "c292",
+   "character": "mirai",
+   "start": 969.327,
+   "end": 972.9437,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c292.wav",
+   "text": "ミラボの画面で、ラベルが「—」に変わった。",
+   "chapter": 4,
+   "emotion": "excitement",
+   "face": "surprised",
+   "beat": "awe",
+   "react": {
+    "mirabo": {
+     "beat": "relief",
+     "face": "excited"
+    }
+   }
+  },
+  {
+   "name": "c293",
+   "character": "mirai",
+   "start": 973.343,
+   "end": 975.8815,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c293.wav",
+   "text": "これも数字ではない。",
+   "chapter": 4,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "relief",
+     "face": "excited"
+    }
+   }
+  },
+  {
+   "name": "c294",
+   "character": "mirai",
+   "start": 976.382,
+   "end": 980.712,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c294.wav",
+   "text": "僕も、あの検査を「精度が低い」と呼ぶ側にいた。",
+   "chapter": 4,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c295",
+   "character": "mirai",
+   "start": 981.312,
+   "end": 983.7248,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c295.wav",
+   "text": "今もいる。",
+   "chapter": 4,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c296",
+   "character": "mirabo",
+   "start": 984.124,
+   "end": 989.5253,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c296.wav",
+   "text": "鏡の形の線は、残します。数字にせず、線のまま。",
+   "chapter": 4,
+   "emotion": "confidence",
+   "face": "focused",
+   "beat": "resolve",
+   "react": {
+    "mirai": {
+     "beat": "approval",
+     "face": "smile"
+    }
+   }
+  },
+  {
+   "name": "c297",
+   "character": "mirai",
+   "start": 989.826,
+   "end": 991.2387,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c297.wav",
+   "text": "うん。",
+   "chapter": 4,
+   "emotion": "calm",
+   "face": "smile",
+   "beat": "approval",
+   "react": {
+    "mirabo": {
+     "beat": "relief",
+     "face": "excited"
+    }
+   }
+  },
+  {
+   "name": "c298",
+   "character": "mirabo",
+   "start": 991.739,
+   "end": 994.6065,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c298.wav",
+   "text": "……僕の数字、要りますか。",
+   "chapter": 4,
+   "emotion": "loneliness",
+   "face": "sad",
+   "beat": "longing",
+   "react": {
+    "mirai": {
+     "beat": "tenderness",
+     "face": "smile"
+    }
+   }
+  },
+  {
+   "name": "c299",
+   "character": "mirai",
+   "start": 995.106,
+   "end": 997.9533,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c299.wav",
+   "text": "いま出したのは、数字じゃない。",
+   "chapter": 4,
+   "emotion": "calm",
+   "face": "smile",
+   "beat": "tenderness",
+   "react": {
+    "mirabo": {
+     "beat": "relief",
+     "face": "excited"
+    }
+   }
+  },
+  {
+   "name": "c300",
+   "character": "mirabo",
+   "start": 998.353,
+   "end": 999.1776,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c300.wav",
+   "text": "はい。",
+   "chapter": 4,
+   "emotion": "joy",
+   "face": "excited",
+   "beat": "relief",
+   "react": {
+    "mirai": {
+     "beat": "tenderness",
+     "face": "smile"
+    }
+   }
+  },
+  {
+   "name": "c301",
+   "character": "mirai",
+   "start": 999.578,
+   "end": 1002.9053,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c301.wav",
+   "text": "僕の机の端にも、紙がある。",
+   "chapter": 4,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "worry",
+     "face": "worried"
+    }
+   }
+  },
+  {
+   "name": "c302",
+   "character": "mirai",
+   "start": 1003.305,
+   "end": 1005.8606,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c302.wav",
+   "text": "同じ班の人が書いた紙だ。",
+   "chapter": 4,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "worry",
+     "face": "worried"
+    }
+   }
+  },
+  {
+   "name": "c303",
+   "character": "mirai",
+   "start": 1006.361,
+   "end": 1009.0484,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c303.wav",
+   "text": "僕は、読まなかった。",
+   "chapter": 4,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c304",
+   "character": "mirabo",
+   "start": 1009.548,
+   "end": 1011.4289,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c304.wav",
+   "text": "……取りに行きますか。",
+   "chapter": 4,
+   "emotion": "loneliness",
+   "face": "sad",
+   "beat": "longing",
+   "react": {
+    "mirai": {
+     "beat": "worry",
+     "face": "worried"
+    }
+   }
+  },
+  {
+   "name": "c305",
+   "character": "mirai",
+   "start": 1012.029,
+   "end": 1013.9214,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c305.wav",
+   "text": "行かない。",
+   "chapter": 4,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "surprise",
+     "face": "surprised"
+    }
+   }
+  },
+  {
+   "name": "c306",
+   "character": "mirabo",
+   "start": 1014.321,
+   "end": 1015.8402,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c306.wav",
+   "text": "……なぜですか。",
+   "chapter": 4,
+   "emotion": "neutral",
+   "face": "focused",
+   "beat": "doubt",
+   "react": {
+    "mirai": {
+     "beat": "worry",
+     "face": "worried"
+    }
+   }
+  },
+  {
+   "name": "c307",
+   "character": "mirai",
+   "start": 1016.441,
+   "end": 1018.9625,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c307.wav",
+   "text": "読むのが、怖い。",
+   "chapter": 4,
+   "emotion": "anxiety",
+   "face": "worried",
+   "beat": "worry",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c308",
+   "character": "mirai",
+   "start": 1020.162,
+   "end": 1024.9041,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c308.wav",
+   "text": "ミラボの画面の分母の欄に、また横線が一本。",
+   "chapter": 4,
+   "emotion": "confidence",
+   "face": "serious",
+   "beat": "resolve",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  },
+  {
+   "name": "c309",
+   "character": "mirai",
+   "start": 1025.404,
+   "end": 1031.2936,
+   "wav": "/Users/user/AI創作工房/semantic-guide-loom/projects/hubble-mirror/assets/voice_trim/c309.wav",
+   "text": "表示は「—」のままだった。数字は、まだ出せない。",
+   "chapter": 4,
+   "emotion": "guilt",
+   "face": "worried",
+   "beat": "shame",
+   "react": {
+    "mirabo": {
+     "beat": "shame",
+     "face": "sad"
+    }
+   }
+  }
+ ],
+ "chapters": [
+  {
+   "label": "序章",
+   "title": "99.8%",
+   "key": "この数字は、\n何を測った?",
+   "term": "現在地",
+   "cue": "c001",
+   "index": 0,
+   "start": 1.2,
+   "cue_start": 2.8
+  },
+  {
+   "label": "第1章",
+   "title": "ぼやけた、最初の一枚",
+   "key": "鏡は、壊れて\nいなかった。",
+   "term": "形",
+   "cue": "c043",
+   "index": 1,
+   "start": 163.082,
+   "cue_start": 164.682
+  },
+  {
+   "label": "第2章",
+   "title": "1.3ミリ",
+   "key": "測る側が、\nずれていた。",
+   "term": "誤差",
+   "cue": "c085",
+   "index": 2,
+   "start": 291.62,
+   "cue_start": 293.22
+  },
+  {
+   "label": "第3章",
+   "title": "眼鏡をかけた望遠鏡",
+   "key": "直すのでは、\nなく。",
+   "term": "補正",
+   "cue": "c190",
+   "index": 3,
+   "start": 648.256,
+   "cue_start": 649.856
+  },
+  {
+   "label": "終章",
+   "title": "十日の露出",
+   "key": "分母が、\n言えない。",
+   "term": "露出",
+   "cue": "c236",
+   "index": 4,
+   "start": 796.295,
+   "cue_start": 797.895
+  }
+ ]
+}

@@ -8,10 +8,16 @@
 | --- | --- | --- |
 | `video.schema.json` | `video.yaml`（映像の台本） | `projects/<作品>/video.yaml` |
 | `template.schema.json` | `template.yaml`（型＝絵の側） | `references/templates/<型>/template.yaml` |
-| `cast.schema.json` | `cast.yaml`（誰が画面に居るか） | `characters/<キャスト>.cast.yaml` |
-| `persona.schema.json` | `persona.yaml`（誰がどう話すか） | `characters/<キャスト>.persona.yaml` |
+| `cast.schema.json` | `cast.yaml`（誰が画面に居るか・身体の揺れ） | `characters/<キャスト>.cast.yaml` |
+| `character.schema.json` | `character.yaml`（人物票。一人 1 ファイル） | `characters/<id>.character.yaml` |
+| `persona.schema.json` | `persona.yaml`（キャストの関係） | `characters/<キャスト>.persona.yaml` |
 | `reading.schema.json` | `reading.yaml`（声に読ませる読み） | `projects/<作品>/reading.yaml` |
 | `bgm.schema.json` | `bgm.yaml`（敷き音の意図とミックス） | `projects/<作品>/bgm.yaml` |
+| `viewer.schema.json` | 初見の視聴者テストの返答（JSON） | `projects/<作品>/review/viewers/<版>/r*.json` |
+
+`viewer.schema.json` だけは YAML ではなく JSON。文学評議会の report とは別の台帳で、
+`engine/viewer.py` が集計する。**評議会の平均に混ぜない。**
+説明の評価者（`explanation.json`）は形が違うので、この schema の対象外。
 
 ## `script.yaml` の形は、ここに無い
 
@@ -36,14 +42,16 @@ def check(schema_path, glob_pat):
         print("ok", p)
 check("schemas/video.schema.json",    "projects/*/video.yaml")
 check("schemas/template.schema.json", "references/templates/*/template.yaml")
-check("schemas/cast.schema.json",     "characters/*.cast.yaml")
-check("schemas/persona.schema.json",  "characters/*.persona.yaml")
-check("schemas/reading.schema.json",  "projects/*/reading.yaml")
-check("schemas/bgm.schema.json",      "projects/*/bgm.yaml")
+check("schemas/cast.schema.json",      "characters/*.cast.yaml")
+check("schemas/character.schema.json", "characters/*.character.yaml")
+check("schemas/persona.schema.json",   "characters/*.persona.yaml")
+check("schemas/reading.schema.json",   "projects/*/reading.yaml")
+check("schemas/bgm.schema.json",       "projects/*/bgm.yaml")
+check("schemas/viewer.schema.json",    "projects/*/review/viewers/*/r*.json")
 PY
 ```
 
-`tools/check_layout.py` が上の 6 つをまとめて走らせる。
+`tools/check_layout.py` が上の 8 つをまとめて走らせる。
 
 ## 欄を足すとき
 

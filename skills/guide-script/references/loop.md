@@ -10,13 +10,23 @@ projects/<作品>/
     reports/v1/<評価者>.json    評価者の返答をそのまま
     scores.yaml                 engine/review.py record が書く
     facts.md                    事実確認
+    acting/plan.md              感情の弧（guide-acting が台詞の前に作る）
+    acting/vN.yaml              版ごとの演技の計測（reports/ には置かない）
   台本.md                       採用版
   script.yaml video.yaml chapters.yaml
 ```
 
 ## 評議会への渡し方
 
-8 体を**別々の subagent** として起動する。同じ会話でまとめて聞かない（独立性が壊れる）。
+評価者を**別々の subagent** として起動する。同じ会話でまとめて聞かない（独立性が壊れる）。
+
+**次元の数はキャストで決まる。**
+
+| 作品 | 次元 | 評価者 |
+| --- | ---: | --- |
+| キャストが居る（掛け合い） | 10 | `hook / plot-architecture / reader-experience / prose-style / admiration / anti-generic-story-filter / theme-resonance / emotional-power / character-depth / character-role` |
+| 語りだけ | 8 | 上の 8 つ（character-* を除く） |
+
 各 subagent へ渡すもの:
 
 - 本文（題・作者を外したもの）
@@ -49,8 +59,20 @@ projects/<作品>/
 | anti-generic-story-filter | 事例が等しい重みで並んでいないか。どこにでもある説明になっていないか |
 | theme-resonance | 題が最後の問いへ届いているか。説明だけで終わっていないか |
 | emotional-power | 感情を名指ししていないか。抑制のある場面があるか |
+| character-depth | 欲と怖れが噛み合っていないか。人物が設定の口になっていないか |
+| character-role | 人物が自分から動いているか。リスクを取り、相手を動かしているか |
 
 **一度に直すのは 2 次元まで。** 全部を直すと、何が効いたか分からなくなる。
+
+## 人物と演技の往復
+
+- **台詞より先に `review/acting/plan.md`。** 章ごとの欲求 → 障害 → 転換 → 落とし所、
+  人物ごとの「漏らす／隠す」、山場と沈黙、反応の置き所。
+- 採用本文を YAML にする前に、guide-acting で全 cue に演技を付ける。
+  `beat` / `emotion` / `face` / `speed` / `pause_before` / `volume` と `react`。
+- 演技が弱いときは、記号を増やさない。**人物の `contradiction` へ戻る。**
+- 版ごとの計測は `review/acting/vN.yaml`。`review/reports/` に置くと、
+  `review.py` が評価者の JSON と数えて平均を壊す。
 
 ## 版を残す
 
@@ -59,9 +81,20 @@ projects/<作品>/
 - `review/scores.yaml` は `record` の出力。手で平均を書かない。
 - 採用版は `台本.md` に写し、`review/README.md` に「どの版を、なぜ採ったか」を一行で残す。
 
+## A/B の作法
+
+- 旧版（`v1b`）と新版（`v4`）を、**同じ時期に、同じ評価者 id の集合で、
+  それぞれ独立の 10 本ずつ**評価する。
+- `review.py compare --before v1b --after v4` は、評価者 id が違えば失敗する。
+  片方だけ評価者を使い回さない。
+- **8 次元の旧版と 10 次元の新版の平均を、そのまま比べない。**
+  `table --versions v1b,v4` で並べ、比較は同じ id の集合で行う。
+  共通 8 次元の平均は `compare` が出す。
+
 ## よくある失敗
 
 - **評価者に前の版を見せる。** 差分の説明を始め、独立した採点にならない。
 - **平均だけを追う。** 分散の大きい版の方が、読む人には刺さることがある。
 - **60 を超えたら即採用。** 最高版でないことがある。表を見てから決める。
 - **評価の言葉をそのまま台詞にする。** 「もっと余白を」は台本の一文ではない。
+- **演技を後付けする。** 記号と表情だけ足しても、人物が動いていなければ平坦なまま。

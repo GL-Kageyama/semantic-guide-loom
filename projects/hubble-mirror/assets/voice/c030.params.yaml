@@ -4,8 +4,8 @@ metadata:
   name: c030
   character: mirabo
   sample_rate: 24000
-  duration_sec: 2.673
-  created_at: '2026-11-02T17:55:37.397610+00:00'
+  duration_sec: 5.323
+  created_at: '2026-11-02T20:19:04.744344+00:00'
 parameters:
   version: 2
   provider: tsukasa
@@ -22,13 +22,13 @@ parameters:
       resonance: head
   performance_spec:
     emotion:
-      primary: neutral
+      primary: confidence
       intensity: 0.0
     loudness:
       effort: normal
       volume: normal
     prosody:
-      pace: very_fast
+      pace: fast
       pitch: natural
       intonation: neutral
       breathiness: none
@@ -36,13 +36,13 @@ parameters:
       emphasis: []
       breath: []
     subtext: ''
-  dialogue: にいてんに、まいくろめーとる。
+  dialogue: こんかい、わったのは、ふたつのきろくがおなじかたちをいっているぶぶん。
   reading: ''
   seed: 1
   alpha: 0.35
   beta: 0.7
-  rate_of_speech: 1.28
-  sha1: 9c73897ca4f3
+  rate_of_speech: 1.12
+  sha1: 43bcbe5938e4
   name: c030
   character: mirabo
-  pause_before: 0.35
+  pause_before: 0.3

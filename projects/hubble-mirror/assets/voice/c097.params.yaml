@@ -2,24 +2,24 @@ name: c097
 metadata:
   kind: cue
   name: c097
-  character: mirai
+  character: mirabo
   sample_rate: 24000
-  duration_sec: 2.973
-  created_at: '2026-11-02T17:56:13.511537+00:00'
+  duration_sec: 3.898
+  created_at: '2026-11-02T20:19:53.754633+00:00'
 parameters:
   version: 2
   provider: tsukasa
   voice_profile:
-    character: ミライ
-    name_reading: みらい
-    reference_audio: gen_female_light
+    character: ミラボ
+    name_reading: みらぼ
+    reference_audio: gen_machine_bright
     voice:
       age: young_adult
       gender: female
-      pitch: medium_high
-      texture: warm
-      breathiness: slight
-      resonance: chest
+      pitch: very_high
+      texture: bright
+      breathiness: none
+      resonance: head
   performance_spec:
     emotion:
       primary: neutral
@@ -28,7 +28,7 @@ parameters:
       effort: normal
       volume: normal
     prosody:
-      pace: fast
+      pace: natural
       pitch: natural
       intonation: neutral
       breathiness: none
@@ -36,13 +36,13 @@ parameters:
       emphasis: []
       breath: []
     subtext: ''
-  dialogue: いま、ぼくが、いいかけた。
+  dialogue: ぼくがいま、ふたつのよみからだしました。
   reading: ''
   seed: 1
   alpha: 0.35
   beta: 0.7
-  rate_of_speech: 1.12
-  sha1: c9a938d2fd21
+  rate_of_speech: 1.0
+  sha1: e49d9d6bb20d
   name: c097
-  character: mirai
-  pause_before: 0.35
+  character: mirabo
+  pause_before: 0.12

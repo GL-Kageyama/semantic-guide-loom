@@ -1,0 +1,48 @@
+name: c250
+metadata:
+  kind: cue
+  name: c250
+  character: mirabo
+  sample_rate: 24000
+  duration_sec: 5.348
+  created_at: '2026-11-02T20:21:48.713050+00:00'
+parameters:
+  version: 2
+  provider: tsukasa
+  voice_profile:
+    character: ミラボ
+    name_reading: みらぼ
+    reference_audio: gen_machine_bright
+    voice:
+      age: young_adult
+      gender: female
+      pitch: very_high
+      texture: bright
+      breathiness: none
+      resonance: head
+  performance_spec:
+    emotion:
+      primary: guilt
+      intensity: 0.0
+    loudness:
+      effort: relaxed
+      volume: quiet
+    prosody:
+      pace: slow
+      pitch: natural
+      intonation: neutral
+      breathiness: none
+      pauses: []
+      emphasis: []
+      breath: []
+    subtext: ''
+  dialogue: ただしさをそとからたしかめるきじゅんが、ぼくにはありません。
+  reading: ''
+  seed: 1
+  alpha: 0.35
+  beta: 0.7
+  rate_of_speech: 0.9
+  sha1: 7e2090c84ada
+  name: c250
+  character: mirabo
+  pause_before: 0.12

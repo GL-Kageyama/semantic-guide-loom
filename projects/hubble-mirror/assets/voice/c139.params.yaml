@@ -2,24 +2,24 @@ name: c139
 metadata:
   kind: cue
   name: c139
-  character: mirabo
+  character: mirai
   sample_rate: 24000
-  duration_sec: 1.823
-  created_at: '2026-11-02T17:56:36.449269+00:00'
+  duration_sec: 3.848
+  created_at: '2026-11-02T20:20:28.093085+00:00'
 parameters:
   version: 2
   provider: tsukasa
   voice_profile:
-    character: ミラボ
-    name_reading: みらぼ
-    reference_audio: gen_machine_bright
+    character: ミライ
+    name_reading: みらい
+    reference_audio: gen_female_light
     voice:
       age: young_adult
       gender: female
-      pitch: very_high
-      texture: bright
-      breathiness: none
-      resonance: head
+      pitch: medium_high
+      texture: warm
+      breathiness: slight
+      resonance: chest
   performance_spec:
     emotion:
       primary: neutral
@@ -28,7 +28,7 @@ parameters:
       effort: normal
       volume: normal
     prosody:
-      pace: very_fast
+      pace: natural
       pitch: natural
       intonation: neutral
       breathiness: none
@@ -36,13 +36,13 @@ parameters:
       emphasis: []
       breath: []
     subtext: ''
-  dialogue: みらいさん。
+  dialogue: かがみのかたちのごさがきょくせんがすってある。
   reading: ''
   seed: 1
   alpha: 0.35
   beta: 0.7
-  rate_of_speech: 1.28
-  sha1: 7d819038ac47
+  rate_of_speech: 1.0
+  sha1: c3c732804c9f
   name: c139
-  character: mirabo
-  pause_before: 0.5
+  character: mirai
+  pause_before: 0.12

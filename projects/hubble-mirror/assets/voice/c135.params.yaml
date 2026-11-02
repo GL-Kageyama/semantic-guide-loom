@@ -4,8 +4,8 @@ metadata:
   name: c135
   character: mirabo
   sample_rate: 24000
-  duration_sec: 2.798
-  created_at: '2026-11-02T17:56:34.407518+00:00'
+  duration_sec: 2.698
+  created_at: '2026-11-02T20:20:24.983526+00:00'
 parameters:
   version: 2
   provider: tsukasa
@@ -22,13 +22,13 @@ parameters:
       resonance: head
   performance_spec:
     emotion:
-      primary: neutral
+      primary: excitement
       intensity: 0.0
     loudness:
-      effort: normal
-      volume: normal
+      effort: relaxed
+      volume: quiet
     prosody:
-      pace: very_fast
+      pace: slow
       pitch: natural
       intonation: neutral
       breathiness: none
@@ -36,13 +36,13 @@ parameters:
       emphasis: []
       breath: []
     subtext: ''
-  dialogue: ほせいは、かんぺきでは、ありません。
+  dialogue: ……みらいさんも。
   reading: ''
   seed: 1
   alpha: 0.35
   beta: 0.7
-  rate_of_speech: 1.28
-  sha1: fcddb0cd99d7
+  rate_of_speech: 0.9
+  sha1: 2aefd8696bdc
   name: c135
   character: mirabo
-  pause_before: 0.35
+  pause_before: 0.5

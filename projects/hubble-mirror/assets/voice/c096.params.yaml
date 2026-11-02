@@ -4,8 +4,8 @@ metadata:
   name: c096
   character: mirabo
   sample_rate: 24000
-  duration_sec: 1.598
-  created_at: '2026-11-02T17:56:12.904243+00:00'
+  duration_sec: 3.573
+  created_at: '2026-11-02T20:19:52.924057+00:00'
 parameters:
   version: 2
   provider: tsukasa
@@ -28,7 +28,7 @@ parameters:
       effort: normal
       volume: normal
     prosody:
-      pace: very_fast
+      pace: natural
       pitch: natural
       intonation: neutral
       breathiness: none
@@ -36,13 +36,13 @@ parameters:
       emphasis: []
       breath: []
     subtext: ''
-  dialogue: なぜ、ですか。
+  dialogue: これも、きろくされたすうじではありません。
   reading: ''
   seed: 1
   alpha: 0.35
   beta: 0.7
-  rate_of_speech: 1.28
-  sha1: cad0db26fb11
+  rate_of_speech: 1.0
+  sha1: 296e6c9f98c1
   name: c096
   character: mirabo
-  pause_before: 0.35
+  pause_before: 0.3

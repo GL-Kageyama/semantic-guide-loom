@@ -2,33 +2,33 @@ name: c044
 metadata:
   kind: cue
   name: c044
-  character: mirabo
+  character: mirai
   sample_rate: 24000
-  duration_sec: 4.098
-  created_at: '2026-11-02T17:55:44.713067+00:00'
+  duration_sec: 2.498
+  created_at: '2026-11-02T20:19:15.155453+00:00'
 parameters:
   version: 2
   provider: tsukasa
   voice_profile:
-    character: ミラボ
-    name_reading: みらぼ
-    reference_audio: gen_machine_bright
+    character: ミライ
+    name_reading: みらい
+    reference_audio: gen_female_light
     voice:
       age: young_adult
       gender: female
-      pitch: very_high
-      texture: bright
-      breathiness: none
-      resonance: head
+      pitch: medium_high
+      texture: warm
+      breathiness: slight
+      resonance: chest
   performance_spec:
     emotion:
-      primary: neutral
+      primary: excitement
       intensity: 0.0
     loudness:
-      effort: normal
-      volume: normal
+      effort: relaxed
+      volume: quiet
     prosody:
-      pace: very_fast
+      pace: slow
       pitch: natural
       intonation: neutral
       breathiness: none
@@ -36,13 +36,13 @@ parameters:
       emphasis: []
       breath: []
     subtext: ''
-  dialogue: そうちの、じこいっちりつです。きゅうじゅうきゅうてんよんぱーせんと。
+  dialogue: ほしをみた。
   reading: ''
   seed: 1
   alpha: 0.35
   beta: 0.7
-  rate_of_speech: 1.28
-  sha1: a38bc5bfb0dd
+  rate_of_speech: 0.9
+  sha1: ead05bd578c0
   name: c044
-  character: mirabo
-  pause_before: 0.35
+  character: mirai
+  pause_before: 0.4

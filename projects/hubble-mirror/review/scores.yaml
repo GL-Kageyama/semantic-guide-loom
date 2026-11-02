@@ -1,7 +1,7 @@
 # 評議会の採点。engine/review.py record が reports/ から作る。
-# 平均は 8 次元の primary_score。採用は人が決め、adopted に残す。
+# 平均は版ごとの次元（評価者）の primary_score。採用は人が決め、adopted に残す。
 threshold: 60.0
-adopted: v1
+adopted: v12
 versions:
   v1:
     mean: 76.75
@@ -15,6 +15,20 @@ versions:
       prose-style: 71
       reader-experience: 75
       theme-resonance: 74
+  v1b:
+    mean: 69.3
+    count: 10
+    scores:
+      admiration: 77
+      anti-generic-story-filter: 67
+      character-depth: 60
+      character-role: 68
+      emotional-power: 67
+      hook: 75
+      plot-architecture: 81
+      prose-style: 64
+      reader-experience: 64
+      theme-resonance: 70
   v2:
     mean: 70.5
     count: 8
@@ -39,3 +53,59 @@ versions:
       prose-style: 62
       reader-experience: 66
       theme-resonance: 71
+  v4:
+    mean: 70.3
+    count: 10
+    scores:
+      admiration: 78
+      anti-generic-story-filter: 48
+      character-depth: 67
+      character-role: 68
+      emotional-power: 69
+      hook: 80
+      plot-architecture: 79
+      prose-style: 68
+      reader-experience: 76
+      theme-resonance: 70
+  v5:
+    mean: 70.6
+    count: 10
+    scores:
+      admiration: 78
+      anti-generic-story-filter: 59
+      character-depth: 71
+      character-role: 77
+      emotional-power: 62
+      hook: 74
+      plot-architecture: 87
+      prose-style: 61
+      reader-experience: 67
+      theme-resonance: 70
+  v6:
+    mean: 76.0
+    count: 10
+    scores:
+      admiration: 77
+      anti-generic-story-filter: 63
+      character-depth: 74
+      character-role: 76
+      emotional-power: 81
+      hook: 80
+      plot-architecture: 90
+      prose-style: 73
+      reader-experience: 73
+      theme-resonance: 73
+  v12:
+    mean: 70.6
+    count: 10
+    scores:
+      admiration: 74
+      anti-generic-story-filter: 51
+      character-depth: 77
+      character-role: 76
+      emotional-power: 74
+      hook: 74
+      plot-architecture: 81
+      prose-style: 62
+      reader-experience: 64
+      theme-resonance: 73

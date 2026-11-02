@@ -1,26 +1,44 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/GL-Kageyama/semantic-guide-loom/schemas/persona.schema.json",
-  "title": "persona.yaml — 言葉の側のキャスト",
-  "description": "characters/<name>.persona.yaml。cast.yaml が「画面の誰か」を持つに対し、こちらは「どう話すか」を持つ。台本を書くときに読む。役者はデータであり、コードに固有名を書かない。",
+  "title": "persona.yaml — キャストの関係",
+  "description": "characters/<name>.persona.yaml。人物それぞれの造形は characters/<id>.character.yaml が持ち、ここは関係と掛け合いの型だけを持つ。旧形式（characters[] を埋め込んだもの）も読める。",
   "type": "object",
-  "required": ["name", "characters"],
+  "required": ["name"],
   "additionalProperties": true,
   "properties": {
     "name": {"type": "string", "minLength": 1},
     "description": {"type": "string"},
-    "source": {"type": "string", "description": "この設定を抽出した台本・資料"},
+    "source": {"type": "string", "description": "この設定の出どころ"},
     "pair": {
       "type": "object",
       "additionalProperties": true,
       "properties": {
-        "engine": {"type": "string", "description": "二人の掛け合いを動かす仕組み"},
-        "rule": {"type": "string", "description": "守るべき関係の一行"}
+        "engine": {"type": "string", "description": "掛け合いを動かす仕組み"},
+        "rule": {"type": "string", "description": "守るべき関係の一行"},
+        "dynamics": {
+          "type": "array",
+          "description": "関係の移り変わり。相手の組ごとに書く",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "between": {
+                "type": "array",
+                "items": {"type": "string"},
+                "description": "関係する id（2 人なら 2 つ）"
+              },
+              "engine": {"type": "string"},
+              "rule": {"type": "string"},
+              "escalation": {"type": "string", "description": "こじれたときの進み方"}
+            }
+          }
+        }
       }
     },
     "characters": {
       "type": "array",
-      "minItems": 1,
+      "description": "旧形式。新規は characters/<id>.character.yaml に分ける",
       "items": {"$ref": "#/$defs/character"}
     }
   },
@@ -30,36 +48,24 @@
       "required": ["id", "name", "role", "speech"],
       "additionalProperties": true,
       "properties": {
-        "id": {"type": "string", "minLength": 1, "description": "cast.yaml と script.yaml の character と一致させる"},
+        "id": {"type": "string", "minLength": 1},
         "name": {"type": "string"},
-        "role": {"type": "string", "description": "物語・説明の中での役割"},
+        "role": {"type": "string"},
         "wants": {"type": "string"},
         "fears": {"type": "string"},
-        "stance": {"type": "string", "description": "世界・相手に対する構え"},
+        "stance": {"type": "string"},
         "speech": {
           "type": "object",
           "required": ["register"],
           "additionalProperties": true,
           "properties": {
-            "register": {"type": "string", "description": "常体・丁寧・混在など"},
-            "length": {"type": "string", "description": "一文の長さの目安"},
-            "tics": {
-              "type": "array",
-              "items": {"type": "string"},
-              "description": "繰り返してよい言い回し"
-            },
-            "avoids": {
-              "type": "array",
-              "items": {"type": "string"},
-              "description": "この人物に言わせないこと"
-            }
+            "register": {"type": "string"},
+            "length": {"type": "string"},
+            "tics": {"type": "array", "items": {"type": "string"}},
+            "avoids": {"type": "array", "items": {"type": "string"}}
           }
         },
-        "moves": {
-          "type": "array",
-          "items": {"type": "string"},
-          "description": "場面で取る手"
-        },
+        "moves": {"type": "array", "items": {"type": "string"}},
         "arc": {"type": "string"}
       }
     }

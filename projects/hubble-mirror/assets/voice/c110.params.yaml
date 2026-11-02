@@ -4,8 +4,8 @@ metadata:
   name: c110
   character: mirai
   sample_rate: 24000
-  duration_sec: 2.098
-  created_at: '2026-11-02T17:56:20.490011+00:00'
+  duration_sec: 1.998
+  created_at: '2026-11-02T20:20:04.666592+00:00'
 parameters:
   version: 2
   provider: tsukasa
@@ -22,13 +22,13 @@ parameters:
       resonance: chest
   performance_spec:
     emotion:
-      primary: neutral
+      primary: confidence
       intensity: 0.0
     loudness:
       effort: normal
       volume: normal
     prosody:
-      pace: fast
+      pace: natural
       pitch: natural
       intonation: neutral
       breathiness: none
@@ -36,13 +36,13 @@ parameters:
       emphasis: []
       breath: []
     subtext: ''
-  dialogue: めがねを、かける。
+  dialogue: だから、
   reading: ''
   seed: 1
   alpha: 0.35
   beta: 0.7
-  rate_of_speech: 1.12
-  sha1: fec2f7f04dbd
+  rate_of_speech: 1.0
+  sha1: 1cb9e9221f51
   name: c110
   character: mirai
-  pause_before: 0.5
+  pause_before: 0.3

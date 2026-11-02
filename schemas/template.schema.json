@@ -66,6 +66,47 @@
           "description": "札を cue の何秒前から出すか。export_timeline.py が読む唯一の timing。"
         }
       }
+    },
+    "acting": {
+      "type": "object",
+      "description": "聞き手の反応の見せ方。作品の cue に react があるときだけ使う。",
+      "additionalProperties": true,
+      "properties": {
+        "reaction": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "lead": {"type": "number", "minimum": 0}
+          }
+        },
+        "mark": {
+          "type": "object",
+          "description": "リアクション記号（！？……）。時刻だけで動く。",
+          "additionalProperties": true,
+          "properties": {
+            "size": {"type": "number", "exclusiveMinimum": 0},
+            "bold": {"type": "boolean"},
+            "color": {"$ref": "#/$defs/color"},
+            "outline": {"$ref": "#/$defs/color"},
+            "outline_width": {"type": "number", "minimum": 0},
+            "pop": {"type": "number", "minimum": 0},
+            "hold": {"type": "number", "minimum": 0},
+            "fade": {"type": "number", "minimum": 0},
+            "pop_amp": {"type": "number", "minimum": 0},
+            "rise": {"type": "number"},
+            "anchor": {
+              "type": "object",
+              "description": "slot の名 → [x, y]（slot の origin からのずれ、720p）",
+              "additionalProperties": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 2,
+                "items": {"type": "number"}
+              }
+            }
+          }
+        }
+      }
     }
   },
   "$defs": {

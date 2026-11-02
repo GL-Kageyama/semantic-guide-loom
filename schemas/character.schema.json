@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/GL-Kageyama/semantic-guide-loom/schemas/character.schema.json",
+  "title": "character.yaml — 1 人ぶんの人物造形",
+  "description": "characters/<id>.character.yaml。作品をまたいで使う人物の正本。作品ごとの演技は script.yaml の cue が持つ。声の語彙（emotion / speed / volume / delivery / intensity）は semantic-audio-loom の scene.schema.json が正本で、ここには列挙しない。",
+  "type": "object",
+  "required": ["id", "name"],
+  "additionalProperties": true,
+  "properties": {
+    "id": {"type": "string", "minLength": 1, "description": "cast.yaml と script.yaml の character と一致させる"},
+    "name": {"type": "string", "minLength": 1},
+    "concept": {"type": "string", "description": "この人を一行で言うと"},
+    "background": {"type": "string", "description": "どこで、何をしてきたか。作品の固有事実ではなく、人物の来歴"},
+    "role": {"type": "string", "description": "説明・物語の中での役割"},
+    "wants": {"type": "string", "description": "手に入れたいもの"},
+    "fears": {"type": "string", "description": "避けたいもの"},
+    "contradiction": {"type": "string", "description": "欲しいものと怖いものが噛み合わない所"},
+    "stance": {"type": "string", "description": "世界・相手に対する構え"},
+    "habits": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "無意識に出る癖。台詞と間で使う"
+    },
+    "humor": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "what": {"type": "string", "description": "何が可笑しいと感じるか"},
+        "how": {"type": "string", "description": "どう笑うか・どう返すか"}
+      }
+    },
+    "speech": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "register": {"type": "string", "description": "常体・丁寧・混在など"},
+        "length": {"type": "string", "description": "一文の長さの目安"},
+        "tempo": {"type": "string", "description": "話す速さと、その変化"},
+        "tics": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "繰り返してよい言い回し"
+        },
+        "avoids": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "この人物に言わせないこと"
+        }
+      }
+    },
+    "moves": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "場面で取る手"
+    },
+    "arc": {"type": "string", "description": "この人が作中で変わる所"},
+    "relationship": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "to": {"type": "string", "description": "相手の id"},
+        "line": {"type": "string", "description": "その相手との関係を一行で"}
+      }
+    },
+    "emotions": {
+      "type": "object",
+      "description": "感情の型（beat）。キーは自由。cue の beat がここを引く",
+      "additionalProperties": {"$ref": "#/$defs/beat"}
+    },
+    "samples": {
+      "type": "array",
+      "description": "声の見本。作品の筋や事実ではなく、この人らしさが出る短い行",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["beat", "line"],
+        "properties": {
+          "beat": {"type": "string", "description": "emotions のキー"},
+          "line": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "beat": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "face": {"type": "string", "description": "cast.yaml の expressions のどれか"},
+        "voice": {"type": "string", "description": "SAL の emotion。cue の emotion に写す"},
+        "speed": {"type": "string", "description": "SAL の speed"},
+        "volume": {"type": "string", "description": "SAL の volume"},
+        "delivery": {"type": "string", "description": "SAL の delivery"},
+        "intensity": {"type": "string", "description": "SAL の intensity"},
+        "tell": {"type": "string", "description": "台詞に出る漏れ（文末・語の選び方）"},
+        "body": {"type": "string", "description": "身体の動き。motion_gain と合わせて使う"},
+        "withhold": {"type": "string", "description": "名指ししないこと・隠すこと"}
+      }
+    }
+  }
+}

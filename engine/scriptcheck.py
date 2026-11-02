@@ -20,11 +20,19 @@ from pathlib import Path
 
 import yaml
 
+import characters as C
+import sal_enums
+
 REPO = Path(__file__).resolve().parent.parent
 RUBY = re.compile(r"([^\s《》]+)《([^》]+)》")
 MAX_SUBTITLE = 27
 # 声を持たない行（「……」だけなど）は build_voice.py が落ちる。間は pause_before に置く。
 SPEAKABLE = re.compile(r"[ぁ-んァ-ヶ一-鿿a-zA-Z0-9]")
+# 読点を一語ずつ打つ書き方（「鏡の、前に、置く、小さな、装置だ。」）を見る。
+# 読点の数と、区切りの平均の長さの両方で判定する。片方だけでは、
+# 長い文に正しく打った読点まで拾ってしまう。
+MIN_COMMA_FLAG = 3
+MAX_MEAN_SEGMENT = 4
 
 
 def load_yaml(path: Path) -> dict:
@@ -42,6 +50,129 @@ def cast_ids(name: str) -> set[str] | None:
         return None
     cast = load_yaml(path)
     return {c.get("id") for c in cast.get("characters", []) if c.get("id")}
+
+
+# cue の演技の欄 → SAL の語彙。
+VOICE_ENUMS = {
+    "emotion": "emotion",
+    "speed": "speed",
+    "volume": "volume",
+    "delivery": "delivery",
+    "intensity": "intensity",
+}
+
+
+def check_acting(cue: dict, ids: set[str], faces: dict[str, set[str]],
+                 sheets: dict[str, dict | None], enums: dict[str, set[str]],
+                 errors: list[str], warnings: list[str]) -> None:
+    """演技の欄の参照切れを見る。網羅率などの計測は acting.py の役目。"""
+    name = cue.get("name") or "?"
+    cid = cue.get("character") or ""
+
+    face = cue.get("face")
+    if face:
+        if not isinstance(face, str):
+            errors.append(f"{name}: face が文字列でない")
+        else:
+            if str(face).startswith("blink_"):
+                errors.append(f"{name}: face {face!r} はまばたき（使わない）")
+            if cid and cid in faces and face not in faces[cid]:
+                errors.append(f"{name}: face {face!r} が {cid} の expressions に無い")
+
+    for key, enum_key in VOICE_ENUMS.items():
+        value = cue.get(key)
+        if value is None or value == "":
+            continue
+        if not isinstance(value, str):
+            errors.append(f"{name}: {key} が文字列でない")
+            continue
+        allowed = enums.get(enum_key)
+        if allowed and value not in allowed:
+            errors.append(f"{name}: {key} {value!r} が SAL の {enum_key} に無い")
+
+    beat = cue.get("beat")
+    if beat:
+        sheet = sheets.get(cid)
+        if sheet is None:
+            warnings.append(f"{name}: beat {beat!r} を検査できない（{cid} の人物票が無い）")
+        elif beat not in (sheet.get("emotions") or {}):
+            errors.append(f"{name}: beat {beat!r} が {cid} の emotions に無い")
+
+    pb = cue.get("pause_before")
+    if pb is not None:
+        if not isinstance(pb, (int, float)) or isinstance(pb, bool):
+            errors.append(f"{name}: pause_before が数値でない")
+        elif pb < 0:
+            errors.append(f"{name}: pause_before が負（{pb}）")
+        elif pb > 5:
+            warnings.append(f"{name}: pause_before が {pb} 秒（長すぎないか）")
+
+    react = cue.get("react")
+    if react is None:
+        return
+    if not isinstance(react, dict):
+        errors.append(f"{name}: react が辞書でない")
+        return
+    for rid, entry in react.items():
+        if rid not in ids:
+            errors.append(f"{name}: react の {rid!r} が cast に無い")
+            continue
+        if not isinstance(entry, dict):
+            errors.append(f"{name}: react.{rid} が辞書でない")
+            continue
+        rface = entry.get("face")
+        rbeat = entry.get("beat")
+        mark = entry.get("mark")
+        if not rface and not rbeat and not mark:
+            errors.append(f"{name}: react.{rid} に顔も記号も無い")
+        if rface:
+            if not isinstance(rface, str):
+                errors.append(f"{name}: react.{rid}.face が文字列でない")
+            else:
+                if rface.startswith("blink_"):
+                    errors.append(f"{name}: react.{rid}.face {rface!r} はまばたき（使わない）")
+                if rid in faces and rface not in faces[rid]:
+                    errors.append(f"{name}: react.{rid}.face {rface!r} が "
+                                  f"{rid} の expressions に無い")
+        if rbeat:
+            sheet = sheets.get(rid)
+            if sheet is not None and rbeat not in (sheet.get("emotions") or {}):
+                errors.append(f"{name}: react.{rid}.beat {rbeat!r} が "
+                              f"{rid} の emotions に無い")
+            elif sheet is not None and not rface:
+                # beat から顔が決まること（決まらないなら face を明示する）
+                mapped = ((sheet.get("emotions") or {}).get(rbeat) or {}).get("face")
+                if not mapped:
+                    errors.append(f"{name}: react.{rid}.beat {rbeat!r} に face が無い"
+                                  f"（人物票の emotions に face を書くか、face を明示する）")
+                elif rid in faces and mapped not in faces[rid]:
+                    errors.append(f"{name}: react.{rid}.beat {rbeat!r} の face "
+                                  f"{mapped!r} が {rid} の expressions に無い")
+        if mark:
+            if not isinstance(mark, str):
+                errors.append(f"{name}: react.{rid}.mark が文字列でない")
+            elif len(mark) > 3:
+                errors.append(f"{name}: react.{rid}.mark が {len(mark)} 字（3 字まで）")
+
+
+def check_punctuation(name: str, line: str, warnings: list[str]) -> None:
+    """読点を一語ずつ打っていないかを見る（日本語の行だけ）。
+
+    「鏡の、前に、置く、小さな、装置だ。」のような行は、声が息継ぎを繰り返し、
+    視聴者が文の構造を追えなくなる。読点の数と、区切りの平均の長さの
+    両方が小さいときだけ警告する（長い文の正しい読点を拾わないため）。
+    """
+    if not re.search(r"[ぁ-んァ-ヶ一-鿿]", line):
+        return
+    commas = line.count("、")
+    segments = [s for s in line.split("、") if s]
+    if commas >= MIN_COMMA_FLAG and segments:
+        mean = sum(len(s) for s in segments) / len(segments)
+        if mean <= MAX_MEAN_SEGMENT:
+            warnings.append(
+                f"{name}: 読点が多すぎる（区切りの平均 {mean:.1f} 字）。"
+                f"一語ずつ区切らず、文節の切れ目に打つ: {line!r}"
+            )
 
 
 def check(args) -> int:
@@ -74,20 +205,32 @@ def check(args) -> int:
             errors.append(
                 f"{name}: 声を持たない行（{line!r}）。間は次の cue の pause_before に置く"
             )
+        else:
+            check_punctuation(name, strip_ruby(line), warnings)
     dupes = sorted({n for n in names if names.count(n) > 1})
     for name in dupes:
         errors.append(f"cue 名が重複している: {name}")
     name_set = set(names)
 
     if video.get("cast"):
-        ids = cast_ids(video["cast"])
+        cast_name = video["cast"]
+        ids = cast_ids(cast_name)
         if ids is None:
-            errors.append(f"cast が無い: characters/{video['cast']}.cast.yaml")
+            errors.append(f"cast が無い: characters/{cast_name}.cast.yaml")
         else:
+            cast_doc = load_yaml(REPO / "characters" / f"{cast_name}.cast.yaml")
+            faces = {c.get("id"): set(c.get("expressions") or [])
+                     for c in cast_doc.get("characters", []) if c.get("id")}
+            sheets = {cid: C.sheet_for_cast(cast_name, cid) for cid in ids}
+            enums = sal_enums.load()
+            if not enums and any(cue.get(k) for cue in cues for k in VOICE_ENUMS):
+                warnings.append("SAL の語彙が読めない（SAL= で場所を指定）。"
+                                "声の語彙の検査は飛ばした")
             for cue in cues:
                 cid = cue.get("character") or ""
                 if cid and cid not in ids:
                     errors.append(f"{cue.get('name')}: character {cid!r} が cast に無い")
+                check_acting(cue, ids, faces, sheets, enums, errors, warnings)
 
     template = video.get("template") or ""
     if template and not (REPO / "references" / "templates" / template / "template.yaml").exists():

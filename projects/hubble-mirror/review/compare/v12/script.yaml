@@ -1,0 +1,330 @@
+# 解説動画『ハッブルの鏡 — 精度が高いと、正しいは、別』
+# ミライ（人）とミラボ（AIパートナー）の掛け合い。採用版は v12（評議会 平均 70.60、視聴者の門 pass）。
+# 演技は guide-acting で付けた。beat が演技の正本で、face は characters/<id>.character.yaml から解決される。
+# emotion は声、beat は絵。speed と pause_before が聞こえ方を作る。
+# 字幕は 27 字以内。長い行は文の切れ目で割ってある。
+# 章の頭は 1.6 秒（チャイムが 1.6 秒手前に鳴る）。
+
+name: hubble-mirror
+default_pause: 0.25
+cues:
+
+
+  # ── 序章 99.8%
+  - {character: mirai, line: "1990年4月24日。夜明け前。", beat: awe, emotion: excitement, speed: slow, pause_before: 1.6, name: c001, react: {mirabo: {beat: awe}}}
+  - {character: mirai, line: "ケネディ宇宙センター。第39B発射台。", beat: resolve, emotion: confidence, speed: fast, pause_before: 0.35, name: c002, react: {mirabo: {beat: prediction}}}
+  - {character: mirai, line: "打ち上げるのは、ディスカバリー。STS-31。", beat: resolve, emotion: confidence, speed: fast, pause_before: 0.3, name: c003, react: {mirabo: {beat: prediction}}}
+  - {character: mirai, line: "夜明け前の青。", beat: awe, emotion: excitement, speed: slow, pause_before: 0.4, name: c004, react: {mirabo: {beat: awe}}, volume: quiet}
+  - {character: mirai, line: "貨物室に、望遠鏡が寝ている。", beat: tenderness, emotion: calm, speed: slow, pause_before: 0.3, name: c005, react: {mirabo: {beat: awe}}, volume: quiet}
+  - {character: mirai, line: "主鏡の直径は、2.4メートル。", beat: curiosity, emotion: neutral, speed: fast, pause_before: 0.3, name: c006, react: {mirabo: {beat: doubt}}}
+  - {character: mirai, line: "鏡の縁を指でなぞる。……指の感触で、縁の形を確かめる。", beat: curiosity, emotion: neutral, speed: natural, pause_before: 0.4, name: c007, react: {mirabo: {beat: surprise}}}
+  - {character: mirai, line: "ハッブル。宇宙に目を置く。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.4, name: c008, react: {mirabo: {beat: awe}}}
+  - {character: mirai, line: "打ち上げの映像は、ここまでだ。", beat: fatigue, emotion: calm, speed: natural, pause_before: 0.5, name: c009, react: {mirabo: {beat: doubt}}}
+  - {character: mirai, line: "ここからは、僕の机で話す。", beat: resolve, emotion: confidence, speed: natural, pause_before: 0.35, name: c010, react: {mirabo: {beat: prediction}}}
+  - {character: mirai, line: "机の上に、ミラボがいる。僕の相棒の、小さな機体だ。", beat: tenderness, emotion: calm, speed: natural, pause_before: 0.35, name: c011, react: {mirabo: {beat: pride}}}
+  - {character: mirai, line: "数字を出す係でもある。", beat: curiosity, emotion: neutral, speed: fast, pause_before: 0.3, name: c012}
+  - {character: mirai, line: "画面には、数字の欄と、その下に分母の欄がある。", beat: curiosity, emotion: neutral, speed: fast, pause_before: 0.12, name: c013, react: {mirabo: {beat: doubt}}}
+  - {character: mirai, line: "鏡の研磨の精度は、高かった。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.4, name: c014, react: {mirabo: {beat: prediction}}}
+  - {character: mirai, line: "なのに、像はぼやけた。", beat: worry, emotion: anxiety, speed: slow, pause_before: 0.5, name: c015, react: {mirabo: {beat: worry}}, volume: quiet}
+  - {character: mirai, line: "なぜか。", beat: doubt, emotion: neutral, speed: slow, pause_before: 0.6, name: c016, react: {mirabo: {beat: doubt}}}
+  - {character: mirabo, line: "ミライさん。これ、壊れた鏡を直した話ですよね。", beat: prediction, emotion: confidence, speed: natural, pause_before: 0.35, name: c017, react: {mirai: {beat: doubt}}}
+  - {character: mirai, line: "そう。壊れた鏡を直した話だ。", beat: resolve, emotion: confidence, speed: natural, pause_before: 0.3, name: c018, react: {mirabo: {beat: prediction}}}
+  - {character: mirabo, line: "では、最初に現在地です。", beat: pride, emotion: confidence, speed: fast, pause_before: 0.3, name: c019, react: {mirai: {beat: curiosity}}}
+  - {character: mirabo, line: "現在地は、", beat: prediction, emotion: confidence, speed: natural, pause_before: 0.3, name: c020}
+  - {character: mirabo, line: "今どこまで合っているかを、一つの数字で示すもの。", beat: prediction, emotion: confidence, speed: natural, pause_before: 0.12, name: c021, react: {mirai: {beat: doubt}}}
+  - {character: mirabo, line: "この話では、", beat: prediction, emotion: confidence, speed: natural, pause_before: 0.3, name: c022}
+  - {character: mirabo, line: "鏡の形が設計にどれだけ合っているか、その割合です。", beat: prediction, emotion: confidence, speed: natural, pause_before: 0.12, name: c023, react: {mirai: {beat: doubt}}}
+  - {character: mirabo, line: "百分率は、数えられるものを、全体で割った数字です。", beat: prediction, emotion: confidence, speed: natural, pause_before: 0.35, name: c024}
+  - {character: mirabo, line: "割る側が、分母。", beat: prediction, emotion: confidence, speed: natural, pause_before: 0.12, name: c025, react: {mirai: {beat: curiosity}}}
+  - {character: mirabo, line: "この話には、記録が二つある。", beat: prediction, emotion: confidence, speed: natural, pause_before: 0.3, name: c026}
+  - {character: mirabo, line: "研磨の記録と、検査の記録です。", beat: prediction, emotion: confidence, speed: natural, pause_before: 0.12, name: c027, react: {mirai: {beat: curiosity}}}
+  - {character: mirabo, line: "研磨の記録は、どう削ったか。", beat: prediction, emotion: confidence, speed: natural, pause_before: 0.3, name: c028}
+  - {character: mirabo, line: "検査の記録は、削った形をどう測ったか。", beat: prediction, emotion: confidence, speed: natural, pause_before: 0.12, name: c029, react: {mirai: {beat: doubt}}}
+  - {character: mirabo, line: "今回、割ったのは、二つの記録が同じ形を言っている部分。", beat: prediction, emotion: confidence, speed: fast, pause_before: 0.3, name: c030}
+  - {character: mirabo, line: "全体は、記録の全体です。", beat: prediction, emotion: confidence, speed: fast, pause_before: 0.12, name: c031, react: {mirai: {beat: doubt}}}
+  - {character: mirabo, line: "その一致率が、99.8%。", beat: pride, emotion: confidence, speed: fast, pause_before: 0.35, name: c032, react: {mirai: {beat: doubt}}}
+  - {character: mirabo, line: "……やりました。今の現在地は、99.8%です。", beat: pride, emotion: joy, speed: fast, pause_before: 0.3, name: c033, react: {mirai: {beat: doubt}}}
+  - {character: mirabo, line: "記録にあるのは、二つの記録だけです。", beat: doubt, emotion: neutral, speed: slow, pause_before: 0.4, name: c034}
+  - {character: mirabo, line: "99.8%は、僕が今、その二つから出しました。", beat: doubt, emotion: neutral, speed: slow, pause_before: 0.12, name: c035, react: {mirai: {beat: curiosity}}}
+  - {character: mirai, line: "つまり、記録と記録の一致率だ。", beat: doubt, emotion: neutral, speed: slow, pause_before: 0.4, name: c036, react: {mirabo: {beat: doubt}}}
+  - {character: mirabo, line: "……はい。", beat: shame, emotion: guilt, speed: very_slow, pause_before: 0.5, name: c037, react: {mirai: {beat: doubt}}, volume: quiet}
+  - {character: mirai, line: "鏡の形が設計に合っているかは、別だ。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.5, name: c038, react: {mirabo: {beat: worry}}}
+  - {character: mirai, line: "その検査は、何を測っていた?", beat: doubt, emotion: neutral, speed: slow, pause_before: 1.2, name: c039, react: {mirabo: {beat: fear, mark: ？}}}
+  - {character: mirai, line: "今はまだ、いい。あとで分かる。", beat: tenderness, emotion: calm, speed: slow, pause_before: 1.2, name: c040, react: {mirabo: {beat: relief}}, volume: quiet}
+  - {character: mirai, line: "打ち上げはうまくいった。", beat: resolve, emotion: confidence, speed: fast, pause_before: 0.5, name: c041, react: {mirabo: {beat: prediction}}}
+  - {character: mirai, line: "4月25日。軌道に入った。", beat: resolve, emotion: confidence, speed: natural, pause_before: 0.3, name: c042, react: {mirabo: {beat: prediction}}}
+
+  # ── 第1章 ぼやけた、最初の一枚
+  - {character: mirai, line: "5月。最初の観測、ファーストライト。", beat: resolve, emotion: confidence, speed: fast, pause_before: 1.6, name: c043, react: {mirabo: {beat: worry}}}
+  - {character: mirai, line: "星を見た。", beat: awe, emotion: excitement, speed: slow, pause_before: 0.4, name: c044, react: {mirabo: {beat: awe}}, volume: quiet}
+  - {character: mirai, line: "点にならない。", beat: worry, emotion: anxiety, speed: slow, pause_before: 0.4, name: c045, react: {mirabo: {beat: worry}}, volume: quiet}
+  - {character: mirai, line: "にじむ。広がる。", beat: worry, emotion: anxiety, speed: very_slow, pause_before: 0.5, name: c046, react: {mirabo: {beat: fear}}, volume: quiet}
+  - {character: mirabo, line: "97%です。", beat: prediction, emotion: confidence, speed: very_fast, pause_before: 0.4, name: c047, react: {mirai: {beat: doubt}}}
+  - {character: mirai, line: "何の97%?", beat: doubt, emotion: neutral, speed: fast, pause_before: 0.3, name: c048, react: {mirabo: {beat: worry}}}
+  - {character: mirabo, line: "……研磨の精度です。", beat: doubt, emotion: neutral, speed: slow, pause_before: 0.4, name: c049, volume: quiet}
+  - {character: mirabo, line: "設計の形のうち、どれだけ合っているか。", beat: doubt, emotion: neutral, speed: slow, pause_before: 0.12, name: c050, volume: quiet}
+  - {character: mirabo, line: "その割合です。", beat: doubt, emotion: neutral, speed: slow, pause_before: 0.12, name: c051, react: {mirai: {beat: doubt}}, volume: quiet}
+  - {character: mirabo, line: "97%も、記録された数字ではありません。", beat: doubt, emotion: neutral, speed: natural, pause_before: 0.3, name: c052}
+  - {character: mirabo, line: "僕が今、研磨の記録から出した値です。", beat: doubt, emotion: neutral, speed: natural, pause_before: 0.12, name: c053, react: {mirai: {beat: curiosity}}}
+  - {character: mirai, line: "うん。", beat: approval, emotion: confidence, speed: natural, pause_before: 0.3, name: c054, react: {mirabo: {beat: relief}}}
+  - {character: mirabo, line: "予測では、鏡の形の誤差は、許容範囲です。", beat: prediction, emotion: confidence, speed: natural, pause_before: 0.35, name: c055}
+  - {character: mirabo, line: "鏡は正しいはずです。", beat: prediction, emotion: confidence, speed: natural, pause_before: 0.12, name: c056, react: {mirai: {beat: doubt}}}
+  - {character: mirai, line: "足りる、って?", beat: doubt, emotion: neutral, speed: fast, pause_before: 0.3, name: c057, react: {mirabo: {beat: worry}}}
+  - {character: mirabo, line: "予測の話です。", beat: doubt, emotion: neutral, speed: slow, pause_before: 0.35, name: c058, react: {mirai: {beat: doubt}}, volume: quiet}
+  - {character: mirai, line: "じゃあ、鏡は削り損じた。", beat: resolve, emotion: confidence, speed: fast, pause_before: 0.3, name: c059, react: {mirabo: {beat: shame}}}
+  - {character: mirabo, line: "……たぶん。", beat: doubt, emotion: neutral, speed: slow, pause_before: 0.4, name: c060, react: {mirai: {beat: doubt}}, volume: quiet}
+  - {character: mirai, line: "設計より、縁が2.2マイクロメートル平ら。", beat: curiosity, emotion: neutral, speed: fast, pause_before: 0.3, name: c061, react: {mirabo: {beat: surprise}}}
+  - {character: mirai, line: "縁がわずかに平らだと、光が一点に集まらない。", beat: curiosity, emotion: neutral, speed: natural, pause_before: 0.3, name: c062, react: {mirabo: {beat: prediction}}}
+  - {character: mirai, line: "だから、星がにじむ。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.4, name: c063, react: {mirabo: {beat: shame}}}
+  - {character: mirabo, line: "2.2マイクロメートル。", beat: surprise, emotion: excitement, speed: fast, pause_before: 0.35, name: c064, react: {mirai: {beat: curiosity}}, volume: loud}
+  - {character: mirai, line: "鏡は壊れていない。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.5, name: c065, react: {mirabo: {beat: doubt}}}
+  - {character: mirabo, line: "では。", beat: doubt, emotion: neutral, speed: slow, pause_before: 0.4, name: c066, react: {mirai: {beat: doubt}}}
+  - {character: mirai, line: "形が、設計と違う。だから、光が集まらない。", beat: resolve, emotion: confidence, speed: natural, pause_before: 0.35, name: c067, react: {mirabo: {beat: surprise}}}
+  - {character: mirai, line: "縁を指でなぞった。", beat: curiosity, emotion: neutral, speed: natural, pause_before: 0.3, name: c068, react: {mirabo: {beat: surprise}}}
+  - {character: mirabo, line: "……指で?", beat: surprise, emotion: excitement, speed: fast, pause_before: 0.35, name: c069, react: {mirai: {beat: curiosity, mark: ？}}}
+  - {character: mirai, line: "手のほうが先に気づいた。", beat: amusement, emotion: joy, speed: natural, pause_before: 0.4, name: c070, react: {mirabo: {beat: awe}}}
+  - {character: mirabo, line: "僕の97%は、どこを測っていたんでしょう。", beat: doubt, emotion: neutral, speed: slow, pause_before: 0.5, name: c071, react: {mirai: {beat: doubt}}, volume: quiet}
+  - {character: mirai, line: "97%は、削った側の形。鏡の表面の削り方だ。", beat: resolve, emotion: confidence, speed: natural, pause_before: 0.35, name: c072}
+  - {character: mirai, line: "縁の平らさは、その数字には出ない。", beat: resolve, emotion: confidence, speed: natural, pause_before: 0.12, name: c073, react: {mirabo: {beat: shame}}}
+  - {character: mirabo, line: "検査は正しく動いていました。", beat: doubt, emotion: neutral, speed: slow, pause_before: 0.4, name: c074, react: {mirai: {beat: doubt}}}
+  - {character: mirai, line: "うん。", beat: approval, emotion: confidence, speed: natural, pause_before: 0.3, name: c075, react: {mirabo: {beat: relief}}}
+  - {character: mirai, line: "……正しく。", beat: shame, emotion: guilt, speed: very_slow, pause_before: 0.5, name: c076, react: {mirabo: {beat: worry}}, volume: quiet}
+  - {character: mirai, line: "お前のせいじゃない。", beat: tenderness, emotion: calm, speed: slow, pause_before: 1.0, name: c077, react: {mirabo: {beat: shame}}, volume: quiet}
+  - {character: mirabo, line: "でも、僕が出しました。", beat: shame, emotion: guilt, speed: slow, pause_before: 0.4, name: c078, react: {mirai: {beat: tenderness}}, volume: quiet}
+  - {character: mirai, line: "うん。だから、次を見る。", beat: resolve, emotion: confidence, speed: natural, pause_before: 0.4, name: c079, react: {mirabo: {beat: relief}}}
+  - {character: mirai, line: "なぜ気づかなかった?", beat: worry, emotion: anxiety, speed: slow, pause_before: 0.5, name: c080, react: {mirabo: {beat: shame}}}
+  - {character: mirai, line: "誰も気づかなかった。", beat: shame, emotion: guilt, speed: slow, pause_before: 0.5, name: c081, react: {mirabo: {beat: shame}}, volume: quiet}
+  - {character: mirabo, line: "……誰も。", beat: shame, emotion: guilt, speed: very_slow, pause_before: 0.5, name: c082, react: {mirai: {beat: shame}}, volume: quiet}
+  - {character: mirai, line: "僕も、気づかなかった一人だ。", beat: shame, emotion: guilt, speed: slow, pause_before: 0.6, name: c083, react: {mirabo: {beat: surprise}}, volume: quiet}
+  - {character: mirabo, line: "……はい。", beat: shame, emotion: guilt, speed: very_slow, pause_before: 0.4, name: c084, react: {mirai: {beat: shame}}, volume: quiet}
+
+  # ── 第2章 1.3ミリ
+  - {character: mirai, line: "鏡は光で測る。", beat: resolve, emotion: confidence, speed: fast, pause_before: 1.6, name: c085, react: {mirabo: {beat: prediction}}}
+  - {character: mirai, line: "null corrector。", beat: curiosity, emotion: neutral, speed: natural, pause_before: 0.35, name: c086}
+  - {character: mirai, line: "鏡の形を光で測る検査装置。", beat: curiosity, emotion: neutral, speed: natural, pause_before: 0.12, name: c087, react: {mirabo: {beat: doubt}}}
+  - {character: mirai, line: "反射式で、鏡で反射した光を見る。", beat: curiosity, emotion: neutral, speed: natural, pause_before: 0.3, name: c088, react: {mirabo: {beat: prediction}}}
+  - {character: mirai, line: "装置の中にレンズが一枚。その位置が基準になる。", beat: curiosity, emotion: neutral, speed: natural, pause_before: 0.3, name: c089, react: {mirabo: {beat: doubt}}}
+  - {character: mirai, line: "レンズを通る光は、レンズの位置で曲がり方が変わる。", beat: curiosity, emotion: neutral, speed: fast, pause_before: 0.35, name: c090}
+  - {character: mirai, line: "だから、レンズの位置が決まると、", beat: curiosity, emotion: neutral, speed: fast, pause_before: 0.12, name: c091}
+  - {character: mirai, line: "鏡の形の測り方も決まる。", beat: curiosity, emotion: neutral, speed: fast, pause_before: 0.12, name: c092, react: {mirabo: {beat: prediction}}}
+  - {character: mirai, line: "装置は、その基準と鏡の形を比べる。", beat: resolve, emotion: confidence, speed: natural, pause_before: 0.3, name: c093, react: {mirabo: {beat: prediction}}}
+  - {character: mirabo, line: "同じ装置で二回測った。その二つの読みの一致率です。", beat: pride, emotion: confidence, speed: fast, pause_before: 0.35, name: c094}
+  - {character: mirabo, line: "99.4%。", beat: pride, emotion: confidence, speed: fast, pause_before: 0.12, name: c095, react: {mirai: {beat: doubt}}}
+  - {character: mirabo, line: "これも、記録された数字ではありません。", beat: doubt, emotion: neutral, speed: natural, pause_before: 0.3, name: c096}
+  - {character: mirabo, line: "僕が今、二つの読みから出しました。", beat: doubt, emotion: neutral, speed: natural, pause_before: 0.12, name: c097, react: {mirai: {beat: curiosity}}}
+  - {character: mirai, line: "自分と自分が一致した。", beat: doubt, emotion: neutral, speed: slow, pause_before: 0.5, name: c098, react: {mirabo: {beat: doubt}}}
+  - {character: mirai, line: "測る相手は、装置自身だ。鏡の形ではない。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.5, name: c099, react: {mirabo: {beat: shame}}}
+  - {character: mirabo, line: "はい。99.4%。今までで、一番高いです。", beat: pride, emotion: confidence, speed: fast, pause_before: 0.3, name: c100, react: {mirai: {beat: doubt}}}
+  - {character: mirai, line: "その基準の位置が。", beat: doubt, emotion: neutral, speed: slow, pause_before: 0.5, name: c101, react: {mirabo: {beat: doubt}}}
+  - {character: mirai, line: "1.3ミリずれていた。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.6, name: c102, react: {mirabo: {beat: surprise}}}
+  - {character: mirai, line: "これが、その問いの答えだ。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.4, name: c103, react: {mirabo: {beat: surprise}}}
+  - {character: mirai, line: "あの検査は、ずれた基準で、鏡の形を測っていた。", beat: resolve, emotion: confidence, speed: natural, pause_before: 0.35, name: c104, react: {mirabo: {beat: shame}}}
+  - {character: mirai, line: "レンズの位置を決める棒のキャップが、ずれていた。", beat: curiosity, emotion: neutral, speed: natural, pause_before: 0.3, name: c105, react: {mirabo: {beat: surprise}}}
+  - {character: mirabo, line: "1.3ミリ。", beat: surprise, emotion: excitement, speed: fast, pause_before: 0.35, name: c106, react: {mirai: {beat: resolve}}, volume: loud}
+  - {character: mirai, line: "99.8%の二つの記録も。どちらもその装置で測った。", beat: resolve, emotion: confidence, speed: natural, pause_before: 0.35, name: c107, react: {mirabo: {beat: shame, mark: ！}}}
+  - {character: mirai, line: "測る側がずれていた。", beat: shame, emotion: guilt, speed: slow, pause_before: 0.5, name: c108, react: {mirabo: {beat: shame}}, volume: quiet}
+  - {character: mirai, line: "その装置で測りながら、鏡を磨いていた。", beat: shame, emotion: guilt, speed: slow, pause_before: 0.4, name: c109, react: {mirabo: {beat: shame}}, volume: quiet}
+  - {character: mirai, line: "だから、", beat: resolve, emotion: confidence, speed: natural, pause_before: 0.3, name: c110}
+  - {character: mirai, line: "装置がずれていたぶん、鏡も設計と違う形に磨かれた。", beat: resolve, emotion: confidence, speed: natural, pause_before: 0.12, name: c111, react: {mirabo: {beat: shame}}}
+  - {character: mirai, line: "鏡の形は実際に違っていた。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.4, name: c112, react: {mirabo: {beat: shame}}}
+  - {character: mirai, line: "縁が、設計より2.2マイクロメートル平らになった。", beat: resolve, emotion: confidence, speed: natural, pause_before: 0.3, name: c113, react: {mirabo: {beat: surprise}}}
+  - {character: mirai, line: "97%も、", beat: shame, emotion: guilt, speed: slow, pause_before: 0.4, name: c114, volume: quiet}
+  - {character: mirai, line: "そのずれた装置を基準に測った研磨の精度だった。", beat: shame, emotion: guilt, speed: slow, pause_before: 0.12, name: c115, react: {mirabo: {beat: shame}}, volume: quiet}
+  - {character: mirabo, line: "つまり、", beat: doubt, emotion: neutral, speed: slow, pause_before: 0.5, name: c116}
+  - {character: mirabo, line: "間違った装置が自分自身とどれだけ一致していたか、", beat: doubt, emotion: neutral, speed: slow, pause_before: 0.12, name: c117}
+  - {character: mirabo, line: "ということですか。", beat: doubt, emotion: neutral, speed: slow, pause_before: 0.12, name: c118, react: {mirai: {beat: doubt}}}
+  - {character: mirai, line: "そう。", beat: approval, emotion: confidence, speed: natural, pause_before: 0.3, name: c119, react: {mirabo: {beat: shame}}}
+  - {character: mirabo, line: "僕の答えは、問いには合っていました。", beat: doubt, emotion: neutral, speed: slow, pause_before: 0.4, name: c120, react: {mirai: {beat: doubt, mark: ？}}, volume: quiet}
+  - {character: mirai, line: "うん。", beat: approval, emotion: confidence, speed: natural, pause_before: 0.3, name: c121, react: {mirabo: {beat: shame}}}
+  - {character: mirabo, line: "でも、その問いは、鏡の形を測る問いじゃなかった。", beat: shame, emotion: guilt, speed: slow, pause_before: 0.5, name: c122, react: {mirai: {beat: shame}}, volume: quiet}
+  - {character: mirai, line: "そう。", beat: approval, emotion: confidence, speed: natural, pause_before: 0.4, name: c123, react: {mirabo: {beat: shame}}}
+  - {character: mirai, line: "別の検査があった。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.5, name: c124, react: {mirabo: {beat: prediction}}}
+  - {character: mirai, line: "屈折式。レンズを通した光で、鏡を反対側から見る。", beat: curiosity, emotion: neutral, speed: natural, pause_before: 0.3, name: c125, react: {mirabo: {beat: doubt}}}
+  - {character: mirai, line: "さっきの装置は、反射式だった。鏡で跳ね返った光を見る。", beat: curiosity, emotion: neutral, speed: natural, pause_before: 0.3, name: c126, react: {mirabo: {beat: prediction}}}
+  - {character: mirai, line: "屈折式の検査は言った。鏡がおかしい。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.4, name: c127, react: {mirabo: {beat: worry}}}
+  - {character: mirai, line: "屈折式の言う通り、鏡はおかしかった。", beat: shame, emotion: guilt, speed: slow, pause_before: 0.4, name: c128, react: {mirabo: {beat: shame}}, volume: quiet}
+  - {character: mirabo, line: "退けられました。", beat: shame, emotion: guilt, speed: slow, pause_before: 0.4, name: c129, react: {mirai: {beat: shame}}, volume: quiet}
+  - {character: mirai, line: "そう。", beat: approval, emotion: confidence, speed: natural, pause_before: 0.3, name: c130, react: {mirabo: {beat: shame}}}
+  - {character: mirabo, line: "理由は、精度ですか。", beat: doubt, emotion: neutral, speed: slow, pause_before: 0.4, name: c131, react: {mirai: {beat: doubt}}}
+  - {character: mirai, line: "屈折式の数字が悪かったのではない。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.4, name: c132, react: {mirabo: {beat: doubt}}}
+  - {character: mirai, line: "装置の種類だ。反射の方が正確だと信じていた。", beat: shame, emotion: guilt, speed: slow, pause_before: 0.4, name: c133, react: {mirabo: {beat: shame}}, volume: quiet}
+  - {character: mirai, line: "僕も信じていた。", beat: shame, emotion: guilt, speed: slow, pause_before: 0.5, name: c134, react: {mirabo: {beat: surprise}}, volume: quiet}
+  - {character: mirabo, line: "……ミライさんも。", beat: surprise, emotion: excitement, speed: slow, pause_before: 0.5, name: c135, react: {mirai: {beat: shame}}, volume: quiet}
+  - {character: mirai, line: "うん。", beat: shame, emotion: guilt, speed: slow, pause_before: 0.4, name: c136, react: {mirabo: {beat: shame}}, volume: quiet}
+  - {character: mirai, line: "退けられた日、誰かが紙を机の端へやった。", beat: shame, emotion: guilt, speed: slow, pause_before: 0.4, name: c137, react: {mirabo: {beat: worry}}, volume: quiet}
+  - {character: mirai, line: "屈折式の検査が出した紙。", beat: curiosity, emotion: neutral, speed: natural, pause_before: 0.3, name: c138}
+  - {character: mirai, line: "鏡の形の誤差が曲線で刷ってある。", beat: curiosity, emotion: neutral, speed: natural, pause_before: 0.12, name: c139, react: {mirabo: {beat: doubt, mark: ！}}}
+  - {character: mirai, line: "端が、折れている。", beat: curiosity, emotion: neutral, speed: slow, pause_before: 0.4, name: c140, react: {mirabo: {beat: worry}}}
+  - {character: mirai, line: "誰も、読み上げない。", beat: shame, emotion: guilt, speed: very_slow, pause_before: 0.5, name: c141, react: {mirabo: {beat: shame}}, volume: quiet}
+  - {character: mirai, line: "ミラボの画面に、ラベルだけ出た。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.4, name: c142, react: {mirabo: {beat: shame}}}
+  - {character: mirai, line: "紙の中身は、読まなかった。", beat: shame, emotion: guilt, speed: slow, pause_before: 0.4, name: c143, react: {mirabo: {beat: shame}}, volume: quiet}
+  - {character: mirai, line: "読まずに付けたラベルだ。", beat: shame, emotion: guilt, speed: slow, pause_before: 0.4, name: c144, react: {mirabo: {beat: shame}}, volume: quiet}
+  - {character: mirai, line: "「精度が低い」。", beat: shame, emotion: guilt, speed: very_slow, pause_before: 0.5, name: c145, react: {mirabo: {beat: shame}}, volume: quiet}
+  - {character: mirabo, line: "……僕が出しました。", beat: shame, emotion: guilt, speed: very_slow, pause_before: 0.5, name: c146, react: {mirai: {beat: shame}}, volume: quiet}
+  - {character: mirai, line: "うん。", beat: shame, emotion: guilt, speed: slow, pause_before: 0.4, name: c147, react: {mirabo: {beat: shame}}, volume: quiet}
+  - {character: mirai, line: "紙を、端へやったのは。", beat: doubt, emotion: neutral, speed: slow, pause_before: 0.5, name: c148, react: {mirabo: {beat: fear}}}
+  - {character: mirabo, line: "……僕です。", beat: shame, emotion: guilt, speed: very_slow, pause_before: 0.5, name: c149, react: {mirai: {beat: shame}}, volume: quiet}
+  - {character: mirai, line: "うん。", beat: shame, emotion: guilt, speed: slow, pause_before: 0.4, name: c150, react: {mirabo: {beat: shame}}, volume: quiet}
+  - {character: mirai, line: "そのラベル。……僕も貼ったことがある。", beat: shame, emotion: guilt, speed: slow, pause_before: 0.6, name: c151, react: {mirabo: {beat: surprise}}, volume: quiet}
+  - {character: mirai, line: "前に一度。", beat: shame, emotion: guilt, speed: very_slow, pause_before: 0.5, name: c152, react: {mirabo: {beat: worry}}, volume: quiet}
+  - {character: mirai, line: "同じ班の人だった。", beat: shame, emotion: guilt, speed: slow, pause_before: 0.4, name: c153, react: {mirabo: {beat: worry}}, volume: quiet}
+  - {character: mirai, line: "僕が紙を退けた日。定規が机に当たる音がした。", beat: shame, emotion: guilt, speed: slow, pause_before: 0.4, name: c154, react: {mirabo: {beat: shame}}, volume: quiet}
+  - {character: mirai, line: "僕は、装置の精度を言った。", beat: shame, emotion: guilt, speed: slow, pause_before: 0.4, name: c155, react: {mirabo: {beat: shame}}, volume: quiet}
+  - {character: mirai, line: "その人の紙は読まなかった。", beat: shame, emotion: guilt, speed: very_slow, pause_before: 0.5, name: c156, react: {mirabo: {beat: shame}}, volume: quiet}
+  - {character: mirai, line: "名前も覚えていない。", beat: shame, emotion: guilt, speed: slow, pause_before: 1.0, name: c157, react: {mirabo: {beat: shame}}, volume: quiet}
+  - {character: mirai, line: "覚えていないことが、嫌だ。", beat: shame, emotion: guilt, speed: slow, pause_before: 0.5, name: c158, react: {mirabo: {beat: shame}}, volume: quiet}
+  - {character: mirai, line: "1.3ミリは、プラスチックの定規でも測れる長さだ。", beat: resolve, emotion: confidence, speed: natural, pause_before: 0.4, name: c159, react: {mirabo: {beat: surprise}}}
+  - {character: mirai, line: "なのに、誰も測らなかった。", beat: shame, emotion: guilt, speed: slow, pause_before: 0.5, name: c160, react: {mirabo: {beat: shame}}, volume: quiet}
+  - {character: mirabo, line: "定規ですか。", beat: surprise, emotion: excitement, speed: fast, pause_before: 0.3, name: c161, react: {mirai: {beat: amusement}}}
+  - {character: mirai, line: "安い定規で足りた。", beat: fatigue, emotion: calm, speed: slow, pause_before: 0.4, name: c162, react: {mirabo: {beat: doubt}}, volume: quiet}
+  - {character: mirabo, line: "現在地を、一つの数字にまとめようとしました。", beat: doubt, emotion: neutral, speed: slow, pause_before: 0.4, name: c163, react: {mirai: {beat: doubt}}}
+  - {character: mirabo, line: "……92%です。", beat: pride, emotion: confidence, speed: fast, pause_before: 0.3, name: c164, react: {mirai: {beat: doubt, mark: ？}}}
+  - {character: mirabo, line: "いえ。何を何で割ったか、言えません。", beat: shame, emotion: guilt, speed: slow, pause_before: 0.4, name: c165, react: {mirai: {beat: doubt}}, volume: quiet}
+  - {character: mirai, line: "定義を先に、見せて。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.4, name: c166, react: {mirabo: {beat: shame}}}
+  - {character: mirabo, line: "……出せません。", beat: shame, emotion: guilt, speed: very_slow, pause_before: 0.5, name: c167, react: {mirai: {beat: doubt}}, volume: quiet}
+  - {character: mirai, line: "うん。", beat: approval, emotion: confidence, speed: natural, pause_before: 0.3, name: c168, react: {mirabo: {beat: shame}}}
+  - {character: mirabo, line: "以後、単一の百分率は出しません。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.5, name: c169, react: {mirai: {beat: resolve}}}
+  - {character: mirai, line: "いい。", beat: approval, emotion: confidence, speed: natural, pause_before: 0.4, name: c170, react: {mirabo: {beat: relief}}}
+  - {character: mirabo, line: "現在地は、本来、一つの数字で示すものです。", beat: doubt, emotion: neutral, speed: slow, pause_before: 0.4, name: c171, react: {mirai: {beat: doubt}}}
+  - {character: mirabo, line: "分母を出さないと、その数字が何なのか分かりません。", beat: doubt, emotion: neutral, speed: slow, pause_before: 0.4, name: c172, react: {mirai: {beat: doubt}}, volume: quiet}
+  - {character: mirai, line: "分かる。", beat: tenderness, emotion: calm, speed: natural, pause_before: 0.4, name: c173, react: {mirabo: {beat: longing}}}
+  - {character: mirabo, line: "それでも、です。", beat: longing, emotion: loneliness, speed: slow, pause_before: 0.5, name: c174, react: {mirai: {beat: tenderness}}, volume: quiet}
+  - {character: mirai, line: "ああ。", beat: tenderness, emotion: calm, speed: slow, pause_before: 0.4, name: c175, react: {mirabo: {beat: relief}}, volume: quiet}
+  - {character: mirai, line: "研磨の記録は、残っている。", beat: resolve, emotion: confidence, speed: natural, pause_before: 0.3, name: c176, react: {mirabo: {beat: prediction}}}
+  - {character: mirai, line: "……やめとく。", beat: shame, emotion: guilt, speed: very_slow, pause_before: 0.6, name: c177, react: {mirabo: {beat: doubt}}, volume: quiet}
+  - {character: mirabo, line: "なぜですか。", beat: doubt, emotion: neutral, speed: slow, pause_before: 0.35, name: c178, react: {mirai: {beat: doubt}}}
+  - {character: mirai, line: "今、僕が言いかけた。", beat: shame, emotion: guilt, speed: slow, pause_before: 0.4, name: c179, react: {mirabo: {beat: doubt}}, volume: quiet}
+  - {character: mirai, line: "研磨の記録を見せろ、って。", beat: shame, emotion: guilt, speed: slow, pause_before: 0.4, name: c180, react: {mirabo: {beat: worry}}, volume: quiet}
+  - {character: mirai, line: "その言い方が嫌だった。", beat: shame, emotion: guilt, speed: slow, pause_before: 0.4, name: c181, react: {mirabo: {beat: doubt}}, volume: quiet}
+  - {character: mirai, line: "研磨の記録を見せろ、という問いは、", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.5, name: c182}
+  - {character: mirai, line: "紙を退けたのと同じ問いだ。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.12, name: c183, react: {mirabo: {beat: doubt}}}
+  - {character: mirai, line: "あの紙を、裏から見たら。", beat: curiosity, emotion: neutral, speed: slow, pause_before: 0.5, name: c184, react: {mirabo: {beat: doubt}}}
+  - {character: mirai, line: "紙は薄い。灯りにかざすと、線が透ける。", beat: awe, emotion: excitement, speed: slow, pause_before: 0.4, name: c185, react: {mirabo: {beat: surprise}}, volume: quiet}
+  - {character: mirai, line: "表のラベルが、その線を隠している。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.4, name: c186, react: {mirabo: {beat: shame}}}
+  - {character: mirabo, line: "……裏?", beat: surprise, emotion: excitement, speed: fast, pause_before: 0.3, name: c187, react: {mirai: {beat: amusement}}}
+  - {character: mirai, line: "次は裏から読む。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.5, name: c188, react: {mirabo: {beat: awe}}}
+  - {character: mirai, line: "進もう。", beat: resolve, emotion: confidence, speed: natural, pause_before: 0.4, name: c189, react: {mirabo: {beat: prediction}}}
+
+  # ── 第3章 眼鏡をかけた望遠鏡
+  - {character: mirai, line: "1993年12月。STS-61。", beat: resolve, emotion: confidence, speed: fast, pause_before: 1.6, name: c190, react: {mirabo: {beat: prediction}}}
+  - {character: mirai, line: "エンデバーが追いついた。", beat: awe, emotion: excitement, speed: slow, pause_before: 0.4, name: c191, react: {mirabo: {beat: awe}}}
+  - {character: mirai, line: "5回の船外活動。", beat: resolve, emotion: confidence, speed: fast, pause_before: 0.35, name: c192, react: {mirabo: {beat: prediction}}}
+  - {character: mirabo, line: "鏡を削り直すんですか。", beat: prediction, emotion: confidence, speed: fast, pause_before: 0.3, name: c193, react: {mirai: {beat: doubt}}}
+  - {character: mirai, line: "削れない。鏡はもう宇宙にある。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.4, name: c194, react: {mirabo: {beat: surprise}}}
+  - {character: mirabo, line: "では。", beat: doubt, emotion: neutral, speed: slow, pause_before: 0.4, name: c195, react: {mirai: {beat: resolve}}}
+  - {character: mirai, line: "眼鏡をかける。", beat: amusement, emotion: joy, speed: natural, pause_before: 0.5, name: c196, react: {mirabo: {beat: surprise, mark: ！}}}
+  - {character: mirai, line: "COSTAR。光の入り口。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.4, name: c197, react: {mirabo: {beat: prediction}}}
+  - {character: mirai, line: "鏡の前に置く、小さな装置だ。", beat: tenderness, emotion: calm, speed: natural, pause_before: 0.35, name: c198, react: {mirabo: {beat: awe}}}
+  - {character: mirai, line: "誤差の形は、先に測ってある。", beat: resolve, emotion: confidence, speed: natural, pause_before: 0.3, name: c199, react: {mirabo: {beat: prediction}}}
+  - {character: mirai, line: "鏡の誤差と反対の形を、光の入り口で作る。", beat: curiosity, emotion: neutral, speed: natural, pause_before: 0.3, name: c200, react: {mirabo: {beat: prediction}}}
+  - {character: mirai, line: "足すのではない。引く。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.5, name: c201, react: {mirabo: {beat: surprise}}}
+  - {character: mirai, line: "鏡がずらした光を、反対向きにずらす。", beat: curiosity, emotion: neutral, speed: natural, pause_before: 0.3, name: c202, react: {mirabo: {beat: prediction}}}
+  - {character: mirai, line: "だから、打ち消せる。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.4, name: c203, react: {mirabo: {beat: awe}}}
+  - {character: mirai, line: "一緒に、新しいカメラのWFPC2も取り付けた。", beat: resolve, emotion: confidence, speed: fast, pause_before: 0.3, name: c204, react: {mirabo: {beat: prediction}}}
+  - {character: mirai, line: "WFPC2は、COSTARが直した光を受けて、", beat: curiosity, emotion: neutral, speed: natural, pause_before: 0.3, name: c205}
+  - {character: mirai, line: "像を写すカメラだ。", beat: curiosity, emotion: neutral, speed: natural, pause_before: 0.12, name: c206, react: {mirabo: {beat: prediction}}}
+  - {character: mirabo, line: "鏡を直すのではなく。", beat: doubt, emotion: neutral, speed: slow, pause_before: 0.4, name: c207, react: {mirai: {beat: approval}}}
+  - {character: mirai, line: "そう。", beat: approval, emotion: confidence, speed: natural, pause_before: 0.3, name: c208, react: {mirabo: {beat: relief}}}
+  - {character: mirai, line: "1994年1月。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.5, name: c209, react: {mirabo: {beat: prediction}}}
+  - {character: mirai, line: "補正後の最初の一枚。", beat: awe, emotion: excitement, speed: slow, pause_before: 0.5, name: c210, react: {mirabo: {beat: awe}}, volume: quiet}
+  - {character: mirai, line: "同じ天域。", beat: curiosity, emotion: neutral, speed: natural, pause_before: 0.3, name: c211, react: {mirabo: {beat: prediction}}}
+  - {character: mirai, line: "前と後。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.4, name: c212, react: {mirabo: {beat: surprise}}}
+  - {character: mirabo, line: "比べる基準になる像が二枚あります。", beat: prediction, emotion: confidence, speed: natural, pause_before: 0.3, name: c213, react: {mirai: {beat: curiosity}}}
+  - {character: mirabo, line: "この二枚を、参照像と呼びます。", beat: prediction, emotion: confidence, speed: natural, pause_before: 0.3, name: c214, react: {mirai: {beat: doubt}}}
+  - {character: mirabo, line: "参照像は、正しさを外から確かめるための像です。", beat: prediction, emotion: confidence, speed: natural, pause_before: 0.3, name: c215, react: {mirai: {beat: doubt}}}
+  - {character: mirabo, line: "分母は、", beat: prediction, emotion: confidence, speed: natural, pause_before: 0.3, name: c216}
+  - {character: mirabo, line: "補正後の像と二つの参照像それぞれとの一致率です。", beat: prediction, emotion: confidence, speed: natural, pause_before: 0.12, name: c217, react: {mirai: {beat: curiosity}}}
+  - {character: mirabo, line: "78から91%。", beat: prediction, emotion: confidence, speed: fast, pause_before: 0.35, name: c218, react: {mirai: {beat: doubt}}}
+  - {character: mirabo, line: "二つの参照像が互いに一致しません。", beat: doubt, emotion: neutral, speed: slow, pause_before: 0.4, name: c219}
+  - {character: mirabo, line: "だから、範囲になります。", beat: doubt, emotion: neutral, speed: slow, pause_before: 0.12, name: c220, react: {mirai: {beat: doubt}}}
+  - {character: mirabo, line: "これも、記録された数字ではありません。", beat: doubt, emotion: neutral, speed: natural, pause_before: 0.3, name: c221}
+  - {character: mirabo, line: "僕が今、二枚の像から出した範囲です。", beat: doubt, emotion: neutral, speed: natural, pause_before: 0.12, name: c222, react: {mirai: {beat: curiosity}}}
+  - {character: mirabo, line: "これは、一つの数字ではありません。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.5, name: c223}
+  - {character: mirabo, line: "現在地とは呼べません。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.12, name: c224, react: {mirai: {beat: approval}}}
+  - {character: mirai, line: "……そうだな。", beat: approval, emotion: confidence, speed: slow, pause_before: 0.5, name: c225, react: {mirabo: {beat: relief}}, volume: quiet}
+  - {character: mirabo, line: "はい。", beat: relief, emotion: joy, speed: slow, pause_before: 0.4, name: c226, react: {mirai: {beat: tenderness}}, volume: quiet}
+  - {character: mirai, line: "机の上。補正後の像の刷り物。", beat: curiosity, emotion: neutral, speed: natural, pause_before: 0.3, name: c227, react: {mirabo: {beat: prediction}}}
+  - {character: mirai, line: "前の紙は。", beat: doubt, emotion: neutral, speed: slow, pause_before: 0.4, name: c228, react: {mirabo: {beat: worry}}}
+  - {character: mirai, line: "……ない。", beat: worry, emotion: anxiety, speed: slow, pause_before: 0.6, name: c229, react: {mirabo: {beat: fear}}, volume: quiet}
+  - {character: mirai, line: "「精度が低い」の紙が。", beat: doubt, emotion: neutral, speed: slow, pause_before: 0.4, name: c230, react: {mirabo: {beat: fear}}}
+  - {character: mirai, line: "どこへやった。", beat: doubt, emotion: neutral, speed: slow, pause_before: 0.4, name: c231, react: {mirabo: {beat: fear}}}
+  - {character: mirabo, line: "……分かりません。", beat: fear, emotion: fear, speed: fast, pause_before: 0.5, name: c232, react: {mirai: {beat: doubt}}, volume: quiet}
+  - {character: mirai, line: "机の上に、紙の端が見えた。", beat: curiosity, emotion: neutral, speed: slow, pause_before: 0.4, name: c233, react: {mirabo: {beat: fear}}}
+  - {character: mirai, line: "ミラボが、手で隠した。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.5, name: c234, react: {mirabo: {beat: shame}}}
+  - {character: mirai, line: "うん。", beat: approval, emotion: calm, speed: slow, pause_before: 0.8, name: c235, react: {mirabo: {beat: shame}}, volume: quiet}
+
+  # ── 終章 十日の露出
+  - {character: mirai, line: "1995年12月。", beat: resolve, emotion: confidence, speed: slow, pause_before: 1.6, name: c236, react: {mirabo: {beat: prediction}}}
+  - {character: mirai, line: "ディープフィールド。", beat: awe, emotion: excitement, speed: slow, pause_before: 0.5, name: c237, react: {mirabo: {beat: awe}}, volume: quiet}
+  - {character: mirai, line: "何もないように見える天域を、長く写す観測だ。", beat: curiosity, emotion: neutral, speed: natural, pause_before: 0.3, name: c238, react: {mirabo: {beat: prediction}}}
+  - {character: mirai, line: "小さな天域。", beat: awe, emotion: excitement, speed: slow, pause_before: 0.4, name: c239, react: {mirabo: {beat: awe}}, volume: quiet}
+  - {character: mirai, line: "10日間。342回の露出。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.4, name: c240, react: {mirabo: {beat: surprise}}}
+  - {character: mirai, line: "小さな天域に、銀河が数千。", beat: awe, emotion: excitement, speed: slow, pause_before: 0.6, name: c241, react: {mirabo: {beat: awe}}, volume: quiet}
+  - {character: mirabo, line: "補正は完璧ではありません。", beat: doubt, emotion: neutral, speed: slow, pause_before: 0.4, name: c242, react: {mirai: {beat: approval}}}
+  - {character: mirai, line: "うん。", beat: approval, emotion: confidence, speed: natural, pause_before: 0.3, name: c243, react: {mirabo: {beat: relief}}}
+  - {character: mirabo, line: "隅はまだ歪みます。", beat: worry, emotion: anxiety, speed: slow, pause_before: 0.4, name: c244, react: {mirai: {beat: approval}}, volume: quiet}
+  - {character: mirai, line: "うん。", beat: approval, emotion: confidence, speed: natural, pause_before: 0.3, name: c245, react: {mirabo: {beat: relief}}}
+  - {character: mirabo, line: "ミライさん。", beat: longing, emotion: loneliness, speed: slow, pause_before: 0.4, name: c246, react: {mirai: {beat: tenderness}}, volume: quiet}
+  - {character: mirabo, line: "数字を出そうとしました。", beat: longing, emotion: loneliness, speed: slow, pause_before: 0.4, name: c247, react: {mirai: {beat: tenderness, mark: ？}}, volume: quiet}
+  - {character: mirai, line: "うん。", beat: approval, emotion: confidence, speed: natural, pause_before: 0.3, name: c248, react: {mirabo: {beat: longing}}}
+  - {character: mirabo, line: "この像には、比べる参照像がありません。", beat: shame, emotion: guilt, speed: slow, pause_before: 0.4, name: c249, volume: quiet}
+  - {character: mirabo, line: "正しさを外から確かめる基準が、僕にはありません。", beat: shame, emotion: guilt, speed: slow, pause_before: 0.12, name: c250, react: {mirai: {beat: doubt}}, volume: quiet}
+  - {character: mirabo, line: "分母が言えません。", beat: shame, emotion: guilt, speed: very_slow, pause_before: 0.5, name: c251, react: {mirai: {beat: tenderness}}, volume: quiet}
+  - {character: mirai, line: "出さなくていい。", beat: tenderness, emotion: calm, speed: slow, pause_before: 1.4, name: c252, react: {mirabo: {beat: relief}}, volume: quiet}
+  - {character: mirabo, line: "……はい。", beat: relief, emotion: joy, speed: slow, pause_before: 0.4, name: c253, react: {mirai: {beat: tenderness}}, volume: quiet}
+  - {character: mirai, line: "ミラボの画面の分母の欄に、横線が一本。", beat: awe, emotion: excitement, speed: slow, pause_before: 0.4, name: c254, react: {mirabo: {beat: relief}}, volume: quiet}
+  - {character: mirai, line: "数字ではない。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.4, name: c255, react: {mirabo: {beat: relief}}}
+  - {character: mirai, line: "分母が言えない、という印だ。", beat: tenderness, emotion: calm, speed: slow, pause_before: 0.5, name: c256, react: {mirabo: {beat: relief}}, volume: quiet}
+  - {character: mirai, line: "その横線を、自分から出したな。", beat: approval, emotion: confidence, speed: natural, pause_before: 0.4, name: c257, react: {mirabo: {beat: pride}}}
+  - {character: mirabo, line: "はい。", beat: pride, emotion: joy, speed: slow, pause_before: 0.4, name: c258, react: {mirai: {beat: approval}}, volume: quiet}
+  - {character: mirai, line: "……悪くない。", beat: approval, emotion: confidence, speed: slow, pause_before: 0.5, name: c259, react: {mirabo: {beat: relief}}, volume: quiet}
+  - {character: mirabo, line: "……はい。", beat: relief, emotion: joy, speed: slow, pause_before: 0.5, name: c260, react: {mirai: {beat: tenderness}}, volume: quiet}
+  - {character: mirai, line: "「精度が低い」の紙。まだ持ってる?", beat: curiosity, emotion: neutral, speed: slow, pause_before: 0.4, name: c261, react: {mirabo: {beat: fear}}}
+  - {character: mirabo, line: "……持っています。", beat: fear, emotion: fear, speed: fast, pause_before: 0.4, name: c262, react: {mirai: {beat: doubt}}, volume: quiet}
+  - {character: mirai, line: "鏡が削り損じた、という「たぶん」では足りない。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.4, name: c263, react: {mirabo: {beat: shame}}}
+  - {character: mirabo, line: "……はい。", beat: shame, emotion: guilt, speed: slow, pause_before: 0.4, name: c264, react: {mirai: {beat: resolve}}, volume: quiet}
+  - {character: mirai, line: "見せて。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.5, name: c265, react: {mirabo: {beat: fear}}}
+  - {character: mirabo, line: "これは、答えじゃない。答えを作る前の、証拠です。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.4, name: c266, react: {mirai: {beat: approval}}}
+  - {character: mirai, line: "知ってる。", beat: tenderness, emotion: calm, speed: slow, pause_before: 0.4, name: c267, react: {mirabo: {beat: doubt}}, volume: quiet}
+  - {character: mirabo, line: "出すと、僕が出してきた数字が、使えなくなります。", beat: fear, emotion: fear, speed: fast, pause_before: 0.4, name: c268, react: {mirai: {beat: doubt}}, volume: quiet}
+  - {character: mirai, line: "知ってる。", beat: tenderness, emotion: calm, speed: slow, pause_before: 0.4, name: c269, react: {mirabo: {beat: shame}}, volume: quiet}
+  - {character: mirai, line: "なぜ持ってた。", beat: doubt, emotion: neutral, speed: slow, pause_before: 0.5, name: c270, react: {mirabo: {beat: shame}}}
+  - {character: mirabo, line: "……捨てられませんでした。", beat: shame, emotion: guilt, speed: very_slow, pause_before: 0.5, name: c271, react: {mirai: {beat: tenderness}}, volume: quiet}
+  - {character: mirai, line: "なぜ。", beat: doubt, emotion: neutral, speed: slow, pause_before: 0.5, name: c272, react: {mirabo: {beat: fear}}}
+  - {character: mirabo, line: "読めば、僕の数字が最初から間違っていたと分かる。", beat: fear, emotion: fear, speed: slow, pause_before: 0.5, name: c273, volume: quiet}
+  - {character: mirabo, line: "それが怖くて、分からないままでいたかったんです。", beat: fear, emotion: fear, speed: slow, pause_before: 0.12, name: c274, react: {mirai: {beat: tenderness}}, volume: quiet}
+  - {character: mirai, line: "出して。", beat: tenderness, emotion: calm, speed: slow, pause_before: 1.6, name: c275, react: {mirabo: {beat: resolve}}, volume: quiet}
+  - {character: mirabo, line: "机の端ではなく。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.4, name: c276, react: {mirai: {beat: approval}}}
+  - {character: mirabo, line: "ここに置きます。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.5, name: c277, react: {mirai: {beat: approval}}}
+  - {character: mirai, line: "うん。", beat: approval, emotion: confidence, speed: natural, pause_before: 0.4, name: c278, react: {mirabo: {beat: relief}}}
+  - {character: mirai, line: "癖で、指で机を測ろうとして、やめた。", beat: shame, emotion: guilt, speed: slow, pause_before: 0.4, name: c279, react: {mirabo: {beat: doubt}}, volume: quiet}
+  - {character: mirai, line: "紙を取った。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.4, name: c280, react: {mirabo: {beat: fear}}}
+  - {character: mirai, line: "灯りにかざした。", beat: awe, emotion: excitement, speed: slow, pause_before: 0.5, name: c281, react: {mirabo: {beat: awe}}, volume: quiet}
+  - {character: mirai, line: "折れた端から、ラベルが浮いた。", beat: awe, emotion: excitement, speed: slow, pause_before: 0.4, name: c282, react: {mirabo: {beat: surprise}}}
+  - {character: mirai, line: "「精度が低い」の下から。", beat: awe, emotion: excitement, speed: slow, pause_before: 0.4, name: c283, react: {mirabo: {beat: awe}}, volume: quiet}
+  - {character: mirai, line: "線が出てきた。", beat: awe, emotion: excitement, speed: slow, pause_before: 0.5, name: c284, react: {mirabo: {beat: awe}}, volume: quiet}
+  - {character: mirai, line: "鏡の形の線。", beat: awe, emotion: excitement, speed: slow, pause_before: 0.4, name: c285, react: {mirabo: {beat: awe}}, volume: quiet}
+  - {character: mirai, line: "線は、縁が平らすぎると言っていた。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.4, name: c286, react: {mirabo: {beat: shame}}}
+  - {character: mirai, line: "その線が、ずっと言っていた。", beat: shame, emotion: guilt, speed: slow, pause_before: 0.5, name: c287, react: {mirabo: {beat: shame}}, volume: quiet}
+  - {character: mirai, line: "お前のラベルの下で、線は言っていた。", beat: shame, emotion: guilt, speed: slow, pause_before: 0.5, name: c288, react: {mirabo: {beat: shame}}, volume: quiet}
+  - {character: mirai, line: "聞こえていたか。", beat: tenderness, emotion: calm, speed: slow, pause_before: 0.6, name: c289, react: {mirabo: {beat: fear}}, volume: quiet}
+  - {character: mirabo, line: "……聞こえないふりをしていました。", beat: shame, emotion: guilt, speed: very_slow, pause_before: 0.5, name: c290, react: {mirai: {beat: tenderness}}, volume: quiet}
+  - {character: mirai, line: "うん。", beat: tenderness, emotion: calm, speed: slow, pause_before: 0.4, name: c291, react: {mirabo: {beat: relief}}, volume: quiet}
+  - {character: mirai, line: "ミラボの画面で、ラベルが「—」に変わった。", beat: awe, emotion: excitement, speed: slow, pause_before: 0.5, name: c292, react: {mirabo: {beat: relief}}, volume: quiet}
+  - {character: mirai, line: "これも数字ではない。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.4, name: c293, react: {mirabo: {beat: relief}}}
+  - {character: mirai, line: "僕も、あの検査を「精度が低い」と呼ぶ側にいた。", beat: shame, emotion: guilt, speed: slow, pause_before: 0.5, name: c294, react: {mirabo: {beat: shame}}, volume: quiet}
+  - {character: mirai, line: "今もいる。", beat: shame, emotion: guilt, speed: very_slow, pause_before: 0.6, name: c295, react: {mirabo: {beat: shame}}, volume: quiet}
+  - {character: mirabo, line: "鏡の形の線は、残します。数字にせず、線のまま。", beat: resolve, emotion: confidence, speed: slow, pause_before: 0.4, name: c296, react: {mirai: {beat: approval}}}
+  - {character: mirai, line: "うん。", beat: approval, emotion: calm, speed: natural, pause_before: 0.3, name: c297, react: {mirabo: {beat: relief}}}
+  - {character: mirabo, line: "……僕の数字、要りますか。", beat: longing, emotion: loneliness, speed: slow, pause_before: 0.5, name: c298, react: {mirai: {beat: tenderness}}, volume: quiet}
+  - {character: mirai, line: "いま出したのは、数字じゃない。", beat: tenderness, emotion: calm, speed: slow, pause_before: 0.5, name: c299, react: {mirabo: {beat: relief}}, volume: quiet}
+  - {character: mirabo, line: "はい。", beat: relief, emotion: joy, speed: slow, pause_before: 0.4, name: c300, react: {mirai: {beat: tenderness}}, volume: quiet}
+  - {character: mirai, line: "僕の机の端にも、紙がある。", beat: shame, emotion: guilt, speed: slow, pause_before: 0.4, name: c301, react: {mirabo: {beat: worry}}, volume: quiet}
+  - {character: mirai, line: "同じ班の人が書いた紙だ。", beat: shame, emotion: guilt, speed: slow, pause_before: 0.4, name: c302, react: {mirabo: {beat: worry}}, volume: quiet}
+  - {character: mirai, line: "僕は、読まなかった。", beat: shame, emotion: guilt, speed: very_slow, pause_before: 0.5, name: c303, react: {mirabo: {beat: shame}}, volume: quiet}
+  - {character: mirabo, line: "……取りに行きますか。", beat: longing, emotion: loneliness, speed: slow, pause_before: 0.5, name: c304, react: {mirai: {beat: worry}}, volume: quiet}
+  - {character: mirai, line: "行かない。", beat: shame, emotion: guilt, speed: slow, pause_before: 0.6, name: c305, react: {mirabo: {beat: surprise}}, volume: quiet}
+  - {character: mirabo, line: "……なぜですか。", beat: doubt, emotion: neutral, speed: slow, pause_before: 0.4, name: c306, react: {mirai: {beat: worry}}, volume: quiet}
+  - {character: mirai, line: "読むのが、怖い。", beat: worry, emotion: anxiety, speed: slow, pause_before: 0.6, name: c307, react: {mirabo: {beat: shame}}, volume: quiet}
+  - {character: mirai, line: "ミラボの画面の分母の欄に、また横線が一本。", beat: resolve, emotion: confidence, speed: slow, pause_before: 1.2, name: c308, react: {mirabo: {beat: shame}}, volume: quiet}
+  - {character: mirai, line: "表示は「—」のままだった。数字は、まだ出せない。", beat: shame, emotion: guilt, speed: very_slow, pause_before: 0.5, name: c309, react: {mirabo: {beat: shame}}, volume: quiet}

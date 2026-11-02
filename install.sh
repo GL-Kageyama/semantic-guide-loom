@@ -19,12 +19,14 @@ REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SKILLS_DIR="$REPO_DIR/skills"
 
 #: 入れる Skill の名。**`skills/` の下のディレクトリ名と一致する。**
-#: 入口（semantic-guide-loom）と、設計から焼くまでをつなぐ 5 つ。
+#: 入口（semantic-guide-loom）と、設計から焼くまでをつなぐ 7 つ。
 SKILLS=(
   semantic-guide-loom
   guide-design
   guide-cast
   guide-script
+  guide-viewer
+  guide-acting
   guide-reading
   guide-bgm
 )
