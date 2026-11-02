@@ -1,0 +1,33 @@
+name: chime
+metadata:
+  asset_type: sfx
+  kind: sfx
+  event: A single soft glass bell chime, warm and gentle, a clear ringing onset with
+    a natural decay, close and intimate, no music, no voice
+  prompt: A single soft glass bell chime, warm and gentle, a clear ringing onset with
+    a natural decay, close and intimate, no music, no voice
+  provider: stable_audio
+  sample_rate: 44100
+  channels: 2
+  duration: 1.45
+  created_at: '2026-10-31T00:22:47.730028+00:00'
+  edit: 生成音の打音は 1.55 秒にあった。assemble.py はチャイムを 1.4 秒に切って
+    置くため、打音ごと消える。1.55 秒から 1.45 秒を切り出し、打音を先頭にした。
+    音は同じ stable_audio の生成物（加工は切り出しだけ）。
+parameters:
+  version: 3
+  asset_type: sfx
+  provider: stable_audio
+  spec:
+    duration: 3.0
+    kind: sfx
+    event: A single soft glass bell chime, warm and gentle, a clear ringing onset
+      with a natural decay, close and intimate, no music, no voice
+    prompt: A single soft glass bell chime, warm and gentle, a clear ringing onset
+      with a natural decay, close and intimate, no music, no voice
+  seed: 1
+  duration: 3.0
+  sample_rate: 44100
+  sha1: ecd9bee46426
+  provider_settings:
+    steps: 100

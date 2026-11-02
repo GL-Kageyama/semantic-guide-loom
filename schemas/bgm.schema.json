@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/GL-Kageyama/semantic-guide-loom/schemas/bgm.schema.json",
+  "title": "bgm.yaml — 話に合わせた敷き音の意図",
+  "description": "projects/<作品>/bgm.yaml。台本の章・気分から決めた意図と、ミックスでの下げ幅を持つ。音そのものは semantic-audio-loom の MusicGen が作る。",
+  "type": "object",
+  "required": ["name", "prompt", "mix"],
+  "additionalProperties": true,
+  "properties": {
+    "name": {"type": "string", "minLength": 1, "description": "assets/bgm/<name>.wav。assemble.py は underlay を読む"},
+    "prompt": {"type": "string", "minLength": 1, "description": "MusicGen 用の英語。話の内容を音の言葉にしたもの"},
+    "mood": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "気分の語（英語）"
+    },
+    "situation": {"type": "string", "description": "この音が流れる状況（任意）"},
+    "provider": {"type": "string", "default": "musicgen"},
+    "duration": {
+      "anyOf": [{"type": "number", "exclusiveMinimum": 0}, {"const": "auto"}],
+      "description": "生成する尺。assemble が全体長へ継ぎ足すので 90 秒で足りる。作品が 90 秒未満のときだけ auto"
+    },
+    "segment_s": {"type": "number", "exclusiveMinimum": 0, "maximum": 30, "default": 30},
+    "seeds": {
+      "anyOf": [
+        {"const": "auto"},
+        {"type": "array", "items": {"type": "integer", "minimum": 0}}
+      ],
+      "description": "auto は prompt から決定的に作る"
+    },
+    "crossfade_s": {"type": "number", "minimum": 0, "default": 2.5},
+    "level_gain_db": {"type": "number", "default": 8.0},
+    "level_limit": {"type": "number", "exclusiveMinimum": 0, "maximum": 1.0, "default": 0.95},
+    "provider_settings": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "生成の設定（記録用）"
+    },
+    "mix": {
+      "type": "object",
+      "required": ["gain_db"],
+      "additionalProperties": true,
+      "properties": {
+        "gain_db": {"type": "number", "description": "会話 RMS の 13〜15 dB 下が目安"},
+        "duck": {
+          "type": "object",
+          "additionalProperties": {"type": "number"},
+          "properties": {
+            "threshold_db": {"type": "number"},
+            "depth_db": {"type": "number"},
+            "attack_s": {"type": "number"},
+            "release_s": {"type": "number"}
+          }
+        }
+      }
+    }
+  }
+}

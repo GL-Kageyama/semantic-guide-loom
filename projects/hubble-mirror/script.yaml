@@ -1,0 +1,169 @@
+# 解説動画『ハッブルの鏡 — 精度が高いと、正しいは、別』
+# ミライ（人）とミラボ（AIパートナー）の掛け合い。
+# 採用版は review/README.md の v1（評議会 平均 76.75）。
+#
+# 台詞の文割りは 台本.md のまま。27 字を超える 2 行だけ、意味の切れ目で cNNN を割った。
+# 読みは guide-reading が reading.yaml に持つ。字幕は line のまま。
+# 演技は効く欄だけ: 文末記号・speed・pause_before。
+# 章の頭は 1.6 秒（チャイムが 1.6 秒手前に鳴る）。
+
+name: hubble-mirror
+default_pause: 0.25
+cues:
+  # ── 序章 99.8%
+  - {character: mirai, line: "1990年4月24日。夜明け前。", speed: fast, pause_before: 1.6, name: c001}
+  - {character: mirai, line: "ケネディ宇宙センター。第39B発射台。", speed: fast, pause_before: 0.35, name: c002}
+  - {character: mirai, line: "貨物室に、望遠鏡が、寝ている。", speed: fast, pause_before: 0.28, name: c003}
+  - {character: mirai, line: "鏡の直径は、2.4メートル。", speed: fast, pause_before: 0.28, name: c004}
+  - {character: mirai, line: "ハッブル。宇宙に、目を、置く。", speed: fast, pause_before: 0.5, name: c005}
+  - {character: mirabo, line: "ミライさん。これ、壊れた鏡を直した話、ですよね。", speed: very_fast, pause_before: 0.35, name: c006}
+  - {character: mirai, line: "そう。壊れた鏡を、直した話だ。", speed: fast, pause_before: 0.28, name: c007}
+  - {character: mirabo, line: "では、最初に、現在地を。", speed: very_fast, pause_before: 0.35, name: c008}
+  - {character: mirabo, line: "99.8%です。", speed: very_fast, pause_before: 0.35, name: c009}
+  - {character: mirai, line: "何の、99.8%?", speed: fast, pause_before: 0.28, name: c010}
+  - {character: mirabo, line: "分母は、検査の一致率です。", speed: very_fast, pause_before: 0.35, name: c011}
+  - {character: mirai, line: "検査の、一致。", speed: fast, pause_before: 0.28, name: c012}
+  - {character: mirabo, line: "はい。その上で、99.8%。", speed: very_fast, pause_before: 0.35, name: c013}
+  - {character: mirai, line: "その検査は、何を、測っていた?", speed: fast, pause_before: 0.28, name: c014}
+  - {character: mirai, line: "まだ、いい。", speed: fast, pause_before: 1.0, name: c016}
+  - {character: mirai, line: "打ち上げは、うまくいった。", speed: fast, pause_before: 0.35, name: c017}
+  - {character: mirai, line: "4月25日。軌道に、入った。", speed: fast, pause_before: 0.28, name: c018}
+
+  # ── 第1章 ぼやけた、最初の一枚
+  - {character: mirai, line: "5月。ファーストライト。", speed: fast, pause_before: 1.6, name: c019}
+  - {character: mirai, line: "星を、見た。", speed: fast, pause_before: 0.28, name: c020}
+  - {character: mirai, line: "点に、ならない。", speed: fast, pause_before: 0.28, name: c021}
+  - {character: mirai, line: "にじむ。広がる。", speed: fast, pause_before: 0.5, name: c022}
+  - {character: mirabo, line: "97%です。", speed: very_fast, pause_before: 0.35, name: c023}
+  - {character: mirai, line: "何の、97%?", speed: fast, pause_before: 0.28, name: c024}
+  - {character: mirabo, line: "……研磨の、精度です。", speed: very_fast, pause_before: 0.5, name: c025}
+  - {character: mirai, line: "うん。", speed: fast, pause_before: 0.28, name: c026}
+  - {character: mirai, line: "じゃあ、鏡は、削り損じた。", speed: fast, pause_before: 0.28, name: c027}
+  - {character: mirabo, line: "はい。たぶん。", speed: very_fast, pause_before: 0.35, name: c028}
+  - {character: mirai, line: "設計より、縁が、2.2マイクロメートル、平ら。", speed: fast, pause_before: 0.28, name: c029}
+  - {character: mirabo, line: "2.2、マイクロメートル。", speed: very_fast, pause_before: 0.35, name: c030}
+  - {character: mirai, line: "鏡は、壊れていない。", speed: fast, pause_before: 0.5, name: c031}
+  - {character: mirabo, line: "では。", speed: very_fast, pause_before: 0.35, name: c032}
+  - {character: mirai, line: "形が、違う。", speed: fast, pause_before: 0.5, name: c033}
+  - {character: mirabo, line: "僕の97%は、どこを、測っていたんでしょう。", speed: very_fast, pause_before: 1.0, name: c035}
+  - {character: mirai, line: "削った側だ。", speed: fast, pause_before: 0.28, name: c036}
+  - {character: mirai, line: "では、なぜ、その形の違いに、気づかなかった?", speed: fast, pause_before: 1.0, name: c038}
+  - {character: mirai, line: "誰も、気づかなかった。", speed: fast, pause_before: 0.5, name: c039}
+  - {character: mirabo, line: "……誰も。", speed: very_fast, pause_before: 0.6, name: c040}
+
+  # ── 第2章 1.3ミリ
+  - {character: mirai, line: "鏡は、光で、測る。", speed: fast, pause_before: 1.6, name: c041}
+  - {character: mirai, line: "null corrector。検査装置。", speed: fast, pause_before: 0.28, name: c042}
+  - {character: mirai, line: "装置の中に、レンズが、一枚。", speed: fast, pause_before: 0.28, name: c043}
+  - {character: mirabo, line: "装置の、自己一致率です。99.4%。", speed: very_fast, pause_before: 0.35, name: c044}
+  - {character: mirai, line: "自分と、自分が、一致した。", speed: fast, pause_before: 0.28, name: c045}
+  - {character: mirabo, line: "はい。99.4%。", speed: very_fast, pause_before: 0.35, name: c046}
+  - {character: mirai, line: "今までで、一番、高い。", speed: fast, pause_before: 0.5, name: c047}
+  - {character: mirabo, line: "はい。今の、ところ。", speed: very_fast, pause_before: 0.35, name: c048}
+  - {character: mirai, line: "そのレンズの、間隔が。", speed: fast, pause_before: 0.28, name: c049}
+  - {character: mirai, line: "1.3ミリ、ずれていた。", speed: fast, pause_before: 0.6, name: c050}
+  - {character: mirabo, line: "1.3、ミリ。", speed: very_fast, pause_before: 0.35, name: c051}
+  - {character: mirai, line: "測る側が、ずれていた。", speed: fast, pause_before: 0.5, name: c052}
+  - {character: mirai, line: "だから、測られる側の形が、狂って、見えた。", speed: fast, pause_before: 0.28, name: c053}
+  - {character: mirabo, line: "99.4%は、間違った装置が、", speed: very_fast, pause_before: 0.35, name: c054}
+  - {character: mirabo, line: "自分自身と、一致した度合い。", speed: very_fast, pause_before: 0.2, name: c055}
+  - {character: mirai, line: "そう。", speed: fast, pause_before: 0.28, name: c056}
+  - {character: mirabo, line: "僕は、正しい問いに、答えていました。", speed: very_fast, pause_before: 1.0, name: c058}
+  - {character: mirai, line: "うん。", speed: fast, pause_before: 0.28, name: c059}
+  - {character: mirabo, line: "別の、問いに。", speed: very_fast, pause_before: 0.5, name: c060}
+  - {character: mirai, line: "そう。", speed: fast, pause_before: 0.28, name: c061}
+  - {character: mirai, line: "別の検査が、あった。", speed: fast, pause_before: 0.5, name: c062}
+  - {character: mirai, line: "屈折式。鏡を、反対側から、見る。", speed: fast, pause_before: 0.28, name: c063}
+  - {character: mirai, line: "その検査は、言った。鏡が、おかしい。", speed: fast, pause_before: 0.28, name: c064}
+  - {character: mirabo, line: "退けられました。", speed: very_fast, pause_before: 0.35, name: c065}
+  - {character: mirai, line: "そう。", speed: fast, pause_before: 0.28, name: c066}
+  - {character: mirabo, line: "理由は、精度、ですか。", speed: very_fast, pause_before: 0.35, name: c067}
+  - {character: mirai, line: "装置の、種類だ。", speed: fast, pause_before: 0.5, name: c068}
+  - {character: mirai, line: "反射の方が、正確だと、信じていた。", speed: fast, pause_before: 0.5, name: c069}
+  - {character: mirai, line: "机の端に、紙が、置かれた。", speed: fast, pause_before: 1.0, name: c071}
+  - {character: mirai, line: "曲線の、刷られた紙。", speed: fast, pause_before: 0.28, name: c072}
+  - {character: mirai, line: "誰かが、それを、机の端へ、やった。", speed: fast, pause_before: 0.35, name: c073}
+  - {character: mirai, line: "読み上げない。", speed: fast, pause_before: 0.5, name: c074}
+  - {character: mirai, line: "画面に、ラベルだけ、出た。", speed: fast, pause_before: 0.28, name: c075}
+  - {character: mirai, line: "「精度が低い」。", speed: fast, pause_before: 0.6, name: c076}
+  - {character: mirabo, line: "……僕が、出しました。", speed: very_fast, pause_before: 0.5, name: c077}
+  - {character: mirai, line: "うん。", speed: fast, pause_before: 0.28, name: c078}
+  - {character: mirai, line: "1.3ミリは、プラスチックの定規でも、測れた。", speed: fast, pause_before: 1.0, name: c080}
+  - {character: mirabo, line: "定規、ですか。", speed: very_fast, pause_before: 0.35, name: c081}
+  - {character: mirai, line: "安い、定規。", speed: fast, pause_before: 0.5, name: c082}
+  - {character: mirabo, line: "92%です。", speed: very_fast, pause_before: 0.35, name: c083}
+  - {character: mirabo, line: "……いえ。", speed: very_fast, pause_before: 0.45, name: c084}
+  - {character: mirabo, line: "分母が、言えません。", speed: very_fast, pause_before: 0.5, name: c085}
+  - {character: mirai, line: "言えるまで、待つ。", speed: fast, pause_before: 0.5, name: c086}
+  - {character: mirabo, line: "待たなくて、いい、です。", speed: very_fast, pause_before: 0.35, name: c087}
+  - {character: mirabo, line: "以後、単一の百分率は、出しません。", speed: very_fast, pause_before: 0.4, name: c088}
+  - {character: mirai, line: "いい。", speed: fast, pause_before: 0.28, name: c089}
+  - {character: mirabo, line: "現在地が、分かりにくく、なります。", speed: very_fast, pause_before: 0.35, name: c090}
+  - {character: mirai, line: "分かる。", speed: fast, pause_before: 0.28, name: c091}
+  - {character: mirabo, line: "それでも、です。", speed: very_fast, pause_before: 0.35, name: c092}
+  - {character: mirai, line: "ああ。", speed: fast, pause_before: 0.5, name: c093}
+  - {character: mirai, line: "研磨の記録は、残って——", speed: fast, pause_before: 0.4, name: c094}
+  - {character: mirai, line: "……やめとく。", speed: fast, pause_before: 0.6, name: c095}
+  - {character: mirabo, line: "なぜ、ですか。", speed: very_fast, pause_before: 0.35, name: c096}
+  - {character: mirai, line: "今、僕が、言いかけた。", speed: fast, pause_before: 0.35, name: c097}
+  - {character: mirai, line: "その言い方が、嫌だった。", speed: fast, pause_before: 0.5, name: c098}
+  - {character: mirai, line: "同じ、形だ。", speed: fast, pause_before: 1.0, name: c100}
+  - {character: mirabo, line: "紙と、ですか。", speed: very_fast, pause_before: 0.35, name: c101}
+  - {character: mirai, line: "うん。", speed: fast, pause_before: 0.28, name: c102}
+  - {character: mirai, line: "進もう。", speed: fast, pause_before: 0.6, name: c103}
+
+  # ── 第3章 眼鏡をかけた望遠鏡
+  - {character: mirai, line: "1993年12月。STS-61。", speed: fast, pause_before: 1.6, name: c104}
+  - {character: mirai, line: "エンデバーが、追いついた。", speed: fast, pause_before: 0.35, name: c105}
+  - {character: mirai, line: "5回の、船外活動。", speed: fast, pause_before: 0.28, name: c106}
+  - {character: mirabo, line: "鏡を、削り直す、ですか。", speed: very_fast, pause_before: 0.35, name: c107}
+  - {character: mirai, line: "削れない。鏡は、もう、宇宙に、ある。", speed: fast, pause_before: 0.28, name: c108}
+  - {character: mirabo, line: "では。", speed: very_fast, pause_before: 0.35, name: c109}
+  - {character: mirai, line: "眼鏡を、かける。", speed: fast, pause_before: 0.5, name: c110}
+  - {character: mirai, line: "COSTAR。光の、入り口。", speed: fast, pause_before: 0.28, name: c111}
+  - {character: mirai, line: "誤差の形を、知っている。", speed: fast, pause_before: 0.28, name: c112}
+  - {character: mirai, line: "だから、引ける。", speed: fast, pause_before: 0.5, name: c113}
+  - {character: mirabo, line: "鏡を、直すのでは、なく。", speed: very_fast, pause_before: 0.35, name: c114}
+  - {character: mirai, line: "そう。", speed: fast, pause_before: 0.28, name: c115}
+  - {character: mirai, line: "1994年1月。", speed: fast, pause_before: 0.5, name: c116}
+  - {character: mirai, line: "補正後の、最初の一枚。", speed: fast, pause_before: 0.28, name: c117}
+  - {character: mirai, line: "同じ、天域。", speed: fast, pause_before: 0.28, name: c118}
+  - {character: mirai, line: "前と、後。", speed: fast, pause_before: 0.6, name: c119}
+  - {character: mirabo, line: "分母は、補正後の像と、", speed: very_fast, pause_before: 0.35, name: c120}
+  - {character: mirabo, line: "二つの参照像、それぞれの一致率。", speed: very_fast, pause_before: 0.2, name: c121}
+  - {character: mirabo, line: "78から、91%。", speed: very_fast, pause_before: 0.35, name: c122}
+  - {character: mirai, line: "幅が、ある。", speed: fast, pause_before: 0.28, name: c123}
+  - {character: mirabo, line: "二つの参照が、一致しません。", speed: very_fast, pause_before: 0.35, name: c124}
+  - {character: mirai, line: "そうか。", speed: fast, pause_before: 0.35, name: c125}
+  - {character: mirai, line: "机の上。補正後の像の、刷り物。", speed: fast, pause_before: 1.0, name: c127}
+  - {character: mirai, line: "……その下に、まだ、ある。", speed: fast, pause_before: 0.6, name: c128}
+
+  # ── 終章 十日の露出
+  - {character: mirai, line: "1995年12月。", speed: fast, pause_before: 2.2, name: c130}
+  - {character: mirai, line: "ディープフィールド。", speed: fast, pause_before: 0.35, name: c131}
+  - {character: mirai, line: "小さな、天域。", speed: fast, pause_before: 0.28, name: c132}
+  - {character: mirai, line: "10日間。342回の、露出。", speed: fast, pause_before: 0.35, name: c133}
+  - {character: mirai, line: "小さな天域に、銀河が、数千。", speed: fast, pause_before: 0.6, name: c134}
+  - {character: mirabo, line: "補正は、完璧では、ありません。", speed: very_fast, pause_before: 0.35, name: c135}
+  - {character: mirai, line: "うん。", speed: fast, pause_before: 0.28, name: c136}
+  - {character: mirabo, line: "隅は、まだ、歪みます。", speed: very_fast, pause_before: 0.35, name: c137}
+  - {character: mirai, line: "うん。", speed: fast, pause_before: 0.28, name: c138}
+  - {character: mirabo, line: "ミライさん。", speed: very_fast, pause_before: 0.5, name: c139}
+  - {character: mirabo, line: "現在地を、出そうと、しました。", speed: very_fast, pause_before: 0.35, name: c140}
+  - {character: mirai, line: "うん。", speed: fast, pause_before: 0.28, name: c141}
+  - {character: mirabo, line: "分母が、言えません。", speed: very_fast, pause_before: 0.5, name: c142}
+  - {character: mirai, line: "画面に、横線が、一本。", speed: fast, pause_before: 1.6, name: c145}
+  - {character: mirai, line: "数字では、ない。", speed: fast, pause_before: 0.28, name: c146}
+  - {character: mirai, line: "自分から、出したな。", speed: fast, pause_before: 0.5, name: c147}
+  - {character: mirabo, line: "はい。", speed: very_fast, pause_before: 0.35, name: c148}
+  - {character: mirai, line: "その紙、まだ、持ってる?", speed: fast, pause_before: 0.4, name: c149}
+  - {character: mirabo, line: "持って、います。……たぶん。", speed: very_fast, pause_before: 0.35, name: c150}
+  - {character: mirai, line: "見せて。", speed: fast, pause_before: 0.5, name: c151}
+  - {character: mirai, line: "ラベルが、浮いた。", speed: fast, pause_before: 0.95, name: c153}
+  - {character: mirai, line: "「精度が低い」の、下から。", speed: fast, pause_before: 0.28, name: c154}
+  - {character: mirai, line: "線が、出てきた。", speed: fast, pause_before: 0.4, name: c155}
+  - {character: mirai, line: "鏡の、形の、線。", speed: fast, pause_before: 0.28, name: c156}
+  - {character: mirai, line: "それが、ずっと、言っていた。", speed: fast, pause_before: 0.6, name: c157}
+  - {character: mirai, line: "ラベルが、「—」に、変わった。", speed: fast, pause_before: 1.0, name: c159}
+  - {character: mirai, line: "僕も、そう呼ぶ側に、いた。", speed: fast, pause_before: 0.5, name: c160}
+  - {character: mirai, line: "表示は、「—」のまま、だった。", speed: fast, pause_before: 1.2, name: c162}

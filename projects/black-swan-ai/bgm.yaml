@@ -1,0 +1,33 @@
+# 敷き音の意図。engine/bgm.py が読み、MusicGen が音にする。
+#
+# 台本の章（黒い白鳥 → 三つの条件 → 壊れた常識 → 灰色のサイ → 檻の外 → 味見 →
+# 探しに行く）に合わせて、静かで、少しだけ不安のある持続音を敷く。
+# 音と音の間に無音ができないよう、パッドを選ぶ（スパースなピアノは沈む）。
+
+name: underlay
+prompt: A continuous soft ambient pad, warm evolving chords, very subtle felt piano
+  notes, calm and curious, slight unease, steady background texture, no drums,
+  no vocals, low dynamic
+mood: [calm, curious, unease]
+situation: A quiet explainer about black swans, prediction, and AI, with a slight
+  unease underneath.
+
+# assemble.py が全体長へ継ぎ足すので、90 秒で足りる。
+duration: 90
+segment_s: 30
+seeds: [21, 22, 23]
+crossfade_s: 2.5
+level_gain_db: 8.0
+level_limit: 0.95
+provider_settings:
+  tokens: 1500
+  guidance_scale: 3.0
+
+# 会話の約 13 dB 下。ducking は浅く（深いと BGM が消える）。
+mix:
+  gain_db: -8.0
+  duck:
+    threshold_db: -30.0
+    depth_db: 3.0
+    attack_s: 0.03
+    release_s: 0.45

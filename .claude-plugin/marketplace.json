@@ -4,14 +4,14 @@
     "name": "GL-Kageyama"
   },
   "metadata": {
-    "description": "Semantic Guide Loom — 意味のある台本から説明の映像を焼くエンジン。掛け合いの胸像型と語りのスライド型を持ち、台本・型・キャストを分けて、同じ台本を別の絵にできる。"
+    "description": "Semantic Guide Loom — 意味のある台本から説明の映像を焼くエンジン。設計・人物・台本の評価・読み・敷き音の 5 スキルと、掛け合いの胸像型・語りのスライド型を持つ。台本・型・キャストを分けて、同じ台本を別の絵にできる。"
   },
   "plugins": [
     {
       "name": "semantic-guide-loom",
       "source": "./",
-      "description": "Semantic Guide Loom — 説明の映像を、台本から決定的に組み立てる。5 段（素材・声・組み立て・時刻・描画）を通し、時刻は mix.yaml の音の実尺から取る。型（template）は絵の側だけを持ち、意味は作品が持つ。AI の映像生成を使わないので、同じ台本から同じ絵が出る。",
-      "version": "0.2.0",
+      "description": "Semantic Guide Loom — 説明の映像を、台本から決定的に組み立てる。設計から台本の評価の往復、読み（reading.yaml）、敷き音（bgm.yaml）までを 6 つのスキルでつなぎ、5 段（素材・声・組み立て・時刻・描画）を通す。時刻は mix.yaml の音の実尺から取る。型（template）は絵の側だけを持ち、意味は作品が持つ。AI の映像生成を使わないので、同じ台本から同じ絵が出る。",
+      "version": "0.3.0",
       "author": {
         "name": "GL-Kageyama"
       },
@@ -23,6 +23,9 @@
         "presentation",
         "slide",
         "dialogue",
+        "script",
+        "persona",
+        "bgm",
         "skill"
       ],
       "category": "workflow",
@@ -31,7 +34,9 @@
         "video",
         "slide",
         "dialogue",
-        "narration"
+        "narration",
+        "script",
+        "bgm"
       ],
       "strict": false
     }

@@ -1,0 +1,48 @@
+name: c089
+metadata:
+  kind: cue
+  name: c089
+  character: mirai
+  sample_rate: 24000
+  duration_sec: 1.823
+  created_at: '2026-11-02T17:56:09.274288+00:00'
+parameters:
+  version: 2
+  provider: tsukasa
+  voice_profile:
+    character: ミライ
+    name_reading: みらい
+    reference_audio: gen_female_light
+    voice:
+      age: young_adult
+      gender: female
+      pitch: medium_high
+      texture: warm
+      breathiness: slight
+      resonance: chest
+  performance_spec:
+    emotion:
+      primary: neutral
+      intensity: 0.0
+    loudness:
+      effort: normal
+      volume: normal
+    prosody:
+      pace: fast
+      pitch: natural
+      intonation: neutral
+      breathiness: none
+      pauses: []
+      emphasis: []
+      breath: []
+    subtext: ''
+  dialogue: いい。
+  reading: ''
+  seed: 1
+  alpha: 0.35
+  beta: 0.7
+  rate_of_speech: 1.12
+  sha1: f7d4af7d69b5
+  name: c089
+  character: mirai
+  pause_before: 0.28

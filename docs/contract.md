@@ -15,6 +15,15 @@ video.yaml ──(template / cast の名)─────────────
                                           (render) ──> projects/<作品>/renders/<name>.mp4
 ```
 
+この 4 つに**任意の 3 つ**が重なる。どれも無ければ、従来の 5 段のまま動く。
+
+```
+reading.yaml ──(reading.py stage)──> build/<作品>/script.yaml + video.yaml
+                                          ↑ line を読みに、display に原表記
+bgm.yaml ──(bgm.py generate / mix)──> assets/bgm/<name>.wav + mix.yaml の bed と duck
+persona.yaml ──(人が読む。engine は check と brief だけ)──> 台本の言葉
+```
+
 **向きが一方通行であることが、この機構の要**。絵は音の実尺を読む。音は絵を知らない。
 ゆえに台本を書き換えても、絵の側の時刻を手で直す必要はない。
 
@@ -42,7 +51,106 @@ cues:
   `docs/resolve.md`「どの欄が、声を動かすか」を見る）
 
 ⚠️ **読み違えは `line` のルビで塞ぐ。** 工房の記法 `漢字《かな》`。読みだけ仮名になり、
-台詞と字幕は原表記のまま残る。
+台詞と字幕は原表記のまま残る。ただし**読みを本気で直すなら `reading.yaml`**（下記）。
+両方を同じ作品に混ぜない。ルビは `reading.yaml` の無い作品のための後方互換。
+
+---
+
+## `reading.yaml` — 読み（作品が持つ。任意）
+
+声に読ませる文だけを持つ。**字幕・章題・`timeline.json` の `text` には渡さない。**
+
+```yaml
+name: black-swan-ai
+readings:
+  c001: "みらいさん。『ぶらっくすわん』って、くろいはくちょうのこと、ですよね？"
+  c250: "にせんにじゅうにねんじゅういちがつみっか"
+needs_review: [c007, c250]      # 数字・%・Latin を残した cue（人が決める）
+```
+
+- `readings` … cue の名 → 声に読ませる文（かな。外来語はカタカナ可）
+- 句読点・`……`・`？`・`！` は残す（間と抑揚がそこから作られる）
+- `engine/reading.py draft` が下書きし、`audit` が残存漢字・数字・`%`・Latin を見る
+- 形は `schemas/reading.schema.json`
+
+### 読みの舞台 — `build/<作品>/`
+
+`make.sh` は `reading.yaml` があるときだけ、2 の前に `reading.py stage` を呼ぶ。
+
+```
+projects/<作品>/script.yaml ─┐
+projects/<作品>/video.yaml  ─┤ stage
+projects/<作品>/reading.yaml ┘
+        ↓
+build/<作品>/script.yaml   line = readings[cue]
+build/<作品>/video.yaml    display[cue] = 元の display か line（原表記）
+build/<作品>/chapters.yaml / voice_fx.yaml / sfx.yaml / bed_mute.yaml
+```
+
+**作品のファイルは書き換えない。** 声は舞台の `line` から、字幕は舞台の `display` から
+出る。`export_timeline.py` の `name` と `render.py` の資材の道が揃うよう、舞台は
+`build/<作品名>/` に作る（`<作品名>` は作品ディレクトリの basename）。
+
+`--prune-voice` は `assets/voice/<cue>.params.yaml` の `reading` か `dialogue` が
+新しい読みと違う cue の WAV だけを消す。`make.sh` は声を作る回だけ付ける。
+
+---
+
+## `bgm.yaml` — 敷き音の意図（作品が持つ。任意）
+
+話から決めた意図と、ミックスの値を持つ。**音そのものは `assets/bgm/<name>.wav`。**
+
+```yaml
+name: underlay
+prompt: "A continuous soft ambient pad, warm evolving chords, ... no drums, no vocals"
+mood: [calm, curious, unease]
+duration: 90            # assemble が全体長へ継ぎ足すので 90 秒で足りる
+segment_s: 30           # MusicGen の上限
+seeds: auto             # prompt の SHA1 から決定的に。または整数の配列
+crossfade_s: 2.5
+level_gain_db: 8.0
+level_limit: 0.95
+provider_settings: {tokens: 1500, guidance_scale: 3.0}
+mix:
+  gain_db: -8.0
+  duck: {threshold_db: -30, depth_db: 3.0, attack_s: 0.03, release_s: 0.45}
+```
+
+- `engine/bgm.py generate` は `assets/bgm/<name>.params.yaml` の `input_sha1` を見て、
+  入力が変わったときだけ作り直す。`--force` / `BGM=force` は常に作り直す
+- `engine/bgm.py mix` は `assemble.py` が書いた `mix.yaml` の bed `gain_db` と
+  `duck` を `mix.gain_db` / `mix.duck` へ直し、SAL の `bin/mix.py` で混ぜる
+- **`mix.yaml` を手で直さない。** 直しても次の `make.sh` で戻る。正本は `bgm.yaml`
+- 形は `schemas/bgm.schema.json`
+
+---
+
+## `persona.yaml` — 言葉の人物（配布する）
+
+`cast.yaml` が**画面の誰か**、`persona.yaml` が**言葉の誰か**。話し方・長さ・癖・
+避けること・弧を持つ。絵の欄（表情・口・立ち位置）は持たない。
+
+```yaml
+name: mirai-mirabo
+characters:
+  - id: mirai
+    name: ミライ
+    role: 問いを立て、具体で崩す
+    speech: {register: 常体, length: {min: 8, max: 25},
+             tics: [うん, そう。, 見てな。], avoids: [です・ます]}
+```
+
+- `engine/persona.py check` が cast との id の一致と必須欄を見る
+- `engine/persona.py brief` が台本を書く前の人物票を出す
+- `engine/persona.py analyze --project` が既存台本から話し方の実測を出す
+- 形は `schemas/persona.schema.json`
+
+---
+
+## `design.md` — 設計（作品が持つ。任意）
+
+台本を書く前の設計。題材・視聴者・約束・事実の柱・章・二人の役割・最後に残す問い。
+**形は決めない**（Markdown）。`guide-design` の `references/design-sheet.md` が型。
 
 ---
 
@@ -85,6 +193,9 @@ cue の名の配列。`assemble.py` がこの cue の手前にチャイムを置
 
 `assemble.py` が `script.yaml` と `voice/` の実尺から書く。
 `timeline.json` の時刻は、**このファイルの voice stem の `start` と WAV の長さ**から取る。
+
+`bgm.yaml` がある作品では、`bgm.py mix` が bed の `gain_db` と `duck` を
+`bgm.yaml` の `mix` で上書きする。**それも含めて `mix.yaml` は派生**で、手で編集しない。
 
 ⚠️ **`pause_before` を足し直して時刻を作らない。** `assemble.py` は各キュー頭尾の
 無音を切るので、足し直すと 1 コマずつずれる。
@@ -137,12 +248,15 @@ cue の名の配列。`assemble.py` がこの cue の手前にチャイムを置
 
 ```
 references/templates/<型>/template.yaml   型（配布する）
-characters/<キャスト>.cast.yaml            キャスト（配布する）
+characters/<キャスト>.cast.yaml            キャスト・画面（配布する）
+characters/<キャスト>.persona.yaml         キャスト・言葉（配布する）
 references/sheets/                        表情シート（入力。Git LFS）
-projects/<作品>/                            台本（script / video / chapters / voice_fx）
+projects/<作品>/                            台本（script / video / chapters / voice_fx /
+                                          design / reading / bgm / review）
 projects/<作品>/assets/                     音の資材（voice / sfx / bgm）— Git LFS
 projects/<作品>/renders/                    焼いた動画 — 成果物。Git LFS
-build/<作品>/                               中間物（assets, audio, timeline.json）— .gitignore
+build/<作品>/                               中間物（assets, audio, 読みの舞台, timeline.json）
+                                          — .gitignore
 ```
 
 **入れるのは「入力」と「成果物」、入れないのは「中間物」。** 表情シートも声も入力

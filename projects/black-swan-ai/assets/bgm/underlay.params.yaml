@@ -28,3 +28,6 @@ parameters:
   provider_settings:
     tokens: 1500
     guidance_scale: 3.0
+# bgm.yaml の入力（prompt・シード・分割・利得）に対応する指紋。
+# engine/bgm.py generate がこれを見て、作り直しが要るか決める。
+input_sha1: d19d7dcb9b6a

@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/GL-Kageyama/semantic-guide-loom/schemas/persona.schema.json",
+  "title": "persona.yaml — 言葉の側のキャスト",
+  "description": "characters/<name>.persona.yaml。cast.yaml が「画面の誰か」を持つに対し、こちらは「どう話すか」を持つ。台本を書くときに読む。役者はデータであり、コードに固有名を書かない。",
+  "type": "object",
+  "required": ["name", "characters"],
+  "additionalProperties": true,
+  "properties": {
+    "name": {"type": "string", "minLength": 1},
+    "description": {"type": "string"},
+    "source": {"type": "string", "description": "この設定を抽出した台本・資料"},
+    "pair": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "engine": {"type": "string", "description": "二人の掛け合いを動かす仕組み"},
+        "rule": {"type": "string", "description": "守るべき関係の一行"}
+      }
+    },
+    "characters": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/character"}
+    }
+  },
+  "$defs": {
+    "character": {
+      "type": "object",
+      "required": ["id", "name", "role", "speech"],
+      "additionalProperties": true,
+      "properties": {
+        "id": {"type": "string", "minLength": 1, "description": "cast.yaml と script.yaml の character と一致させる"},
+        "name": {"type": "string"},
+        "role": {"type": "string", "description": "物語・説明の中での役割"},
+        "wants": {"type": "string"},
+        "fears": {"type": "string"},
+        "stance": {"type": "string", "description": "世界・相手に対する構え"},
+        "speech": {
+          "type": "object",
+          "required": ["register"],
+          "additionalProperties": true,
+          "properties": {
+            "register": {"type": "string", "description": "常体・丁寧・混在など"},
+            "length": {"type": "string", "description": "一文の長さの目安"},
+            "tics": {
+              "type": "array",
+              "items": {"type": "string"},
+              "description": "繰り返してよい言い回し"
+            },
+            "avoids": {
+              "type": "array",
+              "items": {"type": "string"},
+              "description": "この人物に言わせないこと"
+            }
+          }
+        },
+        "moves": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "場面で取る手"
+        },
+        "arc": {"type": "string"}
+      }
+    }
+  }
+}

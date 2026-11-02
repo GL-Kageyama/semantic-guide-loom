@@ -1,0 +1,48 @@
+name: c003
+metadata:
+  kind: cue
+  name: c003
+  character: mirai
+  sample_rate: 24000
+  duration_sec: 3.273
+  created_at: '2026-11-02T17:55:21.503489+00:00'
+parameters:
+  version: 2
+  provider: tsukasa
+  voice_profile:
+    character: ミライ
+    name_reading: みらい
+    reference_audio: gen_female_light
+    voice:
+      age: young_adult
+      gender: female
+      pitch: medium_high
+      texture: warm
+      breathiness: slight
+      resonance: chest
+  performance_spec:
+    emotion:
+      primary: neutral
+      intensity: 0.0
+    loudness:
+      effort: normal
+      volume: normal
+    prosody:
+      pace: fast
+      pitch: natural
+      intonation: neutral
+      breathiness: none
+      pauses: []
+      emphasis: []
+      breath: []
+    subtext: ''
+  dialogue: かもつしつに、ぼうえんきょうが、ねている。
+  reading: ''
+  seed: 1
+  alpha: 0.35
+  beta: 0.7
+  rate_of_speech: 1.12
+  sha1: d54531aafb2b
+  name: c003
+  character: mirai
+  pause_before: 0.28

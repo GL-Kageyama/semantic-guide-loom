@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/GL-Kageyama/semantic-guide-loom/schemas/reading.schema.json",
+  "title": "reading.yaml — 声に読ませる読み",
+  "description": "projects/<作品>/reading.yaml。字幕・台詞の表記は script.yaml / video.yaml が持ち、ここには声に読ませるかなだけを持つ。音の生成専用で、絵には渡さない。",
+  "type": "object",
+  "required": ["readings"],
+  "additionalProperties": true,
+  "properties": {
+    "name": {"type": "string", "description": "作品名（任意）"},
+    "notes": {"type": "string", "description": "読みの決め方・迷った箇所（任意）"},
+    "readings": {
+      "type": "object",
+      "description": "cue 名 → 読み。script.yaml の cue 名と一致させる。",
+      "additionalProperties": {"type": "string", "minLength": 1}
+    },
+    "needs_review": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "draft が数字・%・Latin を残した cue。人が決める。"
+    }
+  }
+}

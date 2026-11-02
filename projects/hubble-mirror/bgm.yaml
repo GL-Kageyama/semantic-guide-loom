@@ -1,0 +1,27 @@
+# 敷き音の意図。engine/bgm.py が 30 秒 × 3 本を作り、クロスフェードして 1 本にする。
+# 話: 測る側の 1.3 ミリのずれ。冷たいが、怖くはない。静かに広い。
+name: underlay
+prompt: A continuous slow ambient pad, cold glassy timbre, wide and deep reverb, a faint
+  orbital hum underneath, sparse distant piano harmonics without melody, calm and curious
+  with a quiet unease, steady background texture, no drums, no vocals, no lead line, low dynamic
+mood:
+- calm
+- curious
+- vast
+- unease
+duration: 90
+segment_s: 30
+seeds: auto
+crossfade_s: 2.5
+level_gain_db: 8.0
+level_limit: 0.95
+provider_settings:
+  tokens: 1500
+  guidance_scale: 3.0
+mix:
+  gain_db: -8.0
+  duck:
+    threshold_db: -30.0
+    depth_db: 3.0
+    attack_s: 0.03
+    release_s: 0.45

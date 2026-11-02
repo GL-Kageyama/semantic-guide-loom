@@ -29,4 +29,4 @@
 
 - **声・効果音・BGM** … 作品ごとの入力。`projects/<作品>/assets/`（Git LFS）。
 - **台本** … 作品が持つ。`projects/<作品>/script.yaml`（音）と `video.yaml`（絵）。
-- **キャスト** … `characters/<名前>.cast.yaml`。誰が画面に居るかは作品ではなく配役。
+- **キャスト** … `characters/<名前>.cast.yaml`（画面）と `persona.yaml`（言葉）。

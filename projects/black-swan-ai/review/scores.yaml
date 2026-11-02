@@ -1,0 +1,69 @@
+# 評議会の採点。engine/review.py record が reports/ から作る。
+# 平均は 8 次元の primary_score。採用は人が決め、adopted に残す。
+threshold: 60.0
+adopted: v7
+versions:
+  v4:
+    mean: 57.13
+    count: 8
+    scores:
+      admiration: 56
+      anti-generic-story-filter: 32
+      emotional-power: 61
+      hook: 67
+      plot-architecture: 65
+      prose-style: 51
+      reader-experience: 62
+      theme-resonance: 63
+  v5:
+    mean: null
+    count: 0
+    scores: {}
+  v6:
+    mean: 64.5
+    count: 8
+    scores:
+      admiration: 70
+      anti-generic-story-filter: 46
+      emotional-power: 64
+      hook: 84
+      plot-architecture: 67
+      prose-style: 63
+      reader-experience: 64
+      theme-resonance: 58
+  v6-single-model:
+    mean: 62.38
+    count: 8
+    scores:
+      admiration: 61
+      anti-generic-story-filter: 50
+      emotional-power: 65
+      hook: 69
+      plot-architecture: 68
+      prose-style: 55
+      reader-experience: 64
+      theme-resonance: 67
+  v7:
+    mean: 67.25
+    count: 8
+    scores:
+      admiration: 70
+      anti-generic-story-filter: 48
+      emotional-power: 71
+      hook: 75
+      plot-architecture: 72
+      prose-style: 57
+      reader-experience: 71
+      theme-resonance: 74
+  v9:
+    mean: 60.63
+    count: 8
+    scores:
+      admiration: 64
+      anti-generic-story-filter: 37
+      emotional-power: 62
+      hook: 63
+      plot-architecture: 64
+      prose-style: 61
+      reader-experience: 64
+      theme-resonance: 70

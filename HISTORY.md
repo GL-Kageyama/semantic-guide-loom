@@ -1,5 +1,87 @@
 # HISTORY
 
+## 0.3.0 — 2026-11-03 台本づくりを、設計から焼くまでつないだ
+
+black-swan-ai を作ったとき、台本の設計・生成と評価の往復・キャラの一貫性・読みの補正・
+BGM の生成は、すべて会話の中の手作業だった。同じやり方を次の作品でも再現できるよう、
+**判断を伴う工程を 5 つのスキル**に、**決定的にできる工程を `engine/` の道具**に分けた。
+
+**engine は LLM を呼ばない。** 同じ入力から同じ結果が出る。
+
+### 足したスキル
+
+| スキル | 何をするか | 作るもの |
+| --- | --- | --- |
+| `guide-design` | 本文より先に設計。評議会の plot モードで 60 超 | `design.md` |
+| `guide-cast` | 採用台本から言葉の設定を起こす | `characters/<キャスト>.persona.yaml` |
+| `guide-script` | 生成 → 8 次元評価 → 改稿の往復。60 超の最高版を採用 | `台本.md` → `script.yaml` ほか |
+| `guide-reading` | 声に読ませる読みを、表示文と分けて持つ | `reading.yaml` |
+| `guide-bgm` | 話に合わせて敷き音を毎回作る | `bgm.yaml` → `assets/bgm/underlay.wav` |
+
+入口（`semantic-guide-loom`）に全体の流れと各スキルへの導線を足した。
+`install.sh` の `SKILLS` と `.claude/skills/` の symlink も 6 本になった。
+
+### 足した道具
+
+| 道具 | 何をするか |
+| --- | --- |
+| `engine/persona.py` | `check`（cast との id・必須欄）・`brief`（人物票）・`analyze`（既存台本の話し方の実測） |
+| `engine/review.py` | `table`（版ごとの平均の推移）・`record`（`review/scores.yaml`）・`validate`（評価 JSON） |
+| `engine/reading.py` | `draft`（fugashi でかなに開く）・`audit`（残存漢字・数字・phonemize）・`stage`（ビルド用の舞台） |
+| `engine/scriptcheck.py` | cue・章・display・読みの参照切れ、27 字超の字幕、声を持たない行、チャイムの欠け |
+| `engine/bgm.py` | `suggest`（意図の下書き）・`generate`（MusicGen 30 秒 × 3 + クロスフェード）・`mix`（bed と duck の上書き） |
+
+`schemas/` に `persona` / `reading` / `bgm` を足し、`tools/check_layout.py` の検査対象に
+入れた。`characters/mirai-mirabo.persona.yaml` と `projects/black-swan-ai/bgm.yaml` を
+加えた（前者は採用版 v7 から、後者は既存の underlay と同じ意図）。
+
+### 決めたこと
+
+- **ペルソナとキャストを分ける。** `cast.yaml` は画面の誰か、`persona.yaml` は言葉の誰か。
+  cast の役目は増やさない。
+- **読みは `build/<作品>/` の舞台で差し替える。** 作品の `script.yaml` / `video.yaml` は
+  書き換えない。`line` に読み、`display` に原表記を残す。
+- **BGM の正本は `bgm.yaml`。** `assemble.py` の bed −30 dB / duck 14 dB を
+  `bgm.py mix` が上書きする。`mix.yaml` を手で直しても次の `make.sh` で戻る。
+- **`reading.yaml` は既存作品にまだ足さない。** 足すと全 cue の声を焼き直すことになる。
+  仕組みの検証は黒鳥のコピーに対する `draft` / `stage` で行った。
+- **`semantic-audio-loom` の中身は書き換えない。** BGM は `AudioAssetEngine` と
+  `bin/mix.py` をパスのまま呼ぶ。
+
+### 検算
+
+| 確かめたこと | 結果 |
+| --- | --- |
+| `engine/review.py table --project projects/black-swan-ai` | v4 57.13 / v6 64.50 / v6-single-model 62.38 / v7 67.25 採用 / v9 60.63 |
+| `engine/persona.py analyze` | mirai 206 cue・平均 14.2 字、mirabo 122 cue・平均 13.4 字 |
+| `engine/reading.py draft`（黒鳥のコピー） | 328 cue、`needs_review` 63（Latin の AI を含むため） |
+| `engine/reading.py audit --phonemize --cue c027` | 「世界の見方」→ `せかいのみかた`（`sekai no mikata`） |
+| `engine/reading.py stage` | 297 行を読みに差し替え、`display` 328 件を補完。作品ファイルは不変 |
+| `engine/bgm.py generate --dry-run` | seeds `[21, 22, 23]`、30 秒 × 3 |
+| `SKIP_VOICE=1 SKIP_ASSETS=1 ./engine/make.sh projects/black-swan-ai --still 40` | 336 stems / 904.0 秒、`renders/black-swan-ai.wav` 903.989 秒、bed −8 dB / duck 3 dB |
+| `engine/scriptcheck.py --project projects/black-swan-ai` | 328 cue / 7 章、エラーなし（27 字超の字幕 14 件は警告） |
+
+⚠️ **`review/README.md` の v4 を 57.12 → 57.13 に直した。** 8 次元の和 457 を 8 で
+割ると 57.125。`engine/review.py` は `Decimal` の四捨五入で 57.13 を出す。
+v7 67.25 と v9 60.63 は元の表と一致した。
+
+### 通しのサンプル（`projects/hubble-mirror/`）で塞いだ穴
+
+設計 → 人物 → 台本 → 読み → BGM → `make.sh` を 1 本通し、機構の穴を 4 つ直した。
+サンプルは『ハッブルの鏡』（148 cue / 5 章 / 398.07 秒）。台本は評議会 8 次元の
+平均 76.75 で v1 を採用（`review/README.md`）。
+
+| 見つけたこと | 原因 | 直した所 |
+| --- | --- | --- |
+| 声の生成が `IndexError` で止まる | `……` だけの cue は声を持たず、Tsukasa の推論で長さ 0 になる | 沈黙は次の cue の `pause_before` に畳む。`scriptcheck.py` が声を持たない行をエラーにする。`guide-script` の「YAML へ起こす」にも規則を足した |
+| 組み立てが `wave.Error: unknown format: 3` で止まる | `engine/bgm.py` が float32 で書き、`assemble.py` の `wave` が読めない | 書き出しを PCM 16 bit に固定し、形式を `input_sha1` に含めた（古い WAV は作り直される） |
+| 章の頭が無音 | `chapters.yaml` があるのに `assets/sfx/chime.wav` が無く、`assemble.py` が黙って飛ばす | サンプルにチャイムを置き、`scriptcheck.py` が無いとき警告するようにした |
+| チャイムを置いても聞こえない | 生成音の打音が 1.55 秒にあり、`assemble.py` の `shorten`（1.4 秒）で切れて打音が消える | 打音を先頭へ切り出した `chime.wav` にした（`chime.params.yaml` に記録）。`semantic-guide-loom` の嵌まりどころにも書いた |
+
+実測: 敷き音は会話より 13.3 dB 下（ギャップ中央値 −32.3 dB 対 声 −19.0 dB、
+`gain_db: -8` / duck 3 dB）、ピーク −0.4 dBFS。章の印は 5 か所とも −10 dB 前後まで
+上がる（敷き音 −20 dB の上へ約 10 dB）。映像は 1280×720 / 30 fps、字幕は最長 24 字。
+
 ## 0.2.0 — 2026-11-01 置き場を姉妹リポジトリに揃えた
 
 `semantic-audio-loom` / `semantic-visual-loom` と同じ名のものが同じ場所に在る形へ寄せた。
