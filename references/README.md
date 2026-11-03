@@ -13,7 +13,7 @@
 `engine/layouts/<layout>.py` に在る（`template.yaml` の `layout:` が名乗る）。
 
 色違い・位置違いの型は YAML を 1 枚足すだけで済む。並べ方が違う型は
-モジュールを 1 本足す。手順と欄の一覧は [../docs/template-contract.md](../docs/template-contract.md)、
+モジュールを 1 本足す。手順と欄の一覧は [../docs/templates.md](../docs/templates.md)、
 形は [../schemas/template.schema.json](../schemas/template.schema.json)。
 
 **型は作品を知らない。** 特定の題・人数・章の数を型に書かない。

@@ -150,7 +150,7 @@ chapters:
 - **色違い・位置違いなら YAML を 1 枚**足すだけ（`layout:` は既存のまま）
 - **並べ方が違うならモジュールを 1 本**足す（`build(tl, cast, fps, W, H)` を出す）
 
-手順と欄の一覧は `docs/template-contract.md`。
+手順と欄の一覧は `docs/templates.md`。
 
 ## 嵌まりどころ
 
@@ -166,7 +166,7 @@ chapters:
 - **中黒を入れすぎない。** 「オープン・エス・エス・エル」は不自然。
 - **演技は「効く欄」だけで振る。** 声は `speed`・`pause_before`・`volume`。
   `emotion` は粗いスイッチ。`pitch`・`intonation`・`intensity` は音が動かない
-  （semantic-audio-loom の `docs/resolve.md`）。**感情の主役は `face` と
+  （`semantic-audio-loom/docs/resolve.md`）。**感情の主役は `face` と
   `react`（聞き手の顔・記号）と `motion_gain`（身体の揺れ）。** 顔は `beat` から
   人物票を引いて決まる（`export_timeline.py` が解決。`face` は明示が優先）。
   まばたきはしない。

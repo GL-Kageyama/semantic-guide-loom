@@ -1,0 +1,10 @@
+# コア（描画・時刻・検査・スキーマ検証）。
+# 声の生成（Tsukasa）は semantic-audio-loom 側の環境。
+Pillow>=10.0
+numpy>=1.24
+scipy>=1.10          # semantic-audio-loom の組み立て（assemble.py）が使う
+PyYAML>=6.0
+jsonschema>=4.18     # tools/check_layout.py の schemas 検証
+
+# テスト（tests/）。描画・実行には要らない。
+pytest>=7.0

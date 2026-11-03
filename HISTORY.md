@@ -1,5 +1,19 @@
 # HISTORY
 
+## 0.5.1 — 2026-11-03 文書を 13 本に分け、テストを足した
+
+`docs/contract.md` と `docs/template-contract.md` の 2 本を、1 トピック 1 ファイルの
+13 本へ分けた（usage / placement / design / research / script / video / reading /
+bgm / characters / acting / templates / timeline / review）。索引は README の
+「ドキュメント」表。README は現在の情報だけにし、細部は docs へ移した。冒頭は
+「テーマが、台本になり、映像になる。」の 3 行。
+
+- `requirements.txt` を足した（Pillow / numpy / scipy / PyYAML / jsonschema / pytest）。
+- `tests/` を足した。`conftest.py` とテスト 8 本・33 件。`export_timeline` の実尺、`reading.py stage` が
+  作品を書き換えないこと、`scriptcheck` の参照切れ、`bgm` の決定性、
+  `render.py --still` の同一性、文書の相対リンクと索引を見る。
+- 実測（2026-11-03）: `pytest -q` 33 passed（2.93 秒）、`tools/check_layout.py` rc 0。
+
 ## 0.5.0 — 2026-11-03 中央パネルの詳細カードと、調査から作る仕組み
 
 `dialogue-bust` の中央パネルは、章の名・語（`term`）・章題・小さな言葉（`key`）を

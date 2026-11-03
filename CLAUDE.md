@@ -6,7 +6,9 @@
 履歴は `HISTORY.md` に一元化する。README / docs には**現在の情報だけ**を書く。
 
 - `README.md` … 何をするものか・構成・使い方（概要のみ）
-- `docs/` … 契約（`contract.md`）と型の作り方（`template-contract.md`）
+- `docs/` … 1 トピック 1 ファイル（`usage` / `placement` / `design` / `research` /
+  `script` / `video` / `reading` / `bgm` / `characters` / `acting` / `templates` /
+  `timeline` / `review`）。索引は README の「ドキュメント」表
 - `HISTORY.md` … 開発履歴と実測値
 - 設計の背景・未裁定の事項は**このリポジトリの外**（作者の手元）。配布物からリンクしない。
 
