@@ -2,15 +2,9 @@
 
 | ファイル | 何 | どこから |
 | --- | --- | --- |
-| `repo-hero.png` | README の頭の絵 | `projects/cyber-basics` の 29.0 秒のコマ |
+| `repo-hero.png` | README の頭の絵 | `distill-essence-engine/examples/semantic-guide-loom/semantic-guide-loom-hero/` の合成プロンプトから、外で描いた hero |
 
-**外で描いた絵ではない。** このリポジトリが焼く動画の、そのままの 1 コマである。
-作り直すときは：
-
-```bash
-SKIP_VOICE=1 ./engine/make.sh projects/cyber-basics          # timeline.json を作る
-<venv> engine/render.py --timeline build/cyber-basics/timeline.json \
-    --still 29 --out assets/repo-hero.png
-```
+**この絵は、リポジトリが焼く動画のコマではない。** リポジトリの本質を 1 枚に蒸留した hero で、
+`prompt.md` の英語プロンプトを外部の画像生成に渡して描く。
 
 ⚠️ `*.png` は Git LFS に載る（`.gitattributes`）。

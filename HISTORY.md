@@ -1,5 +1,20 @@
 # HISTORY
 
+## 0.5.2 — 2026-11-03 README の頭の絵を、リポジトリの顔として描き直した
+
+`assets/repo-hero.png` は `projects/cyber-basics` の 29.0 秒のコマだった。リポジトリの
+本質を 1 枚に畳んだ hero に差し替えた。絵は
+`distill-essence-engine/examples/semantic-guide-loom/semantic-guide-loom-hero/` の
+`input.md` / `prompt.md` から外で描いた。
+
+- 中央のシンボルは**目盛りと型抜き**。声の波形が目盛りを刻み（時刻は音の実尺から）、
+  穴の形が違う 2 枚の型抜きが同じ台本から別の絵を出し、抜けた光が切り離された
+  1 コマを結ぶ（1 コマは状態を持たない）。白熱は枠の中の一点だけ。
+- 姉妹 hero と同じ 4 色（紺・金橙・白熱・薄灰）。織機（`semantic-audio-loom`）と
+  制作台帳（`semantic-visual-loom`）は既に使われているので、名前の比喩でなく機構から起こした。
+- `assets/README.md` の由来を「外で描いた hero」に書き換えた。
+- 実測（2026-11-03）: 1672×941。`git check-attr` で `filter: lfs`。
+
 ## 0.5.1 — 2026-11-03 文書を 13 本に分け、テストを足した
 
 `docs/contract.md` と `docs/template-contract.md` の 2 本を、1 トピック 1 ファイルの
