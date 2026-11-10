@@ -1,0 +1,27 @@
+# この作品のための敷き音。既製曲は使わない。
+name: underlay
+prompt: A continuous warm analog pad, slow evolving chords that move from major to
+  minor, soft felt piano overtones, a quiet workshop at night, patient and curious,
+  a faint electrical hum, restrained wonder, steady background texture, no drums,
+  no vocals, no melody hooks, low dynamic range
+mood:
+- calm
+- curious
+- tender
+- unease
+duration: 90
+segment_s: 30
+seeds: auto
+crossfade_s: 2.5
+level_gain_db: 8.0
+level_limit: 0.95
+provider_settings:
+  tokens: 1500
+  guidance_scale: 3.0
+mix:
+  gain_db: -8.0
+  duck:
+    threshold_db: -30.0
+    depth_db: 3.5
+    attack_s: 0.03
+    release_s: 0.5

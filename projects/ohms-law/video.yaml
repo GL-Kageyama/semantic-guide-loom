@@ -1,0 +1,167 @@
+# 映像側の台本（音には渡さない）。
+title: オームの法則
+subtitle: 抵抗は、一定か
+channel: MIRAI × MIRABO
+template: dialogue-bust
+cast: mirai-mirabo
+chapters:
+  c001:
+    label: 序章
+    title: 三つ、置く
+    term: 予測
+    key: "同じ式で、\n二つは、違った。"
+    details:
+    - cue: c021
+      head: 抵抗器
+      lines:
+      - 2Vで 0.20A
+      - 4Vで 0.40A
+      - 電流は2倍
+      - ※説明用の例
+      fact: in-work-demo
+    - cue: c027
+      head: 電球
+      lines:
+      - 1Vと 2Vをかける
+      - 電流は2倍にならない
+      - 電球は、比例しない
+      fact: in-work-lamp
+  c038:
+    label: 第1章
+    title: 三つの量
+    term: 抵抗
+    key: "式は、R を\n決めただけ。"
+    details:
+    - cue: c039
+      head: 三つの量
+      lines:
+      - 電圧 V（ボルト）
+      - 電流 I（アンペア）
+      - 抵抗 R（オーム）
+      fact: resistance-definition
+    - cue: c047
+      head: 1オーム
+      lines:
+      - 1Vで 1Aが流れる
+      - 1Ω = 1V/A
+      fact: resistance-definition
+    - cue: c050
+      head: 計算例
+      lines:
+      - 6Vの電池
+      - 3Ωの抵抗
+      - 電流は 2A
+      - ※説明用の例
+      fact: in-work-example
+  c067:
+    label: 第2章
+    title: 直線になる条件
+    term: 比例
+    key: "R は、\n一定か。"
+    details:
+    - cue: c068
+      head: 測定
+      lines:
+      - 1V → 0.10A
+      - 3V → 0.30A
+      - 5V → 0.50A
+      - どれも 10Ω（例）
+      fact: in-work-demo
+    - cue: c086
+      head: オームの実験
+      lines:
+      - 1826年
+      - 銅線 2〜130インチ
+      - 熱電対
+      - ねじり秤
+      fact: ohm-1826
+    - cue: c101
+      head: オーム抵抗
+      lines:
+      - 電圧を変えても
+      - V/I が同じ
+      - R が一定
+      fact: ohmic-material
+  c120:
+    label: 第3章
+    title: 同じ電球なのに
+    term: 温度
+    key: "壊れては\nいない。"
+    details:
+    - cue: c121
+      head: 電球のグラフ
+      lines:
+      - 電圧を上げる
+      - 電流は比例より遅い
+      - R が上がる
+      fact: lamp-hot-cold
+    - cue: c135
+      head: 冷間と点灯
+      lines:
+      - 冷間 13.9Ω
+      - 点灯 71.3Ω
+      - 約5倍
+      - ある電球の例
+      fact: lamp-hot-cold
+  c163:
+    label: 第4章
+    title: 抵抗を、入れる
+    term: 直列
+    key: "電流を、\n決めるのは。"
+    details:
+    - cue: c164
+      head: LED
+      lines:
+      - 向きがある
+      - 閾値まで流れない
+      - 超えると急に流れる
+      fact: led-nonohmic
+    - cue: c185
+      head: 直列抵抗
+      lines:
+      - 9Vの電源
+      - Vf 2V
+      - 目標 20mA
+      - 350Ω
+      fact: in-work-led-example
+  c211:
+    label: 終章
+    title: スイッチを、入れる
+    term: 単位
+    key: "測ってから、\n決める。"
+    details:
+    - cue: c213
+      head: オーム
+      lines:
+      - 1827年 本
+      - 1841年 コプリーメダル
+      - 14年後
+      fact: ohm-1827-book
+    - cue: c217
+      head: 単位
+      lines:
+      - 1881年
+      - オームが単位に
+      - 1827年から54年
+      - 水銀柱の抵抗
+      fact: ohm-unit-1881
+    - cue: c236
+      head: まとめ
+      lines:
+      - 式は R を決める
+      - R が一定かは物質
+      - 温度で R が変わる
+      fact: in-work-summary
+    - cue: c257
+      head: 読み違い
+      lines:
+      - 計算 350Ω
+      - 実測 3.5kΩ
+      - 10倍
+      fact: in-work-resistor-mixup
+    - cue: c265
+      head: 妹の返事
+      lines:
+      - 知ってた
+      - 言ったら、直さないでしょ
+      fact: in-work-sister

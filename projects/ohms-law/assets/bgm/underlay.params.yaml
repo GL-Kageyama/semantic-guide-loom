@@ -1,0 +1,43 @@
+# engine/bgm.py generate が書く（入力が変わると作り直す）
+name: underlay
+metadata:
+  asset_type: bgm
+  prompt: A continuous warm analog pad, slow evolving chords that move from major
+    to minor, soft felt piano overtones, a quiet workshop at night, patient and curious,
+    a faint electrical hum, restrained wonder, steady background texture, no drums,
+    no vocals, no melody hooks, low dynamic range
+  provider: musicgen
+  sample_rate: 44100
+  channels: 1
+  duration: 84.82
+  seeds: &id001
+  - 257852714
+  - 1738607193
+  - 2018645949
+  crossfade_s: 2.5
+  level: +8 dB、ピークを 0.95 でリミット
+parameters:
+  version: 3
+  asset_type: bgm
+  provider: musicgen
+  spec:
+    duration: 30.0
+    prompt: A continuous warm analog pad, slow evolving chords that move from major
+      to minor, soft felt piano overtones, a quiet workshop at night, patient and
+      curious, a faint electrical hum, restrained wonder, steady background texture,
+      no drums, no vocals, no melody hooks, low dynamic range
+    mood:
+    - calm
+    - curious
+    - tender
+    - unease
+  seeds: *id001
+  crossfade_s: 2.5
+  level_gain_db: 8.0
+  level_limit: 0.95
+  duration: 84.82
+  sample_rate: 44100
+  provider_settings:
+    tokens: 1500
+    guidance_scale: 3.0
+input_sha1: 6954b264d562

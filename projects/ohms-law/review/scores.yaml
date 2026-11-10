@@ -1,0 +1,103 @@
+# 評議会の採点。engine/review.py record が reports/ から作る。
+# 平均は版ごとの次元（評価者）の primary_score。採用は人が決め、adopted に残す。
+threshold: 60.0
+adopted: v7
+versions:
+  v1:
+    mean: 50.8
+    count: 10
+    scores:
+      admiration: 68
+      anti-generic-story-filter: 40
+      character-depth: 24
+      character-role: 40
+      emotional-power: 39
+      hook: 58
+      plot-architecture: 66
+      prose-style: 58
+      reader-experience: 55
+      theme-resonance: 60
+  v2:
+    mean: 45.5
+    count: 10
+    scores:
+      admiration: 47
+      anti-generic-story-filter: 32
+      character-depth: 22
+      character-role: 38
+      emotional-power: 55
+      hook: 52
+      plot-architecture: 50
+      prose-style: 55
+      reader-experience: 52
+      theme-resonance: 52
+  v3:
+    mean: 50.6
+    count: 10
+    scores:
+      admiration: 60
+      anti-generic-story-filter: 46
+      character-depth: 20
+      character-role: 55
+      emotional-power: 55
+      hook: 63
+      plot-architecture: 55
+      prose-style: 44
+      reader-experience: 61
+      theme-resonance: 47
+  v4:
+    mean: 54.2
+    count: 10
+    scores:
+      admiration: 62
+      anti-generic-story-filter: 48
+      character-depth: 38
+      character-role: 58
+      emotional-power: 50
+      hook: 67
+      plot-architecture: 62
+      prose-style: 54
+      reader-experience: 42
+      theme-resonance: 61
+  v5:
+    mean: 54.8
+    count: 10
+    scores:
+      admiration: 69
+      anti-generic-story-filter: 41
+      character-depth: 43
+      character-role: 55
+      emotional-power: 64
+      hook: 56
+      plot-architecture: 58
+      prose-style: 56
+      reader-experience: 53
+      theme-resonance: 53
+  v6:
+    mean: 63.2
+    count: 10
+    scores:
+      admiration: 62
+      anti-generic-story-filter: 65
+      character-depth: 51
+      character-role: 73
+      emotional-power: 65
+      hook: 61
+      plot-architecture: 64
+      prose-style: 57
+      reader-experience: 67
+      theme-resonance: 67
+  v7:
+    mean: 60.1
+    count: 10
+    scores:
+      admiration: 57
+      anti-generic-story-filter: 43
+      character-depth: 46
+      character-role: 63
+      emotional-power: 60
+      hook: 65
+      plot-architecture: 74
+      prose-style: 60
+      reader-experience: 65
+      theme-resonance: 68

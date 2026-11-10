@@ -1,0 +1,128 @@
+facts:
+- id: ohm-law-statement
+  statement: 温度が変わらなければ、導体を流れる電流は電圧に比例する。比例定数が抵抗 R で、V = R I と書ける。
+  sources: [openstax-ohms-law, hyperphysics-ohmlaw]
+  confidence: high
+  used_by: [c074, c075, c076, c093]
+- id: resistance-definition
+  statement: 抵抗は R = V/I で定義される。1Ω は、1V の電圧で 1A の電流が流れる抵抗（1Ω = 1V/A）。
+  sources: [openstax-ohms-law, hyperphysics-ohmlaw]
+  confidence: high
+  used_by: [c044, c045, c046, c047, c049, c098, c099, c185, c186, c187, c188, c189,
+    c190, c191, c231]
+- id: ohmic-material
+  statement: 抵抗が電圧や電流によらず一定な物質をオーム物質といい、オームの法則が成り立つ抵抗をオーム抵抗という。オームの法則はすべての物質に成り立つわけではない。
+  sources: [openstax-ohms-law, hyperphysics-ohmlaw]
+  confidence: high
+  used_by: [c101, c102, c103, c105, c106, c107, c147, c148, c160, c234, c236]
+- id: metal-tempcoef
+  statement: 金属の抵抗は、温度が上がると増える（正の温度係数）。タングステンの温度係数は約4.5×10⁻³/℃（1℃あたり約0.45%）。
+  sources: [hyperphysics-tempcoef, openstax-power]
+  confidence: high
+  used_by: [c125, c127, c128, c130, c131, c133, c134, c151, c153, c231]
+- id: lamp-hot-cold
+  statement: 白熱電球のフィラメントは点灯時に高温になり、抵抗は冷間の約5倍になる。一つの電球の測定例では、冷間13.9Ω、点灯71.3Ω（約5.1倍）。
+  sources: [ac-bordeaux-lamp, openstax-power]
+  confidence: medium
+  used_by: [c135, c136, c137, c138, c139]
+  note: 13.9Ω / 71.3Ω は一つの電球の測定例。すべての電球の値ではない。
+- id: ohm-1826
+  statement: 1826年、オームは長さ2〜130インチの8本の銅線を順に回路へ入れ、銅・ビスマス熱電対を電源に、ねじり秤で電流の強さを測った。関係は X
+    = a/(b+x) で表され、現代の I = U/(Ri+R) に対応する。
+  sources: [scielo-ohm-1826]
+  confidence: high
+  used_by: [c086, c087, c088, c089, c225, c226]
+  note: 現代のボルト・アンペアに換算した絶対値は台本で使わない。
+- id: ohm-1827-book
+  statement: 1827年、オームは『Die galvanische Kette, mathematisch bearbeitet』を出版し、電気回路の理論をまとめた。当時は広く読まれず、大きな公的評価は1841年まで待つことになった。
+  sources: [ethw-ohm, science-museum-ohm]
+  confidence: high
+  used_by: [c211, c213, c214]
+- id: ohm-copley
+  statement: 1841年、王立協会はオームにコプリーメダルを贈った（1827年の本から14年）。1842年5月5日、外国人会員に選ばれた。
+  sources: [royal-society-ohm, ethw-ohm]
+  confidence: high
+  used_by: [c215, c216]
+- id: ohm-unit-1881
+  statement: 1881年、パリの国際電気会議は、オームを水銀柱の抵抗として表すことを勧告し、アンペア・クーロン・ファラドを実用単位として採択した（1827年の本から54年）。
+  sources: [ethw-si-units]
+  confidence: high
+  used_by: [c217, c218, c219]
+  note: 水銀柱の具体的な長さは1884年の委員会で106cmとされた。台本では1881年の採択までにする。
+- id: ohm-teacher
+  statement: オームは1817年からケルンのイエズス会ギムナジウムで数学と物理を教え、その実験室で研究した。
+  sources: [ethw-ohm]
+  confidence: high
+  used_by: [c211, c212]
+- id: led-nonohmic
+  statement: LED はダイオードで、順方向の閾値まではほとんど電流が流れず、閾値を超えると電流が急激に増える。逆方向にはほとんど流れない。オームの法則に従わない。
+  sources: [makeabilitylab-led]
+  confidence: high
+  used_by: [c163, c164, c165, c166, c167, c168, c169, c170, c171, c173, c175]
+- id: led-series-resistor
+  statement: LED の電流を決めるには、直列に抵抗を入れる。抵抗値は R = (電源電圧 − LEDの順方向電圧) / 目標電流 で求める。抵抗を入れないと電流が過大になり、LED
+    が壊れる。
+  sources: [makeabilitylab-led, openstax-series-parallel]
+  confidence: high
+  used_by: [c174, c175, c176, c179, c180, c181, c182, c183, c184, c185, c186, c187,
+    c188, c189, c190, c191, c192, c193, c196, c197, c199, c200, c201, c202,
+    c253, c254, c255, c256, c257, c258, c259, c260, c261, c262, c263]
+- id: series-current-same
+  statement: 直列回路では、どの抵抗にも同じ電流が流れ、電圧は分かれる。合成抵抗は和になる。
+  sources: [openstax-series-parallel]
+  confidence: high
+  used_by: [c197]
+- id: in-work-demo
+  statement: 抵抗器の測定値（2V/0.20A、4V/0.40A、1V/0.10A、3V/0.30A、5V/0.50A、R=10Ω）は、説明のために置いた代表値。実際の測定値ではない。
+  sources: [ohms-law-script]
+  confidence: high
+  used_by: [c022, c023, c024, c067, c068, c069, c070, c071, c072]
+  note: カードには「例」と明記する。
+- id: in-work-lamp
+  statement: 序章の電球の実演では、電流の数値を出さず「2倍にならない」だけを言う。数値は第3章の外部の測定例（13.9Ω→71.3Ω）で補う。
+  sources: [ohms-law-script]
+  confidence: high
+  used_by: [c027, c028, c029, c030, c031, c036]
+- id: in-work-example
+  statement: 6Vの電池に3Ωの抵抗をつなぐと2A、3Ωに2A流れると6V。説明用の代表値。
+  sources: [ohms-law-script]
+  confidence: high
+  used_by: [c050, c051, c052, c053, c054]
+  note: オームの法則の三つの形を確かめるための例。実際の測定値ではない。
+- id: in-work-led-example
+  statement: 9Vの電源、LEDの順方向電圧2V、目標電流20mAのとき、直列抵抗は (9−2)/0.02 = 350Ω。説明用の例。
+  sources: [makeabilitylab-led, ohms-law-script]
+  confidence: high
+  used_by: [c179, c180, c181, c182, c183, c184, c185, c186, c187, c188, c189, c190,
+    c191, c192, c193]
+  note: Makeability Lab の例（9V、Vf=2V、If=20mA → 350Ω）に合わせた。
+- id: in-work-lamp-inrush
+  statement: 冷えているときの抵抗が低いので、点灯した瞬間は定常より大きな電流が流れる。冷間13.9Ωと点灯71.3Ωの比からの帰結で、実測値ではない。
+  sources: [ac-bordeaux-lamp]
+  confidence: medium
+  used_by: [c139, c140, c141, c142]
+  note: 実測ではなく、冷間抵抗と点灯抵抗の比からの帰結。
+- id: in-work-resistor-mixup
+  statement: 組み上げた常夜灯で抵抗を測ると3.5kΩで、計算した350Ωの10倍だった。色の帯が似た抵抗を掴んでいた。350Ωに替えると点いた。作品内の出来事で、実際の測定値ではない。
+  sources: [ohms-law-script]
+  confidence: high
+  used_by: [c256, c257, c258, c259, c260, c261, c262, c263]
+  note: 第三者が再現するための値ではない。色帯の読み違いという筋書きのための設定。
+- id: in-work-summary
+  statement: 'まとめカード: R = V/I は定義、オームの法則は R が一定という経験則、金属の R は温度で変わる。声では列挙せず、カードで残す。'
+  sources: [openstax-ohms-law, hyperphysics-ohmlaw, hyperphysics-tempcoef]
+  confidence: high
+  used_by: [c234, c236]
+  note: 第1章・第2章・第3章で言ったことの要約。新しい事実ではない。
+- id: in-work-sister
+  statement: 妹の常夜灯を壊したことを隠している。妹から「まだ？」と連絡が来て、ミライは「明日、直す」と書いて消す。直した後、妹は「知ってた」「言ったら、直さないでしょ」と返す。ミライは「生きているうちに、渡したい」と言い、最後に「要らなかった。でも、測るのは、要った」とまとめる。
+  sources: [ohms-law-script]
+  confidence: high
+  used_by: [c108, c109, c110, c111, c112, c113, c114, c115, c116, c117, c118, c119,
+    c220, c221, c222, c264, c265, c266, c267, c268, c269, c270, c271, c272, c273]
+- id: mext-ohm-unit
+  statement: 中学校学習指導要領の第2学年では、金属線に加わる電圧と電流を測定する実験を行い、電圧と電流の関係を見いだして理解するとともに、金属線には電気抵抗があることを理解することを求める。
+  sources: [mext-curriculum]
+  confidence: high
+  used_by: []
+  note: 設計の前提。台本の台詞にはしない。

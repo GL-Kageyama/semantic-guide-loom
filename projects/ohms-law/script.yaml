@@ -1,0 +1,2380 @@
+# 音の台本。演技の正本は review/acting/plan.md。
+# beat から顔が決まる（characters/<id>.character.yaml）。
+# 字幕は 27 字以内。間は沈黙を作る所だけに置く。
+name: ohms-law
+default_pause: 0.25
+cues:
+
+# ---- 序章 三つ、置く ----
+- name: c001
+  character: mirai
+  line: 机の上に、三つ、置く。抵抗器。電球。LED。
+  beat: resolve
+  emotion: confidence
+  speed: slow
+  pause_before: 1.2
+  react:
+    mirabo:
+      beat: prediction
+- name: c002
+  character: mirai
+  line: 9ボルトの電池も、置く。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  react:
+    mirabo:
+      beat: prediction
+- name: c003
+  character: mirabo
+  line: 何を、するんですか。
+  beat: doubt
+  emotion: neutral
+  speed: very_fast
+  pause_before: 0.24
+  react:
+    mirai:
+      beat: doubt
+- name: c004
+  character: mirai
+  line: 妹の常夜灯を、直す。昨日、壊した。
+  beat: resolve
+  emotion: confidence
+  speed: slow
+  pause_before: 0.3
+  react:
+    mirabo:
+      beat: surprise
+- name: c005
+  character: mirai
+  line: 常夜灯の、傷を、指でなぞる。
+  beat: tenderness
+  emotion: calm
+  speed: slow
+  volume: quiet
+  pause_before: 0.36
+  react:
+    mirabo:
+      beat: prediction
+- name: c006
+  character: mirabo
+  line: ……どうやって壊したんですか。
+  beat: doubt
+  emotion: neutral
+  speed: very_fast
+  pause_before: 0.24
+  react:
+    mirai:
+      beat: shame
+- name: c007
+  character: mirai
+  line: LED に、替えた。抵抗を、入れずに。
+  beat: shame
+  emotion: guilt
+  speed: slow
+  volume: quiet
+  pause_before: 0.3
+  react:
+    mirabo:
+      beat: surprise
+- name: c008
+  character: mirai
+  line: 一瞬、光った。それだけ。
+  beat: shame
+  emotion: guilt
+  speed: very_slow
+  volume: quiet
+  pause_before: 0.36
+  react:
+    mirabo:
+      beat: surprise
+- name: c009
+  character: mirabo
+  line: ……壊したんですか。
+  beat: surprise
+  emotion: excitement
+  speed: fast
+  volume: loud
+  pause_before: 0.42
+  react:
+    mirai:
+      beat: doubt
+      mark: ……
+- name: c010
+  character: mirai
+  line: 私が。
+  beat: shame
+  emotion: guilt
+  speed: very_slow
+  volume: quiet
+  pause_before: 0.15
+  delivery: flat
+  react:
+    mirabo:
+      beat: worry
+- name: c011
+  character: mirai
+  line: 妹には、言っていない。
+  beat: shame
+  emotion: guilt
+  speed: very_slow
+  volume: quiet
+  pause_before: 0.18
+- name: c012
+  character: mirai
+  line: 妹は、楽しみにしていた。
+  beat: tenderness
+  emotion: calm
+  speed: slow
+  volume: quiet
+  react:
+    mirabo:
+      beat: longing
+- name: c013
+  character: mirabo
+  line: 妹さんには言わないんですか。
+  beat: doubt
+  emotion: neutral
+  speed: slow
+  pause_before: 0.24
+  react:
+    mirai:
+      beat: shame
+- name: c014
+  character: mirai
+  line: 直してから、言う。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.3
+  react:
+    mirabo:
+      beat: prediction
+- name: c015
+  character: mirai
+  line: だから、今日は、測る。
+  beat: resolve
+  emotion: confidence
+  speed: slow
+  pause_before: 0.36
+  react:
+    mirabo:
+      beat: prediction
+- name: c016
+  character: mirabo
+  line: ……87パーセント、予測できます。
+  beat: prediction
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.36
+  react:
+    mirai:
+      beat: doubt
+- name: c017
+  character: mirai
+  line: 予測は、いい。まず、測る。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.24
+  react:
+    mirabo:
+      beat: doubt
+      mark: ？
+- name: c018
+  character: mirabo
+  line: でも、予測しないと、測れません。
+  beat: prediction
+  emotion: confidence
+  speed: very_fast
+  react:
+    mirai:
+      beat: doubt
+- name: c019
+  character: mirai
+  line: ……なら、予測しろ。
+  beat: impatience
+  emotion: anger
+  speed: fast
+  pause_before: 0.24
+  react:
+    mirabo:
+      beat: fear
+- name: c020
+  character: mirabo
+  line: 電圧を2倍にすれば、電流も2倍です。
+  beat: prediction
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.24
+  react:
+    mirai:
+      beat: doubt
+- name: c021
+  character: mirai
+  line: 2ボルトのとき、0.20アンペア流れる。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.24
+  react:
+    mirabo:
+      beat: prediction
+- name: c022
+  character: mirai
+  line: 4ボルトのとき、0.40アンペア流れる。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c023
+  character: mirai
+  line: 同じ抵抗器で、電圧だけ変えた。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.18
+- name: c024
+  character: mirai
+  line: 電流が、2倍になった。
+  beat: awe
+  emotion: excitement
+  speed: slow
+  volume: quiet
+  pause_before: 0.3
+  react:
+    mirabo:
+      beat: surprise
+- name: c025
+  character: mirabo
+  line: 予測どおり当たりました。
+  beat: pride
+  emotion: confidence
+  speed: fast
+  pause_before: 0.24
+  react:
+    mirai:
+      beat: approval
+- name: c026
+  character: mirai
+  line: 次は、電球。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  react:
+    mirabo:
+      beat: prediction
+- name: c027
+  character: mirai
+  line: 1ボルトと、2ボルトを、かける。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.3
+  react:
+    mirabo:
+      beat: prediction
+- name: c028
+  character: mirabo
+  line: ……電流も2倍ですか。
+  beat: doubt
+  emotion: neutral
+  speed: very_fast
+  pause_before: 0.36
+  react:
+    mirai:
+      beat: doubt
+- name: c029
+  character: mirai
+  line: ……違う。2倍じゃ、ない。
+  beat: doubt
+  emotion: neutral
+  speed: slow
+  pause_before: 0.36
+  delivery: restrained
+  react:
+    mirabo:
+      beat: surprise
+- name: c030
+  character: mirabo
+  line: ……外れました。
+  beat: shame
+  emotion: guilt
+  speed: very_slow
+  volume: quiet
+  pause_before: 0.3
+  delivery: flat
+  react:
+    mirai:
+      beat: worry
+- name: c031
+  character: mirabo
+  line: 87パーセントで、外れました。
+  beat: shame
+  emotion: guilt
+  speed: very_slow
+  volume: quiet
+  pause_before: 0.48
+  delivery: flat
+  react:
+    mirai:
+      beat: doubt
+      mark: 87%
+- name: c032
+  character: mirai
+  line: 私もだ。電球も、ただの抵抗だと思った。
+  beat: shame
+  emotion: guilt
+  speed: very_slow
+  volume: quiet
+  pause_before: 0.3
+  react:
+    mirabo:
+      beat: shame
+- name: c033
+  character: mirai
+  line: この電球は、妹の常夜灯の、ものだ。
+  beat: tenderness
+  emotion: calm
+  speed: slow
+  volume: quiet
+  pause_before: 0.3
+  react:
+    mirabo:
+      beat: prediction
+- name: c034
+  character: mirai
+  line: これが、点いていた。
+  beat: awe
+  emotion: excitement
+  speed: slow
+  volume: quiet
+  pause_before: 0.42
+  react:
+    mirabo:
+      beat: awe
+- name: c035
+  character: mirabo
+  line: ……僕の予測、要りますか。
+  beat: longing
+  emotion: loneliness
+  speed: slow
+  volume: quiet
+  pause_before: 0.36
+  react:
+    mirai:
+      beat: tenderness
+- name: c036
+  character: mirai
+  line: 要る。4ボルトでも、2倍にならない。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.3
+  react:
+    mirabo:
+      beat: awe
+      mark: ……
+- name: c037
+  character: mirai
+  line: 電球を、机に置く。二人とも外れた。だから、確かめる。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.48
+
+# ---- 第1章 三つの量 ----
+- name: c038
+  character: mirai
+  line: 常夜灯の電球を測る前に、比べる相手が要る。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 1.2
+  react:
+    mirabo:
+      beat: prediction
+- name: c039
+  character: mirai
+  line: まず三つの言葉を分ける。電圧、電流、抵抗だ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  react:
+    mirabo:
+      beat: prediction
+- name: c040
+  character: mirabo
+  line: 電圧は電流を押す力ですね。
+  beat: prediction
+  emotion: confidence
+  speed: very_fast
+  react:
+    mirai:
+      beat: approval
+- name: c041
+  character: mirai
+  line: 電流は、流れる量だ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  react:
+    mirabo:
+      beat: prediction
+- name: c042
+  character: mirai
+  line: 抵抗は、流れにくさだ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  react:
+    mirabo:
+      beat: prediction
+- name: c043
+  character: mirabo
+  line: 押す力が大きいほど流れるんですよね。
+  beat: prediction
+  emotion: confidence
+  speed: very_fast
+  react:
+    mirai:
+      beat: approval
+- name: c044
+  character: mirai
+  line: 電流は、電圧を抵抗で割ったものだ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  react:
+    mirabo:
+      beat: prediction
+- name: c045
+  character: mirai
+  line: I は、V 割る R だ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  react:
+    mirabo:
+      beat: prediction
+- name: c046
+  character: mirabo
+  line: 抵抗は電圧を電流で割っても出ます。
+  beat: prediction
+  emotion: confidence
+  speed: very_fast
+  react:
+    mirai:
+      beat: approval
+- name: c047
+  character: mirai
+  line: R は、V 割る I だ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c048
+  character: mirai
+  line: 式を、カードに書く。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  react:
+    mirabo:
+      beat: prediction
+- name: c049
+  character: mirai
+  line: 1オームは、1ボルトで1アンペアだ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  react:
+    mirabo:
+      beat: prediction
+- name: c050
+  character: mirai
+  line: 6ボルトの電池に、3オームの抵抗。電流は、いくらだ。
+  beat: curiosity
+  emotion: neutral
+  speed: very_fast
+  pause_before: 0.24
+  react:
+    mirabo:
+      beat: prediction
+- name: c051
+  character: mirabo
+  line: 僕の計算では2アンペアです。
+  beat: pride
+  emotion: confidence
+  speed: fast
+  react:
+    mirai:
+      beat: approval
+- name: c052
+  character: mirai
+  line: 2アンペア。
+  beat: approval
+  emotion: confidence
+  speed: very_fast
+  react:
+    mirabo:
+      beat: pride
+- name: c053
+  character: mirai
+  line: 同じ式で、電圧も出る。3オームに、2アンペア。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  react:
+    mirabo:
+      beat: prediction
+- name: c054
+  character: mirabo
+  line: 3オームかける2アンペアで6ボルトです。
+  beat: pride
+  emotion: confidence
+  speed: fast
+  react:
+    mirai:
+      beat: approval
+- name: c055
+  character: mirabo
+  line: じゃあ式はいつでも成り立つんですね。
+  beat: doubt
+  emotion: neutral
+  speed: very_fast
+  react:
+    mirai:
+      beat: amusement
+- name: c056
+  character: mirai
+  line: R は、V 割る I で決まる。式はいつでも成り立つ。
+  beat: resolve
+  emotion: confidence
+  speed: slow
+  pause_before: 0.3
+  react:
+    mirabo:
+      beat: doubt
+- name: c057
+  character: mirai
+  line: R が一定かは、別の話だ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  react:
+    mirabo:
+      beat: prediction
+- name: c058
+  character: mirabo
+  line: 別の話なんですね。
+  beat: doubt
+  emotion: neutral
+  speed: very_fast
+  react:
+    mirai:
+      beat: approval
+- name: c059
+  character: mirai
+  line: 二つを、並べる。
+  beat: curiosity
+  emotion: neutral
+  speed: very_fast
+  react:
+    mirabo:
+      beat: prediction
+- name: c060
+  character: mirai
+  line: 電圧を2倍にした。電流も2倍になった。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c061
+  character: mirai
+  line: 抵抗が一定なら、そうなる。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  react:
+    mirabo:
+      beat: prediction
+- name: c062
+  character: mirai
+  line: でも、電流が2倍になった理由は、二つある。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c063
+  character: mirai
+  line: 電圧が2倍になったからか。
+  beat: curiosity
+  emotion: neutral
+  speed: very_fast
+  react:
+    mirabo:
+      beat: prediction
+- name: c064
+  character: mirai
+  line: 抵抗が半分になったからか。
+  beat: curiosity
+  emotion: neutral
+  speed: very_fast
+  react:
+    mirabo:
+      beat: prediction
+- name: c065
+  character: mirabo
+  line: ……式だけでは分かりません。
+  beat: doubt
+  emotion: neutral
+  speed: very_fast
+  react:
+    mirai:
+      beat: approval
+- name: c066
+  character: mirai
+  line: だから、測る。測ってみないと、分からない。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.42
+  react:
+    mirabo:
+      beat: resolve
+
+# ---- 第2章 直線になる条件 ----
+- name: c067
+  character: mirai
+  line: 一つの抵抗器で、電圧を変えて測る。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 1.2
+  react:
+    mirabo:
+      beat: prediction
+- name: c068
+  character: mirai
+  line: 1ボルトのとき、0.10アンペア流れる。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  react:
+    mirabo:
+      beat: prediction
+- name: c069
+  character: mirai
+  line: 3ボルトのとき、0.30アンペア流れる。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c070
+  character: mirai
+  line: 5ボルトのとき、0.50アンペア流れる。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c071
+  character: mirabo
+  line: 電流が電圧に比例していますね。
+  beat: prediction
+  emotion: confidence
+  speed: very_fast
+  react:
+    mirai:
+      beat: approval
+- name: c072
+  character: mirai
+  line: どれも、10オームだ。
+  beat: approval
+  emotion: confidence
+  speed: very_fast
+  react:
+    mirabo:
+      beat: prediction
+- name: c073
+  character: mirabo
+  line: R がどれも同じだということですね。
+  beat: pride
+  emotion: confidence
+  speed: fast
+  react:
+    mirai:
+      beat: approval
+- name: c074
+  character: mirai
+  line: これが、オームの法則だ。
+  beat: resolve
+  emotion: confidence
+  speed: slow
+  pause_before: 0.36
+  react:
+    mirabo:
+      beat: awe
+- name: c075
+  character: mirai
+  line: 温度が変わらなければ、電圧と電流が比例する。
+  beat: resolve
+  emotion: confidence
+  speed: slow
+- name: c076
+  character: mirai
+  line: 比例定数が、抵抗だ。
+  beat: resolve
+  emotion: confidence
+  speed: slow
+- name: c077
+  character: mirabo
+  line: グラフにすると原点を通る直線になりますね。
+  beat: prediction
+  emotion: confidence
+  speed: very_fast
+  react:
+    mirai:
+      beat: approval
+- name: c078
+  character: mirai
+  line: 抵抗器は、電流で熱くなる。
+  beat: curiosity
+  emotion: neutral
+  speed: very_fast
+  react:
+    mirabo:
+      beat: prediction
+- name: c079
+  character: mirai
+  line: 温度が変わると、R も変わる。
+  beat: worry
+  emotion: anxiety
+  speed: fast
+  volume: quiet
+  pause_before: 0.3
+  react:
+    mirabo:
+      beat: worry
+- name: c080
+  character: mirabo
+  line: じゃあ、この測定も温度が変わっているんですか。
+  beat: worry
+  emotion: anxiety
+  speed: fast
+  volume: quiet
+  react:
+    mirai:
+      beat: worry
+- name: c081
+  character: mirai
+  line: 少しな。
+  beat: approval
+  emotion: confidence
+  speed: very_fast
+  react:
+    mirabo:
+      beat: doubt
+- name: c082
+  character: mirai
+  line: でも、この抵抗器では、無視できる。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  react:
+    mirabo:
+      beat: prediction
+- name: c083
+  character: mirai
+  line: 温度が変わらないとみなせる範囲で、比例する。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c084
+  character: mirabo
+  line: 条件があるんですね。
+  beat: doubt
+  emotion: neutral
+  speed: very_fast
+  react:
+    mirai:
+      beat: approval
+- name: c085
+  character: mirai
+  line: そう。条件がある。
+  beat: approval
+  emotion: confidence
+  speed: very_fast
+- name: c086
+  character: mirai
+  line: 1826年、オームは銅線の長さを変えて測った。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.36
+  react:
+    mirabo:
+      beat: prediction
+- name: c087
+  character: mirai
+  line: 2インチから、130インチまで、8本の銅線を使った。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c088
+  character: mirai
+  line: 温度差で電圧を一定にし、ねじれで電流を測った。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c089
+  character: mirabo
+  line: ……手で測ったんですね。
+  beat: awe
+  emotion: excitement
+  speed: slow
+  volume: quiet
+  pause_before: 0.36
+  react:
+    mirai:
+      beat: tenderness
+- name: c090
+  character: mirai
+  line: 手で測った。
+  beat: tenderness
+  emotion: calm
+  speed: slow
+  volume: quiet
+  react:
+    mirabo:
+      beat: awe
+- name: c091
+  character: mirai
+  line: 銅線を長くすると、電流が減った。表にした。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c092
+  character: mirabo
+  line: それがオームの法則ですか。
+  beat: doubt
+  emotion: neutral
+  speed: very_fast
+  react:
+    mirai:
+      beat: approval
+- name: c093
+  character: mirai
+  line: オームの法則は、抵抗が一定なら、比例するという関係だ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  react:
+    mirabo:
+      beat: prediction
+- name: c094
+  character: mirabo
+  line: ……比例しない物もあるんですか。
+  beat: doubt
+  emotion: neutral
+  speed: very_fast
+  react:
+    mirai:
+      beat: curiosity
+- name: c095
+  character: mirai
+  line: ある。次に、見る。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  react:
+    mirabo:
+      beat: prediction
+- name: c096
+  character: mirabo
+  line: さっきの電球は外れました。
+  beat: doubt
+  emotion: neutral
+  speed: very_fast
+  react:
+    mirai:
+      beat: approval
+- name: c097
+  character: mirai
+  line: そう。次は、それを見る。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  react:
+    mirabo:
+      beat: prediction
+- name: c098
+  character: mirai
+  line: この抵抗器の R は、10オームだ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c099
+  character: mirai
+  line: 5ボルトでも、1ボルトでも、10オームだ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c100
+  character: mirabo
+  line: R が変わっていないんですね。
+  beat: surprise
+  emotion: excitement
+  speed: fast
+  volume: loud
+  react:
+    mirai:
+      beat: approval
+- name: c101
+  character: mirai
+  line: こういう抵抗を、オーム抵抗という。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  react:
+    mirabo:
+      beat: prediction
+- name: c102
+  character: mirabo
+  line: オーム抵抗というんですか。
+  beat: doubt
+  emotion: neutral
+  speed: very_fast
+  react:
+    mirai:
+      beat: approval
+- name: c103
+  character: mirai
+  line: 電圧を変えても、R が一定とみなせる抵抗だ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c104
+  character: mirabo
+  line: じゃあ電球はどうですか。
+  beat: doubt
+  emotion: neutral
+  speed: very_fast
+  react:
+    mirai:
+      beat: approval
+- name: c105
+  character: mirai
+  line: 電球は、そうじゃない。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.24
+  react:
+    mirabo:
+      beat: prediction
+- name: c106
+  character: mirai
+  line: この抵抗器は、使える。オーム抵抗だから。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c107
+  character: mirabo
+  line: ……使えるんですね。
+  beat: awe
+  emotion: excitement
+  speed: slow
+  volume: quiet
+  react:
+    mirai:
+      beat: approval
+- name: c108
+  character: mirai
+  line: 妹から、連絡が来た。
+  beat: worry
+  emotion: anxiety
+  speed: fast
+  volume: quiet
+  pause_before: 0.36
+  react:
+    mirabo:
+      beat: worry
+- name: c109
+  character: mirabo
+  line: 何て書いてあるんですか。
+  beat: doubt
+  emotion: neutral
+  speed: very_fast
+  react:
+    mirai:
+      beat: worry
+- name: c110
+  character: mirai
+  line: 「まだ？」
+  beat: worry
+  emotion: anxiety
+  speed: fast
+  volume: quiet
+  pause_before: 0.3
+  react:
+    mirabo:
+      beat: worry
+- name: c111
+  character: mirai
+  line: 返事を、書く。
+  beat: shame
+  emotion: guilt
+  speed: very_slow
+  volume: quiet
+- name: c112
+  character: mirai
+  line: 「明日、直す」と、打つ。
+  beat: shame
+  emotion: guilt
+  speed: very_slow
+  volume: quiet
+  pause_before: 0.24
+- name: c113
+  character: mirai
+  line: ……消す。
+  beat: shame
+  emotion: guilt
+  speed: very_slow
+  volume: quiet
+  pause_before: 0.36
+  delivery: restrained
+- name: c114
+  character: mirai
+  line: 直っていないのに、直すと書いた。
+  beat: shame
+  emotion: guilt
+  speed: very_slow
+  volume: quiet
+- name: c115
+  character: mirabo
+  line: ……嘘じゃないですか。
+  beat: doubt
+  emotion: neutral
+  speed: very_fast
+  pause_before: 0.3
+  react:
+    mirai:
+      beat: doubt
+      mark: ……
+- name: c116
+  character: mirai
+  line: 嘘だ。
+  beat: shame
+  emotion: guilt
+  speed: very_slow
+  volume: quiet
+  pause_before: 0.24
+  react:
+    mirabo:
+      beat: prediction
+- name: c117
+  character: mirai
+  line: 直してから、返す。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c118
+  character: mirabo
+  line: ……それで、いいんですか。
+  beat: worry
+  emotion: anxiety
+  speed: fast
+  volume: quiet
+- name: c119
+  character: mirai
+  line: よくない。でも、まだ、書けない。
+  beat: shame
+  emotion: guilt
+  speed: slow
+  volume: quiet
+  pause_before: 0.36
+  react:
+    mirabo:
+      beat: shame
+      mark: ……
+
+# ---- 第3章 同じ電球なのに ----
+- name: c120
+  character: mirai
+  line: 電球で、同じように測る。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 1.2
+  react:
+    mirabo:
+      beat: prediction
+- name: c121
+  character: mirai
+  line: これは、妹の常夜灯の電球だ。
+  beat: tenderness
+  emotion: calm
+  speed: slow
+  volume: quiet
+- name: c122
+  character: mirai
+  line: 1ボルト、2ボルト、4ボルトをかける。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c123
+  character: mirai
+  line: 電流は、比例して増えない。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  react:
+    mirabo:
+      beat: prediction
+- name: c124
+  character: mirabo
+  line: グラフが曲がっていますね。
+  beat: surprise
+  emotion: excitement
+  speed: fast
+  volume: loud
+  pause_before: 0.24
+  react:
+    mirai:
+      beat: worry
+- name: c125
+  character: mirai
+  line: 電圧を上げるほど、R が大きくなる。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c126
+  character: mirabo
+  line: R が一定じゃないんですね。
+  beat: doubt
+  emotion: neutral
+  speed: very_fast
+  react:
+    mirai:
+      beat: approval
+- name: c127
+  character: mirai
+  line: 電球の中で光る細い線を、フィラメントという。
+  beat: curiosity
+  emotion: neutral
+  speed: natural
+  pause_before: 0.24
+- name: c128
+  character: mirai
+  line: それが、熱くなって、橙色になる。
+  beat: curiosity
+  emotion: neutral
+  speed: natural
+- name: c129
+  character: mirai
+  line: 指を、近づける。熱い。
+  beat: awe
+  emotion: excitement
+  speed: slow
+  volume: quiet
+  react:
+    mirabo:
+      beat: prediction
+- name: c130
+  character: mirai
+  line: このフィラメントは、タングステンだ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c131
+  character: mirai
+  line: 金属は、温度が上がると、抵抗が増える。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c132
+  character: mirabo
+  line: タングステンもですか。
+  beat: doubt
+  emotion: neutral
+  speed: very_fast
+  react:
+    mirai:
+      beat: approval
+- name: c133
+  character: mirai
+  line: タングステンの抵抗も、温度で増える。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c134
+  character: mirai
+  line: 1度上がるごとに、0.45パーセント増える。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+- name: c135
+  character: mirai
+  line: ある電球では、冷えているとき14オームだ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.3
+  react:
+    mirabo:
+      beat: prediction
+- name: c136
+  character: mirai
+  line: 点灯すると、71オームになる。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c137
+  character: mirabo
+  line: 同じ電球なのに14オームと71オームですか。
+  beat: surprise
+  emotion: excitement
+  speed: fast
+  volume: loud
+  pause_before: 0.24
+  react:
+    mirai:
+      beat: awe
+      mark: ？
+- name: c138
+  character: mirai
+  line: 5倍。
+  beat: approval
+  emotion: confidence
+  speed: slow
+  pause_before: 0.36
+  react:
+    mirabo:
+      beat: prediction
+- name: c139
+  character: mirai
+  line: 冷えているときの抵抗が、低い。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c140
+  character: mirai
+  line: だから、点灯した瞬間は、電流が大きく流れる。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c141
+  character: mirabo
+  line: ……最初だけですか。
+  beat: doubt
+  emotion: neutral
+  speed: very_fast
+  react:
+    mirai:
+      beat: curiosity
+- name: c142
+  character: mirai
+  line: 最初だけ。すぐ熱くなって、R が上がる。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c143
+  character: mirai
+  line: だから、電球は、オームの法則に従わない。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.3
+- name: c144
+  character: mirabo
+  line: 電球が壊れているんですか。
+  beat: worry
+  emotion: anxiety
+  speed: fast
+  volume: quiet
+- name: c145
+  character: mirai
+  line: 壊れていない。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.24
+- name: c146
+  character: mirai
+  line: R が、一定でないだけだ。値を、信じすぎた。
+  beat: shame
+  emotion: guilt
+  speed: slow
+  volume: quiet
+  pause_before: 0.3
+  delivery: restrained
+  react:
+    mirabo:
+      beat: prediction
+- name: c147
+  character: mirabo
+  line: 法則は物質の性質なんですか。
+  beat: doubt
+  emotion: neutral
+  speed: very_fast
+  react:
+    mirai:
+      beat: approval
+- name: c148
+  character: mirai
+  line: そう。法則が成り立つかは、物質しだい。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c149
+  character: mirabo
+  line: 同じ電球なのに抵抗が違うんですね。
+  beat: doubt
+  emotion: neutral
+  speed: very_fast
+  react:
+    mirai:
+      beat: approval
+- name: c150
+  character: mirai
+  line: 同じ電球だ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c151
+  character: mirai
+  line: 冷えているときと、点灯しているときで、温度が違う。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c152
+  character: mirabo
+  line: ……温度で変わるんですね。
+  beat: awe
+  emotion: excitement
+  speed: slow
+  volume: quiet
+  react:
+    mirai:
+      beat: approval
+- name: c153
+  character: mirai
+  line: オームの法則は、温度が一定のときの話だ。
+  beat: resolve
+  emotion: confidence
+  speed: slow
+  pause_before: 0.36
+  react:
+    mirabo:
+      beat: worry
+- name: c154
+  character: mirabo
+  line: 条件を忘れていました。
+  beat: shame
+  emotion: guilt
+  speed: very_slow
+  volume: quiet
+  pause_before: 0.3
+  react:
+    mirai:
+      beat: amusement
+- name: c155
+  character: mirai
+  line: 忘れやすい。
+  beat: tenderness
+  emotion: calm
+  speed: slow
+  volume: quiet
+  react:
+    mirabo:
+      beat: relief
+- name: c156
+  character: mirai
+  line: 式だけ見ると、いつでも成り立つように見える。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c157
+  character: mirai
+  line: でも、R が一定かは、別だ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c158
+  character: mirabo
+  line: ……じゃあどうやって使うんですか。
+  beat: doubt
+  emotion: neutral
+  speed: very_fast
+  react:
+    mirai:
+      beat: curiosity
+- name: c159
+  character: mirai
+  line: 次は、その話だ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c160
+  character: mirai
+  line: この電球は、使えない。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.3
+- name: c161
+  character: mirabo
+  line: 妹の常夜灯の、電球なのに。
+  beat: worry
+  emotion: anxiety
+  speed: fast
+  volume: quiet
+  react:
+    mirai:
+      beat: tenderness
+- name: c162
+  character: mirai
+  line: そう。だから、LED にする。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.3
+
+# ---- 第4章 抵抗を、入れる ----
+- name: c163
+  character: mirai
+  line: LED は、もっと極端だ。
+  beat: curiosity
+  emotion: neutral
+  speed: very_fast
+  pause_before: 1.2
+  react:
+    mirabo:
+      beat: prediction
+- name: c164
+  character: mirai
+  line: 向きが、決まっている。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c165
+  character: mirai
+  line: 逆に向けると、ほとんど流れない。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c166
+  character: mirai
+  line: 順方向でも、ある電圧まで流れない。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c167
+  character: mirabo
+  line: 閾値というものですか。
+  beat: doubt
+  emotion: neutral
+  speed: very_fast
+  react:
+    mirai:
+      beat: approval
+- name: c168
+  character: mirai
+  line: そう。超えると、急に流れる。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c169
+  character: mirai
+  line: 0.5ボルトでは、ほとんど流れない。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c170
+  character: mirai
+  line: 1.6ボルトくらいから、急に増える。
+  beat: worry
+  emotion: anxiety
+  speed: fast
+  volume: quiet
+  pause_before: 0.3
+  react:
+    mirabo:
+      beat: fear
+      mark: ？
+- name: c171
+  character: mirai
+  line: だから、電圧で電流を決めにくい。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c172
+  character: mirabo
+  line: 電圧を少し上げただけなのに。
+  beat: surprise
+  emotion: excitement
+  speed: fast
+  volume: loud
+  react:
+    mirai:
+      beat: approval
+- name: c173
+  character: mirai
+  line: それで、電流が何倍にもなる。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c174
+  character: mirai
+  line: 直列は、一列につなぐことだ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.24
+- name: c175
+  character: mirai
+  line: だから、LED と抵抗を、一列に入れる。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c176
+  character: mirai
+  line: 抵抗が、電流を決める。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c177
+  character: mirabo
+  line: 抵抗はオーム抵抗ですか。
+  beat: doubt
+  emotion: neutral
+  speed: very_fast
+  react:
+    mirai:
+      beat: approval
+- name: c178
+  character: mirai
+  line: そう。R が同じだ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c179
+  character: mirai
+  line: 9ボルトで、この前と同じ LED を、つなぐ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.36
+  react:
+    mirabo:
+      beat: prediction
+- name: c180
+  character: mirai
+  line: 直列では、9ボルトが、二つに分かれる。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.24
+  react:
+    mirabo:
+      beat: prediction
+- name: c181
+  character: mirai
+  line: Vf は、LED の順方向電圧だ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c182
+  character: mirai
+  line: 今度は、それを測る。2ボルトだった。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c183
+  character: mirai
+  line: 目標の電流は、20ミリアンペアだ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.24
+  react:
+    mirabo:
+      beat: prediction
+- name: c184
+  character: mirabo
+  line: 0.02アンペアですね。
+  beat: prediction
+  emotion: confidence
+  speed: very_fast
+  react:
+    mirai:
+      beat: approval
+- name: c185
+  character: mirai
+  line: 抵抗にかかる電圧は、9引く2で、7ボルトだ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.3
+  react:
+    mirabo:
+      beat: prediction
+- name: c186
+  character: mirai
+  line: R は、7割る0.02だ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c187
+  character: mirabo
+  line: 僕の計算では450オームです。
+  beat: pride
+  emotion: confidence
+  speed: fast
+  pause_before: 0.24
+  react:
+    mirai:
+      beat: doubt
+- name: c188
+  character: mirai
+  line: 9ボルトを、そのまま割ったな。
+  beat: doubt
+  emotion: neutral
+  speed: very_fast
+  react:
+    mirabo:
+      beat: prediction
+- name: c189
+  character: mirabo
+  line: ……2ボルトを、引いていません。
+  beat: shame
+  emotion: guilt
+  speed: very_slow
+  volume: quiet
+  pause_before: 0.3
+  delivery: flat
+  react:
+    mirai:
+      beat: doubt
+      mark: ……
+- name: c190
+  character: mirai
+  line: 7ボルトだ。350オーム。
+  beat: resolve
+  emotion: confidence
+  speed: slow
+  pause_before: 0.3
+- name: c191
+  character: mirai
+  line: 合ったな。
+  beat: approval
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.15
+- name: c192
+  character: mirai
+  line: この前の部品も、これで選び直す。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  react:
+    mirabo:
+      beat: prediction
+- name: c193
+  character: mirai
+  line: ……350オーム。これで、いい。
+  beat: doubt
+  emotion: neutral
+  speed: slow
+  pause_before: 0.36
+  react:
+    mirabo:
+      beat: prediction
+- name: c194
+  character: mirabo
+  line: ……計算だけで決めるんですか。
+  beat: doubt
+  emotion: neutral
+  speed: very_fast
+  pause_before: 0.3
+  react:
+    mirai:
+      beat: doubt
+- name: c195
+  character: mirai
+  line: ……ああ。
+  beat: shame
+  emotion: guilt
+  speed: very_slow
+  volume: quiet
+  pause_before: 0.24
+  react:
+    mirabo:
+      beat: prediction
+- name: c196
+  character: mirai
+  line: 組んで、測る。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.36
+- name: c197
+  character: mirai
+  line: 直列だから、LED にも同じ電流が流れる。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c198
+  character: mirabo
+  line: 抵抗が電流を決めるんですね。
+  beat: prediction
+  emotion: confidence
+  speed: very_fast
+  react:
+    mirai:
+      beat: approval
+- name: c199
+  character: mirai
+  line: LED は、その電流で光る。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c200
+  character: mirai
+  line: 抵抗を入れないと、どうなる。
+  beat: curiosity
+  emotion: neutral
+  speed: very_fast
+  react:
+    mirabo:
+      beat: prediction
+- name: c201
+  character: mirabo
+  line: 電流が大きくなりすぎます。
+  beat: worry
+  emotion: anxiety
+  speed: fast
+  volume: quiet
+  react:
+    mirai:
+      beat: approval
+- name: c202
+  character: mirai
+  line: 壊れる。
+  beat: resolve
+  emotion: confidence
+  speed: slow
+- name: c203
+  character: mirabo
+  line: ……スイッチに手が伸びません。
+  beat: fear
+  emotion: fear
+  speed: fast
+  volume: quiet
+  pause_before: 0.3
+  delivery: desperate
+  react:
+    mirai:
+      beat: worry
+- name: c204
+  character: mirai
+  line: だから、入れる。
+  beat: resolve
+  emotion: confidence
+  speed: slow
+- name: c205
+  character: mirai
+  line: 抵抗を、入れる。
+  beat: resolve
+  emotion: confidence
+  speed: slow
+  pause_before: 0.3
+  react:
+    mirabo:
+      beat: prediction
+      mark: ……
+- name: c206
+  character: mirabo
+  line: ……LED はわがままなんですか。
+  beat: doubt
+  emotion: neutral
+  speed: very_fast
+  react:
+    mirai:
+      beat: amusement
+- name: c207
+  character: mirai
+  line: わがままじゃない。そういう物質だ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c208
+  character: mirai
+  line: これで、直せる。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c209
+  character: mirabo
+  line: ……測ってから、ですね。
+  beat: relief
+  emotion: joy
+  speed: natural
+  volume: quiet
+  pause_before: 0.24
+  react:
+    mirai:
+      beat: approval
+- name: c210
+  character: mirai
+  line: そう。
+  beat: approval
+  emotion: confidence
+  speed: very_fast
+
+# ---- 終章 スイッチを、入れる ----
+- name: c211
+  character: mirai
+  line: この式を書いたのは、学校の先生だった。
+  beat: curiosity
+  emotion: neutral
+  speed: very_fast
+  pause_before: 1.2
+  react:
+    mirabo:
+      beat: prediction
+- name: c212
+  character: mirabo
+  line: オームは先生だったんですか。
+  beat: surprise
+  emotion: excitement
+  speed: fast
+  volume: loud
+  react:
+    mirai:
+      beat: curiosity
+- name: c213
+  character: mirai
+  line: 1827年に、オームが本を出した。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.3
+- name: c214
+  character: mirai
+  line: 当時は、広く読まれなかった。
+  beat: worry
+  emotion: anxiety
+  speed: slow
+  volume: quiet
+  react:
+    mirabo:
+      beat: prediction
+- name: c215
+  character: mirabo
+  line: 1841年、生きているうちに、コプリーメダルです。
+  beat: awe
+  emotion: excitement
+  speed: fast
+  volume: quiet
+  pause_before: 0.36
+  react:
+    mirai:
+      beat: approval
+- name: c216
+  character: mirai
+  line: 14年、かかった。
+  beat: fatigue
+  emotion: calm
+  speed: slow
+  volume: quiet
+  pause_before: 0.3
+- name: c217
+  character: mirai
+  line: 1881年には、抵抗の単位が、オームになった。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c218
+  character: mirabo
+  line: 本から54年もかかったんですか。
+  beat: surprise
+  emotion: excitement
+  speed: fast
+  volume: loud
+  react:
+    mirai:
+      beat: approval
+- name: c219
+  character: mirai
+  line: 単位は、死後だ。本人は、知らない。
+  beat: tenderness
+  emotion: calm
+  speed: slow
+  volume: quiet
+  pause_before: 0.36
+- name: c220
+  character: mirai
+  line: 生きているうちに、渡したい。
+  beat: tenderness
+  emotion: calm
+  speed: slow
+  volume: quiet
+  pause_before: 0.3
+- name: c221
+  character: mirabo
+  line: ……妹さんに、ですか。
+  beat: longing
+  emotion: loneliness
+  speed: slow
+  volume: quiet
+  pause_before: 0.36
+  react:
+    mirai:
+      beat: tenderness
+      mark: ……
+- name: c222
+  character: mirai
+  line: そう。
+  beat: approval
+  emotion: confidence
+  speed: very_fast
+- name: c223
+  character: mirai
+  line: 長いな。
+  beat: fatigue
+  emotion: calm
+  speed: very_slow
+  volume: quiet
+  pause_before: 0.36
+- name: c224
+  character: mirabo
+  line: ……オームさんも測ったんですか。
+  beat: doubt
+  emotion: neutral
+  speed: very_fast
+  pause_before: 0.24
+  react:
+    mirai:
+      beat: tenderness
+- name: c225
+  character: mirai
+  line: 測った。銅線の長さを、変えてな。
+  beat: tenderness
+  emotion: calm
+  speed: slow
+  volume: quiet
+- name: c226
+  character: mirai
+  line: 2インチから、130インチまで、銅線を変えた。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c227
+  character: mirabo
+  line: ……手で。
+  beat: awe
+  emotion: excitement
+  speed: slow
+  volume: quiet
+  react:
+    mirai:
+      beat: tenderness
+- name: c228
+  character: mirai
+  line: 手で。
+  beat: tenderness
+  emotion: calm
+  speed: slow
+  volume: quiet
+- name: c229
+  character: mirai
+  line: 今日の測定も、同じだ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c230
+  character: mirai
+  line: 電圧を変えて、電流を測る。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c231
+  character: mirai
+  line: V 割る I が、同じか見る。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c232
+  character: mirai
+  line: 抵抗が一定なら、比例する。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c233
+  character: mirai
+  line: 比例しなければ、一定じゃない。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c234
+  character: mirai
+  line: どちらも、物質の性質だ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c235
+  character: mirabo
+  line: ……例外ではないんですね。
+  beat: awe
+  emotion: excitement
+  speed: slow
+  volume: quiet
+  pause_before: 0.24
+  react:
+    mirai:
+      beat: approval
+- name: c236
+  character: mirai
+  line: 例外じゃない。
+  beat: approval
+  emotion: confidence
+  speed: slow
+  pause_before: 0.36
+  react:
+    mirabo:
+      beat: doubt
+      mark: ……
+- name: c237
+  character: mirai
+  line: その物質が、そうなっているだけだ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c238
+  character: mirai
+  line: カードを、伏せる。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c239
+  character: mirabo
+  line: ……相手を選ぶんですか。
+  beat: doubt
+  emotion: neutral
+  speed: very_fast
+  pause_before: 0.24
+  react:
+    mirai:
+      beat: amusement
+- name: c240
+  character: mirai
+  line: そう。物質に、聞く。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.24
+  react:
+    mirabo:
+      beat: prediction
+- name: c241
+  character: mirabo
+  line: ……抵抗は、一定か。
+  beat: longing
+  emotion: loneliness
+  speed: slow
+  volume: quiet
+  pause_before: 0.3
+  react:
+    mirai:
+      beat: tenderness
+      mark: ……
+- name: c242
+  character: mirai
+  line: 三つの部品が、並んでいる。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c243
+  character: mirabo
+  line: ……じゃあ僕も。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.3
+  react:
+    mirai:
+      beat: curiosity
+- name: c244
+  character: mirai
+  line: 何を。
+  beat: curiosity
+  emotion: neutral
+  speed: very_fast
+  react:
+    mirabo:
+      beat: resolve
+- name: c245
+  character: mirabo
+  line: 式で、予測します。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.3
+  react:
+    mirai:
+      beat: approval
+- name: c246
+  character: mirabo
+  line: ……パーセントは、やめます。
+  beat: shame
+  emotion: guilt
+  speed: very_slow
+  volume: quiet
+  pause_before: 0.48
+  delivery: flat
+  react:
+    mirai:
+      beat: tenderness
+- name: c247
+  character: mirabo
+  line: 決めるのは、測ってからです。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.36
+  react:
+    mirai:
+      beat: approval
+- name: c248
+  character: mirai
+  line: ……それで、いい。
+  beat: tenderness
+  emotion: calm
+  speed: slow
+  volume: quiet
+  pause_before: 0.36
+- name: c249
+  character: mirai
+  line: 任せる。
+  beat: tenderness
+  emotion: calm
+  speed: slow
+  volume: quiet
+  pause_before: 0.36
+  react:
+    mirabo:
+      beat: prediction
+- name: c250
+  character: mirai
+  line: 端子を、渡す。
+  beat: tenderness
+  emotion: calm
+  speed: slow
+  volume: quiet
+- name: c251
+  character: mirabo
+  line: ……測ります。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.3
+  react:
+    mirai:
+      beat: tenderness
+- name: c252
+  character: mirai
+  line: ……まだ、分からないけど。
+  beat: worry
+  emotion: anxiety
+  speed: slow
+  volume: quiet
+  pause_before: 0.36
+  react:
+    mirabo:
+      beat: prediction
+- name: c253
+  character: mirai
+  line: スイッチを、入れる。
+  beat: resolve
+  emotion: confidence
+  speed: slow
+  pause_before: 0.42
+- name: c254
+  character: mirai
+  line: ……暗い。
+  beat: worry
+  emotion: anxiety
+  speed: slow
+  volume: quiet
+  pause_before: 0.48
+  delivery: restrained
+  react:
+    mirabo:
+      beat: prediction
+- name: c255
+  character: mirabo
+  line: ……予測では、もっと明るいはずです。
+  beat: fear
+  emotion: fear
+  speed: fast
+  volume: quiet
+  pause_before: 0.3
+  delivery: desperate
+  react:
+    mirai:
+      beat: worry
+- name: c256
+  character: mirai
+  line: 抵抗を、測る。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c257
+  character: mirai
+  line: ……3.5キロオームだ。
+  beat: worry
+  emotion: anxiety
+  speed: slow
+  volume: quiet
+  pause_before: 0.36
+  react:
+    mirabo:
+      beat: surprise
+- name: c258
+  character: mirai
+  line: 抵抗の値は、色の帯で、示されている。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+- name: c259
+  character: mirabo
+  line: 似た色を、掴んだんですね。
+  beat: awe
+  emotion: excitement
+  speed: slow
+  volume: quiet
+  pause_before: 0.3
+  react:
+    mirai:
+      beat: approval
+- name: c260
+  character: mirai
+  line: 抜いて、350オームに、替える。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.3
+- name: c261
+  character: mirai
+  line: ……見てな。
+  beat: resolve
+  emotion: confidence
+  speed: slow
+  pause_before: 0.54
+  react:
+    mirabo:
+      beat: prediction
+- name: c262
+  character: mirai
+  line: スイッチを、入れる。
+  beat: resolve
+  emotion: confidence
+  speed: slow
+- name: c263
+  character: mirai
+  line: ……点いた。
+  beat: tenderness
+  emotion: calm
+  speed: slow
+  volume: quiet
+  pause_before: 1.2
+  react:
+    mirabo:
+      beat: relief
+- name: c264
+  character: mirai
+  line: 妹に、「直った」と送る。
+  beat: tenderness
+  emotion: calm
+  speed: slow
+  volume: quiet
+  pause_before: 0.48
+- name: c265
+  character: mirai
+  line: 「知ってた」と、返ってきた。
+  beat: tenderness
+  emotion: calm
+  speed: slow
+  volume: quiet
+  pause_before: 0.36
+  react:
+    mirabo:
+      beat: prediction
+      mark: ！
+- name: c266
+  character: mirai
+  line: 「言ったら、直さないでしょ」とも。
+  beat: tenderness
+  emotion: calm
+  speed: slow
+  volume: quiet
+- name: c267
+  character: mirabo
+  line: ……知っていたんですか。
+  beat: surprise
+  emotion: excitement
+  speed: fast
+  volume: loud
+  pause_before: 0.3
+  react:
+    mirai:
+      beat: tenderness
+- name: c268
+  character: mirai
+  line: 知っていた。待っていたんだ。
+  beat: tenderness
+  emotion: calm
+  speed: slow
+  volume: quiet
+- name: c269
+  character: mirabo
+  line: ……僕の予測は。
+  beat: longing
+  emotion: loneliness
+  speed: slow
+  volume: quiet
+  pause_before: 0.3
+  react:
+    mirai:
+      beat: tenderness
+- name: c270
+  character: mirai
+  line: 要らなかった。
+  beat: tenderness
+  emotion: calm
+  speed: slow
+  volume: quiet
+  pause_before: 0.42
+  react:
+    mirabo:
+      beat: prediction
+- name: c271
+  character: mirai
+  line: でも、測るのは、要った。
+  beat: resolve
+  emotion: confidence
+  speed: slow
+  pause_before: 0.36
+- name: c272
+  character: mirai
+  line: 妹は、この光で、本を読む。
+  beat: tenderness
+  emotion: calm
+  speed: slow
+  volume: quiet
+- name: c273
+  character: mirai
+  line: 明日、渡す。
+  beat: resolve
+  emotion: confidence
+  speed: slow
+  pause_before: 1.2
+  react:
+    mirabo:
+      beat: prediction

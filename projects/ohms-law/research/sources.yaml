@@ -1,0 +1,128 @@
+sources:
+  - id: mext-curriculum
+    title: 中学校学習指導要領（平成29年告示）理科
+    kind: official
+    url: https://www.mext.go.jp/content/1413522_002.pdf
+    accessed: "2026-11-10"
+    confidence: high
+    note: 第2学年 第1分野 (3)「電流とその利用」ア(イ)「電流・電圧と抵抗」。
+
+  - id: openstax-ohms-law
+    title: "College Physics 2e — 20.2 Ohm's Law: Resistance and Simple Circuits"
+    kind: reference
+    url: https://openstax.org/books/college-physics-2e/pages/20-2-ohms-law-resistance-and-simple-circuits
+    accessed: "2026-11-10"
+    confidence: high
+    note: 抵抗の定義、1Ω = 1V/A、オーム物質、法則が普遍的でないこと。
+
+  - id: openstax-power
+    title: "College Physics 2e — 20.4 Electric Power and Energy"
+    kind: reference
+    url: https://openstax.org/books/college-physics-2e/pages/20-4-electric-power-and-energy
+    accessed: "2026-11-10"
+    confidence: high
+    note: 電球の温度上昇と抵抗の増加。
+
+  - id: openstax-series-parallel
+    title: "College Physics 2e — 21.1 Resistors in Series and Parallel"
+    kind: reference
+    url: https://openstax.org/books/college-physics-2e/pages/21-1-resistors-in-series-and-parallel
+    accessed: "2026-11-10"
+    confidence: high
+    note: 直列は同じ電流、電圧は分かれる。合成抵抗は和。
+
+  - id: hyperphysics-ohmlaw
+    title: "HyperPhysics — Ohm's Law"
+    kind: reference
+    url: https://hyperphysics.gsu.edu/hbase/electric/ohmlaw.html
+    accessed: "2026-11-10"
+    confidence: high
+    note: V/I が抵抗。比が広い電圧範囲で一定ならオーム物質。
+
+  - id: hyperphysics-tempcoef
+    title: "HyperPhysics — Resistance: Temperature Coefficient"
+    kind: reference
+    url: https://hyperphysics.gsu.edu/hbase/electric/restmp.html
+    accessed: "2026-11-10"
+    confidence: high
+    note: R = R0[1 + α(T − T0)]。タングステンの α は約4.5×10⁻³/℃。
+
+  - id: ethw-ohm
+    title: "ETHW — Georg Simon Ohm"
+    kind: reference
+    url: https://ethw.org/Georg_Simon_Ohm
+    accessed: "2026-11-10"
+    confidence: high
+    note: 経歴、1817年ケルンのギムナジウム、1825/1826年の論文、1827年の本、1841年のコプリーメダル。
+
+  - id: royal-society-ohm
+    title: "Royal Society — Georg Simon Ohm (NA7521)"
+    kind: official
+    url: https://catalogues.royalsociety.org/CalmView/Record.aspx?src=CalmView.Persons&id=NA7521&pos=1
+    accessed: "2026-11-10"
+    confidence: high
+    note: 1789年3月16日生、1854年7月6日没。1842年5月5日外国人会員。1841年コプリーメダル。
+
+  - id: science-museum-ohm
+    title: "Science Museum Group — Georg Simon Ohm"
+    kind: official
+    url: https://collection.sciencemuseumgroup.org.uk/people/cp37605
+    accessed: "2026-11-10"
+    confidence: high
+    note: 1826年に法則を発表、1827年に本。広く読まれず、1841年のコプリーメダルまで評価が遅れた。
+
+  - id: scielo-ohm-1826
+    title: "Revista Brasileira de Ensino de Física — Tradução comentada do artigo de 1826 de Ohm"
+    kind: paper
+    url: http://www.scielo.br/j/rbef/a/ZFfRbm49DVDgqQchD9xjBzg/?lang=pt
+    accessed: "2026-11-10"
+    confidence: high
+    note: 1826年論文の註解付き翻訳。熱電対、ねじり秤、2〜130インチの銅線8本、X = a/(b+x)。
+
+  - id: ac-bordeaux-lamp
+    title: "Académie de Bordeaux — Caractéristiques des dipôles (lampe)"
+    kind: reference
+    url: https://webetab.ac-bordeaux.fr/Pedagogie/Physique/Physico/Electro/e07carac.htm
+    accessed: "2026-11-10"
+    confidence: medium
+    note: 一つの電球の測定例。冷間13.9Ω、点灯71.3Ω。すべての電球の値ではない。
+
+  - id: makeabilitylab-led
+    title: "Makeability Lab — LEDs (Physical Computing)"
+    kind: reference
+    url: https://github.com/makeabilitylab/physcomp/blob/main/electronics/leds.md
+    accessed: "2026-11-10"
+    confidence: medium
+    note: LED の閾値、逆方向、直列抵抗 R = (Vs − Vf)/If。
+
+  - id: bipm-ampere
+    title: "BIPM — SI base unit: ampere"
+    kind: official
+    url: https://www.bipm.org/en/si-base-units/ampere
+    accessed: "2026-11-10"
+    confidence: high
+    note: アンペアは電気素量 e = 1.602176634×10⁻¹⁹ C を固定して定義される。
+
+  - id: ethw-si-units
+    title: "ETHW — System of Measurement Units"
+    kind: reference
+    url: https://ethw.org/System_of_Measurement_Units
+    accessed: "2026-11-10"
+    confidence: high
+    note: 1861年 BAAS、1881年パリ国際電気会議。1881年に水銀柱のオームを勧告し、アンペア・クーロン・ファラドを採択。
+
+  - id: kindai-ohms-law
+    title: "近畿大学 近藤研究室 — オームの法則"
+    kind: reference
+    url: https://www.phys.kindai.ac.jp/laboratory/kondo/lectures/em_tb/node139.html
+    accessed: "2026-11-10"
+    confidence: medium
+    note: I = Δφ/R をオームの法則と呼ぶ教材。R = ρl/S。温度一定の条件には触れない。定義と法則を同一視する立場の例として記録。
+
+  - id: ohms-law-script
+    title: "オームの法則 — 抵抗は、一定か（v7 採用版・10分授業版）"
+    kind: in-work
+    path: projects/ohms-law/review/drafts/v7.md
+    accessed: "2026-11-10"
+    confidence: high
+    note: 作品内の実演・代表値・予測。外部の事実と混ぜない。

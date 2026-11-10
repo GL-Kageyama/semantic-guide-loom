@@ -1,0 +1,48 @@
+name: c071
+metadata:
+  kind: cue
+  name: c071
+  character: mirabo
+  sample_rate: 24000
+  duration_sec: 2.773
+  created_at: '2026-11-10T01:51:04.712244+00:00'
+parameters:
+  version: 2
+  provider: tsukasa
+  voice_profile:
+    character: ミラボ
+    name_reading: みらぼ
+    reference_audio: gen_machine_bright
+    voice:
+      age: young_adult
+      gender: female
+      pitch: very_high
+      texture: bright
+      breathiness: none
+      resonance: head
+  performance_spec:
+    emotion:
+      primary: confidence
+      intensity: 0.0
+    loudness:
+      effort: normal
+      volume: normal
+    prosody:
+      pace: very_fast
+      pitch: natural
+      intonation: neutral
+      breathiness: none
+      pauses: []
+      emphasis: []
+      breath: []
+    subtext: ''
+  dialogue: でんりゅうがでんあつにひれいしていますね。
+  reading: ''
+  seed: 1
+  alpha: 0.35
+  beta: 0.7
+  rate_of_speech: 1.28
+  sha1: c8e7fc512595
+  name: c071
+  character: mirabo
+  pause_before: 0.25

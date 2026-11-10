@@ -1,0 +1,48 @@
+name: c017
+metadata:
+  kind: cue
+  name: c017
+  character: mirai
+  sample_rate: 24000
+  duration_sec: 2.973
+  created_at: '2026-11-10T01:50:28.204159+00:00'
+parameters:
+  version: 2
+  provider: tsukasa
+  voice_profile:
+    character: ミライ
+    name_reading: みらい
+    reference_audio: gen_female_light
+    voice:
+      age: young_adult
+      gender: female
+      pitch: medium_high
+      texture: warm
+      breathiness: slight
+      resonance: chest
+  performance_spec:
+    emotion:
+      primary: confidence
+      intensity: 0.0
+    loudness:
+      effort: normal
+      volume: normal
+    prosody:
+      pace: very_fast
+      pitch: natural
+      intonation: neutral
+      breathiness: none
+      pauses: []
+      emphasis: []
+      breath: []
+    subtext: ''
+  dialogue: よそくは、いい。まず、はかる。
+  reading: ''
+  seed: 1
+  alpha: 0.35
+  beta: 0.7
+  rate_of_speech: 1.28
+  sha1: 0d96f3dbeb3c
+  name: c017
+  character: mirai
+  pause_before: 0.24

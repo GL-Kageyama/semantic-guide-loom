@@ -1,0 +1,48 @@
+name: c118
+metadata:
+  kind: cue
+  name: c118
+  character: mirabo
+  sample_rate: 24000
+  duration_sec: 2.473
+  created_at: '2026-11-10T01:51:34.778853+00:00'
+parameters:
+  version: 2
+  provider: tsukasa
+  voice_profile:
+    character: ミラボ
+    name_reading: みらぼ
+    reference_audio: gen_machine_bright
+    voice:
+      age: young_adult
+      gender: female
+      pitch: very_high
+      texture: bright
+      breathiness: none
+      resonance: head
+  performance_spec:
+    emotion:
+      primary: anxiety
+      intensity: 0.0
+    loudness:
+      effort: relaxed
+      volume: quiet
+    prosody:
+      pace: fast
+      pitch: natural
+      intonation: neutral
+      breathiness: none
+      pauses: []
+      emphasis: []
+      breath: []
+    subtext: ''
+  dialogue: ……それで、いいんですか。
+  reading: ''
+  seed: 1
+  alpha: 0.35
+  beta: 0.7
+  rate_of_speech: 1.12
+  sha1: 0cbebfbc0c00
+  name: c118
+  character: mirabo
+  pause_before: 0.25
