@@ -1,0 +1,61 @@
+facts:
+- id: remark-note
+  statement: 2026年11月20日、Levent Alpöge は4ページのノート remark.pdf を公開し、Claude と共同でリーマン予想を証明したと主張した。主張は GRH に及び、時間をかければ ERH にも及ぶ見込みとした。
+  sources: [remark]
+  confidence: high
+  used_by: [c010, c011, c012, c013, c014]
+
+- id: remark-caveats
+  statement: アルポゲはノートで「最適でない選択が混ざっている可能性」「短い議論がすぐ続くはずだ」「高階の保型形式には個人的に習熟していない」と留保した。巨大で読めない「slop」を避けるため、Lean のみを公開したと説明した。
+  sources: [remark]
+  confidence: high
+  used_by: [c015, c016, c017, c018, c019, c020, c073]
+
+- id: lean-scale
+  statement: Lean 4.33.1（commit 819816b2）、Mathlib 0df444a3。175,187ファイル、約1,740万行、約81.9万定理/補題。14分割、約239MB。
+  sources: [lean-check]
+  confidence: high
+  used_by: [c005, c032, c038]
+
+- id: five-theorems
+  statement: 証明された5つの定理は riemannHypothesis, riemannZeta_eq_zero_re, LFunction_ne_zero_of_half_lt_re, LFunction_eq_zero_re, LFunction_eq_zero_re_of_isPrimitive。GRH はディリクレL関数に限る。
+  sources: [lean-check]
+  confidence: high
+  used_by: [c039, c040]
+
+- id: joint-statement
+  statement: 2026年11月21日、Lean/Mathlib コミュニティの共同声明が、命題と証明の両方を認定した。comparator と con-leche --compare が命題の一致を確認し、Lean カーネル、con-leche、con-ron、第三者のチェッカーが受理した。
+  sources: [lean-blog]
+  confidence: high
+  used_by: [c032, c033, c034, c035, c036]
+
+- id: rubinstein-checks
+  statement: Rubinstein の4チェック（全175,187モジュールのコンパイル、標準3公理のみの公理監査、Lean カーネルでの全リプレイ、nanoda による1,484,729宣言の型検査）が成功し、2026-11-21 10:10 UTC に完了した。
+  sources: [lean-check]
+  confidence: high
+  used_by: [c037, c038, c039, c040, c041, c042]
+
+- id: rubinstein-draft
+  statement: Rubinstein は164ページの作業草案を公開した。Part I で5段階の戦略、Part II で詳細、Part III で B・C を証明。核心の不等式 (M) は Lean から引用され、完全な人間向け証明ではない。草案自体は Claude・Codex・Gemini が執筆した。
+  sources: [rubinstein-draft]
+  confidence: high
+  used_by: [c046, c047, c048, c049, c050, c052, c053, c054]
+
+- id: masullo
+  statement: Masullo は940ページの GRH 証明草稿を公開した。AI なし、12年。公開版は未完成（522ページに定理13.3.1.2のメモ、13.1〜13.2節は見出しのみ）。Nielsen は一様有界性の主張に反例があると批判した。GRH の反証ではない。
+  sources: [xenospectrum, nielsen]
+  confidence: medium
+  used_by: [c056, c057, c058, c059, c060, c061, c062]
+
+- id: clay-status
+  statement: クレイ数学研究所の公式ページは依然「Unsolved」。Wikipedia は「solution claimed; prize pending」と記録している。賞金の手続きは発表・2年・一般受容。
+  sources: [clay-rh, wikipedia-rh]
+  confidence: high
+  used_by: [c063, c064, c065, c066]
+
+- id: four-stages
+  statement: 「解けた」は、証明が存在する、形式検証が通る、人間が理解する、コミュニティが受け入れる、の4段階で整理できる。2026年の主張は2段目まで。
+  sources: [in-work]
+  confidence: high
+  used_by: [c067, c068, c069, c070, c071]
+  note: 作品内の整理枠。事実そのものではない。

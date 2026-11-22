@@ -1,0 +1,1100 @@
+name: riemann-02-consequences
+default_pause: 0.25
+cues:
+- name: c001
+  character: mirai
+  line: 机の上に、紙の束を置く。持ち上げる。重い。表紙に、「RHを仮定した定理」と書いてある。
+  beat: resolve
+  emotion: confidence
+  speed: slow
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c002
+  character: mirabo
+  line: 予測では、リーマン予想が解ければ、素数に関する問題は、すべて解けます。確率は、99.8パーセント。
+  beat: doubt
+  emotion: neutral
+  speed: slow
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c003
+  character: mirai
+  line: 全部?
+  beat: doubt
+  emotion: neutral
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+      mark: ？
+- name: c004
+  character: mirabo
+  line: 全部です。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c005
+  character: mirai
+  line: カードに、「全部」と書く。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c006
+  character: mirai
+  line: 双子素数は。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c007
+  character: mirabo
+  line: ……それは、別の問題です。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.4
+  react:
+    mirai:
+      beat: doubt
+- name: c008
+  character: mirai
+  line: ゴールドバッハは。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+      mark: ？
+- name: c009
+  character: mirabo
+  line: ……別です。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.4
+  react:
+    mirai:
+      beat: doubt
+- name: c010
+  character: mirai
+  line: 「全部」を、赤ペンで、消す。ペン先が、紙に、食い込む。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c011
+  character: mirai
+  line: 全部は、どこまでだ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c012
+  character: mirabo
+  line: ……予測の範囲を、狭めます。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.4
+  react:
+    mirai:
+      beat: doubt
+- name: c013
+  character: mirai
+  line: RHが成り立てば、π(x)は、Li(x)に、√x log xの誤差で近づく。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c014
+  character: mirabo
+  line: フォン・コッホの評価です。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c015
+  character: mirai
+  line: 100万で、πは78,498。Liは約78,628。差は130。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c016
+  character: mirai
+  line: RHが保証する上限は、約550。実際の差は、その中にある。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c017
+  character: mirabo
+  line: 平均は、もっと正確になります。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c018
+  character: mirai
+  line: ああ。でも、位置は、分からない。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c019
+  character: mirai
+  line: シェーンフェルドの評価、素数ギャップ、区間の素数。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c020
+  character: mirabo
+  line: 全部、平均と揺らぎの話ですね。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c021
+  character: mirai
+  line: そう。素数の「個性」は、別だ。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c022
+  character: mirai
+  line: 私は、この束の定理を、一つ、使っている。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c023
+  character: mirabo
+  line: ……RHを仮定した定理を。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.4
+  react:
+    mirai:
+      beat: doubt
+- name: c024
+  character: mirai
+  line: 引き出しから、返却された論文を、出す。表紙に、査読の付箋。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.6
+  react:
+    mirabo:
+      beat: doubt
+      mark: ……
+- name: c025
+  character: mirai
+  line: 「条件付きの結果は、定理ではない」。査読者の、一行。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.6
+  react:
+    mirabo:
+      beat: doubt
+- name: c026
+  character: mirai
+  line: 三年前。同じ条件で、返ってきた。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.5
+  react:
+    mirabo:
+      beat: doubt
+- name: c026b
+  character: mirai
+  line: だから、今度は、通したい。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.3
+  react:
+    mirabo:
+      beat: doubt
+- name: c027
+  character: mirabo
+  line: その定理は、RHだけでは足りません。GRHが要ります。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c028
+  character: mirai
+  line: ……知っている。
+  beat: doubt
+  emotion: neutral
+  speed: very_fast
+  pause_before: 0.4
+  react:
+    mirabo:
+      beat: doubt
+- name: c029
+  character: mirabo
+  line: 予測では、99.2パーセント、GRHも解けます。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c030
+  character: mirai
+  line: 予測は、いい。根拠を、言え。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c031
+  character: mirabo
+  line: ……根拠は、まだ、ありません。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.4
+  react:
+    mirai:
+      beat: doubt
+- name: c032
+  character: mirai
+  line: なら、条件付きだ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c032b
+  character: mirabo
+  line: 表紙の条件を、消せば、通る確率は、41パーセント。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c032c
+  character: mirai
+  line: ……消せば。
+  beat: doubt
+  emotion: neutral
+  speed: very_fast
+  pause_before: 0.6
+  react:
+    mirabo:
+      beat: doubt
+- name: c032d
+  character: mirai
+  line: ペンを、表紙の上で、止める。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c032e
+  character: mirai
+  line: ……消さない。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.6
+  react:
+    mirabo:
+      beat: doubt
+- name: c033
+  character: mirai
+  line: 束を、持ち上げる。重い。表紙に、「条件付き」と、書く。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c034
+  character: mirabo
+  line: それで、出せるんですか。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c035
+  character: mirai
+  line: 出す。前の論文は、出せなかった。今度は、出す。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c036
+  character: mirai
+  line: RHを仮定した定理は、数百ある。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c037
+  character: mirabo
+  line: 仮定が消えると。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c038
+  character: mirai
+  line: 無条件になる。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c039
+  character: mirai
+  line: たとえば、アルティンの原始根予想。GRHの下で、フーリーが証明した。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c040
+  character: mirabo
+  line: GRHは、ディリクレL関数のRHです。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c041
+  character: mirai
+  line: そう。RHより、強い。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c042
+  character: mirai
+  line: アルゴリズムにも効く。ミラー–ラビンは、GRHの下で決定的になる。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c043
+  character: mirabo
+  line: じゃあ、暗号が終わります。……予測では、99パーセントです。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c044
+  character: mirai
+  line: RSAは、素因数分解の難しさだ。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c045
+  character: mirai
+  line: RHは、その難しさを、直接は揺るがさない。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c046
+  character: mirabo
+  line: ……撤回しません。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.5
+  react:
+    mirai:
+      beat: doubt
+      mark: ……
+- name: c047
+  character: mirai
+  line: ……なぜ。
+  beat: doubt
+  emotion: neutral
+  speed: very_fast
+  pause_before: 0.4
+  react:
+    mirabo:
+      beat: doubt
+- name: c048
+  character: mirabo
+  line: 予測は、外れていません。暗号の一部は、GRHを仮定しています。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c049
+  character: mirai
+  line: ……そうだ。一部は、な。
+  beat: doubt
+  emotion: neutral
+  speed: very_fast
+  pause_before: 0.4
+  react:
+    mirabo:
+      beat: doubt
+- name: c050
+  character: mirai
+  line: 撤回は、要らない。範囲を、言え。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c051
+  character: mirabo
+  line: 範囲は、GRHを仮定するアルゴリズムです。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c051b
+  character: mirabo
+  line: 予測の数字は、もう、出しません。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.5
+  react:
+    mirai:
+      beat: doubt
+- name: c052
+  character: mirai
+  line: ……それで、いい。
+  beat: doubt
+  emotion: neutral
+  speed: very_fast
+  pause_before: 0.4
+  react:
+    mirabo:
+      beat: doubt
+- name: c053
+  character: mirai
+  line: RHが解けても、双子素数は、残る。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c054
+  character: mirai
+  line: ゴールドバッハも、残る。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c055
+  character: mirabo
+  line: 素数の位置も、全部は分かりません。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c056
+  character: mirai
+  line: 101、103、107、109、113。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c057
+  character: mirai
+  line: 間隔は、2、4、2、4。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c058
+  character: mirai
+  line: この並びは、平均からは、出ない。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c059
+  character: mirabo
+  line: ……それが、個性ですか。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.4
+  react:
+    mirai:
+      beat: doubt
+      mark: ？
+- name: c060
+  character: mirai
+  line: そう。平均は、この並びを、教えない。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c061
+  character: mirai
+  line: バザードは、RHは「山の麓」だと言う。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c062
+  character: mirai
+  line: 拡張リーマン予想、大リーマン予想。上がある。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c063
+  character: mirabo
+  line: じゃあ、解けても、終わりじゃない。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c064
+  character: mirai
+  line: 終わりじゃ、ない。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c065
+  character: mirai
+  line: 私の束は、どこまで、片付く。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.5
+  react:
+    mirabo:
+      beat: doubt
+- name: c066
+  character: mirai
+  line: 「解けた」には、段階がある。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c067
+  character: mirai
+  line: 証明がある。形式検証が通る。人間が理解する。コミュニティが受け入れる。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c068
+  character: mirabo
+  line: 2026年の主張は、どこまで。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c069
+  character: mirai
+  line: 形式検証は、完了した。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c070
+  character: mirai
+  line: でも、完全な人間向け証明は、まだない。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c071
+  character: mirai
+  line: 査読も、クレイ賞の手続きも、未了だ。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c072
+  character: mirabo
+  line: クレイ賞は、発表、2年、一般受容。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c073
+  character: mirai
+  line: そう。公開しただけでは、賞金は出ない。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c074
+  character: mirabo
+  line: じゃあ、ミライさんの定理は、まだ条件付きですね。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c075
+  character: mirai
+  line: ああ。だから、出す。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c076
+  character: mirabo
+  line: ……条件付きで、ですか。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.4
+  react:
+    mirai:
+      beat: doubt
+- name: c077
+  character: mirai
+  line: 完全な証明が出るまで、待つこともできる。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.8
+  react:
+    mirabo:
+      beat: doubt
+- name: c077b
+  character: mirai
+  line: でも、待っている間に、誰かが同じ定理を、別の方法で出すかもしれない。だから、出す。
+  beat: resolve
+  emotion: confidence
+  speed: slow
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c078
+  character: mirabo
+  line: ……待たないんですね。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.4
+  react:
+    mirai:
+      beat: doubt
+- name: c079
+  character: mirai
+  line: 待たない。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c080
+  character: mirai
+  line: RHは、素数の平均を、最良の精度で教える。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c081
+  character: mirai
+  line: でも、素数の全部を、教えるわけじゃない。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c082
+  character: mirabo
+  line: 解けた、という言葉も。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c083
+  character: mirai
+  line: ああ。証明と、検証と、理解と、受容。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c084
+  character: mirai
+  line: 全部揃って、初めて、定理になる。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c085
+  character: mirabo
+  line: ……じゃあ、今は。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.4
+  react:
+    mirai:
+      beat: doubt
+- name: c085b
+  character: mirai
+  line: カードを、二枚、出す。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.4
+  react:
+    mirabo:
+      beat: doubt
+- name: c086
+  character: mirai
+  line: 一枚に、「条件付き」と書く。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c086b
+  character: mirai
+  line: もう一枚を、ミラボに、渡す。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.4
+  react:
+    mirabo:
+      beat: doubt
+- name: c087
+  character: mirabo
+  line: ミラボが、ペンを、差し出す。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.4
+  react:
+    mirai:
+      beat: doubt
+      mark: ……
+- name: c087b
+  character: mirai
+  line: ……それは、私が、書く。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.6
+  react:
+    mirabo:
+      beat: doubt
+- name: c087c
+  character: mirai
+  line: ペンを受け取る。「測定中」と、書く。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.5
+  react:
+    mirabo:
+      beat: doubt
+- name: c088
+  character: mirai
+  line: 二枚を、並べる。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c089
+  character: mirabo
+  line: ……どちらも、本当ですね。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.4
+  react:
+    mirai:
+      beat: doubt
+- name: c090
+  character: mirai
+  line: ああ。だから、出す。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c091
+  character: mirabo
+  line: 条件付きで。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c092
+  character: mirai
+  line: 条件付きで。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c092b
+  character: mirai
+  line: 封筒を、しばらく、見る。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.7
+  react:
+    mirabo:
+      beat: doubt
+- name: c093
+  character: mirai
+  line: カードを、封筒に、入れる。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.6
+  react:
+    mirabo:
+      beat: doubt
+- name: c094
+  character: mirabo
+  line: ……出しますか。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.4
+  react:
+    mirai:
+      beat: doubt
+- name: c095
+  character: mirai
+  line: 出す。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.6
+  react:
+    mirabo:
+      beat: doubt
+- name: c095b
+  character: mirabo
+  line: ……読まれますか。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.4
+  react:
+    mirai:
+      beat: doubt
+      mark: ……
+- name: c095c
+  character: mirai
+  line: 分からない。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.8
+  react:
+    mirabo:
+      beat: doubt

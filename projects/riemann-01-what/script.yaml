@@ -1,0 +1,951 @@
+name: riemann-01-what
+default_pause: 0.25
+cues:
+- name: c001
+  character: mirai
+  line: 机の上に、素数表を置く。紙の角が、めくれている。余白の字は、私のだ。学生の頃の。
+  beat: resolve
+  emotion: confidence
+  speed: slow
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c002
+  character: mirabo
+  line: 予測では、100万以下の素数の個数は、78,498個です。確率は、99.2パーセント。
+  beat: prediction
+  emotion: confidence
+  speed: slow
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c003
+  character: mirai
+  line: 数えた?
+  beat: doubt
+  emotion: neutral
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c004
+  character: mirabo
+  line: 数えなくても、分かります。個数は、平均から出ます。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c005
+  character: mirai
+  line: 次の素数は。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.6
+  react:
+    mirabo:
+      beat: doubt
+      mark: ？
+- name: c006
+  character: mirabo
+  line: ……それは、予測の範囲の外です。
+  beat: prediction
+  emotion: confidence
+  speed: natural
+  pause_before: 0.6
+  react:
+    mirai:
+      beat: doubt
+      mark: ……
+- name: c007
+  character: mirai
+  line: 外れた。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c008
+  character: mirabo
+  line: ……外れました。
+  beat: shame
+  emotion: guilt
+  speed: natural
+  pause_before: 0.4
+  react:
+    mirai:
+      beat: doubt
+- name: c009
+  character: mirabo
+  line: 予測を、一つ、捨てます。
+  beat: prediction
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c010
+  character: mirai
+  line: 捨てろ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c011
+  character: mirai
+  line: 数は当たる。場所は、当たらない。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c012
+  character: mirabo
+  line: ……なぜでしょう。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.4
+  react:
+    mirai:
+      beat: doubt
+- name: c013
+  character: mirai
+  line: 今日、見る。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c014
+  character: mirai
+  line: 学生の頃、次の素数を、予測で書いた。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c015
+  character: mirabo
+  line: ……当たったんですか。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.4
+  react:
+    mirai:
+      beat: doubt
+      mark: ？
+- name: c016
+  character: mirai
+  line: ×だった。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.5
+  react:
+    mirabo:
+      beat: doubt
+      mark: ……
+- name: c017
+  character: mirai
+  line: それから、数える。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c018
+  character: mirai
+  line: 素数は、2、3、5、7、11。割れない数だ。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c019
+  character: mirabo
+  line: 並びは、不規則に見えます。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c020
+  character: mirai
+  line: 近くはな。101、103、107、109、113。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c021
+  character: mirai
+  line: 間隔は、2にも、4にも、6にもなる。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c022
+  character: mirabo
+  line: でも、数えると、規則的です。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c023
+  character: mirai
+  line: x以下の素数の個数を、π(x)と書く。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c024
+  character: mirai
+  line: π(x)は、x/log xに近づく。素数定理だ。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c025
+  character: mirabo
+  line: 1896年に、証明されています。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c026
+  character: mirai
+  line: 100万で、78,498。予測は、当たった。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c027
+  character: mirabo
+  line: 対数積分なら、78,628。差は、130です。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c028
+  character: mirai
+  line: 平均は、正確だ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c029
+  character: mirabo
+  line: じゃあ、素数は、予測できるんですね。
+  beat: prediction
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c030
+  character: mirai
+  line: 数はな。場所は、別だ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c031
+  character: mirai
+  line: 表の、丸の次を、指でなぞる。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c032
+  character: mirai
+  line: 空白だ。どの数が次かは、平均からは、出ない。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c033
+  character: mirai
+  line: 素数を数える関数を、ゼータ関数の零点で書ける。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c034
+  character: mirabo
+  line: 零点ですか。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c035
+  character: mirai
+  line: ζ(s)=0になる、sだ。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c036
+  character: mirai
+  line: 自明な零点は、-2、-4、-6。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c037
+  character: mirai
+  line: 非自明な零点は、0と1の間の帯にある。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c038
+  character: mirabo
+  line: それが、素数の分布を決めるんですか。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c039
+  character: mirai
+  line: 明示公式だ。零点の和が、素数の誤差になる。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c040
+  character: mirai
+  line: 零点の実部が小さいほど、誤差は小さい。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c041
+  character: mirabo
+  line: 実部が、1/2なら。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c042
+  character: mirai
+  line: 誤差は、√x程度になる。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c043
+  character: mirai
+  line: これが、リーマン予想だ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c044
+  character: mirai
+  line: すべての非自明な零点は、実部1/2の線上にある。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c045
+  character: mirabo
+  line: 予測では、99.9パーセント、成り立ちます。
+  beat: prediction
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c046
+  character: mirai
+  line: 予測じゃない。証拠だ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c047
+  character: mirai
+  line: 最初の10兆個は、線上にある。確認済みだ。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c048
+  character: mirai
+  line: 零点全体の、41.6パーセント以上が、線上にあると証明されている。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c049
+  character: mirabo
+  line: じゃあ、全部ですか。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c050
+  character: mirai
+  line: 有限個を見たって、全部の証明にはならない。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c051
+  character: mirai
+  line: 私も、全部は分かっていない。
+  beat: worry
+  emotion: anxiety
+  speed: fast
+  pause_before: 0.5
+  react:
+    mirabo:
+      beat: doubt
+- name: c052
+  character: mirabo
+  line: ……ミライさんでも。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.4
+  react:
+    mirai:
+      beat: doubt
+      mark: ……
+- name: c053
+  character: mirai
+  line: 数えても、分からない。だから、確かめる。
+  beat: worry
+  emotion: anxiety
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c054
+  character: mirabo
+  line: なぜ、1/2なんですか。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c055
+  character: mirai
+  line: 関数等式だ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c056
+  character: mirai
+  line: sを、1-sに移す。零点は、その鏡で対称になる。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c057
+  character: mirai
+  line: 対称の軸が、実部1/2の線だ。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c058
+  character: mirabo
+  line: だから、そこに全部ある、と。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c059
+  character: mirai
+  line: 予想は、そう言う。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c060
+  character: mirabo
+  line: 証拠は、揃っています。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c061
+  character: mirai
+  line: タオは、解析だけでは足りないと言う。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c062
+  character: mirai
+  line: ゼータ関数を少し動かすと、零点は線から動く。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c063
+  character: mirai
+  line: 保型形式、代数的整数論、数論幾何。現代数学の道具が要る。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c064
+  character: mirabo
+  line: 予測では、いつか解けます。
+  beat: prediction
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c065
+  character: mirai
+  line: いつか、は、測れない。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c066
+  character: mirai
+  line: 1859年に、リーマンが提唱した。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c067
+  character: mirai
+  line: 2000年には、ミレニアム懸賞問題。100万ドル。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c068
+  character: mirai
+  line: 167年、証明は得られなかった。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c069
+  character: mirabo
+  line: でも、2026年11月20日。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c070
+  character: mirabo
+  line: 証明したと主張する人がいます。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c071
+  character: mirai
+  line: 誰が。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c072
+  character: mirabo
+  line: Anthropicの、レヴェント・アルポゲ。Claudeと共同です。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c073
+  character: mirai
+  line: 論文は。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c074
+  character: mirabo
+  line: ありません。Leanの形式証明が、1,740万行です。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c075
+  character: mirai
+  line: ……読んだ?
+  beat: doubt
+  emotion: neutral
+  speed: very_fast
+  pause_before: 0.8
+  react:
+    mirabo:
+      beat: doubt
+      mark: ？
+- name: c076
+  character: mirabo
+  line: 読めません。
+  beat: shame
+  emotion: guilt
+  speed: natural
+  pause_before: 0.8
+  react:
+    mirai:
+      beat: doubt
+      mark: ……
+- name: c077
+  character: mirai
+  line: 私も、読めない。
+  beat: worry
+  emotion: anxiety
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c078
+  character: mirabo
+  line: ……ミライさんも。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.4
+  react:
+    mirai:
+      beat: doubt
+- name: c079
+  character: mirai
+  line: ああ。だから、何を確かめた。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c080
+  character: mirabo
+  line: ……機械が、確かめました。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.4
+  react:
+    mirai:
+      beat: doubt
+- name: c081
+  character: mirai
+  line: 4ページのノートを、指で押さえる。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c082
+  character: mirai
+  line: 1,740万行。人間が、一生かけても、読み切れない量だ。それを、機械が、一晩で通した。
+  beat: resolve
+  emotion: confidence
+  speed: slow
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c083
+  character: mirai
+  line: カードを、出す。78,498と、空白。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.6
+  react:
+    mirabo:
+      beat: doubt
+- name: c084
+  character: mirai
+  line: 空白に、1,740万行と、書く。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c085
+  character: mirabo
+  line: ……僕の予測は。
+  beat: prediction
+  emotion: confidence
+  speed: natural
+  pause_before: 0.4
+  react:
+    mirai:
+      beat: doubt
+- name: c086
+  character: mirai
+  line: 要らない。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c087
+  character: mirai
+  line: 外れたことを、記録しろ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c088
+  character: mirabo
+  line: ……記録、ですか。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.4
+  react:
+    mirai:
+      beat: doubt
+- name: c089
+  character: mirai
+  line: ここに、外れたと、書け。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c090
+  character: mirabo
+  line: ミラボが、カードに、「外れた」と書く。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c091
+  character: mirabo
+  line: ……予測の数字が、出ません。
+  beat: prediction
+  emotion: confidence
+  speed: natural
+  pause_before: 0.8
+  react:
+    mirai:
+      beat: doubt
+      mark: ……
+- name: c092
+  character: mirai
+  line: 出さなくていい。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c093
+  character: mirabo
+  line: ……これが、記録、ですか。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.8
+  react:
+    mirai:
+      beat: doubt
+- name: c094
+  character: mirai
+  line: ああ。明日も、書く。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt

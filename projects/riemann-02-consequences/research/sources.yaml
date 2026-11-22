@@ -1,0 +1,123 @@
+sources:
+- id: prime-counting-table
+  title: Wikipedia — Prime-counting function
+  kind: reference
+  url: https://en.wikipedia.org/wiki/Prime-counting_function
+  accessed: '2026-11-22'
+  confidence: high
+  note: π(10^6)=78,498、li(10^6)=78,628 の表。
+- id: clay-rh
+  title: Clay Mathematics Institute — Riemann Hypothesis
+  kind: official
+  url: https://www.claymath.org/millennium/riemann-hypothesis/
+  accessed: '2026-11-22'
+  confidence: high
+  note: 予想の定義、10^13個の数値確認、ミレニアム懸賞問題。
+- id: riemann-1859
+  title: B. Riemann, Über die Anzahl der Primzahlen unter einer gegebenen Größe
+  kind: paper
+  year: 1859
+  confidence: high
+  note: 予想の初出。
+  accessed: '2026-11-22'
+  path: 予想の初出。
+- id: pratt-2020
+  title: Pratt, Robles, Zaharescu, Zeindler — 5/12 of the zeros are on the critical line
+  kind: paper
+  year: 2020
+  confidence: high
+  note: 少なくとも 5/12（約41.6%）が臨界線上。
+  accessed: '2026-11-22'
+  path: 少なくとも 5/12（約41.6%）が臨界線上。
+- id: wikipedia-rh
+  title: Wikipedia — Riemann hypothesis
+  kind: reference
+  url: https://en.wikipedia.org/wiki/Riemann_hypothesis
+  accessed: '2026-11-22'
+  confidence: medium
+  note: 関数等式、フォン・コッホ、シェーンフェルド、GRH、Siegel 零点。
+- id: tao-2026
+  title: Terence Tao — Unforced Euler singularity, unforced Navier-Stokes singularity, and the Generalized Riemann Hypothesis
+  kind: reference
+  url: https://terrytao.wordpress.com/2026/11/20/unforced-euler-singularity-unforced-navier-stokes-singularity-and-the-generalized-riemann-hypothesis/
+  accessed: '2026-11-22'
+  confidence: high
+  note: 解析だけでは足りない、保型・数論幾何の道具。
+- id: remark
+  title: Levent Alpöge — remark.pdf
+  kind: paper
+  url: https://alpo.ge/remark.pdf
+  accessed: '2026-11-22'
+  confidence: high
+  note: 4ページのノート。RH/GRH、ERH への言及、留保、Lean のみ公開。
+- id: techcrunch
+  title: TechCrunch — AI claimed a solution to the 167-year-old Riemann hypothesis
+  kind: news
+  url: https://techcrunch.com/2026/11/20/ai-claimed-a-solution-to-the-167-year-old-riemann-hypothesis-and-a-human-did-too/
+  accessed: '2026-11-22'
+  confidence: high
+  note: 2026-11-20 の主張、Masullo の別証明。
+- id: hooley-1967
+  title: C. Hooley — On Artin's conjecture
+  kind: paper
+  year: 1967
+  confidence: high
+  note: GRH の下でアルティンの原始根予想を証明。
+  accessed: '2026-11-22'
+  path: GRH の下でアルティンの原始根予想を証明。
+- id: aljazeera
+  title: 'Al Jazeera — Riemann hypothesis: Has the world''s most famous maths problem been cracked?'
+  kind: news
+  url: https://www.aljazeera.com/news/2026/11/21/riemann-hypothesis-has-the-worlds-most-famous-maths-problem-been-cracked
+  accessed: '2026-11-22'
+  confidence: high
+  note: バザード、サハのコメント。
+- id: clay-rules
+  title: Clay Mathematics Institute — Millennium Prize Rules
+  kind: official
+  url: https://www.claymath.org/millennium-problems/rules/
+  accessed: '2026-11-22'
+  confidence: high
+  note: Qualifying Outlet、発表後2年、一般受容。直接投稿は受け付けない。
+- id: lean-check
+  title: Michael Rubinstein — GRH Lean Check
+  kind: paper
+  url: https://mrubinst.github.io/grh-lean-verification/
+  accessed: '2026-11-22'
+  confidence: high
+  note: 5定理、4チェック、nanoda、10:10 UTC 完了、GRH の範囲。
+- id: lean-blog
+  title: Lean/Mathlib communities — joint statement on the Riemann Hypothesis
+  kind: paper
+  url: https://leanprover-community.github.io/blog/posts/riemann-hypothesis/
+  accessed: '2026-11-22'
+  confidence: high
+  note: 命題と証明の認定、comparator、con-leche、con-ron。
+- id: rubinstein-draft
+  title: Rubinstein — The Alpöge–Claude proof explained for the Riemann zeta function (164-page working draft)
+  kind: paper
+  url: https://www.math.uwaterloo.ca/~mrubinst/alpoge_claude_grh/zeta-paper.pdf
+  accessed: '2026-11-22'
+  confidence: high
+  note: 5段階の戦略、Part I–III、核心の (M) は Lean から引用。
+- id: xenospectrum
+  title: Xenospectrum — Draft Proof of the Generalized Riemann Hypothesis, 12 Years in the Making Without AI, Released Early
+  kind: news
+  url: https://xenospectrum.com/en/masullo-riemann-proof-draft-release/
+  accessed: '2026-11-22'
+  confidence: medium
+  note: 940ページ、Brian Conrad、未完成部分。
+- id: nielsen
+  title: J. L. Nielsen — A Failure of Uniform Boundedness in Masullo's Proposed Proof of the Generalized Riemann Hypothesis
+  kind: paper
+  url: https://philarchive.org/archive/NIEIOM
+  accessed: '2026-11-22'
+  confidence: medium
+  note: 一様有界性への反例。GRH の反証ではない。
+- id: in-work
+  title: 作品内の演出・整理枠
+  kind: in-work
+  confidence: high
+  note: 事実ではない。ミラボの百分率、4段階の整理など。
+  accessed: '2026-11-22'
+  path: 事実ではない。ミラボの百分率、4段階の整理など。

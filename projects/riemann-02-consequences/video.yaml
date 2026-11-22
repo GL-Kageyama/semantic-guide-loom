@@ -1,0 +1,51 @@
+title: 解けたら、何が変わる
+subtitle: リーマン予想の帰結
+channel: MIRAI × MIRABO
+template: dialogue-bust
+width: 1280
+height: 720
+fps: 30
+chapters:
+  c001:
+    label: 序章
+    title: 全部
+    term: 全部
+    key: '全部は、
+
+      どこまでだ。'
+  c013:
+    label: 第1章
+    title: 揺らぎの上限
+    term: 誤差
+    key: '平均は正確。
+
+      位置は別。'
+  c036:
+    label: 第2章
+    title: 仮定の上に建つ定理
+    term: 仮定
+    key: '条件付きで、
+
+      建っている。'
+  c053:
+    label: 第3章
+    title: 解けないもの
+    term: 個性
+    key: '平均は、
+
+      個性を教えない。'
+  c066:
+    label: 第4章
+    title: 「解けた」の4段階
+    term: 段階
+    key: '証明・検証・
+
+      理解・受容。'
+  c080:
+    label: 終章
+    title: まだ、測定中
+    term: 現在地
+    key: '条件付きで、
+
+      それでも出す。'
+cast: mirai-mirabo

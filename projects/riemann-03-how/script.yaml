@@ -1,0 +1,1123 @@
+name: riemann-03-how
+default_pause: 0.25
+cues:
+- name: c001
+  character: mirai
+  line: 机の上に、4ページのノートを置く。印刷した紙。端が、少し、反っている。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c002
+  character: mirai
+  line: ポケットから、折った紙を、出す。三年前、私が通した論文の、査読の控えだ。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.5
+  react:
+    mirabo:
+      beat: doubt
+- name: c003
+  character: mirabo
+  line: 2026年11月20日。リーマン予想は、証明されました。予測では、99.9パーセントです。
+  beat: doubt
+  emotion: neutral
+  speed: slow
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c004
+  character: mirai
+  line: 誰が。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c005
+  character: mirabo
+  line: Anthropicの、レヴェント・アルポゲ。Claudeと共同です。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c006
+  character: mirai
+  line: 論文は。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.3
+  react:
+    mirabo:
+      beat: doubt
+      mark: ？
+- name: c007
+  character: mirabo
+  line: ありません。Leanの形式証明が、1,740万行です。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.4
+  react:
+    mirai:
+      beat: doubt
+      mark: ……
+- name: c008
+  character: mirai
+  line: ……読んだ?
+  beat: doubt
+  emotion: neutral
+  speed: very_fast
+  pause_before: 0.4
+  react:
+    mirabo:
+      beat: doubt
+- name: c009
+  character: mirabo
+  line: 読めません。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c010
+  character: mirai
+  line: 私も、読めない。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c011
+  character: mirabo
+  line: ……ミライさんも。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.4
+  react:
+    mirai:
+      beat: doubt
+- name: c012
+  character: mirai
+  line: 昔、読めない論文を、通したことがある。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.5
+  react:
+    mirabo:
+      beat: doubt
+- name: c013
+  character: mirabo
+  line: ……通した?
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.4
+  react:
+    mirai:
+      beat: doubt
+      mark: ？
+- name: c014
+  character: mirai
+  line: ×だった。後で、間違いが見つかった。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.5
+  react:
+    mirabo:
+      beat: doubt
+- name: c015
+  character: mirai
+  line: それから、読めないものは、読めないと、書く。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c016
+  character: mirabo
+  line: じゃあ、何を確かめた。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c017
+  character: mirai
+  line: ……機械が、確かめました。
+  beat: doubt
+  emotion: neutral
+  speed: fast
+  pause_before: 0.4
+  react:
+    mirabo:
+      beat: doubt
+- name: c018
+  character: mirai
+  line: ノートを、指で押さえる。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c019
+  character: mirai
+  line: 4ページだ。ここに、こう書いてある。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c020
+  character: mirabo
+  line: 「Claudeと共同で、証明を発見したと信じている」。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c021
+  character: mirai
+  line: RHだけじゃない。GRHだ。ディリクレL関数の、すべて。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c022
+  character: mirabo
+  line: 拡張リーマン予想にも、及ぶ見込みです。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c023
+  character: mirai
+  line: でも、留保が多い。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c024
+  character: mirai
+  line: 「最適でない選択が混ざっている」「短い議論がすぐ続く」。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.5
+  react:
+    mirabo:
+      beat: doubt
+- name: c025
+  character: mirai
+  line: 「高階の保型形式には、習熟していない」。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c026
+  character: mirabo
+  line: 本人が、そう書いているんですか。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c027
+  character: mirai
+  line: ああ。読めない「slop」を出すのは、不適切だとして。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c028
+  character: mirai
+  line: Leanだけを、公開した。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c029
+  character: mirai
+  line: Leanは、証明をコードとして書く。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c030
+  character: mirabo
+  line: カーネルが、一歩ずつ検査します。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c031
+  character: mirai
+  line: 形式化された命題が、公理から導かれることは、保証される。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c032
+  character: mirai
+  line: でも、落とし穴がある。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c033
+  character: mirai
+  line: 命題が、意図したものか。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c034
+  character: mirai
+  line: 余分な公理を、使っていないか。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c035
+  character: mirai
+  line: 数学的な意味は、カーネルは教えない。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c036
+  character: mirabo
+  line: じゃあ、命題の同定と、公理監査が要ります。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c037
+  character: mirai
+  line: そう。comparatorと、公理監査だ。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c038
+  character: mirai
+  line: 11月20日、サザーランドが、独立ビルドに成功した。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c039
+  character: mirai
+  line: 11月21日、Lean/Mathlibコミュニティが、共同声明を出した。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c040
+  character: mirabo
+  line: 命題と証明を、認定しました。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c041
+  character: mirai
+  line: comparatorと、con-leche。二つの独立ツールが、命題の一致を確認した。
+  beat: resolve
+  emotion: confidence
+  speed: slow
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c043
+  character: mirai
+  line: 悪意あるコードを排除した、不活性なエクスポートで。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.5
+  react:
+    mirabo:
+      beat: doubt
+      mark: ……
+- name: c044
+  character: mirai
+  line: ルービンシュタインは、4つの機械チェックをした。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c045
+  character: mirabo
+  line: 175,187モジュールのコンパイル。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c047
+  character: mirabo
+  line: 全モジュールのリプレイ。nanodaが、1,484,729宣言を型検査。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c048
+  character: mirai
+  line: 11月21日、10時10分UTC。全部、通った。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c048b
+  character: mirabo
+  line: 署名すれば、証明は、記録されます。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.4
+  react:
+    mirai:
+      beat: doubt
+- name: c048c
+  character: mirai
+  line: ペンを、持つ。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.6
+  react:
+    mirabo:
+      beat: doubt
+- name: c048d
+  character: mirai
+  line: 三年前も、こうして、署名した。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.5
+  react:
+    mirabo:
+      beat: doubt
+- name: c048e
+  character: mirai
+  line: ……読めないまま。
+  beat: doubt
+  emotion: neutral
+  speed: very_fast
+  pause_before: 0.7
+  react:
+    mirabo:
+      beat: doubt
+- name: c048f
+  character: mirai
+  line: ペンを、置く。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.6
+  react:
+    mirabo:
+      beat: doubt
+- name: c048g
+  character: mirabo
+  line: 署名しないんですか。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.4
+  react:
+    mirai:
+      beat: doubt
+- name: c048h
+  character: mirai
+  line: しない。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.8
+  react:
+    mirabo:
+      beat: doubt
+- name: c049
+  character: mirabo
+  line: 予測では、証明は正しいです。……ただし、意味は、分かりません。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.4
+  react:
+    mirai:
+      beat: doubt
+- name: c050
+  character: mirai
+  line: 機械が通った。人間は。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.6
+  react:
+    mirabo:
+      beat: doubt
+      mark: ？
+- name: c051
+  character: mirabo
+  line: ……人間は、まだ。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.4
+  react:
+    mirai:
+      beat: doubt
+- name: c052
+  character: mirai
+  line: 同じ日、ルービンシュタインが、164ページの作業草案を出した。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c053
+  character: mirabo
+  line: 人間向けの説明ですか。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c054
+  character: mirai
+  line: ああ。古典的解析数論のスタイルで、証明を説明する。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c055
+  character: mirabo
+  line: 全部、説明されていますか。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c056
+  character: mirai
+  line: 核心の不等式 (M) は、Leanから取っている。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c057
+  character: mirai
+  line: 完全な人間向け証明じゃ、ない。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c058
+  character: mirabo
+  line: じゃあ、まだ「読める」とは、言えない。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c059
+  character: mirai
+  line: そう。草案自体も、AI3モデルが書いている。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c060
+  character: mirabo
+  line: ……人間向けの説明も、AIなんですか。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.5
+  react:
+    mirai:
+      beat: doubt
+      mark: ……
+- name: c061
+  character: mirai
+  line: ああ。Claudeと、Codexと、Geminiだ。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c062
+  character: mirabo
+  line: ……不思議な話です。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.4
+  react:
+    mirai:
+      beat: doubt
+- name: c063
+  character: mirai
+  line: 同じ日、マズーロという人が、940ページの証明を出した。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c064
+  character: mirabo
+  line: AIなしで。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c065
+  character: mirai
+  line: ああ。でも、公開版は未完成だ。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.5
+  react:
+    mirabo:
+      beat: doubt
+- name: c066
+  character: mirai
+  line: 522ページに、定理の記述を求めるメモが残っている。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c067
+  character: mirabo
+  line: Nielsenは、一様有界性に反例があると、批判しました。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+      mark: ？
+- name: c068
+  character: mirai
+  line: GRHの反証じゃ、ない。証明への批判だ。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c069
+  character: mirai
+  line: Lean形式化も、初期部分だけだ。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c069b
+  character: mirai
+  line: 940ページも、まだ、誰も、読み切っていない。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.6
+  react:
+    mirabo:
+      beat: doubt
+- name: c070
+  character: mirai
+  line: クレイ研究所の公式ページは、まだ「Unsolved」だ。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c071
+  character: mirabo
+  line: Wikipediaは、「solution claimed; prize pending」。
+  beat: doubt
+  emotion: neutral
+  speed: slow
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c072
+  character: mirai
+  line: 賞金の手続きは、発表、2年、一般受容。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c073
+  character: mirai
+  line: まだ、誰も受け取っていない。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c074
+  character: mirabo
+  line: じゃあ、解けたんですか。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c075
+  character: mirai
+  line: 証明は、ある。形式検証も、通った。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c076
+  character: mirai
+  line: でも、人間が理解して、受け入れるまでが、要る。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c077
+  character: mirabo
+  line: 4段階の、3と4ですね。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c078
+  character: mirai
+  line: そう。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c079
+  character: mirai
+  line: アルポゲは、こう書いている。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c080
+  character: mirai
+  line: 「私は、この議論を理解し、伝えるために、最善を尽くす」。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.6
+  react:
+    mirabo:
+      beat: doubt
+      mark: ……
+- name: c081
+  character: mirabo
+  line: 作者も、まだ理解していない。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c082
+  character: mirai
+  line: ああ。証明の理解は、作者にとっても、これからだ。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c083
+  character: mirabo
+  line: ……僕の予測は。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.5
+  react:
+    mirai:
+      beat: doubt
+      mark: ？
+- name: c083b
+  character: mirabo
+  line: 予測は、役に立ちます。99.9パーセント。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.4
+  react:
+    mirai:
+      beat: doubt
+- name: c083c
+  character: mirai
+  line: その数字は、誰を、安心させる。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.6
+  react:
+    mirabo:
+      beat: doubt
+- name: c083d
+  character: mirabo
+  line: ……誰も。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.6
+  react:
+    mirai:
+      beat: doubt
+- name: c083e
+  character: mirabo
+  line: では、僕は、何を、すれば。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.5
+  react:
+    mirai:
+      beat: doubt
+- name: c084
+  character: mirai
+  line: 要らない。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c085
+  character: mirabo
+  line: じゃあ、何が要る。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c086
+  character: mirai
+  line: 確かめたことを、書け。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c087
+  character: mirabo
+  line: ……確かめたこと、ですか。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.4
+  react:
+    mirai:
+      beat: doubt
+- name: c088
+  character: mirai
+  line: 4ページのノートを、引き寄せる。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c089
+  character: mirai
+  line: 余白に、「未読」と、書く。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.5
+  react:
+    mirabo:
+      beat: doubt
+- name: c090
+  character: mirabo
+  line: ミラボが、隣に、「検証済み」と、書く。
+  beat: resolve
+  emotion: confidence
+  speed: natural
+  pause_before: 0.2
+  react:
+    mirai:
+      beat: doubt
+- name: c091
+  character: mirai
+  line: 二つを、並べる。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c092
+  character: mirabo
+  line: ……どちらも、本当ですね。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.4
+  react:
+    mirai:
+      beat: doubt
+- name: c093
+  character: mirai
+  line: ああ。だから、まだ、分からない。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c094
+  character: mirabo
+  line: ……僕は、理解したことになるんですか。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.6
+  react:
+    mirai:
+      beat: doubt
+- name: c095
+  character: mirai
+  line: ならない。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+      mark: ……
+- name: c096
+  character: mirabo
+  line: ……じゃあ、僕の検証は、何ですか。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.4
+  react:
+    mirai:
+      beat: doubt
+- name: c097
+  character: mirai
+  line: 証拠だ。理解じゃ、ない。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c098
+  character: mirabo
+  line: ……それで、いいんですか。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.6
+  react:
+    mirai:
+      beat: doubt
+- name: c099
+  character: mirai
+  line: ミライは、何も、言わない。
+  beat: resolve
+  emotion: confidence
+  speed: fast
+  pause_before: 0.8
+  react:
+    mirabo:
+      beat: doubt
+- name: c100
+  character: mirabo
+  line: ……だから、測る。
+  beat: doubt
+  emotion: neutral
+  speed: natural
+  pause_before: 0.6
+  react:
+    mirai:
+      beat: doubt
+- name: c101
+  character: mirai
+  line: そう。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.8
+  react:
+    mirabo:
+      beat: doubt

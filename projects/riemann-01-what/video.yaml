@@ -1,0 +1,44 @@
+title: 素数は、数えられるか
+subtitle: リーマン予想とは
+channel: MIRAI × MIRABO
+template: dialogue-bust
+width: 1280
+height: 720
+fps: 30
+chapters:
+  c001:
+    label: 序章
+    title: 赤い丸
+    term: 予測
+    key: '数は当たる。
+
+      場所は、当たらない。'
+  c014:
+    label: 第1章
+    title: 平均は、当たる
+    term: 平均
+    key: '数えても、
+
+      場所は出ない。'
+  c033:
+    label: 第2章
+    title: 零点が、数を決める
+    term: 零点
+    key: '零点が、
+
+      誤差を決める。'
+  c054:
+    label: 第3章
+    title: なぜ、1/2 なのか
+    term: 対称
+    key: '対称の軸が、
+
+      1/2。'
+  c066:
+    label: 終章
+    title: 167年
+    term: 証明
+    key: '読めない証明が、
+
+      残った。'
+cast: mirai-mirabo

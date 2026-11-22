@@ -1,0 +1,17 @@
+{
+  "version": "v4",
+  "scores": {
+    "hook": 66,
+    "plot-architecture": 71,
+    "reader-experience": 71,
+    "prose-style": 63,
+    "admiration": 66,
+    "anti-generic-story-filter": 62,
+    "theme-resonance": 66,
+    "emotional-power": 61,
+    "character-depth": 51,
+    "character-role": 64
+  },
+  "mean": 64.1,
+  "pass": true
+}

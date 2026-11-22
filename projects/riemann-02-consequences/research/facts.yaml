@@ -1,0 +1,61 @@
+facts:
+- id: von-koch
+  statement: リーマン予想が成り立てば、π(x)=Li(x)+O(√x log x) が従う（フォン・コッホ）。
+  sources: [wikipedia-rh]
+  confidence: high
+  used_by: [c010, c011, c012, c013]
+
+- id: schoenfeld
+  statement: シェーンフェルドは、x≥2657 で |π(x)−Li(x)| < (1/(8π))√x log x を示した。
+  sources: [wikipedia-rh]
+  confidence: high
+  used_by: [c016]
+
+- id: hooley-artin
+  statement: アルティンの原始根予想は、GRH を仮定することで Hooley（1967）により証明された。
+  sources: [hooley-1967]
+  confidence: high
+  used_by: [c022]
+
+- id: miller-rabin
+  statement: GRH が成り立てば、ミラー–ラビン法は 2(log n)^2 程度までの底を試すだけで決定的に正しく判定できる。AKS 法（2002）は無条件の多項式時間アルゴリズムを与える。
+  sources: [wikipedia-rh]
+  confidence: high
+  used_by: [c025]
+
+- id: rsa
+  statement: RSA の安全性は大きな数の素因数分解の難しさに依存する。RH はその困難性を直接揺るがさない。
+  sources: [wikipedia-rh]
+  confidence: high
+  used_by: [c027, c028]
+
+- id: unsolved-by-rh
+  statement: 双子素数予想とゴールドバッハ予想は、リーマン予想からは従わない。RH は素数の位置をすべて与えるものでもない。
+  sources: [wikipedia-rh]
+  confidence: high
+  used_by: [c031, c032, c033]
+
+- id: buzzard-mountain
+  statement: ケビン・バザードは、リーマン予想は「山の麓」にすぎず、拡張リーマン予想や大リーマン予想などさらに強い形があると述べた。
+  sources: [aljazeera]
+  confidence: medium
+  used_by: [c037, c038]
+
+- id: clay-rules
+  statement: クレイ数学研究所のミレニアム賞は、Qualifying Outlet での発表、発表から2年以上の経過、世界の数学界での一般的受容の3つを必要とする。直接投稿は受け付けない。
+  sources: [clay-rules]
+  confidence: high
+  used_by: [c047, c048]
+
+- id: four-stages
+  statement: 「解けた」は、証明が存在する、形式検証が通る、人間が理解する、コミュニティが受け入れる、の4段階で整理できる。
+  sources: [in-work]
+  confidence: high
+  used_by: [c041, c042, c043, c044, c045, c046]
+  note: 作品内の整理枠。事実そのものではない。
+
+- id: claim-status
+  statement: 2026年11月の Alpöge + Claude の主張は、Lean による形式検証が完了したが、完全な人間向け証明・査読・クレイ賞の手続きは未了。
+  sources: [lean-check, clay-rh]
+  confidence: high
+  used_by: [c043, c044, c045, c046, c049, c050, c053]

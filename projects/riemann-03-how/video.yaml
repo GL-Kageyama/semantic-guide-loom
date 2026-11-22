@@ -1,0 +1,58 @@
+title: 証明は、誰のものか
+subtitle: リーマン予想をどうやって解いたか
+channel: MIRAI × MIRABO
+template: dialogue-bust
+width: 1280
+height: 720
+fps: 30
+chapters:
+  c001:
+    label: 序章
+    title: 4ページ
+    term: 未読
+    key: '読めない証明が、
+
+      届いた。'
+  c018:
+    label: 第1章
+    title: 4ページのノート
+    term: 留保
+    key: '本人も、
+
+      理解の途上。'
+  c029:
+    label: 第2章
+    title: なぜ、Lean なのか
+    term: 検証
+    key: '命題と公理と、
+
+      意味は別。'
+  c038:
+    label: 第3章
+    title: 検証
+    term: カーネル
+    key: '機械は通った。
+
+      人間は、まだ。'
+  c052:
+    label: 第4章
+    title: 164ページ
+    term: 草案
+    key: '核心は、
+
+      Leanの中。'
+  c070:
+    label: 第5章
+    title: 解けた、とは
+    term: 受容
+    key: '公式は、
+
+      まだUnsolved。'
+  c079:
+    label: 終章
+    title: まだ、測定中
+    term: 記録
+    key: '未読と検証済み、
+
+      どちらも本当。'
+cast: mirai-mirabo

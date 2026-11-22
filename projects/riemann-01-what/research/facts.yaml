@@ -1,0 +1,73 @@
+facts:
+- id: prime-counting-table
+  statement: 10^6 以下の素数の個数は 78,498。対数積分 li(10^6) は約 78,628 で、差は約 130。
+  sources: [prime-counting-table]
+  confidence: high
+  used_by: [c018, c019]
+
+- id: prime-theorem
+  statement: 素数定理は π(x) ~ x/log x。1896年にアダマールとド・ラ・ヴァレ・プーサンが独立に証明した。
+  sources: [clay-rh]
+  confidence: high
+  used_by: [c015, c016, c017]
+
+- id: euler-product
+  statement: ゼータ関数は ζ(s)=Σ1/n^s で、Re(s)>1 でオイラー積 ζ(s)=Π(1-p^-s)^-1 を持つ。
+  sources: [clay-rh]
+  confidence: high
+  used_by: [c023, c024]
+
+- id: nontrivial-zeros
+  statement: ゼータ関数の非自明な零点は 0<Re(s)<1 の臨界帯にある。自明な零点は -2,-4,-6,…。
+  sources: [clay-rh]
+  confidence: high
+  used_by: [c025, c026, c027]
+
+- id: explicit-formula
+  statement: 明示公式は、素数の計数関数をゼータ関数の零点の和で表す。零点の実部が小さいほど、素数の分布の誤差は小さい。
+  sources: [clay-rh]
+  confidence: high
+  used_by: [c028, c029, c030, c031, c032]
+
+- id: riemann-hypothesis
+  statement: リーマン予想は、ゼータ関数のすべての非自明な零点が Re(s)=1/2 の臨界線上にある、という予想。1859年にリーマンが提唱した。
+  sources: [clay-rh, riemann-1859]
+  confidence: high
+  used_by: [c033, c034, c053]
+
+- id: zeros-verified
+  statement: 最初の 10^13 個の零点は、臨界線上にあることが数値的に確認されている。
+  sources: [clay-rh]
+  confidence: high
+  used_by: [c037]
+
+- id: zeros-proportion
+  statement: 2020年、Pratt, Robles, Zaharescu, Zeindler は、零点の少なくとも 5/12（約41.6%）が臨界線上にあることを示した。
+  sources: [pratt-2020]
+  confidence: high
+  used_by: [c038]
+
+- id: functional-equation
+  statement: ゼータ関数は関数等式 ζ(s)=2^s π^(s-1) sin(πs/2) Γ(1-s) ζ(1-s) を満たす。零点の配置は Re(s)=1/2 に関して対称になる。
+  sources: [wikipedia-rh]
+  confidence: high
+  used_by: [c042, c043, c044]
+
+- id: tao-analytic
+  statement: テレンス・タオは、純粋に解析的な手法だけではリーマン予想に足りないと指摘した。ゼータ関数を摂動すると零点は臨界線から動く。
+  sources: [tao-2026]
+  confidence: medium
+  used_by: [c048, c049, c050]
+
+- id: claim-2026
+  statement: 2026年11月20日、Anthropic の Levent Alpöge は、Claude と共同でリーマン予想と GRH を証明したと主張し、Lean の形式証明を公開した。
+  sources: [remark, techcrunch]
+  confidence: high
+  used_by: [c056, c057, c059, c061]
+
+- id: in-work-mirabo
+  statement: ミラボの「99.2パーセント」「99.9パーセント」は人物の癖で、事実ではない。
+  sources: [in-work]
+  confidence: high
+  used_by: [c002, c035]
+  note: 作品内の演出。事実台帳の数値と混ぜない。

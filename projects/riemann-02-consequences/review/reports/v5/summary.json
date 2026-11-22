@@ -1,0 +1,17 @@
+{
+  "version": "v5",
+  "scores": {
+    "hook": 61,
+    "plot-architecture": 65,
+    "reader-experience": 62,
+    "prose-style": 62,
+    "admiration": 66,
+    "anti-generic-story-filter": 62,
+    "theme-resonance": 68,
+    "emotional-power": 67,
+    "character-depth": 60,
+    "character-role": 72
+  },
+  "mean": 64.5,
+  "pass": true
+}
