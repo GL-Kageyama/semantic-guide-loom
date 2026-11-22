@@ -4,7 +4,12 @@
 """
 from __future__ import annotations
 
+from pathlib import Path
+
+import pytest
 import yaml
+
+SAL = Path(__file__).resolve().parent.parent.parent / "semantic-audio-loom"
 
 
 def write(path, doc):
@@ -100,6 +105,65 @@ def test_detail_outside_its_chapter_fails(run_engine, tmp_path):
     result = run_engine("scriptcheck.py", "--project", str(project))
     assert result.returncode == 1
     assert "台本順で増えない" in result.stdout
+
+
+def make_narrator_project(tmp_path):
+    project = tmp_path / "work"
+    script = {
+        "name": "work",
+        "cues": [
+            {"name": "c01", "character": "mirai", "line": "数えた?"},
+            {"name": "c02", "character": "narrator", "line": "机の上に、素数表を置く。"},
+        ],
+    }
+    video = {
+        "title": "題",
+        "template": "dialogue-bust",
+        "cast": "mirai-mirabo",
+        "chapters": {},
+    }
+    write(project / "script.yaml", script)
+    write(project / "video.yaml", video)
+    return project
+
+
+@pytest.mark.skipif(not (SAL / "characters" / "narrator.voice.yaml").exists(),
+                    reason="SAL の narrator.voice.yaml が無い")
+def test_voice_only_narrator_passes(run_engine, tmp_path):
+    project = make_narrator_project(tmp_path)
+    result = run_engine("scriptcheck.py", "--project", str(project))
+    assert result.returncode == 0, result.stdout + result.stderr
+
+
+def test_stage_direction_in_own_voice_warns(run_engine, tmp_path):
+    project = make_narrator_project(tmp_path)
+    script = yaml.safe_load((project / "script.yaml").read_text(encoding="utf-8"))
+    script["cues"][0] = {"name": "c01", "character": "mirai",
+                         "line": "ミライは、何も、言わない。"}
+    write(project / "script.yaml", script)
+
+    loose = run_engine("scriptcheck.py", "--project", str(project))
+    assert loose.returncode == 0
+    assert "三人称" in loose.stdout
+
+    strict = run_engine("scriptcheck.py", "--project", str(project), "--strict")
+    assert strict.returncode == 1
+
+
+def test_chapter_without_details_warns_when_facts_exist(run_engine, tmp_path):
+    project = make_research_project(tmp_path)
+    video = yaml.safe_load((project / "video.yaml").read_text(encoding="utf-8"))
+    video["template"] = "dialogue-bust"
+    video["cast"] = "mirai-mirabo"
+    del video["chapters"]["c01"]["details"]
+    write(project / "video.yaml", video)
+
+    loose = run_engine("scriptcheck.py", "--project", str(project))
+    assert loose.returncode == 0
+    assert "details が無い" in loose.stdout
+
+    strict = run_engine("scriptcheck.py", "--project", str(project), "--strict")
+    assert strict.returncode == 1
 
 
 def test_too_many_detail_lines_fails(run_engine, tmp_path):

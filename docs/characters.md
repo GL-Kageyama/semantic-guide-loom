@@ -76,6 +76,14 @@ pair:
 - `engine/persona.py analyze --project` が既存台本から話し方の実測を出す
 - 形は `schemas/persona.schema.json`
 
+## 声だけの人物 — `narrator`
+
+画面に居ない語り手は、キャストに置かない。semantic-audio-loom の
+`characters/narrator.voice.yaml` を `script.yaml` の `character: narrator` で呼ぶ。
+`scriptcheck.py` / `acting.py` は、SAL に voice profile があれば**声だけの人物**として通す。
+`beat` / `face` は無く、`emotion` / `speed` / `pause_before` / `react` だけを持つ。
+地の文・動作はここへ置き、画面の人物には読ませない（[script.md](script.md)）。
+
 ## キャスト — `characters/<キャスト>.cast.yaml`（配布する）
 
 キャストは「誰が画面に居るか」。**立ち位置は型が持ち、キャストは `slot` の名で座る。**

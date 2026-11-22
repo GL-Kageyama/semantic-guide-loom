@@ -34,6 +34,17 @@
 
 人物票の `emotions` の形は [characters.md](characters.md)。
 
+## 声だけの語り手 — `narrator`
+
+地の文・動作・設定は `character: narrator` に置く。画面の人物に読ませない。
+`narrator` はキャストに置かず、semantic-audio-loom の
+`characters/narrator.voice.yaml` を使う。`beat` / `face` は持たず、
+`emotion` / `speed` / `pause_before` / `react` だけを置く。
+
+`dialogue-bust` では画面の二人が沈黙し、字幕だけが残る。`acting.py` は
+narrator を声だけの人物として扱い、表情の網羅率には数えない。
+一人称の回想・自分の動作は本人に残し、混ざる行は二つに割る。
+
 ## 検査と計測
 
 ```bash

@@ -38,6 +38,38 @@ def test_palette_lookup_keeps_the_declared_rgb():
     assert K.C("white") == (255, 255, 255, 255)
 
 
+def load_wrap():
+    K = load_common()
+    K.TPL = K.load_yaml(REPO / "references" / "templates" / "dialogue-bust" / "template.yaml")
+    K.SCALE = 1.0
+    return K, K.font(K.TPL["subtitle"]["size"]), K.S(K.TPL["subtitle"]["max_width"])
+
+
+def test_wrap_keeps_numbers_and_latin_together():
+    K, fnt, maxw = load_wrap()
+    lines = K.wrap_balanced(
+        "ルービンシュタインが、4つの機械チェック。"
+        "175,187モジュールの、コンパイルと全リプレイ。", fnt, maxw)
+    assert len(lines) == 2
+    assert any("175,187" in line for line in lines)
+    assert not any(line.endswith("17") for line in lines)
+
+    lines = K.wrap_balanced(
+        "RHが成り立てば、π(x)は、Li(x)に、√x log xの誤差で近づく。", fnt, maxw)
+    assert any("Li(x)" in line for line in lines)
+
+
+def test_wrap_keeps_particles_and_kana_words_together():
+    K, fnt, maxw = load_wrap()
+    lines = K.wrap_balanced(
+        "空白だ。どの数が次かは、平均からは、出ない。だから、私は、数える。", fnt, maxw)
+    assert lines[1].startswith("出")
+
+    lines = K.wrap_balanced(
+        "アルゴリズムにも効く。ミラー–ラビンは、GRHの下で決定的になる。", fnt, maxw)
+    assert any("ミラー–ラビン" in line for line in lines)
+
+
 def test_ruby_is_stripped_from_subtitles():
     # 字幕は原表記。ルビの括弧だけが落ちる。
     spec = importlib.util.spec_from_file_location("reading_under_test",

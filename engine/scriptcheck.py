@@ -318,6 +318,46 @@ def check_details(project: Path, video: dict, script: dict,
         warnings.append(f"型の panel.detail を読めないので、head 幅と容量の検査を飛ばした（{exc}）")
 
 
+def check_details_presence(project: Path, video: dict,
+                           errors: list[str], warnings: list[str]) -> None:
+    """事実台帳のある dialogue-bust は、全章に詳細カードを置く。"""
+    if video.get("template") != "dialogue-bust":
+        return
+    if not (project / "research" / "facts.yaml").exists():
+        return
+    for cue_name, ch in (video.get("chapters") or {}).items():
+        if isinstance(ch, dict) and not ch.get("details"):
+            warnings.append(
+                f"{cue_name}: 章に details が無い（中央が key 1 枚のまま）。"
+                "research/facts.yaml の事実から詳細カードを置く"
+            )
+
+
+def check_narrator(video: dict, script: dict,
+                   errors: list[str], warnings: list[str]) -> None:
+    """本人の名前を三人称で読む cue は、地の文を本人に読ませている。"""
+    cast_name = video.get("cast")
+    if not cast_name:
+        return
+    path = REPO / "characters" / f"{cast_name}.cast.yaml"
+    if not path.exists():
+        return
+    cast = load_yaml(path)
+    names = {c.get("id"): str(c.get("name") or "")
+             for c in cast.get("characters", []) if c.get("id")}
+    for cue in script.get("cues") or []:
+        cid = cue.get("character") or ""
+        name = names.get(cid) or ""
+        if not name:
+            continue
+        line = strip_ruby(cue.get("line") or "")
+        if any(f"{name}{p}" in line for p in "はがをの"):
+            warnings.append(
+                f"{cue.get('name')}: 本人の名前を三人称で読んでいる（{name}）。"
+                "地の文なら character: narrator へ"
+            )
+
+
 def check_research(project: Path, video: dict,
                    errors: list[str], warnings: list[str]) -> None:
     """research/ の出典と事実、details[].fact の参照を見る。
@@ -551,6 +591,8 @@ def check(args) -> int:
             warnings.append(f"{name}: 字幕が {len(text)} 字（{MAX_SUBTITLE} 字超）")
 
     check_details(project, video, script, errors, warnings)
+    check_details_presence(project, video, errors, warnings)
+    check_narrator(video, script, errors, warnings)
     check_research(project, video, errors, warnings)
 
     return report(errors, warnings, args, counts=(len(names), len(video.get("chapters") or {})))

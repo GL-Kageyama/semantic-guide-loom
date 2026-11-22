@@ -58,6 +58,13 @@ DAY_ALONE = re.compile(r"([一二三四五六七八九十]{1,3})日(?![中半間
 
 NEEDS_REVIEW = ("数字", "%", "Latin")
 
+# Tsukasa の前処理（Utils/phonemize/cotlet_utils.py）が、かなに直したあとで
+# 置換する語。ここに引っかかると、正しいかなを書いても別の語になる。
+TTS_TRAPS = {
+    "すうは": "TTS が「すうは」を「かずは」に置換します。素数は・個数は などは漢字で書く",
+    "ふかつせい": "促音が落ちます。「フカッセイ」にしてください",
+}
+
 
 def load_yaml(path: Path) -> dict:
     with open(path, encoding="utf-8") as f:
@@ -233,7 +240,13 @@ def audit(args) -> int:
             reasons.append("漢字")
         if reasons:
             warnings.append(f"{name}: 読みに{'・'.join(reasons)}が残る: {reading}")
-            flagged.append(name)
+            if name not in flagged:
+                flagged.append(name)
+        for trap, hint in TTS_TRAPS.items():
+            if trap in reading:
+                warnings.append(f"{name}: {hint}: {reading}")
+                if name not in flagged:
+                    flagged.append(name)
     for name in sorted(set(readings) - set(cue_names)):
         warnings.append(f"{name}: script.yaml に無い cue")
 

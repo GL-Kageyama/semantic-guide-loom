@@ -46,6 +46,17 @@ cues:
 
 演技の設計そのものは [acting.md](acting.md)、人物票は [characters.md](characters.md)。
 
+## 声だけの語り手 — `narrator`
+
+地の文・動作・設定は、画面の人物に読ませない。`character: narrator` にする。
+`narrator` はキャストに置かない（semantic-audio-loom の
+`characters/narrator.voice.yaml` を使う）。`beat` / `face` は持たず、
+`emotion` / `speed` / `pause_before` / `react` だけを置く。
+
+`dialogue-bust` では、話し手が cast に居ないので画面の二人は沈黙し、字幕だけが残る。
+一人称の回想・自分の動作は本人に残し、混ざる行は二つに割る。`scriptcheck.py` は、
+キャストの人物が自分の名前を三人称で読む cue を警告する（`--strict` では失敗）。
+
 ⚠️ **読み違えは `line` のルビで塞ぐ。** 工房の記法 `漢字《かな》`。読みだけ仮名になり、
 台詞と字幕は原表記のまま残る。ただし**読みを本気で直すなら `reading.yaml`**（下記）。
 両方を同じ作品に混ぜない。ルビは `reading.yaml` の無い作品のための後方互換。

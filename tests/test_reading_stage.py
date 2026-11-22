@@ -94,6 +94,46 @@ def test_audit_strict_fails_on_kanji_left_in_reading(run_engine, tmp_path):
     assert strict.returncode == 1
 
 
+def test_audit_warns_on_tts_traps(run_engine, tmp_path):
+    project = make_project(tmp_path)
+    write(project / "reading.yaml", {
+        "name": "work",
+        "readings": {"c01": "そすうは、ふかつせい。", "c02": "じゅうねんご。"},
+    })
+
+    loose = run_engine("reading.py", "audit", "--project", str(project))
+    assert loose.returncode == 0
+    assert "かずは" in loose.stdout
+    assert "フカッセイ" in loose.stdout
+
+    strict = run_engine("reading.py", "audit", "--project", str(project), "--strict")
+    assert strict.returncode == 1
+
+
+def test_prune_voice_when_character_changes(run_engine, tmp_path):
+    project = make_project(tmp_path)
+    voice = project / "assets" / "voice"
+    voice.mkdir(parents=True)
+    (voice / "c01.wav").write_bytes(b"x")
+    write(voice / "c01.params.yaml", {
+        "name": "c01",
+        "parameters": {"dialogue": "にじゅうねんまえ。", "character": "a"},
+    })
+
+    script = yaml.safe_load((project / "script.yaml").read_text(encoding="utf-8"))
+    script["cues"][0]["character"] = "narrator"
+    write(project / "script.yaml", script)
+
+    result = run_engine(
+        "reading.py", "stage", "--project", str(project),
+        "--stage", str(tmp_path / "stage"),
+        "--assets", str(project / "assets"), "--prune-voice",
+    )
+    assert result.returncode == 0, result.stdout + result.stderr
+    assert not (voice / "c01.wav").exists()
+    assert not (voice / "c01.params.yaml").exists()
+
+
 def test_audit_reports_missing_and_unknown_cues(run_engine, tmp_path):
     project = make_project(tmp_path)
     write(project / "reading.yaml",

@@ -49,6 +49,14 @@ projects/<作品>/   engine/   docs/   tools/   assets/repo-hero.png
 - **`script.yaml` の形の正本も `semantic-audio-loom`。**
   `schemas/scene.schema.json`。ここへ写さない（写すと黙って古くなる）。
 - **決定的であること。** 同じ台本・同じ素材から同じ絵が出る。時刻に乱数を使わない。
+- **読みは `reading.yaml` で固定する。** 数字・英字・記号はカタカナ。TTS は
+  `すうは → かずは` と置換するので、`素数は`・`双子素数は`・`個数は` は漢字。
+  分数は `B分のA`（`x/log x` は `ログエックス分のエックス`）。
+- **地の文・動作・設定は `narrator`（声だけ）に置く。** 画面の人物に読ませない。
+  一人称の回想・自分の動作だけを本人に残す。`scriptcheck.py` が三人称の自分名を警告する。
+- **`dialogue-bust` の全章に `details` を置く。** 事実台帳（`research/facts.yaml`）が
+  ある作品で章に詳細カードが無いと、`scriptcheck.py` が警告する。中央を `key` 1 枚で
+  終わらせない。
 
 ## 触ってはいけないもの
 

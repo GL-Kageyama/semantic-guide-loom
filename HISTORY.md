@@ -1,5 +1,28 @@
 # HISTORY
 
+## 0.6.0 — 2026-11-22 読み・話者・中央詳細を、機構へ
+
+リーマン予想3話の仕上げで見つかった3つの弱点を、作品ごとの修正ではなく、
+次回そのまま効く機構へ移した。
+
+- **読み**: `reading.yaml` の罠を `guide-reading` と `docs/reading.md` に固定。
+  TTS の `すうは → かずは`、`はつか → わつか`、`ふかつせい → ふかせい` を避ける。
+  数字・英字・記号はカタカナ、`素数は`・`双子素数は`・`個数は` は漢字、
+  `x/log x` は「ログエックス分のエックス」。`reading.py audit` が `すうは` と
+  `ふかつせい` を警告する。
+- **話者**: 地の文・動作・設定は `character: narrator`（声だけ）へ。SAL の
+  `narrator.voice.yaml` を使い、キャストに置かない。`scriptcheck.py` / `acting.py` は
+  voice profile のある人物を声だけとして通す。`scriptcheck.py` は、キャストの人物が
+  自分の名前を三人称で読む cue を警告する。`reading.py stage --prune-voice` は
+  話者が変わった cue も声を作り直す。
+- **中央**: `dialogue-bust` + `research/facts.yaml` の作品は、全章に `details` を置く。
+  `scriptcheck.py` が欠落を警告する。`guide-design` は章ごとの詳細カードの材料を
+  事実の柱に含める。
+- **字幕**: `wrap_balanced` が数字・英字・カタカナ語・助詞・ダッシュの途中で
+  割らないようにした。句読点の後ろを優先する。
+- テスト: 読みの罠、話者変更の prune、声だけの narrator、詳細カード欠落、
+  字幕の折り返しを追加（`pytest -q` 40 passed）。
+
 ## 0.5.2 — 2026-11-03 README の頭の絵を、リポジトリの顔として描き直した
 
 `assets/repo-hero.png` は `projects/cyber-basics` の 29.0 秒のコマだった。リポジトリの

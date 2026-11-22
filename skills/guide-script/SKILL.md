@@ -85,6 +85,8 @@ argument-hint: '作品の置き場。例: projects/<作品>'
     <venv> engine/scriptcheck.py --project projects/<作品>
     <venv> engine/acting.py audit --project projects/<作品>
     ```
+    `scriptcheck` は、地の文を本人が三人称で読む cue と、事実台帳があるのに
+    `details` の無い章を警告する（`--strict` では失敗）。
 
 12. **読みと BGM へ。** [guide-reading](../guide-reading/SKILL.md) →
     [guide-bgm](../guide-bgm/SKILL.md) → `engine/make.sh`。
@@ -131,6 +133,9 @@ argument-hint: '作品の置き場。例: projects/<作品>'
 - **`……` だけの行は cue にしない。** 声を持たない行は音にならず、`build_voice.py` が
   落ちる。その間は次の cue の `pause_before` に畳む（0.6 秒の沈黙なら次の行へ +0.6）。
 - `character` は `characters/<id>.character.yaml` / `cast.yaml` の id。固有名は書かない。
+  **地の文・動作・設定は `character: narrator`。** 画面の人物に読ませない。
+  `narrator` はキャスト不要（SAL の `narrator.voice.yaml` があれば声だけ通る）。
+  一人称の回想・自分の動作だけを、その人物に残す。混ざる行は二つに割る。
 - `line` は**字幕に出したい文**。読みは `reading.yaml` が別に持つ（guide-reading）。
 - **演技の欄**（guide-acting の出力）:
   `emotion` / `beat` / `face` / `speed` / `pause_before` / `volume` / `react`。
@@ -168,7 +173,10 @@ chapters:
         fact: first-light
 ```
 
-- **章に 2〜7 枚。** 章の長さに合わせる。1 枚だけなら `key` で足りる。
+- **`dialogue-bust` の全章に 2〜4 枚を置く。** 章の長さに合わせる。
+  事実台帳（`research/facts.yaml`）がある作品で章に `details` が無いと、
+  `scriptcheck.py` が警告する（`--strict` では失敗）。**key 1 枚で終わらせない。**
+- 1 枚だけなら `key` で足りるのは、事実台帳の無い短い作品だけ。
 - **`cue` はその章の範囲**（章の頭 cue 以上、次の章の頭 cue 未満）で、**台本順に増える**。
   同じ cue を 2 枚に使わない。**最初のカードは章の頭 cue より後ろ**に置く
   （`key` を読む時間を作る）。
@@ -212,6 +220,8 @@ chapters:
 - **説明の因果を「余白」として隠す。** 主題は言わない。事実と因果は言う。
 - **文学の点数を上げるために、事実の cue を断片にする。**
 - **詳細カードに、出典の無い事実を置く。** 台帳に無い数字は、先に research へ足す。
+- **事実台帳があるのに、章を `key` 1 枚で終わらせる。** 中央が薄くなる。
+- **地の文・動作を、画面の人物に読ませる。** `character: narrator` へ置く。
 - Markdown から YAML への自動変換。文の切れ目と cue 名は意味判断なので、ここで行う。
 - 演技を YAML 化の後に足す。感情の設計は台詞より先。
 
