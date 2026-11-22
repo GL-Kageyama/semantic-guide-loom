@@ -59,3 +59,29 @@ facts:
   sources: [lean-check, clay-rh]
   confidence: high
   used_by: [c043, c044, c045, c046, c049, c050, c053]
+
+- id: in-work-returned-paper
+  statement: ミライの三年前の論文は「条件付きの結果は、定理ではない」として返却された（作品内）。
+  sources: [in-work]
+  confidence: high
+  used_by: [c024, c025, c026]
+  note: 作品内の演出。
+
+- id: in-work-priority
+  statement: 同じ定理を、別の誰かが先に投稿しようとしている（作品内）。封筒の締切は金曜。
+  sources: [in-work]
+  confidence: high
+  used_by: [c001b, c077b, c079]
+  note: 作品内の演出。
+
+- id: conditional-theorems
+  statement: RH を仮定して証明された定理は数百あり、仮定が外れると無条件になる。
+  sources: [wikipedia-rh]
+  confidence: high
+  used_by: [c022, c036, c038]
+
+- id: crypto-grh
+  statement: 暗号の一部の解析・評価は GRH を仮定している。ただし RSA の安全性そのものは素因数分解の困難性に依存する。
+  sources: [wikipedia-rh]
+  confidence: high
+  used_by: [c048, c049, c051]

@@ -189,8 +189,55 @@ def wrap_jp(text: str, fnt: ImageFont.FreeTypeFont, max_w: int) -> list[str]:
     return lines
 
 
+PARTICLES = set("はがをにでとものへや")
+NUMBER_UNITS = set("万億兆千百十")
+
+
+def _char_class(ch: str) -> str:
+    if ch.isdigit():
+        return "digit"
+    if ch.isascii() and ch.isalpha():
+        return "latin"
+    if ch in "()[]{}.,:;/-_+='\"":
+        return "latin_punct"
+    if "゠" <= ch <= "ヿ":
+        return "kana"
+    if "一" <= ch <= "鿿":
+        return "kanji"
+    if "぀" <= ch <= "ゟ":
+        return "hira"
+    return "other"
+
+
+def _break_penalty(a: str, b: str) -> int:
+    """行頭に置くと読みにくい位置に、重みを付ける。"""
+    ca, cb = _char_class(a), _char_class(b)
+    # 数字・英字・記号の途中では割らない（17 / 5,187、Li(x / ) など）。
+    if ca in ("digit", "latin", "latin_punct") and cb in ("digit", "latin", "latin_punct"):
+        return 10000
+    # 1,740 万行 のように、数字と位取りの間でも割らない。
+    if ca == "digit" and b in NUMBER_UNITS:
+        return 10000
+    if a in NUMBER_UNITS and cb == "digit":
+        return 10000
+    # ダッシュの前后では割らない（ミラー–ラビン など）。
+    if a in "–—‐-" or b in "–—‐-":
+        return 10000
+    # 助詞を単独で行頭に出さない。
+    if b in PARTICLES:
+        return 300
+    # カタカナ語・漢字熟語・ひらがなの語中を避ける。
+    if ca == cb == "kana":
+        return 200
+    if ca == cb == "kanji":
+        return 150
+    if ca == cb == "hira":
+        return 150
+    return 0
+
+
 def wrap_balanced(text: str, fnt: ImageFont.FreeTypeFont, max_w: int) -> list[str]:
-    """2 行に割るとき、行の長さを揃える。句読点の後ろを優先する。"""
+    """2 行に割るとき、行の長さを揃える。句読点の後ろと語の切れ目を優先する。"""
     if fnt.getlength(text) <= max_w:
         return [text]
     best, best_score = None, None
@@ -200,7 +247,8 @@ def wrap_balanced(text: str, fnt: ImageFont.FreeTypeFont, max_w: int) -> list[st
         w1, w2 = fnt.getlength(text[:k]), fnt.getlength(text[k:])
         if w1 > max_w or w2 > max_w:
             continue
-        score = abs(w1 - w2) - (S(60) if text[k - 1] in "、。！？" else 0)
+        score = abs(w1 - w2) - (S(200) if text[k - 1] in "、。！？」』】" else 0)
+        score += _break_penalty(text[k - 1], text[k])
         if best_score is None or score < best_score:
             best, best_score = k, score
     if best is None:

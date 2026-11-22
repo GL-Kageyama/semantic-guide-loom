@@ -24,6 +24,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import statistics
 import sys
@@ -37,6 +38,12 @@ import sal_enums
 
 REPO = Path(__file__).resolve().parent.parent
 RUBY = re.compile(r"([^\s《》]+)《([^》]+)》")
+
+
+def voice_profile_exists(cid: str) -> bool:
+    """画面に居ない語り手。SAL に voice profile があれば声だけ使える。"""
+    sal = Path(os.environ.get("SAL", REPO.parent / "semantic-audio-loom"))
+    return bool(cid) and (sal / "characters" / f"{cid}.voice.yaml").exists()
 
 VOICE_ENUMS = {
     "emotion": "emotion",
@@ -133,8 +140,9 @@ def collect(project: Path, script_path: Path | None = None,
     for cue in cues:
         name = cue.get("name") or "?"
         cid = cue.get("character") or ""
+        voice_only = bool(cid) and cid not in ids and voice_profile_exists(cid)
 
-        if cid and cid not in ids:
+        if cid and cid not in ids and not voice_only:
             errors.append(f"{name}: character {cid!r} が cast に無い")
 
         for key, enum_key in VOICE_ENUMS.items():
@@ -177,7 +185,7 @@ def collect(project: Path, script_path: Path | None = None,
             else:
                 pauses.append(float(pb))
 
-        if cid:
+        if cid and not voice_only:
             row = per.setdefault(cid, {
                 "cues": 0, "chars": 0, "questions": 0, "faces": Counter(),
                 "beats": Counter(), "speeds": Counter(), "marks": 0,
@@ -278,7 +286,8 @@ def collect(project: Path, script_path: Path | None = None,
             same_mark += 1
         prev = cid
 
-    total = max(1, len(speaking))
+    visible = [c for c in speaking if c.get("character") in ids]
+    total = max(1, len(visible))
     metrics = {
         "cues": len(cues),
         "speaking": len(speaking),

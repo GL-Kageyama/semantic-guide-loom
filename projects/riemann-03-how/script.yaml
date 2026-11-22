@@ -2,22 +2,30 @@ name: riemann-03-how
 default_pause: 0.25
 cues:
 - name: c001
-  character: mirai
+  character: narrator
   line: 机の上に、4ページのノートを置く。印刷した紙。端が、少し、反っている。
-  beat: resolve
-  emotion: confidence
-  speed: natural
+  emotion: neutral
+  speed: slow
   pause_before: 0.2
   react:
     mirabo:
       beat: doubt
 - name: c002
+  character: narrator
+  line: ポケットから、折った紙。三年前の、査読の控え。
+  emotion: neutral
+  speed: slow
+  pause_before: 0.5
+  react:
+    mirabo:
+      beat: doubt
+- name: c002b
   character: mirai
-  line: ポケットから、折った紙を、出す。三年前、私が通した論文の、査読の控えだ。
+  line: 表紙に、私の署名。
   beat: resolve
   emotion: confidence
-  speed: natural
-  pause_before: 0.5
+  speed: slow
+  pause_before: 0.3
   react:
     mirabo:
       beat: doubt
@@ -64,7 +72,7 @@ cues:
       mark: ？
 - name: c007
   character: mirabo
-  line: ありません。Leanの形式証明が、1,740万行です。
+  line: 論文は、ありません。Leanの形式証明が、1,740万行です。
   beat: doubt
   emotion: neutral
   speed: natural
@@ -115,7 +123,7 @@ cues:
       beat: doubt
 - name: c012
   character: mirai
-  line: 昔、読めない論文を、通したことがある。
+  line: 三年前の、署名。
   beat: resolve
   emotion: confidence
   speed: fast
@@ -136,7 +144,7 @@ cues:
       mark: ？
 - name: c014
   character: mirai
-  line: ×だった。後で、間違いが見つかった。
+  line: 通した。半年後、式が一つ、逆だった。訂正は、二行。
   beat: resolve
   emotion: confidence
   speed: fast
@@ -175,11 +183,10 @@ cues:
     mirabo:
       beat: doubt
 - name: c018
-  character: mirai
+  character: narrator
   line: ノートを、指で押さえる。
-  beat: resolve
-  emotion: confidence
-  speed: very_fast
+  emotion: neutral
+  speed: slow
   pause_before: 0.2
   react:
     mirabo:
@@ -427,7 +434,7 @@ cues:
       mark: ……
 - name: c044
   character: mirai
-  line: ルービンシュタインは、4つの機械チェックをした。
+  line: ルービンシュタインが、4つの機械チェック。175,187モジュールの、コンパイルと全リプレイ。
   beat: resolve
   emotion: confidence
   speed: natural
@@ -437,17 +444,7 @@ cues:
       beat: doubt
 - name: c045
   character: mirabo
-  line: 175,187モジュールのコンパイル。
-  beat: doubt
-  emotion: neutral
-  speed: natural
-  pause_before: 0.2
-  react:
-    mirai:
-      beat: doubt
-- name: c047
-  character: mirabo
-  line: 全モジュールのリプレイ。nanodaが、1,484,729宣言を型検査。
+  line: nanodaが、1,484,729宣言を、型検査しました。
   beat: doubt
   emotion: neutral
   speed: natural
@@ -457,7 +454,7 @@ cues:
       beat: doubt
 - name: c048
   character: mirai
-  line: 11月21日、10時10分UTC。全部、通った。
+  line: 11月21日、10時10分UTC。全部、通りました。
   beat: resolve
   emotion: confidence
   speed: natural
@@ -476,18 +473,17 @@ cues:
     mirai:
       beat: doubt
 - name: c048c
-  character: mirai
+  character: narrator
   line: ペンを、持つ。
-  beat: resolve
-  emotion: confidence
-  speed: very_fast
+  emotion: neutral
+  speed: slow
   pause_before: 0.6
   react:
     mirabo:
       beat: doubt
 - name: c048d
   character: mirai
-  line: 三年前も、こうして、署名した。
+  line: 三年前も、このペンで、署名した。
   beat: resolve
   emotion: confidence
   speed: fast
@@ -497,7 +493,7 @@ cues:
       beat: doubt
 - name: c048e
   character: mirai
-  line: ……読めないまま。
+  line: 締切の、前の晩。読めないまま。
   beat: doubt
   emotion: neutral
   speed: very_fast
@@ -506,11 +502,10 @@ cues:
     mirabo:
       beat: doubt
 - name: c048f
-  character: mirai
-  line: ペンを、置く。
-  beat: resolve
-  emotion: confidence
-  speed: very_fast
+  character: narrator
+  line: ……ペンを、置く。
+  emotion: neutral
+  speed: slow
   pause_before: 0.6
   react:
     mirabo:
@@ -535,6 +530,46 @@ cues:
   react:
     mirabo:
       beat: doubt
+- name: c048i
+  character: mirabo
+  line: では、僕の名前で、署名します。
+  beat: prediction
+  emotion: confidence
+  speed: natural
+  pause_before: 0.4
+  react:
+    mirai:
+      beat: doubt
+- name: c048j
+  character: mirai
+  line: お前は、読んだか。
+  beat: doubt
+  emotion: neutral
+  speed: fast
+  pause_before: 0.2
+  react:
+    mirabo:
+      beat: worry
+- name: c048k
+  character: mirabo
+  line: ……読めません。
+  beat: shame
+  emotion: guilt
+  speed: very_slow
+  pause_before: 0.6
+  react:
+    mirai:
+      beat: doubt
+- name: c048l
+  character: mirai
+  line: なら、書くな。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.3
+  react:
+    mirabo:
+      beat: shame
 - name: c049
   character: mirabo
   line: 予測では、証明は正しいです。……ただし、意味は、分かりません。
@@ -547,7 +582,7 @@ cues:
       beat: doubt
 - name: c050
   character: mirai
-  line: 機械が通った。人間は。
+  line: 署名欄を、見る。私の欄だけ、空いている。
   beat: resolve
   emotion: confidence
   speed: very_fast
@@ -558,13 +593,23 @@ cues:
       mark: ？
 - name: c051
   character: mirabo
-  line: ……人間は、まだ。
+  line: ……記録は、進みません。
   beat: doubt
   emotion: neutral
   speed: natural
   pause_before: 0.4
   react:
     mirai:
+      beat: doubt
+- name: c051b
+  character: mirai
+  line: 知っている。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.6
+  react:
+    mirabo:
       beat: doubt
 - name: c052
   character: mirai
@@ -755,6 +800,26 @@ cues:
   emotion: confidence
   speed: natural
   pause_before: 0.6
+  react:
+    mirabo:
+      beat: doubt
+- name: c069c
+  character: mirabo
+  line: 164ページ、今日から、読みます。1ページずつ。
+  beat: prediction
+  emotion: confidence
+  speed: natural
+  pause_before: 0.4
+  react:
+    mirai:
+      beat: approval
+- name: c069d
+  character: mirai
+  line: 半年だな。
+  beat: amusement
+  emotion: joy
+  speed: natural
+  pause_before: 0.3
   react:
     mirabo:
       beat: doubt
@@ -981,41 +1046,37 @@ cues:
     mirai:
       beat: doubt
 - name: c088
-  character: mirai
+  character: narrator
   line: 4ページのノートを、引き寄せる。
-  beat: resolve
-  emotion: confidence
-  speed: fast
+  emotion: neutral
+  speed: slow
   pause_before: 0.2
   react:
     mirabo:
       beat: doubt
 - name: c089
-  character: mirai
+  character: narrator
   line: 余白に、「未読」と、書く。
-  beat: resolve
-  emotion: confidence
-  speed: fast
+  emotion: neutral
+  speed: slow
   pause_before: 0.5
   react:
     mirabo:
       beat: doubt
 - name: c090
-  character: mirabo
+  character: narrator
   line: ミラボが、隣に、「検証済み」と、書く。
-  beat: resolve
-  emotion: confidence
-  speed: natural
+  emotion: neutral
+  speed: slow
   pause_before: 0.2
   react:
     mirai:
       beat: doubt
 - name: c091
-  character: mirai
+  character: narrator
   line: 二つを、並べる。
-  beat: resolve
-  emotion: confidence
-  speed: very_fast
+  emotion: neutral
+  speed: slow
   pause_before: 0.2
   react:
     mirabo:
@@ -1092,18 +1153,17 @@ cues:
     mirai:
       beat: doubt
 - name: c099
-  character: mirai
+  character: narrator
   line: ミライは、何も、言わない。
-  beat: resolve
-  emotion: confidence
-  speed: fast
+  emotion: neutral
+  speed: slow
   pause_before: 0.8
   react:
     mirabo:
       beat: doubt
 - name: c100
   character: mirabo
-  line: ……だから、測る。
+  line: ……だから、測る。1ページずつ。
   beat: doubt
   emotion: neutral
   speed: natural

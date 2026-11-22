@@ -13,6 +13,21 @@ chapters:
     key: '数は当たる。
 
       場所は、当たらない。'
+    details:
+    - cue: c003
+      head: この話の問い
+      lines:
+      - 100万の素数は 78,498
+      - 予測は当たる
+      - 次の素数は、出ない
+      fact: prime-counting-table
+    - cue: c007
+      head: 数と、場所
+      lines:
+      - 数は、平均で当たる
+      - 場所は、平均で出ない
+      - だから、数える
+      fact: prime-theorem
   c014:
     label: 第1章
     title: 平均は、当たる
@@ -20,6 +35,28 @@ chapters:
     key: '数えても、
 
       場所は出ない。'
+    details:
+    - cue: c018
+      head: 素数の並び
+      lines:
+      - 2, 3, 5, 7, 11
+      - 101, 103, 107, 109, 113
+      - 間隔は 2・4・6
+      fact: prime-gaps-example
+    - cue: c026
+      head: 100万で
+      lines:
+      - π(10^6) = 78,498
+      - li(10^6) ≈ 78,628
+      - 差は、130
+      fact: prime-counting-table
+    - cue: c029
+      head: 素数定理
+      lines:
+      - π(x) ~ x/log x
+      - 1896年、独立に証明
+      - 平均は、正確
+      fact: prime-theorem
   c033:
     label: 第2章
     title: 零点が、数を決める
@@ -27,6 +64,35 @@ chapters:
     key: '零点が、
 
       誤差を決める。'
+    details:
+    - cue: c035
+      head: ゼータ関数
+      lines:
+      - ζ(s) = Σ 1/n^s
+      - オイラー積で素数と結ぶ
+      - Re(s) > 1
+      fact: euler-product
+    - cue: c039
+      head: 明示公式
+      lines:
+      - 零点の和が、誤差になる
+      - 実部が小さいほど、誤差小
+      - 零点が、数を決める
+      fact: explicit-formula
+    - cue: c044
+      head: リーマン予想
+      lines:
+      - 非自明な零点は
+      - すべて Re(s) = 1/2
+      - 1859年、リーマン
+      fact: riemann-hypothesis
+    - cue: c048
+      head: どこまで確認
+      lines:
+      - 10^13 個は、線上
+      - 41.6% 以上も、証明
+      - 「すべて」は、まだ
+      fact: zeros-proportion
   c054:
     label: 第3章
     title: なぜ、1/2 なのか
@@ -34,6 +100,21 @@ chapters:
     key: '対称の軸が、
 
       1/2。'
+    details:
+    - cue: c056
+      head: 関数等式
+      lines:
+      - s を 1−s に移す
+      - 零点は、鏡で対称
+      - 軸が Re(s) = 1/2
+      fact: functional-equation
+    - cue: c062
+      head: 解析だけでは
+      lines:
+      - ゼータを動かすと
+      - 零点は線から動く
+      - 保型形式・数論幾何も
+      fact: tao-analytic
   c066:
     label: 終章
     title: 167年
@@ -41,4 +122,26 @@ chapters:
     key: '読めない証明が、
 
       残った。'
+    details:
+    - cue: c067
+      head: 1859 → 2026
+      lines:
+      - 1859年、リーマン
+      - 2000年、ミレニアム賞
+      - 2026年、証明の主張
+      fact: riemann-hypothesis
+    - cue: c074
+      head: 2026年の主張
+      lines:
+      - 4ページのノート
+      - Lean は 1,740万行
+      - 論文は、まだない
+      fact: claim-2026
+    - cue: c083
+      head: 確かめたのは
+      lines:
+      - 78,498 は、数えた
+      - 1,740万行は、機械
+      - 人間は、読めていない
+      fact: claim-2026
 cast: mirai-mirabo

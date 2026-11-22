@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -54,6 +55,12 @@ def cast_ids(name: str) -> set[str] | None:
         return None
     cast = load_yaml(path)
     return {c.get("id") for c in cast.get("characters", []) if c.get("id")}
+
+
+def voice_profile_exists(cid: str) -> bool:
+    """画面に居ない語り手。SAL に voice profile があれば声だけ使える。"""
+    sal = Path(os.environ.get("SAL", REPO.parent / "semantic-audio-loom"))
+    return bool(cid) and (sal / "characters" / f"{cid}.voice.yaml").exists()
 
 
 # cue の演技の欄 → SAL の語彙。
@@ -496,7 +503,7 @@ def check(args) -> int:
                                 "声の語彙の検査は飛ばした")
             for cue in cues:
                 cid = cue.get("character") or ""
-                if cid and cid not in ids:
+                if cid and cid not in ids and not voice_profile_exists(cid):
                     errors.append(f"{cue.get('name')}: character {cid!r} が cast に無い")
                 check_acting(cue, ids, faces, sheets, enums, errors, warnings)
 

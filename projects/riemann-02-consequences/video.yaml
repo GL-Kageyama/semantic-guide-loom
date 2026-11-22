@@ -13,6 +13,21 @@ chapters:
     key: '全部は、
 
       どこまでだ。'
+    details:
+    - cue: c003
+      head: 「全部」の範囲
+      lines:
+      - 双子素数は、別
+      - ゴールドバッハも、別
+      - RH は「全部」ではない
+      fact: unsolved-by-rh
+    - cue: c010
+      head: RH が教えること
+      lines:
+      - 平均と、揺らぎ
+      - 位置のすべては、別
+      - 「全部」を、狭める
+      fact: unsolved-by-rh
   c013:
     label: 第1章
     title: 揺らぎの上限
@@ -20,6 +35,35 @@ chapters:
     key: '平均は正確。
 
       位置は別。'
+    details:
+    - cue: c015
+      head: 100万で
+      lines:
+      - π = 78,498
+      - Li ≈ 78,628
+      - 差は 130
+      fact: von-koch
+    - cue: c016
+      head: RH の上限
+      lines:
+      - '|π − Li| の上限'
+      - (1/8π)√x log x
+      - x ≥ 2657
+      fact: schoenfeld
+    - cue: c024
+      head: 三年前の返却
+      lines:
+      - 「条件付きは、定理ではない」
+      - 査読者の、一行
+      - 付箋は、まだ
+      fact: in-work-returned-paper
+    - cue: c033
+      head: 条件付きの定理
+      lines:
+      - RH を仮定した定理は数百
+      - 仮定が消えると、無条件
+      - 条件を、消さない
+      fact: conditional-theorems
   c036:
     label: 第2章
     title: 仮定の上に建つ定理
@@ -27,6 +71,35 @@ chapters:
     key: '条件付きで、
 
       建っている。'
+    details:
+    - cue: c039
+      head: アルティン
+      lines:
+      - 原始根予想
+      - GRH の下で、Hooley 1967
+      - 仮定が消えれば、定理
+      fact: hooley-artin
+    - cue: c042
+      head: ミラー–ラビン
+      lines:
+      - GRH の下で決定的
+      - 底は 2(log n)^2
+      - AKS は無条件（2002）
+      fact: miller-rabin
+    - cue: c044
+      head: RSA
+      lines:
+      - 素因数分解の難しさ
+      - RH は直接、揺るがさない
+      - 暗号の一部は GRH 前提
+      fact: rsa
+    - cue: c048
+      head: 撤回しない理由
+      lines:
+      - 暗号の評価の一部は
+      - GRH の上に載っている
+      - 範囲を言えば、撤回不要
+      fact: crypto-grh
   c053:
     label: 第3章
     title: 解けないもの
@@ -34,6 +107,21 @@ chapters:
     key: '平均は、
 
       個性を教えない。'
+    details:
+    - cue: c056
+      head: 残る問題
+      lines:
+      - 双子素数、ゴールドバッハ
+      - 素数の位置のすべて
+      - RH からは、従わない
+      fact: unsolved-by-rh
+    - cue: c061
+      head: 山の麓
+      lines:
+      - バザードの比喩
+      - 拡張 RH、大 RH
+      - 上がある
+      fact: buzzard-mountain
   c066:
     label: 第4章
     title: 「解けた」の4段階
@@ -41,6 +129,29 @@ chapters:
     key: '証明・検証・
 
       理解・受容。'
+    details:
+    - cue: c067
+      head: 4段階
+      lines:
+      - 証明がある
+      - 形式検証が通る
+      - 人間が理解する
+      - コミュニティが受け入れる
+      fact: four-stages
+    - cue: c069
+      head: 2026年の現在地
+      lines:
+      - 形式検証は、完了
+      - 人間向け証明は、まだ
+      - 査読・クレイ賞も、未了
+      fact: claim-status
+    - cue: c072
+      head: クレイ賞
+      lines:
+      - 対象誌で発表
+      - 発表から 2 年
+      - 世界の一般受容
+      fact: clay-rules
   c080:
     label: 終章
     title: まだ、測定中
@@ -48,4 +159,26 @@ chapters:
     key: '条件付きで、
 
       それでも出す。'
+    details:
+    - cue: c083
+      head: 「解けた」の4段階
+      lines:
+      - 証明・検証・理解・受容
+      - 全部揃って、定理
+      - 今は、2段目
+      fact: four-stages
+    - cue: c086
+      head: 二枚のカード
+      lines:
+      - 条件付き
+      - 測定中
+      - どちらも、本当
+      fact: claim-status
+    - cue: c092b
+      head: 封筒
+      lines:
+      - 出す
+      - 読まれるかは、分からない
+      - それでも、出す
+      fact: in-work-priority
 cast: mirai-mirabo

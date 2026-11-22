@@ -13,6 +13,28 @@ chapters:
     key: '読めない証明が、
 
       届いた。'
+    details:
+    - cue: c003
+      head: 2026年の主張
+      lines:
+      - 2026年11月20日
+      - RH と GRH を証明と主張
+      - Lean の形式証明のみ
+      fact: remark-note
+    - cue: c007
+      head: 読めない証明
+      lines:
+      - 4ページのノート
+      - Lean は 1,740万行
+      - 通常の論文は、ない
+      fact: lean-scale
+    - cue: c012
+      head: 三年前の署名
+      lines:
+      - 読めないまま、通した
+      - 半年後、式が一つ逆
+      - 訂正は、二行
+      fact: in-work-mirai-signature
   c018:
     label: 第1章
     title: 4ページのノート
@@ -20,6 +42,28 @@ chapters:
     key: '本人も、
 
       理解の途上。'
+    details:
+    - cue: c020
+      head: ノートの主張
+      lines:
+      - RH だけでなく、GRH
+      - ディリクレL関数の零点
+      - ERH にも及ぶ見込み
+      fact: remark-note
+    - cue: c024
+      head: 本人の留保
+      lines:
+      - 最適でない選択が混ざる
+      - 短い議論が続く
+      - 高階の保型形式は不得手
+      fact: remark-caveats
+    - cue: c027
+      head: なぜ Lean だけか
+      lines:
+      - 読めない「slop」を避ける
+      - 巨大な証明は、読めない
+      - だから、Lean のみ
+      fact: remark-caveats
   c029:
     label: 第2章
     title: なぜ、Lean なのか
@@ -27,6 +71,28 @@ chapters:
     key: '命題と公理と、
 
       意味は別。'
+    details:
+    - cue: c031
+      head: Lean の保証
+      lines:
+      - 証明をコードとして書く
+      - カーネルが一歩ずつ検査
+      - 公理から導かれる
+      fact: lean-kernel
+    - cue: c033
+      head: 三つの落とし穴
+      lines:
+      - 命題は、意図したものか
+      - 余分な公理は、ないか
+      - 数学的な意味は、別
+      fact: lean-kernel
+    - cue: c036
+      head: 何を確かめるか
+      lines:
+      - 命題の同定
+      - 公理監査
+      - comparator で一致確認
+      fact: joint-statement
   c038:
     label: 第3章
     title: 検証
@@ -34,6 +100,36 @@ chapters:
     key: '機械は通った。
 
       人間は、まだ。'
+    details:
+    - cue: c039
+      head: 独立ビルド
+      lines:
+      - 11月20日、Sutherland
+      - 全モジュール、エラーゼロ
+      - 独立にビルド
+      fact: independent-build
+    - cue: c041
+      head: 共同声明
+      lines:
+      - 11月21日
+      - Lean/Mathlib コミュニティ
+      - 命題と証明を認定
+      fact: joint-statement
+    - cue: c044
+      head: 4つの機械チェック
+      lines:
+      - 175,187 モジュール
+      - 標準3公理のみ
+      - 全リプレイ
+      - nanoda 1,484,729宣言
+      fact: rubinstein-checks
+    - cue: c050
+      head: 署名欄
+      lines:
+      - 署名すれば、記録される
+      - 読めないまま、署名しない
+      - 私の欄だけ、空く
+      fact: in-work-mirai-signature
   c052:
     label: 第4章
     title: 164ページ
@@ -41,6 +137,35 @@ chapters:
     key: '核心は、
 
       Leanの中。'
+    details:
+    - cue: c054
+      head: 164ページ草案
+      lines:
+      - 古典的解析数論のスタイル
+      - 5段階の戦略
+      - 核心 (M) は Lean から
+      fact: rubinstein-draft
+    - cue: c059
+      head: 誰が書いたか
+      lines:
+      - Claude・Codex・Gemini
+      - AI 3モデル
+      - 人間向けの説明も、AI
+      fact: rubinstein-draft
+    - cue: c063
+      head: 940ページの別証明
+      lines:
+      - Masullo、AI なし、12年
+      - 公開版は未完成
+      - 522ページにメモ
+      fact: masullo
+    - cue: c067
+      head: Nielsen の批判
+      lines:
+      - 一様有界性に反例
+      - GRH の反証ではない
+      - 証明への批判
+      fact: masullo
   c070:
     label: 第5章
     title: 解けた、とは
@@ -48,6 +173,29 @@ chapters:
     key: '公式は、
 
       まだUnsolved。'
+    details:
+    - cue: c071
+      head: 公式の現在地
+      lines:
+      - 'クレイ公式: Unsolved'
+      - 'Wikipedia: prize pending'
+      - 誰も受け取っていない
+      fact: clay-status
+    - cue: c072
+      head: 賞金の条件
+      lines:
+      - 対象誌で発表
+      - 発表から 2 年
+      - 世界の一般受容
+      fact: clay-status
+    - cue: c075
+      head: 4段階
+      lines:
+      - 証明・形式検証
+      - 人間の理解
+      - コミュニティの受容
+      - 2026年は、2段目
+      fact: four-stages
   c079:
     label: 終章
     title: まだ、測定中
@@ -55,4 +203,26 @@ chapters:
     key: '未読と検証済み、
 
       どちらも本当。'
+    details:
+    - cue: c080
+      head: 作者の言葉
+      lines:
+      - 「この議論を理解し」
+      - 「伝えるために、最善を」
+      - 作者も、途上
+      fact: remark-caveats
+    - cue: c089
+      head: 未読と検証済み
+      lines:
+      - 未読
+      - 検証済み
+      - どちらも、本当
+      fact: four-stages
+    - cue: c099
+      head: 1ページずつ
+      lines:
+      - 164ページ
+      - 1日 1ページ
+      - 半年
+      fact: rubinstein-draft
 cast: mirai-mirabo

@@ -2,12 +2,21 @@ name: riemann-01-what
 default_pause: 0.25
 cues:
 - name: c001
-  character: mirai
-  line: 机の上に、素数表を置く。紙の角が、めくれている。余白の字は、私のだ。学生の頃の。
-  beat: resolve
-  emotion: confidence
+  character: narrator
+  line: 机の上に、素数表を置く。紙の角が、めくれている。
+  emotion: neutral
   speed: slow
   pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c001b
+  character: mirai
+  line: 余白の字は、私のだ。学生の頃の。
+  beat: doubt
+  emotion: neutral
+  speed: slow
+  pause_before: 0.3
   react:
     mirabo:
       beat: doubt
@@ -156,7 +165,7 @@ cues:
       mark: ？
 - name: c016
   character: mirai
-  line: ×だった。
+  line: 赤で、×だった。
   beat: resolve
   emotion: confidence
   speed: very_fast
@@ -166,18 +175,17 @@ cues:
       beat: doubt
       mark: ……
 - name: c017
-  character: mirai
-  line: それから、数える。
-  beat: resolve
-  emotion: confidence
-  speed: very_fast
+  character: narrator
+  line: 裏を、返す。正の字が、三年分。
+  emotion: neutral
+  speed: slow
   pause_before: 0.2
   react:
     mirabo:
       beat: doubt
 - name: c018
   character: mirai
-  line: 素数は、2、3、5、7、11。割れない数だ。
+  line: 素数は、2、3、5、7、11。この正の字は、そこからだ。
   beat: resolve
   emotion: confidence
   speed: fast
@@ -306,18 +314,17 @@ cues:
     mirabo:
       beat: doubt
 - name: c031
-  character: mirai
+  character: narrator
   line: 表の、丸の次を、指でなぞる。
-  beat: resolve
-  emotion: confidence
-  speed: fast
+  emotion: neutral
+  speed: slow
   pause_before: 0.2
   react:
     mirabo:
       beat: doubt
 - name: c032
   character: mirai
-  line: 空白だ。どの数が次かは、平均からは、出ない。
+  line: 空白だ。どの数が次かは、平均からは、出ない。だから、私は、数える。
   beat: resolve
   emotion: confidence
   speed: fast
@@ -738,7 +745,7 @@ cues:
       beat: doubt
 - name: c074
   character: mirabo
-  line: ありません。Leanの形式証明が、1,740万行です。
+  line: 4ページのノートと、1,740万行の形式証明です。
   beat: doubt
   emotion: neutral
   speed: natural
@@ -809,11 +816,10 @@ cues:
     mirai:
       beat: doubt
 - name: c081
-  character: mirai
+  character: narrator
   line: 4ページのノートを、指で押さえる。
-  beat: resolve
-  emotion: confidence
-  speed: fast
+  emotion: neutral
+  speed: slow
   pause_before: 0.2
   react:
     mirabo:
@@ -829,21 +835,19 @@ cues:
     mirabo:
       beat: doubt
 - name: c083
-  character: mirai
+  character: narrator
   line: カードを、出す。78,498と、空白。
-  beat: resolve
-  emotion: confidence
-  speed: fast
+  emotion: neutral
+  speed: slow
   pause_before: 0.6
   react:
     mirabo:
       beat: doubt
 - name: c084
-  character: mirai
+  character: narrator
   line: 空白に、1,740万行と、書く。
-  beat: resolve
-  emotion: confidence
-  speed: fast
+  emotion: neutral
+  speed: slow
   pause_before: 0.2
   react:
     mirabo:
@@ -899,11 +903,10 @@ cues:
     mirabo:
       beat: doubt
 - name: c090
-  character: mirabo
+  character: narrator
   line: ミラボが、カードに、「外れた」と書く。
-  beat: doubt
   emotion: neutral
-  speed: natural
+  speed: slow
   pause_before: 0.2
   react:
     mirai:
@@ -946,6 +949,26 @@ cues:
   emotion: confidence
   speed: very_fast
   pause_before: 0.2
+  react:
+    mirabo:
+      beat: doubt
+- name: c095
+  character: mirabo
+  line: ……明日は、数えます。百万まで。
+  beat: doubt
+  emotion: neutral
+  speed: slow
+  pause_before: 0.6
+  react:
+    mirai:
+      beat: doubt
+- name: c096
+  character: mirai
+  line: 数えたら、書け。
+  beat: resolve
+  emotion: confidence
+  speed: very_fast
+  pause_before: 0.3
   react:
     mirabo:
       beat: doubt

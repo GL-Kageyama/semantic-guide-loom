@@ -71,3 +71,9 @@ facts:
   confidence: high
   used_by: [c002, c035]
   note: 作品内の演出。事実台帳の数値と混ぜない。
+
+- id: prime-gaps-example
+  statement: 101, 103, 107, 109, 113 はすべて素数で、間隔は 2, 4, 2, 4 と不規則。
+  sources: [clay-rh]
+  confidence: high
+  used_by: [c020, c021]

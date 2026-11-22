@@ -319,14 +319,19 @@ def stage(args) -> int:
             if not reading or not params_path.exists():
                 continue
             params = load_yaml(params_path)
-            old_reading = params.get("reading") or params.get("dialogue") or ""
-            if old_reading == reading:
+            # build_voice.py は parameters の下に dialogue を置く。
+            # トップレベルだけを見ると常に不一致になり、毎回すべて捨ててしまう。
+            inner = params.get("parameters") or {}
+            old_reading = (params.get("reading") or inner.get("reading")
+                           or params.get("dialogue") or inner.get("dialogue") or "")
+            old_character = (params.get("character") or inner.get("character") or "")
+            if old_reading == reading and old_character == (cue.get("character") or ""):
                 continue
             for p in (wav_path, params_path):
                 if p.exists():
                     p.unlink()
                     pruned += 1
-            print(f"  消した: {name}（読みが変わった）")
+            print(f"  消した: {name}（読みか話者が変わった）")
 
     print(f"舞台: {stage}")
     print(f"  差し替えた line: {changed} cue / 字幕に元表記を足した: {len(new_display)} cue")

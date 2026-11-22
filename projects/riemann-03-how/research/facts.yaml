@@ -59,3 +59,22 @@ facts:
   confidence: high
   used_by: [c067, c068, c069, c070, c071]
   note: 作品内の整理枠。事実そのものではない。
+
+- id: in-work-mirai-signature
+  statement: ミライは三年前、読めない論文に締切前夜に署名し、半年後に式が一つ逆だったことが分かった。訂正は二行だった（作品内）。
+  sources: [in-work]
+  confidence: high
+  used_by: [c012, c014, c015, c048d, c048e, c050]
+  note: 作品内の演出。
+
+- id: lean-kernel
+  statement: Lean は証明をコードとして書き、カーネルが命題が公理から導かれることを一歩ずつ検査する。
+  sources: [lean-check]
+  confidence: high
+  used_by: [c029, c030, c031]
+
+- id: independent-build
+  statement: 2026年11月20日、Andrew Sutherland が Lean 証明の独立ビルドに成功した（全モジュール、エラーゼロ）。
+  sources: [lean-check]
+  confidence: high
+  used_by: [c038]
